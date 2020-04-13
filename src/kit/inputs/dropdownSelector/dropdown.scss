@@ -1,0 +1,33 @@
+.dropdown{
+  display: inline-block;
+}
+.select{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.options {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  height: auto;
+  z-index: 10;
+  position: absolute;
+  padding-left: 0;
+}
+
+.option{
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.option:hover{
+  background-color: #f1f1f1;
+}
+.expander{
+  width: 44px;
+  text-align: center;
+}

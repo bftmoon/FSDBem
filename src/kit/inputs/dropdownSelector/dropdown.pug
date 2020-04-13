@@ -1,0 +1,10 @@
+mixin dropdown(idPrefix, title, placeholder, map)
+    h3.title=title
+    div(id=idPrefix+'-dropdown').dropdown
+        div.field.select
+            span=placeholder
+            i.expander.material-icons expand_more
+        .field.options(id=idPrefix+'-options' hidden)
+            for val, key in map
+                div(name=key id=idPrefix+'-'+key).option=val
+
