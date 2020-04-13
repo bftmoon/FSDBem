@@ -1,0 +1,20 @@
+{
+  "name": "fsdbem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.pug --open",
+    "build": "parcel build src/index.pug -d docs --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pug": "^2.0.4",
+    "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "jquery": "^3.5.0"
+  }
+}

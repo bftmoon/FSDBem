@@ -1,0 +1,43 @@
+@import "../../colors";
+
+.menu-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
+  height: 44px;
+  align-items: center;
+}
+
+.menu-button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid $dark_shade25;
+  box-sizing: border-box;
+  padding: 0;
+  color: $dark_shade50;
+}
+
+.counter {
+  width: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options-text{
+  color: $dark_shade100;
+}
+.content-text{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.clear{
+  color: $dark_shade50;
+}
+
+.actions{
+  display: flex;
+  justify-content: space-between;
+}
