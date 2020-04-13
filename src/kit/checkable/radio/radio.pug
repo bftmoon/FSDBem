@@ -1,0 +1,7 @@
+mixin radio(map)
+  .radio-group
+    each el in map
+      label.radio
+        text=el.text
+        input(type="radio" name=el.name value=el.val)
+        span.radio-item
