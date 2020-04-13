@@ -1,7 +1,8 @@
-.dropdown{
+.dropdown {
   display: inline-block;
 }
-.select{
+
+.select {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,16 +19,17 @@
   padding-left: 0;
 }
 
-.option{
+.option {
   height: 44px;
   display: flex;
   align-items: center;
   padding-left: 15px;
+  &:hover {
+    background-color: #f1f1f1;
+  }
 }
-.option:hover{
-  background-color: #f1f1f1;
-}
-.expander{
+
+.expander {
   width: 44px;
   text-align: center;
 }
