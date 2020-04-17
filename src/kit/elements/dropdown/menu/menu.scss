@@ -1,4 +1,4 @@
-@import "../../colors";
+@import "../../../env_styles/colors";
 
 .menu-option {
   display: flex;
@@ -40,4 +40,38 @@
 .actions{
   display: flex;
   justify-content: space-between;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  height: auto;
+  z-index: 10;
+  position: absolute;
+  padding-left: 0;
+}
+
+.option {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+.expander {
+  width: 44px;
+  text-align: center;
 }
