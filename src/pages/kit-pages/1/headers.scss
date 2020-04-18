@@ -1,0 +1,16 @@
+@import "../../../kit/kit";
+.headers{
+  max-width: 415px;
+}
+
+td{
+  vertical-align: text-top;
+  * {
+    margin-bottom: 50px;
+  }
+}
+.prefix{
+  text-align: right;
+  color: $dark_shade25;
+  margin-right: 30px;
+}
