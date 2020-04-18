@@ -1,77 +1,81 @@
 @import "../../../env_styles/colors";
 
-.menu-option {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px 0 15px;
-  height: 44px;
-  align-items: center;
-}
-
-.menu-button {
-  width: 30px;
-  height: 30px;
-
-  border: 1px solid $dark_shade25;
-  box-sizing: border-box;
-  padding: 0;
-  color: $dark_shade50;
-}
-
-.counter {
-  width: 92px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.options-text{
-  color: $dark_shade100;
-}
-.content-text{
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.clear{
-  color: $dark_shade50;
-}
-
-.actions{
-  display: flex;
-  justify-content: space-between;
-}
 
 .dropdown {
   display: inline-block;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
-.select {
+.dropdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 10px;
 }
 
-.options {
+.dropdown-header-opened{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-content {
+  @extend .field;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   height: auto;
   z-index: 10;
   position: absolute;
-  padding-left: 0;
+  background: white;
 }
 
-.option {
+.dropdown-item {
   height: 44px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
-  &:hover {
-    background-color: #f1f1f1;
+  padding-right: 5px;
+}
+
+//.dropdown-item-name{
+//  color: $dark_shade100;
+//  font-weight: bold;
+//  text-transform: uppercase;
+//}
+
+.dropdown-counter {
+  width: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $dark_shade25;
+    box-sizing: border-box;
+    padding: 0;
+    color: $dark_shade25;
+    &:disabled{
+      color: $dark_shade5;
+      border-color: $dark_shade5;
+    }
   }
 }
 
-.expander {
-  width: 44px;
-  text-align: center;
+.dropdown-buttons{
+  button{
+    padding-left: 0;
+    padding-right: 5px;
+  }
+}
+
+.dropdown-cancel{
+  color: $dark_shade50;
+  &:hover{
+    text-shadow: 2px 2px 2px rgba(34, 60, 80, 0.2);
+  }
+}
+
+.dropdown-confirm{
+  float: right;
 }

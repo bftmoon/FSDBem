@@ -20,31 +20,36 @@ class DropdownMenu {
     let menuContent = this._menu.lastChild;
 
     menuTitle.textContent = initTitle;
-    menuHeader.addEventListener('click', () => menuContent.hidden = !menuContent.hidden);
+    menuHeader.addEventListener('click', () => {
+      menuContent.hidden = !menuContent.hidden;
+      menuHeader.classList.toggle('dropdown-header-opened');
+    });
+    if (!isClosed) {
+      menuHeader.classList.add('dropdown-header-opened')
+    }
 
     let list = [];
     this.countersData.forEach((el, i) => {
       list.push(this._buildItem(el, i))
     });
 
-    menuContent.append(...list);
+    menuContent.firstChild.before(...list);
     menuContent.hidden = isClosed;
 
     this._initMenuButtons(withCancel, withConfirm);
   }
 
   _buildItem(el, i) {
+    // <div class="dropdown-item">
     const listItem = `
-<!--        <div class="dropdown-item">-->
-          <span class="dropdown-item-name">${el.name}</span>
+          <h3>${el.name}</h3>
           <span class="dropdown-counter">
-            <button ${el.count===0?'disabled':''}>-</button>
-            <span class="count">${el.count}</span>
+            <button ${el.count === 0 ? 'disabled' : ''}>-</button>
+            <h3 class="count">${el.count}</h3>
             <button>+</button>
           </span>
-<!--        </div>-->
     `.replace(/>\s+</g, '><');
-    console.log(listItem)
+    // </div>
 
     let item = document.createElement('div')
     item.classList.add("dropdown-item");
@@ -90,12 +95,16 @@ class DropdownMenu {
     if (withCancel) {
       let cancelButton = this._menu.querySelector('.dropdown-cancel');
       cancelButton.hidden = false;
-      cancelButton.addEventListener('click', ()=>{this._clear()});
+      cancelButton.addEventListener('click', () => {
+        this._clear()
+      });
     }
     if (withConfirm) {
       let confirmButton = this._menu.querySelector('.dropdown-confirm');
       confirmButton.hidden = false;
-      confirmButton.addEventListener('click', ()=>{this._confirm()});
+      confirmButton.addEventListener('click', () => {
+        this._confirm()
+      });
     }
   }
 
@@ -107,8 +116,9 @@ class DropdownMenu {
     this.countersData.forEach(el => {
       el.count = 0;
     })
-    this._menu.querySelectorAll('.count').forEach(el => {
-      el.innerText = '0';
+    this._menu.querySelectorAll('.dropdown-counter').forEach(el => {
+      el.firstChild.disabled = true;
+      el.firstChild.nextSibling.innerText = '0';
     })
     this._menu.firstChild.firstChild.innerText = this._initTitle;
   }
@@ -126,8 +136,4 @@ class DropdownMenu {
   }
 }
 
-new DropdownMenu([{name: 'Hi', count: 8}, {name: 'Hi', count: 8}], {}).init({
-  isClosed: false,
-  withConfirm: true,
-  withCancel: true
-});
+export {DropdownMenu};
