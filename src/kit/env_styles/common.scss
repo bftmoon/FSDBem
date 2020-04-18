@@ -1,0 +1,33 @@
+@import "colors";
+body {
+  font-family: "Montserrat", "Roboto", serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark_shade75;
+}
+
+h1 {
+  font-family: Quicksand, serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: $dark_shade100;
+}
+
+h2{
+  font-family: Quicksand, serif;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: $dark_shade100;
+}
+
+h3{
+  font-family: Montserrat, serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark_shade100;
+}
+
