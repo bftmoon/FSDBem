@@ -1,58 +1,57 @@
-import Litepicker from "litepicker";
+import 'air-datepicker/dist/js/datepicker'
 
-console.log('hi')
-
-class Datepicker extends Litepicker {
-  renderFooter() {
-    let a = super.renderFooter();
-    let buttonsDiv = document.createElement('div');
-    // Get submit button because submit method is private
-    let apply = a.lastElementChild;
-    let cancel = document.createElement('button');
-    apply.innerHTML = 'Подтведить';
-    cancel.innerHTML = 'Сбросить';
-    cancel.addEventListener('click', () => {
-      this.clearSelection();
-    });
-    buttonsDiv.append(cancel, apply);
-    return buttonsDiv;
-  }
-
-
+const commonParams = {
+  navTitles: {
+    days: 'MM yyyy'
+  },
+  prevHtml: '<i class="material-icons datepicker-icons">arrow_back</i>',
+  nextHtml: '<i class="material-icons datepicker-icons">arrow_forward</i>',
+  clearButton: true,
 }
 
-function init(selector, {isRanged = true, isOpened = false}) {
-  const picker = new Datepicker({
-    element: document.querySelector(selector),
-    autoApply: false,
-buttonText: {
-  previousMonth: '<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-    '<path d="M16.1755 8.01562V9.98438H3.98801L9.56613 15.6094L8.15988 17.0156L0.144258 9L8.15988 0.984375L9.56613 2.39062L3.98801 8.01562H16.1755Z" fill="#BC9CFF"/>\n' +
-    '</svg>\n',
-  nextMonth: '<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-    '<path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/>\n' +
-    '</svg>\n',
-},
-    lang: 'ru',
-    format: 'DD.MM.YYYY',
-    singleMode: !isRanged,
-    showTooltip: false,
-
-  });
-  if (isOpened) picker.show();
-  return picker;
+function init(selector, {isRange = true, isInline = true}) {
+  let dateInput = $(selector)
+  let navigator = 'js-' + selector.replace(/[.#]/, '') + '-datepicker';
+  let picker = dateInput.datepicker({
+    ...commonParams,
+    clearButton: true,
+    range: isRange,
+    classes: navigator,
+    multipleDatesSeparator: ' - ',
+    inline: isInline,
+  }).data('datepicker');
+  _setButtons(navigator, picker);
 }
 
-function initFor2Inputs(selector1, selector2) {
-  return new Datepicker({
-    element: document.querySelector(selector1),
-    elementEnd: document.querySelector(selector2),
-    autoApply: false,
-    lang: 'ru',
-    format: 'DD.MM.YYYY',
-    singleMode: false,
-    showTooltip: false,
-  });
+function initFor2Inputs(selectorStart, selectorEnd) {
+  let firstDateInput = $(selectorStart);
+  let secondDateInput = $(selectorEnd);
+  let navigator = 'js-' + selectorStart.replace(/[.#]/, '') + '-datepicker';
+  let picker = firstDateInput.datepicker({
+    ...commonParams,
+    range: true,
+    classes: navigator,
+    onSelect: (formatted, a, b) => {
+      console.log(a, b)
+      let dates = formatted.split(',');
+      firstDateInput.val(dates[0])
+      secondDateInput.val(dates.length === 2 ? dates[1] : '')
+    }
+  }).data('datepicker');
+  _setButtons(navigator, picker);
 }
 
-export {init, initFor2Inputs};
+function _setButtons(selector, picker) {
+
+  let apply = document.createElement('span');
+  apply.innerText = 'Применить';
+  apply.classList.add('datepicker--button', 'datepicker--button-apply');
+  apply.addEventListener('click', () => picker.hide())
+
+  let cancel = $('.' + selector + ' .datepicker--button');
+  cancel.addClass('datepicker--button-cancel');
+
+  cancel.after(apply);
+}
+
+export {init, initFor2Inputs}
