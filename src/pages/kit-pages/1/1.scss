@@ -1,7 +1,11 @@
+@import "../common";
+
 main{
-  max-width: 1140px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
+.headers{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

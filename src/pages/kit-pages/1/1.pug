@@ -17,26 +17,20 @@ html(lang="en")
             {name: 'Dark Shade 5%', num: '#1F2041'},
             {name: 'Purple', num: '#BC9CFF'},
             {name: 'Green', num: '#6FCF97'},
-            ]
+          ]
         each color, i in colors
           .color-item
-            div(class='color'+i).color-box
+            div(class='color' + i).color-box
             .color-description
               span.color-name=color.name
               span.color-num=color.num
       section.headers
-        table
-          tr
-            td: h1.prefix H1
-            td: h1 This one is the sub-section or widget title
-          tr
-            td: h2.prefix H2
-            td: h2 Next one is the item title inside widgets
-          tr
-            td: h3.prefix H3
-            td: h3 This is a label or CTA text
-          tr
-            td: span.prefix Body
-            td: span This is the body text which is used for most of the design, like paragraphs, lists, etc.
-    //script(type='script/javascript' src='./1.js')
+        h1.prefix H1
+        h1 This one is the sub-section or widget title
+        h2.prefix H2
+        h2 Next one is the item title inside widgets
+        h3.prefix H3
+        h3 This is a label or CTA text
+        span.prefix Body
+        span This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
