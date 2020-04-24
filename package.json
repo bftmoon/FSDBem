@@ -32,8 +32,9 @@
     "expose-loader": "^0.7.5",
     "inputs": "^0.9.2",
     "jquery": "^3.5.0",
+    "jquery-ui": "^1.12.1",
     "material-icons": "^0.3.1",
     "typeface-montserrat": "0.0.75",
-    "typeface-quicksand": "^1.1.4",
+    "typeface-quicksand": "^1.1.4"
   }
 }

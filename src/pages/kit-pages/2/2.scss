@@ -1,0 +1,25 @@
+@import "../common";
+@import "../../../kit/kit.scss";
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+label{
+  display: flex;
+  justify-content: space-between;
+}
+.component-name{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.component-description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.condition{
+  font-weight: normal;
+  color: $dark_shade50;
+}

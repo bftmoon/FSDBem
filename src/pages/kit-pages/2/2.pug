@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+  include ../../../kit/kit
+  head
+    meta(charset="UTF-8")
+    title UIKit
+  body
+    main
+      div
+        label Text field
+          span.condition Default
+        input(placeholder='Email')
+        label Text field
+          span.condition Hover/focus
+        input(value='This is pretty awesome')
+        label Dropdown
+          span.condition Default
+        +dropdownMenu(id='init_closed')
+        label Masked text field
+          span.condition Default
+        +maskedDateInput
+        +dateDropdown('Date dropdown', 'Date dropdown')(id='date_double_input')
+        +dateDropdown('Filter date dropdown')(id='date_single_input')
+        label Subscription text field
+        +subscribeInput
+      div
+        label Checkbox buttons
+        +checkboxList([
+          {text: 'Можно курить', attributes: {name: '?', value:'smoke'}},
+          {text: 'Можно с питомцами', attributes: {name: '?', value:'pet', checked: true}},
+          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value:'visiters', checked: 'checked'}},
+          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value: 'visiters', checked: ''}},
+          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value:'visiters', checked: false}}
+        ])
+        label Radio buttons
+        +radio([
+          {text: 'Мужчина', attributes: {value: 'M', name: 'gender'}},
+          {text: 'Женщина', attributes: {value: 'W', name: 'gender'}}
+        ])
+        label Toggle
+        +toggle('Получать спецпредложения')
+        +toggle('Получать спецпредложения')(disabled)
+        label Like button
+        +likeButton(2)
+        +likeButton(12)(checked)
+        label Rate button
+        +rating(4)
+        +rating(5)
+      div
+        +slider
+    script(type='script/javascript' src='./2.js')
+
+
+
+
+
+
+
