@@ -1,0 +1,9 @@
+mixin likeButton(numOfLikes)
+  .like
+    input(type='checkbox').like__checker&attributes(attributes)
+    .like__box
+      i.material-icons.like__active favorite
+      i.material-icons.like__passive favorite_border
+      .like__count= numOfLikes
+
+

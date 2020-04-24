@@ -1,10 +1,12 @@
-console.log('hi')
-
 import './kit.scss'
-import * as paginator from './components/paginator/paginator'
-import * as dropdown from './elements/dropdown/menu/menu'
-import './elements/dropdown/datepicker/datepicker'
-import './elements/inputs/field_masked'
-import * as datepicker from './elements/dropdown/datepicker/datepicker'
+import * as paginator from './paginator/paginator'
+import * as dropdown from './menu/menu'
+import './dateDropdown/dateDropdown'
+import './maskedDateInput/field_masked'
+import * as datepicker from './dateDropdown/dateDropdown'
+import * as slider from './slider/slider'
 
-export {paginator, dropdown, datepicker}
+function initDefault() {
+  // dropdown.DropdownMenu()
+}
+export {paginator, dropdown, datepicker, slider}

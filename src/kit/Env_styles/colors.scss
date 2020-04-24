@@ -1,7 +1,8 @@
 $secondary: #6FCF97;
-$primary: #BC9CFF;
-$third: #8ba4f9;
+$primary: rgba(188, 156, 255, 1);
+$third: rgba(139, 164, 249, 1);
 $gradient: linear-gradient($primary 0%, $third 100%);
+$gradient25: linear-gradient(rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
 $secondary_gradient:  linear-gradient($secondary 0%, #66D2EA 100%);
 $dark_shade5: rgba(31, 32, 65, 0.05);
 $dark_shade10: rgba(31, 32, 65, 0.1);
