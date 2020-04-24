@@ -1,14 +1,13 @@
 class DropdownMenu {
   constructor(countersData, {changesListener = this._defaultChangesListener, initTitle = 'Menu'}) {
-    this.countersData = countersData;
-    this._changesListener = changesListener;
+    this.countersData = countersData; // [{name, count}]
+    this._changesListener = changesListener; // (countersData)=>{}
     this._initTitle = initTitle;
   }
 
   init(
     {
       parentSelector = '.dropdown-menu',
-      initTitle = 'Menu',
       isClosed = true,
       withCancel = false,
       withConfirm = false,
@@ -19,7 +18,7 @@ class DropdownMenu {
     let menuTitle = menuHeader.firstChild;
     let menuContent = this._menu.lastChild;
 
-    menuTitle.textContent = initTitle;
+    menuTitle.textContent = this._initTitle;
     menuHeader.addEventListener('click', () => {
       menuContent.hidden = !menuContent.hidden;
       menuHeader.classList.toggle('dropdown-header-opened');
@@ -79,7 +78,6 @@ class DropdownMenu {
   }
 
   _setDecrementListener(decrement, countText, i) {
-    console.log(decrement, countText)
     decrement.addEventListener('click', (ev) => {
       let currentItem = this.countersData[i];
       currentItem.count--;
