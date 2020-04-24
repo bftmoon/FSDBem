@@ -1,0 +1,11 @@
+mixin checkboxList(map)
+  //// [{text, attributes:{}, description?}]
+  fieldset.checkbox-group&attributes(attributes)
+    each el in map
+      label.checkbox
+        input(type="checkbox")&attributes(el.attributes)
+        span.checkbox-item
+        span.checkbox__text=el.text
+  //      //if el.hasOwnProperty('description')
+  //      //  span=el.description
+
