@@ -1,0 +1,11 @@
+mixin dateDropdown(...title)
+  div.date-dropdown&attributes(attributes)
+    label=title[0]
+      div.date-dropdown__iconed-input
+        input(readonly).date-dropdown__first-date
+        i.material-icons expand_more
+    if title.length === 2
+      label=title[1]
+        div.date-dropdown__iconed-input
+          input(readonly).date-dropdown__last-date
+          i.material-icons expand_more
