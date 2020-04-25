@@ -1,0 +1,24 @@
+.iconed-list{
+  //display: flex;
+}
+.iconed-list__item{
+  display: flex;
+  align-items: center;
+}
+.iconed-list__icon{
+  font-size: 48px;
+  //display: flex;
+  //align-items: center;
+  //text-align: center;
+}
+.iconed-list__separator{
+  display: block;
+  height: 1px;
+  background: $dark_shade10;
+}
+
+.iconed-list__text{
+  display: inline-block;
+  font-size: 14px;
+  color: $dark_shade75;
+}
