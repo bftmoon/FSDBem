@@ -1,4 +1,4 @@
-@import "../button";
+@import "../button/button";
 
 .paginator a {
   display: inline-block;
@@ -8,9 +8,6 @@
   height: 40px;
   line-height: 40px;
   border-radius: 50%;
-  //display: inline-flex;
-  //align-items: center;
-  //text-align: center;
 }
 
 .paginator a {
@@ -41,4 +38,8 @@
 
 .paginator .hidden {
   display: none;
+}
+
+.paginator *::selection{
+  background: none;
 }

@@ -1,3 +1,4 @@
-mixin paginator(text)
-    div.paginator(id="pag")
-    div=text
+mixin paginator
+  .paginator&attributes(attributes)
+    .paginator__pages
+    .paginator__text
