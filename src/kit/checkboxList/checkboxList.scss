@@ -70,3 +70,27 @@
   //text-align: center;
   //line-height: 22px;
 }
+
+.checkbox-list__expander{
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //.checkbox-list__more-icon{
+  //  display: none;
+  //}
+  .checkbox-list__less-icon{
+    display: none;
+  }
+}
+
+.checkbox-list__expander_opened{
+  .checkbox-list__more-icon{
+    display: none;
+  }
+  .checkbox-list__less-icon{
+    display: initial;
+  }
+}
+
