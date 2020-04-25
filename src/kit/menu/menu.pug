@@ -1,13 +1,13 @@
-mixin dropdownMenu
+mixin dropdownMenu(overHtml)
   // todo: button may be
   div.dropdown-menu&attributes(attributes)
     .dropdown-header.field.select
       span
       i.material-icons expand_more
-    .dropdown-content
+    div(class=overHtml?'dropdown__content_over':'').dropdown-content
       .dropdown-buttons
-        button.dropdown-cancel Очистить
-        button.dropdown-confirm.text-button Применить
+        button(hidden).dropdown-confirm Применить
+        button(hidden).dropdown-cancel Очистить
 
 
 

@@ -1,17 +1,22 @@
-//@import "../../#env_styles/colors";
-
-
 .dropdown {
   display: inline-block;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  z-index: 1;
 }
-
+.dropdown_main{
+  z-index: 2;
+}
 .dropdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 10px;
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .dropdown-header-opened{
@@ -25,16 +30,19 @@
   border-top-left-radius: 0;
   height: auto;
   z-index: 10;
-  position: absolute;
   background: white;
+  padding-right: 5px;
+  padding-left: 15px;
 }
 
+.dropdown__content_over{
+  position: absolute;
+}
 .dropdown-item {
   height: 44px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 5px;
 }
 
 //.dropdown-item-name{
@@ -49,9 +57,11 @@
   justify-content: space-between;
   align-items: center;
   button {
+    background: white;
     width: 30px;
     height: 30px;
     border: 1px solid $dark_shade25;
+    border-radius: 50%;
     box-sizing: border-box;
     padding: 0;
     color: $dark_shade25;
@@ -63,10 +73,13 @@
 }
 
 .dropdown-buttons{
-  button{
-    padding-left: 0;
-    padding-right: 5px;
-  }
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+button{
+  background: white;
+  border: none;
+}
 }
 
 .dropdown-cancel{
@@ -77,5 +90,4 @@
 }
 
 .dropdown-confirm{
-  float: right;
 }

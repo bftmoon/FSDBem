@@ -1,24 +1,23 @@
 class DropdownMenu {
-  constructor(countersData, {changesListener = this._defaultChangesListener, initTitle = 'Menu'}) {
+  constructor(countersData, {changesListener = this._defaultChangesListener}) {
     this.countersData = countersData; // [{name, count}]
-    this._changesListener = changesListener; // (countersData)=>{}
-    this._initTitle = initTitle;
+    this._changesListener = changesListener; // (countersData)=>{return string}
   }
 
   init(
     {
-      parentSelector = '.dropdown-menu',
+      parentSelector = '',
       isClosed = true,
       withCancel = false,
       withConfirm = false,
     }
   ) {
-    this._menu = document.querySelector(parentSelector)
+    this._menu = document.querySelector('.dropdown-menu' + parentSelector)
     let menuHeader = this._menu.firstChild;
     let menuTitle = menuHeader.firstChild;
     let menuContent = this._menu.lastChild;
 
-    menuTitle.textContent = this._initTitle;
+    menuTitle.textContent = this._changesListener(this.countersData);
     menuHeader.addEventListener('click', () => {
       menuContent.hidden = !menuContent.hidden;
       menuHeader.classList.toggle('dropdown-header-opened');
@@ -118,7 +117,7 @@ class DropdownMenu {
       el.firstChild.disabled = true;
       el.firstChild.nextSibling.innerText = '0';
     })
-    this._menu.firstChild.firstChild.innerText = this._initTitle;
+    this._menu.firstChild.firstChild.innerText = this._changesListener(this.countersData);
   }
 
   _confirm() {
@@ -134,4 +133,16 @@ class DropdownMenu {
   }
 }
 
-export {DropdownMenu};
+
+function init(data, {selector, changesListener, initTitle, isClosed, withCancel, withConfirm}) {
+  let dropdown = new DropdownMenu(data, {changesListener, initTitle})
+  dropdown.init({
+    parentSelector: selector,
+    isClosed: isClosed,
+    withCancel: withCancel,
+    withConfirm: withConfirm
+  });
+  return dropdown;
+}
+
+export {init};
