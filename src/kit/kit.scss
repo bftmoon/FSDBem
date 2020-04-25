@@ -5,18 +5,18 @@
 @import "Env_styles/colors";
 @import "Env_styles/common";
 
-@import "button";
+@import "button/button";
 @import "menu/menu";
-@import "checkbox/checkbox";
 @import "likeButton/likeButton";
 @import "toggle/toggle";
 @import "radio/radio";
-@import "navigate_button/nav_btn";
-@import "bullet/buller";
-@import "iconed/iconed";
+@import "bulletList/bulletList";
+@import "iconedList/iconedList";
 @import "paginator/paginator";
 @import "kit-header/kitHeader";
 @import "dateDropdown/dateDropdown";
 @import "dateDropdown/datepicker_overrides";
 @import "subscribeInput/subscribeInput";
 @import "slider/slider";
+@import "checkboxList/checkboxList";
+@import "feedback/feedback";

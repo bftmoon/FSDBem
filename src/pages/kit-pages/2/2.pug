@@ -6,7 +6,7 @@ html(lang="en")
     title UIKit
   body
     main
-      div
+      section
         label Text field
           span.condition Default
         input(placeholder='Email')
@@ -15,7 +15,7 @@ html(lang="en")
         input(value='This is pretty awesome')
         label Dropdown
           span.condition Default
-        +dropdownMenu(id='init_closed')
+        +dropdownMenu.dropdown-default-example
         label Masked text field
           span.condition Default
         +maskedDateInput
@@ -23,14 +23,17 @@ html(lang="en")
         +dateDropdown('Filter date dropdown')(id='date_single_input')
         label Subscription text field
         +subscribeInput
-      div
+      section
         label Checkbox buttons
         +checkboxList([
-          {text: 'Можно курить', attributes: {name: '?', value:'smoke'}},
-          {text: 'Можно с питомцами', attributes: {name: '?', value:'pet', checked: true}},
-          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value:'visiters', checked: 'checked'}},
+          {text: 'Можно курить', attributes: {name: '?', value: 'smoke'}},
+          {text: 'Можно с питомцами', attributes: {name: '?', value: 'pet', checked: true}},
+          {
+            text: 'Можно пригласить гостей (до 10 человек)',
+            attributes: {name: '?', value: 'visiters', checked: 'checked'}
+          },
           {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value: 'visiters', checked: ''}},
-          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value:'visiters', checked: false}}
+          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value: 'visiters', checked: false}}
         ])
         label Radio buttons
         +radio([
@@ -46,9 +49,69 @@ html(lang="en")
         label Rate button
         +rating(4)
         +rating(5)
-      div
+      section
         +slider
-    script(type='script/javascript' src='./2.js')
+        h3 Buttons
+        +button(button_type.raised, 'Click me')
+        +button(button_type.raised, 'Click me')(disabled)
+        +button(button_type.flat, 'Click me')
+        +button(button_type.flat, 'Click me')(disabled)
+        +button(button_type.text, 'Click me')
+        +button(button_type.text, 'Click me')(disabled)
+        +button(button_type.raised, 'Перейти к оплате', false, true)
+        h3 Pagination
+        +paginator
+      section
+        label Dropdown
+          span.condition Default
+        +dropdownMenu(true).dropdown-titled-example
+        label Dropdown
+          span.condition Expanded
+        +dropdownMenu.dropdown-expanded-example
+      section
+        label Dropdown
+        +dropdownMenu.dropdown-confirm-example
+      section
+        label Dropdown
+        +dropdownMenu.dropdown-cancel-example
+      section
+        -
+          let simpleCheckboxData = [
+            {text: 'Завтрак'},
+            {text: 'Письменный стол', attributes: {checked: true}},
+            {text: 'Стул для кормления', attributes: {checked: true}},
+            {text: 'Кроватка', attributes: {checked: true}},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'},
+          ];
+        +checkboxList(simpleCheckboxData, 'Expandable checkbox list')
+        +checkboxList(simpleCheckboxData, 'Expandable checkbox list', true)
+      section
+        h3 Rich checkbox buttons
+        +checkboxList([
+          {text: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
+          {text: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'},
+        ])
+      section
+        h3 Bullet list
+        +bulletList(['Нельзя с питомцами', 'Без вечеринок и меропреятий', 'Время прибытия - после 13:00, а выезд до 12:00'])
+      section
+        +iconedList([
+          {icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглощающие стены'},
+          {icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'},
+        ])
+      section.double-section
+        +feedback(
+          {
+            img: {src: '../../../../res/imgs/man.png', alt: 'Somebody'},
+            name: 'Мурад Сарафанов',
+            time: '5 дней назад',
+            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+            like: {count: 12, active: true}
+          })
+    script(type = 'script/javascript' src='./2.js')
 
 
 

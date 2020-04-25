@@ -23,3 +23,12 @@ label{
   font-weight: normal;
   color: $dark_shade50;
 }
+
+section{
+  max-width: 320px;
+}
+
+.double-section{
+  grid-column: 2/4;
+  max-width: initial;
+}
