@@ -1,0 +1,15 @@
+//@import "../../#env_styles/colors";
+.bullet-list__bullet{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $dark_shade25;
+  float: left;
+}
+
+.bullet-list__item{
+  list-style: none;
+  //display: flex;
+  //align-items: center;
+}
