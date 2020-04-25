@@ -1,0 +1,9 @@
+.feedback{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.feedback__img{
+  border-radius: 50%;
+  border: 3px solid white;
+}
