@@ -1,0 +1,48 @@
+.rating {
+  position: relative;
+  border: none;
+  line-height: 20px;
+
+  &__input {
+    opacity: 0;
+  }
+
+  &__input:checked ~ &__star_active {
+    background: transparent;
+  }
+
+  &__star {
+    color: transparent;
+    background: $gradient;
+    -webkit-background-clip: text;
+
+    &_absolute {
+      position: absolute;
+    }
+  }
+
+  &__item {
+    width: 24px;
+    height: 24px;
+
+    &_0 {
+      left: 0;
+    }
+
+    &_1 {
+      left: 24px;
+    }
+
+    &_2 {
+      left: 2*24px;
+    }
+
+    &_3 {
+      left: 3*24px;
+    }
+
+    &_4 {
+      left: 4*24px;
+    }
+  }
+}

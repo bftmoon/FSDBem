@@ -1,0 +1,18 @@
+mixin rating(rating, groupName)
+  if groupName
+    fieldset.rating&attributes(attributes)
+      - let i=0
+      while i < 5
+        i(class='rating__item_' + i).material-icons.rating__item.rating__star.rating__star_absolute.rating__star_passive star_border
+        i(class='rating__item_' + i).material-icons.rating__item.rating__star.rating__star_absolute.rating__star_active star
+        input(class='rating__item_' + i type='radio' name=groupName || 'stars' value=i + 1 checked=(rating === (i + 1))).rating__item.rating__input
+        - i++;
+  else
+    .rating
+      - let i=0
+      while i < rating
+        i.material-icons.rating__item.rating__star.rating__star_active star
+        - i++;
+      while i<5
+        i.material-icons.rating__item.rating__star.rating__star_passive star_border
+        - i++;
