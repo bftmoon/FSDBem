@@ -1,0 +1,9 @@
+.a-link{
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $dark_shade50;
+  text-decoration: none;
+  &:link, &:visited{
+    color: $primary;
+  }
+}
