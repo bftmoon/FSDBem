@@ -1,7 +1,0 @@
-mixin radio(map)
-  fieldset.radio-group&attributes(attributes)
-    each el in map
-      label.radio
-        input(type="radio")&attributes(el.attributes)
-        span.radio-item
-        span.radio__text=el.text

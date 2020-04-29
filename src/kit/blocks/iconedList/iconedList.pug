@@ -1,0 +1,11 @@
+// [{icon(material name), title, description}]
+mixin iconedList(map)
+    .iconed-list
+        for el, index in map
+            .iconed-list__item
+                i.material-icons.iconed-list__icon=el.icon
+                .iconed-list__text
+                    .iconed-list__title=el.title
+                    .iconed-list__description=el.description
+            if index<map.length -1
+                .iconed-list__separator

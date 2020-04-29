@@ -1,34 +1,85 @@
 @import "../common";
 @import "../../../kit/kit.scss";
 
-main{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+main {
+  padding: 5px;
+  //display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  //width: 100%;
+  //grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  gap: 70px;
+  //grid-template-columns: 1fr 1fr 1fr;
 }
 
-label{
+.label {
+  @extend h3;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 20px;
 }
-.component-name{
+
+.component-name {
   font-weight: bold;
   text-transform: uppercase;
 }
-.component-description{
+
+.component-description {
   display: flex;
   justify-content: space-between;
 }
 
-.condition{
+.condition {
   font-weight: normal;
   color: $dark_shade50;
 }
 
-section{
+section {
   max-width: 320px;
+  min-width: 200px;
+  width: 100%;
+  //flex-basis: auto; /* default value */
+  //flex-grow: 1;
 }
 
-.double-section{
-  grid-column: 2/4;
-  max-width: initial;
+.double-section {
+  //grid-column: 2/4;
+  //max-width: initial;
+  //grid-column: 1/span 2;
+  //width: 100%;
+  max-width: 715px;
+}
+
+.big-margin {
+  margin-bottom: 40px;
+}
+
+.title-for-clickable{
+  padding: 40px 0 16px 0;
+}
+.title-for-clickable_first{
+  padding-top: 0;
+}
+
+.like-buttons{
+display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.rate-buttons{
+  display: flex;
+  gap: 20px;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dropdown-smaller{
+  max-width: 266px;
 }

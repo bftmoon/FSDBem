@@ -7,24 +7,24 @@ html(lang="en")
   body
     main
       section
-        label Text field
+        label.label Text field
           span.condition Default
-        input(placeholder='Email')
-        label Text field
+        +input(placeholder='Email')
+        label.label Text field
           span.condition Hover/focus
-        input(value='This is pretty awesome')
-        label Dropdown
+        +input(value='This is pretty awesome', autofocus)
+        label.label Dropdown
           span.condition Default
-        +dropdownMenu.dropdown-default-example
-        label Masked text field
+        +dropdownMenu(true).dropdown-default-example
+        label.label Masked text field
           span.condition Default
-        +maskedDateInput
-        +dateDropdown('Date dropdown', 'Date dropdown')(id='date_double_input')
-        +dateDropdown('Filter date dropdown')(id='date_single_input')
-        label Subscription text field
-        +subscribeInput
+        +input(input_specify.dateMask).big-margin
+        +dropdownDate('Date dropdown', 'Date dropdown')(id='date_double_input').big-margin
+        +dropdownDate('Filter date dropdown')(id='date_single_input').big-margin
+        label.label Subscription text field
+        +input(input_specify.subscriber)(placeholder='Email').big-margin
       section
-        label Checkbox buttons
+        label.label.title-for-clickable.title-for-clickable_first Checkbox buttons
         +checkboxList([
           {text: 'Можно курить', attributes: {name: '?', value: 'smoke'}},
           {text: 'Можно с питомцами', attributes: {name: '?', value: 'pet', checked: true}},
@@ -32,49 +32,53 @@ html(lang="en")
             text: 'Можно пригласить гостей (до 10 человек)',
             attributes: {name: '?', value: 'visiters', checked: 'checked'}
           },
-          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value: 'visiters', checked: ''}},
-          {text: 'Можно пригласить гостей (до 10 человек)', attributes: {name: '?', value: 'visiters', checked: false}}
         ])
-        label Radio buttons
-        +radio([
-          {text: 'Мужчина', attributes: {value: 'M', name: 'gender'}},
+        label.label.title-for-clickable Radio buttons
+        +radioList([
+          {text: 'Мужчина', attributes: {value: 'M', name: 'gender', checked: true}},
           {text: 'Женщина', attributes: {value: 'W', name: 'gender'}}
         ])
-        label Toggle
+        label.label.title-for-clickable Toggle
         +toggle('Получать спецпредложения')
         +toggle('Получать спецпредложения')(disabled)
-        label Like button
-        +likeButton(2)
-        +likeButton(12)(checked)
-        label Rate button
-        +rating(4)
-        +rating(5)
+        label.label.title-for-clickable Like button
+        .like-buttons
+          +likeButton(2)
+          +likeButton(12)(checked)
+        label.label.title-for-clickable Rate button
+        .rate-buttons
+          +rating(4, 'star-1')
+          //+rating(3)
+          +rating(5, 'star-2')
       section
         +slider
-        h3 Buttons
-        +button(button_type.raised, 'Click me')
-        +button(button_type.raised, 'Click me')(disabled)
-        +button(button_type.flat, 'Click me')
-        +button(button_type.flat, 'Click me')(disabled)
-        +button(button_type.text, 'Click me')
-        +button(button_type.text, 'Click me')(disabled)
-        +button(button_type.raised, 'Перейти к оплате', false, true)
-        h3 Pagination
+        label.label.title-for-clickable Buttons
+        .buttons
+          +button(button_type.raised, 'Click me')
+          +button(button_type.raised, 'Click me')(disabled)
+          +button(button_type.flat, 'Click me')
+          +button(button_type.flat, 'Click me')(disabled)
+          +a('Click me')(href='#')
+          +a('Click me')
+          //+button(button_type.text, 'Click me')
+          //+button(button_type.text, 'Click me')(disabled)
+          +button(button_type.raised, 'Перейти к оплате', false, true)
+        label.label.title-for-clickable Pagination
         +paginator
-      section
-        label Dropdown
+      section.dropdown-smaller
+        label.label Dropdown
           span.condition Default
         +dropdownMenu(true).dropdown-titled-example
-        label Dropdown
+        label.label Dropdown
           span.condition Expanded
         +dropdownMenu.dropdown-expanded-example
       section
-        label Dropdown
+        label.label Dropdown
         +dropdownMenu.dropdown-confirm-example
       section
-        label Dropdown
+        label.label Dropdown
         +dropdownMenu.dropdown-cancel-example
-      section
+      section.dropdown-smaller
         -
           let simpleCheckboxData = [
             {text: 'Завтрак'},
@@ -88,15 +92,15 @@ html(lang="en")
           ];
         +checkboxList(simpleCheckboxData, 'Expandable checkbox list')
         +checkboxList(simpleCheckboxData, 'Expandable checkbox list', true)
-      section
-        h3 Rich checkbox buttons
+      section.dropdown-smaller
+        label.label Rich checkbox buttons
         +checkboxList([
           {text: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
           {text: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'},
         ])
       section
-        h3 Bullet list
-        +bulletList(['Нельзя с питомцами', 'Без вечеринок и меропреятий', 'Время прибытия - после 13:00, а выезд до 12:00'])
+        label.label Bullet list
+        +bulletList(['Нельзя с питомцами', 'Без вечеринок и меропреятий', 'Время прибытия — после 13:00, а выезд до 12:00']).dropdown-smaller
       section
         +iconedList([
           {icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглощающие стены'},

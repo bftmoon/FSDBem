@@ -1,0 +1,11 @@
+- let input_specify ={dateMask: 'js-input_masked', subscriber: 'input_type_subscribe'}
+
+mixin input(specifier)
+  if specifier === input_specify.subscriber
+    .subscriber
+      input(class=specifier).field_bordered.input&attributes(attributes)
+      i.material-icons.subscriber__icon arrow_forward
+  else
+    input(class=specifier).field_bordered.input&attributes(attributes)
+
+

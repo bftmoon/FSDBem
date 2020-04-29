@@ -1,0 +1,109 @@
+//.dropdown {
+//  display: inline-block;
+//  border-top-right-radius: 0;
+//  border-top-left-radius: 0;
+//  z-index: 1;
+//}
+//
+//.dropdown_main {
+//  z-index: 2;
+//}
+
+.dropdown-menu {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    &_opened {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    }
+  }
+  &__text {
+    max-width: 67%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__content {
+    @extend .field_bordered;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    height: auto;
+    z-index: 10;
+    background: white;
+    padding-right: 5px;
+    padding-left: 15px;
+    //padding-bottom: 13px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    &_over {
+      position: absolute;
+    }
+  }
+
+  &__item {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__counter {
+    width: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background: white;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      border: 1px solid $dark_shade25;
+      border-radius: 50%;
+      box-sizing: border-box;
+      padding: 0;
+      color: $dark_shade25;
+
+      &:disabled {
+        color: $dark_shade5;
+        border-color: $dark_shade5;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    button {
+      margin-top: 20px;
+      margin-bottom: 13px;
+      background: white;
+      border: none;
+      text-transform: uppercase;
+  font-weight: bold;
+      font-size: 12px;
+    }
+  }
+  &__confirm{
+    color: $primary;
+  }
+  &__cancel {
+    color: $dark_shade50;
+
+    &:hover {
+      text-shadow: 2px 2px 2px rgba(34, 60, 80, 0.2);
+    }
+  }
+}
+
+
+//.dropdown-item-name{
+//  color: $dark_shade100;
+//  font-weight: bold;
+//  text-transform: uppercase;
+//}

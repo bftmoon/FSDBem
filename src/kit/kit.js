@@ -1,15 +1,15 @@
-import './kit.scss'
-import * as paginator from './paginator/paginator'
-import * as dropdown from './menu/menu'
-import './dateDropdown/dateDropdown'
-import './maskedDateInput/field_masked'
-import * as datepicker from './dateDropdown/dateDropdown'
-import * as slider from './slider/slider'
-import * as checkboxes from './checkboxList/checkboxList'
+// import './kit.scss' // avoid double import
+import * as paginator from './blocks/paginator/paginator'
+import * as dropdown from './blocks/dropdownMenu/dropdownMenu'
+import './blocks/dropdownDate/dropdownDate'
+import * as datepicker from './blocks/dropdownDate/dropdownDate'
+import * as slider from './blocks/slider/slider'
+import * as checkboxes from './blocks/checkboxList/checkboxList'
+import * as input from './blocks/input/input'
+import * as like from './blocks/likeButton/likeButton'
 
-function initDefault() {
-  // dropdown.DropdownMenu()
-}
-
+input.initDateMasks();
 checkboxes.init();
+like.init();
+
 export {paginator, dropdown, datepicker, slider}

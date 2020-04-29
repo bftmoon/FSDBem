@@ -1,0 +1,7 @@
+mixin bulletList(list)
+  ul.bullet-list&attributes(attributes)
+    for el in list
+      li.bullet-list__item
+        .bullet-list__bullet-box
+          span.bullet-list__bullet
+        .bullet-list__text=el

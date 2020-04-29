@@ -1,0 +1,22 @@
+@import "~jquery-ui/themes/base/slider.css";
+@import "~jquery-ui/themes/base/theme.css";
+@import "slider_overrides";
+
+.slider {
+  &__header {
+    @extend h3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px; // todo: check best practice for margin
+  }
+
+  &__amount {
+    text-align: end;
+    color: $dark_shade50 !important; // plugin uses style attribute
+    font-weight: normal !important;
+    width: 40%;
+    max-width: max-content;
+  }
+}

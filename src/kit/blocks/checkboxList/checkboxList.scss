@@ -1,0 +1,56 @@
+.checkbox-list {
+  max-width: 266px;
+
+  &__expander {
+    width: 100%;
+    border: none;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &_less {
+      display: none;
+    }
+  }
+
+  &__group {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &[hidden] { // flex bug fix
+      display: none;
+    }
+  }
+
+  &__title {
+    @extend .field;
+    display: flex;
+    align-items: center;
+    padding-left: 0; // todo: delete mixes
+  }
+
+  &__expander_opened {
+    .checkbox-list__icon_more {
+      display: none;
+    }
+
+    .checkbox-list__icon_less {
+      //display: initial;
+      display: flex;
+    }
+  }
+}
+
+

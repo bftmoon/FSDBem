@@ -1,0 +1,20 @@
+.feedback {
+  max-width: 715px;
+  display: grid;
+  gap: 10px;
+  //justify-content: center;
+  grid-template-columns: auto 1fr;
+
+  &__user{
+    font-weight: bold;
+  }
+&__like{
+  margin: 0 auto;
+}
+}
+
+.feedback__img {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: $shadow_small;
+}

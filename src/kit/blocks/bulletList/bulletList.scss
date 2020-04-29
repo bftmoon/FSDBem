@@ -1,0 +1,18 @@
+.bullet-list{
+  &__item{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  &__bullet{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $dark_shade25;
+    flex-shrink: 0;
+  }
+}
+
+
+

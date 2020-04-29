@@ -21,6 +21,11 @@ const guestsInitData = [
   {name: 'Дети', count: 0},
   {name: 'Младенцы', count: 0},
 ];
+const guestsWithCount= [
+  {name: 'Взрослые', count: 2},
+  {name: 'Дети', count: 1},
+  {name: 'Младенцы', count: 0},
+];
 
 kit.dropdown.init($.extend(true, [], guestsInitData), {
   selector: '.dropdown-default-example',
@@ -35,13 +40,13 @@ kit.dropdown.init($.extend(true, [], furnitureInitData), {
   isClosed: false,
   changesListener: furnitureFormatter
 });
-kit.dropdown.init($.extend(true, [], furnitureInitData), {
+kit.dropdown.init($.extend(true, [], guestsInitData), {
   selector: '.dropdown-confirm-example',
   isClosed: false,
   withConfirm: true,
-  changesListener: furnitureFormatter
+  changesListener: guestsFormatter
 });
-kit.dropdown.init($.extend(true, [], guestsInitData), {
+kit.dropdown.init($.extend(true, [], guestsWithCount), {
   selector: '.dropdown-cancel-example',
   isClosed: false,
   withConfirm: true,

@@ -1,0 +1,45 @@
+@import "../button/button";
+
+.paginator{
+  display: inline-block;
+  * {
+    text-align: center;
+  }
+}
+.paginator a {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.paginator a.current {
+  background: $gradient;
+  color: white;
+}
+
+.paginator .arrow {
+  background: $secondary_gradient;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.paginator i {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+.paginator .hidden {
+  display: none;
+}
+
+.paginator *::selection{
+  background: none;
+}

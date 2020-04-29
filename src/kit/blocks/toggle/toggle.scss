@@ -1,0 +1,53 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &__box {
+    position: relative;
+    width: 40px;
+    height: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+
+    &:checked + .toggle__checker:before {
+      transform: translateX(20px);
+    }
+
+    &:disabled + .toggle__checker {
+      border-color: $dark_shade25;
+
+      &:before {
+        background: $dark_shade25;
+      }
+    }
+  }
+
+  &__checker {
+    width: 100%;
+    height: 100%;
+    //display: flex;
+    //align-items: center;
+    cursor: pointer;
+    border: 1px solid $primary;
+    border-radius: 12px;
+    background-color: white;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 10%;
+      top: 20%;
+      background-image: $gradient;
+      transition: .2s;
+      border-radius: 50%;
+    }
+  }
+}
