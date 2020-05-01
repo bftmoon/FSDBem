@@ -1,0 +1,130 @@
+@import "../../env-styles/variables";
+
+.dropdown-menu {
+  position: relative;
+
+  &__header {
+    width: 100%;
+    height: pxToRem(44px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 15px;
+    padding-right: 10px;
+
+    background: white;
+    border: $border {
+      radius: 4px;
+    };
+
+    &_opened {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: $shadow_smaller;
+    }
+  }
+
+  &__text {
+    max-width: 67%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__content {
+    width: 100%;
+    height: auto;
+    z-index: 10;
+
+    padding-right: 5px;
+    padding-left: 15px;
+
+    border-radius: 0 0 4px 4px;
+    border: $border;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: pxToRem(12px);
+    color: $dark_shade100;
+
+    background: white;
+    box-shadow: $shadow_smaller;
+
+    &_over {
+      position: absolute;
+    }
+  }
+
+  &__item {
+    height: pxToRem(44px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__counter {
+    width: pxToRem(92px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__count {
+    width: pxToRem(32px);
+    text-align: center;
+    font: inherit;
+    background: white;
+    border: none;
+  }
+
+  &__decrement, &__increment {
+    height: pxToRem(30px);
+    width: pxToRem(30px);
+    padding: 0;
+
+    font-size: pxToRem(18px);
+    border: 1px solid $dark_shade25;
+    border-radius: 50%;
+    background: white;
+    color: $dark_shade25;
+
+    &:disabled {
+      color: $dark_shade5;
+      border-color: $dark_shade5;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__button {
+    margin-top: 20px;
+    margin-bottom: 13px;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: pxToRem(12px);
+
+    background: white;
+    border: none;
+
+    &_type_confirm {
+      color: $primary;
+    }
+
+    &_type_cancel {
+      color: $dark_shade50;
+    }
+
+    &:hover {
+      text-shadow: $text_shadow;
+    }
+  }
+}
