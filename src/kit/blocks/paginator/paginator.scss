@@ -1,45 +1,44 @@
-@import "../button/button";
+@import "../../env-styles/common";
 
-.paginator{
+.paginator {
   display: inline-block;
-  * {
+
+  &__item {
+    display: inline-block;
+    width: pxToRem(40px);
+    height: pxToRem(40px);
+
+    line-height: pxToRem(40px);
+    vertical-align: middle;
+    text-align: center;
+
+    text-decoration: none;
+    border-radius: 50%;
+    color: $dark_shade50;
+
+    &:link {
+      color: $dark_shade50;
+    }
+
+    &-with-arrow {
+      background: $secondary_gradient;
+    }
+  }
+
+  &__arrow {
+    vertical-align: middle;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__current {
+    background: $gradient;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-top: 10px;
     text-align: center;
   }
-}
-.paginator a {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.paginator a.current {
-  background: $gradient;
-  color: white;
-}
-
-.paginator .arrow {
-  background: $secondary_gradient;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.paginator i {
-  color: white;
-  width: 24px;
-  height: 24px;
-}
-
-.paginator .hidden {
-  display: none;
-}
-
-.paginator *::selection{
-  background: none;
 }
