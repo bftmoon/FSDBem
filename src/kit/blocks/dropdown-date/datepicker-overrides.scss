@@ -1,0 +1,114 @@
+@import "~air-datepicker/dist/css/datepicker.min.css";
+@import "../../env-styles/variables";
+
+@mixin doubleBackground($circleColor, $bgBorderRadius, $circleOpacity, $circleBorderRadius) {
+  background: $gradient25;
+  border-radius: $bgBorderRadius;
+  border-width: 0;
+  &:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    background: $circleColor;
+    opacity: $circleOpacity;
+    border-radius: $circleBorderRadius;
+  }
+}
+
+.datepicker {
+  font-family: $quicksand;
+  color: $dark_shade50;
+  padding: 20px;
+  &-icons {
+    color: $primary;
+  }
+  &--pointer {
+    height: 0;
+  }
+
+  &--buttons, &--nav {
+    border: none;
+  }
+
+  &--day-name {
+    color: $primary;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  &--cell-day.-other-month-, &--cell-year.-other-decade- {
+    color: $dark_shade25;
+  }
+
+  &--nav-title {
+    font-weight: bold;
+    font-family: $quicksand;
+    font-size: 19px;
+    line-height: 24px;
+    color: $dark_shade100;
+  }
+
+  &--button {
+    border: none;
+    background: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &--button-apply {
+    color: $primary;
+  }
+
+  &--button-cancel {
+    color: $dark_shade50;
+  }
+
+  &--cell {
+    border-radius: 50%;
+  }
+
+  &--cell.-in-range- {
+    background: $gradient25;
+  }
+
+  &--cell.-current- {
+    background: $secondary_gradient;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  &--cell.-current-.-in-range- {
+    color: white;
+    @include doubleBackground($secondary_gradient, 0, 1, 50%);
+  }
+
+  &--cell.-in-range-.-focus- {
+    @include doubleBackground($gradient, 0, 0.3, 50%);
+  }
+
+  &--cell.-range-from- {
+    font-weight: bold;
+    @include doubleBackground($gradient, 50% 0 0 50%, 1, 50%);
+  }
+
+  &--cell.-range-to- {
+    font-weight: bold;
+    @include doubleBackground($gradient, 0 50% 50% 0, 1, 50%);
+  }
+
+  &--cell.-selected-.-focus- {
+    background: $gradient25;
+  }
+}
+
+.-selected-.datepicker--cell-day.-other-month- {
+  background: $gradient25;
+}

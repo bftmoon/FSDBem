@@ -1,0 +1,14 @@
+mixin date-dropdown(titles, dates)
+  .date-dropdown&attributes(attributes)
+    label.date-dropdown__title
+      .date-dropdown__header=titles[0]
+      .date-dropdown__iconed-input
+        +input()(placeholder='ДД.ММ.ГГГГ', readonly, value=values ? values[0] : '' name='start-date').date-dropdown__first-date
+        i.material-icons.date-dropdown__icon expand_more
+    if titles.length === 2
+      label.date-dropdown__title
+        .date-dropdown__header=titles[1]
+        .date-dropdown__iconed-input
+          +input()(placeholder='ДД.ММ.ГГГГ', readonly, value=values ? values[1] : '' name='end-date').date-dropdown__last-date
+          i.material-icons.date-dropdown__icon expand_more
+

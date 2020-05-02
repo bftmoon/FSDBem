@@ -1,26 +1,33 @@
-.date-dropdown{
+@import "../../env-styles/common";
+
+.date-dropdown {
   display: flex;
   justify-content: space-between;
   gap: 10%;
-  &__title{
-    @extend h3;  // todo: check best practice
+
+  &__title {
+    @extend h3; // todo: check best practice
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 267px;
     gap: 5px;
   }
-  &__first-date, &__last-date{
+
+  &__first-date, &__last-date {
     width: 100%;
-    &::selection{
+
+    &::selection {
       background: none;
     }
   }
-  &__iconed-input{
+
+  &__iconed-input {
     position: relative;
     height: auto;
   }
-  &__icon{
+
+  &__icon {
     position: absolute;
     top: 25%;
     font-size: 24px;
@@ -28,7 +35,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    //left: 80%;
     right: 10px;
     justify-content: right;
     color: $dark_shade50;
