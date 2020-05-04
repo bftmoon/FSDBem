@@ -1,0 +1,10 @@
+mixin login-card
+  form&attributes(attributes).login-card
+    h1 Войти
+    .login-card__fields
+      +input({})(placeholder='Email' type='email' name='email')
+      +input({})(placeholder='Пароль' type='password' name='password')
+    +button('Войти', {isArrowed: true})
+    .login-card__offer
+      | Нет аккаунта на Toxin?
+      +button('Создать', {isFlat: true})(type='button')

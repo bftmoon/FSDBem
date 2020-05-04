@@ -1,0 +1,19 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/functions";
+@import "../../env-styles/abstract";
+
+.login-card{
+  @extend %card;
+  &__fields{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(10px);
+    margin: pxToRem(20px) 0;
+  }
+  &__offer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
