@@ -1,21 +1,35 @@
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
-  border: 2px solid white;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  background: $secondary_gradient;
-  color: #454545;
-  top: -5px;
-}
+@import "../../env-styles/common";
 
-.ui-slider-horizontal .ui-slider-range{
-  background: $secondary_gradient;
-  border: none;
-  //align-self: center;
-}
+.ui-slider {
+  position: relative;
 
-.ui-widget.ui-widget-content{
-  border-radius: 4px;
-  border-color: $dark_shade25;
-  height: 6px;
+  &-handle {
+    position: absolute;
+    top: pxToRem(-5px);
+    margin-left: -.6em;
+    z-index: 2;
+
+    width: pxToRem(14px);
+    height: pxToRem(14px);
+
+    touch-action: none;
+    cursor: grab;
+    border: 2px solid white {
+      radius: 50%;
+    }
+    background: $secondary_gradient;
+    color: #454545;
+  }
+
+  &-range {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    display: block;
+    height: 100%;
+
+    background: $secondary_gradient;
+    border: none;
+  }
 }

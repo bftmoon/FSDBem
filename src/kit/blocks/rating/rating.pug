@@ -1,4 +1,4 @@
-mixin rating(rating, groupName)
+mixin rating({rating=0, groupName})
   if groupName
     fieldset.rating&attributes(attributes)
       - let i=0

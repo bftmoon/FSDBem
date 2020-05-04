@@ -1,11 +1,11 @@
 class DropdownMenu {
 
-  constructor({selector = '.dropdown-menu', headerFormatter}) {
-    this._init(selector, headerFormatter);
+  constructor(headerFormatter) {
+    if (headerFormatter)
+      this._formatter = headerFormatter;
   }
 
-  _init(selector, headerFormatter) {
-    let $menu = $(selector);
+  init($menu) {
     if ($menu.length > 1)
       console.log(`WARNING: ${$menu.length} dropdown menu for 1 class`);
 
@@ -14,8 +14,6 @@ class DropdownMenu {
     this._$inputs = $content.find('.dropdown-menu__count')
     let $actionButtons = $content.find('.dropdown-menu__buttons');
 
-    if (headerFormatter)
-      this._formatter = headerFormatter;
     this._bindListeners()
 
     this._$header.on('click', this._openOrCloseMenu)
@@ -48,7 +46,7 @@ class DropdownMenu {
   }
 
   _formatter(countArray) {
-    return countArray.join(', ');
+    return countArray.map((count=>DropdownMenu.itemFormatter(count, ['Нет вещей', 'вещь', 'вещи', 'вещей'])))
   }
 
   _decrement(event) {
@@ -73,11 +71,16 @@ class DropdownMenu {
     this._updateHeader();
   }
 
-  static initAll(initData) {
-    let dropdowns = [];
-    initData.forEach(item => dropdowns.push(new DropdownMenu(item)))
-    return dropdowns;
+  static itemFormatter(count, variants) { // number, [string]
+    if (count === 0) return variants[0];
+    if (count === 1) return count + ' ' + variants[1];
+    if (count > 1 && count < 5) return count + ' ' + variants[2];
+    return count + ' ' + variants[3];
+  }
+
+  static initAll(selector='.js-dropdown-menu', headerFormatter) {
+    $(selector).each((_, element)=>new DropdownMenu(headerFormatter).init($(element)));
   }
 }
 
-export {DropdownMenu}
+export default DropdownMenu;

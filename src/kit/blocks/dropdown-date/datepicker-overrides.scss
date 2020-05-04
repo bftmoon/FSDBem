@@ -20,92 +20,155 @@
 }
 
 .datepicker {
+  box-sizing: border-box;
+  width: pxToRem(320px);
+  padding: 19px;
+
   font-family: $quicksand;
   color: $dark_shade50;
-  padding: 20px;
+  cursor: default;
+
+  box-shadow: $shadow_smaller;
+  &-inline{
+    box-shadow: $shadow_smaller;
+  }
+
   &-icons {
     color: $primary;
   }
+
   &--pointer {
-    height: 0;
+    display: none;
   }
 
-  &--buttons, &--nav {
+  &--content {
+    padding: 0;
+  }
+
+  &--buttons {
+    margin-top: 20px;
+    padding: 0;
+    justify-content: space-between;
     border: none;
+  }
+
+  &--nav {
+    padding: 0;
+    border: none;
+
+    &-title {
+      margin-bottom: 30px;
+      height: min-content;
+      line-height: pxToRem(24px);
+
+      font-family: $quicksand;
+      font-size: pxToRem(19px);
+      font-weight: bold;
+      color: $dark_shade100;
+      &:hover{
+        background: white;
+      }
+    }
+
+    &-action {
+      width: min-content;
+      height: min-content;
+      &:hover{
+        background: white;
+      }
+    }
+  }
+
+  &--days-names {
+    margin-bottom: 9px;
   }
 
   &--day-name {
+    font-size: pxToRem(12px);
+    font-weight: bold;
     color: $primary;
     text-transform: capitalize;
-    font-weight: bold;
   }
 
-  &--cell-day.-other-month-, &--cell-year.-other-decade- {
-    color: $dark_shade25;
-  }
-
-  &--nav-title {
-    font-weight: bold;
-    font-family: $quicksand;
-    font-size: 19px;
-    line-height: 24px;
-    color: $dark_shade100;
-  }
-
-  &--button {
-    border: none;
-    background: white;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-  }
-
-  &--button-apply {
-    color: $primary;
-  }
-
-  &--button-cancel {
-    color: $dark_shade50;
+  &--sells {
+    font-size: pxToRem(12px);
   }
 
   &--cell {
     border-radius: 50%;
+
+    &-day {
+      width: pxToRem(40px);
+      height: pxToRem(40px);
+      &.-other-month-{
+        color: $dark_shade25;
+      }
+    }
+
+    &.-in-range- {
+      background: $gradient25;
+
+      &.-focus- {
+        @include doubleBackground($gradient, 0, 0.3, 50%);
+      }
+    }
+
+    &.-current- {
+      font-weight: bold;
+      background: $secondary_gradient;
+      color: white;
+      border-radius: 50%;
+
+      &.-in-range- {
+        color: white;
+        @include doubleBackground($secondary_gradient, 0, 1, 50%);
+      }
+    }
+
+    &.-range-from- {
+      font-weight: bold;
+      @include doubleBackground($gradient, 50% 0 0 50%, 1, 50%);
+    }
+
+    &.-range-to- {
+      font-weight: bold;
+      @include doubleBackground($gradient, 0 50% 50% 0, 1, 50%);
+    }
+
+    &.-selected-.-focus- {
+      background: $gradient25;
+    }
   }
 
-  &--cell.-in-range- {
-    background: $gradient25;
-  }
+  &--button {
+    height: min-content;
+    flex: 0;
+    line-height: pxToRem(15px);
 
-  &--cell.-current- {
-    background: $secondary_gradient;
-    color: white;
-    border-radius: 50%;
+    font-size: pxToRem(12px);
+    font-style: normal;
     font-weight: bold;
-  }
+    text-transform: uppercase;
 
-  &--cell.-current-.-in-range- {
-    color: white;
-    @include doubleBackground($secondary_gradient, 0, 1, 50%);
-  }
+    border: none;
+    background: white;
 
-  &--cell.-in-range-.-focus- {
-    @include doubleBackground($gradient, 0, 0.3, 50%);
-  }
+    &:hover{
+      background: white;
+      color: inherit;
+    }
 
-  &--cell.-range-from- {
-    font-weight: bold;
-    @include doubleBackground($gradient, 50% 0 0 50%, 1, 50%);
-  }
+    &-apply {
+      color: $primary;
+      &:hover{
+        color: $primary;
+      }
+    }
 
-  &--cell.-range-to- {
-    font-weight: bold;
-    @include doubleBackground($gradient, 0 50% 50% 0, 1, 50%);
-  }
+    &-cancel {
+      color: $dark_shade50;
 
-  &--cell.-selected-.-focus- {
-    background: $gradient25;
+    }
   }
 }
 

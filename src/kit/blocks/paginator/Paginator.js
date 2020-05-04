@@ -1,10 +1,6 @@
 class Paginator {
 
-  constructor({selector = '.paginator', page = 1, count = 15, href = 'mockHref/'}) {
-    this._init(selector, page, count, href);
-  }
-
-  _init(selector, page, count, href) {
+  init($element, {page = 1, count = 15, href = 'mockHref/'}) {
     const items = [];
     if (page > 1) items.push(this._buildArrow(page, href, false));
 
@@ -17,7 +13,7 @@ class Paginator {
     })
 
     if (page < count) items.push(this._buildArrow(page, href, true));
-    $(selector).prepend(this._buildPaginator(items));
+    $element.prepend(this._buildPaginator(items));
   }
 
   _buildPaginator(items) {
@@ -80,6 +76,10 @@ class Paginator {
       pages.push(count);
     }
     return [...new Set(pages)];
+  }
+
+  static initAll(selector='.js-paginator'){
+    $(selector).each((_, element)=>new Paginator().init($(element), {}))
   }
 }
 

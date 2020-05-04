@@ -1,0 +1,42 @@
+@import "../../env-styles/variables";
+
+.room-title {
+  display: flex;
+  align-items: baseline;
+  font-weight: bold;
+  white-space: pre-wrap;
+
+  &__prefix {
+    color: $dark_shade100;
+  }
+
+  &__number {
+    font-size: pxToRem(24px);
+    font-family: $quicksand;
+    color: $dark_shade100;
+
+    &_font_mini {
+      font-size: pxToRem(19px);
+    }
+  }
+
+  &__lux {
+    font-size: pxToRem(12px);
+    color: $primary;
+    text-transform: uppercase;
+  }
+
+  &__separator {
+    flex-grow: 1;
+  }
+
+  &__price {
+    color: $dark_shade50;
+  }
+
+  &__info {
+    font-size: pxToRem(12px);
+    font-weight: normal;
+    color: $dark_shade50;
+  }
+}

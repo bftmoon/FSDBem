@@ -3,16 +3,7 @@
 .date-dropdown {
   display: flex;
   justify-content: space-between;
-  gap: 10%;
-
-  &__title {
-    @extend h3; // todo: check best practice
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 267px;
-    gap: 5px;
-  }
+  gap: 20px;
 
   &__first-date, &__last-date {
     width: 100%;
@@ -25,17 +16,19 @@
   &__iconed-input {
     position: relative;
     height: auto;
+    //min-width: pxToRem(117px);
+    cursor: pointer;
   }
 
   &__icon {
-    position: absolute;
-    top: 25%;
-    font-size: 24px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
     text-align: center;
-    right: 10px;
+    line-height: pxToRem(44px);
+    margin: auto;
+    width: pxToRem(44px);
+    height: pxToRem(44px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
     justify-content: right;
     color: $dark_shade50;
   }

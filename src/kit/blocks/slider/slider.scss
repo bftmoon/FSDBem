@@ -1,21 +1,28 @@
-@import "~jquery-ui/themes/base/slider.css";
-@import "~jquery-ui/themes/base/theme.css";
+@import "../../env-styles/common";
 @import "slider_overrides";
 
 .slider {
+  &__picker{
+    height: 6px;
+    border: 1px solid $dark_shade25{
+      radius: 4px;
+    }
+  }
   &__header {
     @extend h3;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px; // todo: check best practice for margin
+    margin-bottom: 20px;
   }
 
   &__amount {
     text-align: end;
     color: $dark_shade50 !important; // plugin uses style attribute
     font-weight: normal !important;
+    background: white;
+    border: none;
     width: 40%;
     max-width: max-content;
   }

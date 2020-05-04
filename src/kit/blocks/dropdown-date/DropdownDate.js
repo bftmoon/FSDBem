@@ -6,7 +6,7 @@ class DropdownDate {
     this._init(element, isInline);
   }
 
-  _init(datepicker, isInline){
+  _init(element, isInline){
     let params = {
       navTitles: {
         days: 'MM yyyy'
@@ -16,13 +16,13 @@ class DropdownDate {
       clearButton: true,
       range: true,
       multipleDatesSeparator: ' - ',
-      inline: isInline
+      inline: isInline,
+      offset: 5
     };
 
-    this._$inputStart = datepicker.find('.date-dropdown__first-date')
-    this._$inputEnd = datepicker.find('.date-dropdown__last-date')
+    this._$inputStart = element.find('.date-dropdown__first-date')
+    this._$inputEnd = element.find('.date-dropdown__last-date')
 
-    console.log(this._$inputStart, this._$inputEnd)
     if (this._$inputEnd.length !== 0) {
       this._extractSecondDate = this._extractSecondDate.bind(this);
       params.onSelect = this._extractSecondDate;

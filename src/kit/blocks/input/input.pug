@@ -1,11 +1,10 @@
-- let input_specify ={dateMask: 'js-input_masked', subscriber: 'input_type_subscribe'}
+mixin input({isDateMasked, title, subtitle})
+  .input
+    +title({title, subtitle})
+    if isDateMasked
+      input(placeholder='ДД.ММ.ГГГГ' pattern='(\\d{2}\\.){2}\\d{4}$').input__field&attributes(attributes)
+    else
+      input.input__field&attributes(attributes)
 
-mixin input(specifier)
-  if specifier === input_specify.subscriber
-    .subscriber
-      input(class=specifier).field_bordered.input&attributes(attributes)
-      i.material-icons.subscriber__icon arrow_forward
-  else
-    input(class=specifier).field_bordered.input&attributes(attributes)
 
 

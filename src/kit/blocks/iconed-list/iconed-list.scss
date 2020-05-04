@@ -1,0 +1,41 @@
+
+@import "../../env-styles/common";
+
+.iconed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__item {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+  }
+
+  &__icon {
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0);
+    background: $gradient;
+    -webkit-background-clip: text;
+    //display: flex;
+    //align-items: center;
+    //text-align: center;
+  }
+
+  &__separator {
+    display: block;
+    height: 1px;
+    background: $dark_shade10;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 14px;
+    color: $dark_shade75;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+}

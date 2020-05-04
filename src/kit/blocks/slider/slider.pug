@@ -1,7 +1,7 @@
-mixin slider
-  .slider
+mixin slider({title})
+  .slider.js-slider&attributes(attributes)
     label.slider__header
-      | Price range
-      input.slider__amount(type='text', readonly='', style='border:0; color:#f6931f; font-weight:bold;')
-    .slider__picker
+      span=title
+      input.slider__amount.js-slider__amount(readonly)
+    .slider__picker.js-slider__picker
 

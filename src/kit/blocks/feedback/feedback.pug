@@ -1,11 +1,11 @@
-include ../likeButton/likeButton
-// {img: {src, alt}, name, time, text, like: {count, active}
-mixin feedback(map)
-  .feedback
-    img.feedback__img(src=map.img.src alt=map.img.alt)
+include ../like-button/like-button
+// {img: {srcName, alt}, name, time, text, like: {count, active}
+mixin feedback({img, name, time, text, like})
+  .feedback&attributes(attributes)
+    img.feedback__img(src=require(`@res/imgs/${img.srcName}`).default alt=img.alt)
     div
-      .feedback__user=map.name
-      div=map.time
+      .feedback__user=name
+      div=time
     .feedback__like
-      +likeButton(map.like.count)(checked=map.like.active)
-    div=map.text
+      +like-button(like.count)(checked=like.active)
+    div=text

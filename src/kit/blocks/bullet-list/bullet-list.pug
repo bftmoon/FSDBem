@@ -1,0 +1,8 @@
+mixin bullet-list({items, title, subtitle})
+  ul.bullet-list&attributes(attributes)
+    +title({title, subtitle})
+    for item in items
+      li.bullet-list__item
+        .bullet-list__bullet-box
+          span.bullet-list__bullet
+        .bullet-list__text=item

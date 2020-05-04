@@ -1,3 +1,5 @@
+@import "../../env-styles/common";
+
 .feedback {
   max-width: 715px;
   display: grid;
@@ -5,12 +7,13 @@
   //justify-content: center;
   grid-template-columns: auto 1fr;
 
-  &__user{
+  &__user {
     font-weight: bold;
   }
-&__like{
-  margin: 0 auto;
-}
+
+  &__like {
+    margin: 0 auto;
+  }
 }
 
 .feedback__img {

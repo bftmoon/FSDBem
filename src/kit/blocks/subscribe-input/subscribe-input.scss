@@ -1,0 +1,14 @@
+@import "../../env-styles/abstract";
+
+.subscribe-input{
+  @extend %field_bordered;
+  display: flex;
+  &__input{
+    background: none;
+    border: none;
+    flex-grow: 1;
+  }
+  &__icon{
+    margin: auto 10px auto 5px;
+  }
+}

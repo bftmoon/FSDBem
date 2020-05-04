@@ -1,0 +1,90 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/functions";
+
+.checkable-item {
+  position: relative;
+  display: flex;
+  gap: 10px;
+
+  &__checker {
+    width: pxToRem(20px);
+    height: pxToRem(20px);
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+    border: 1px solid $dark_shade25;
+
+    &_checkbox {
+      border-radius: 4px;
+    }
+
+    &_radio {
+      border-radius: 50%;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__input:checked ~ &__checker {
+    justify-content: center;
+    display: flex;
+
+    border-color: $primary;
+
+    &:after {
+      display: inline-block;
+      content: "";
+    }
+
+    &_radio:after {
+      width: 60%;
+      height: 60%;
+      align-self: center;
+
+      border-radius: 50%;
+      background: $gradient;
+    }
+
+    &_checkbox:after {
+      align-self: stretch;
+      height: pxToRem(8px);
+      width: pxToRem(6px);
+      margin-top: 10%;
+
+      border: solid {
+        width: 0 3px 3px 0;
+        image: $gradient {
+          slice: 1;
+        }
+      }
+      transform: rotate(45deg);
+    }
+  }
+
+  &__input:checked ~ &__text_radio {
+    color: $dark_shade75;
+  }
+
+  &__text {
+    line-height: 129%;
+
+    &__title {
+      font-weight: bold;
+    }
+
+    &__description {
+      padding-top: 5px;
+      line-height: 117%;
+      font-size: pxToRem(12px);
+      color: $dark_shade50;
+    }
+  }
+}

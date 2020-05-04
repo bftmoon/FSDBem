@@ -1,57 +1,49 @@
-.button{
-  border: 0;
-  border-radius: 22px;
-  font-weight: bold;
-  //font-family: inherit;
-  background-color: white;
-  text-transform: uppercase;
+@import "../../env-styles/variables";
+
+.button {
   padding: 15px 20px;
 
-  &:disabled{
+  font-weight: bold;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 22px;
+  background-color: white;
+
+  &:disabled {
     opacity: 0.5;
   }
-  //&:hover:enabled{
-  //  //box-shadow: $shadow_small;
-  //  //text-shadow: 2px 2px 2px $dark_shade10;
-  //}
 
-  &_flat{
+  &:hover:enabled {
+    cursor: pointer;
+  }
+
+  &_flat {
     color: $primary;
-    //border: 1px solid $primary; // todo: check should be gradient?
     box-shadow: 0 0 0 3px $primary inset; // inner border
   }
-  &_raised{
+
+  &_raised {
     background: $gradient;
     color: white;
   }
-  &_text{
-    color: $primary;
-    &:disabled{
-      color: $dark_shade50;
-    }
-    //&:hover:enabled{
-    //  box-shadow: none;
-    //  text-shadow: 2px 2px 2px $dark_shade10;
-    //}
-  }
 
-  &_color_secondary{
+  &_color_secondary {
     background: $secondary_gradient;
   }
-  &_arrowed{
+
+  &_arrowed {
     position: relative;
     width: 100%;
-    //display: flex;
-    //align-items: center;
-    //justify-content: space-between;
   }
 
-  &__arrow{
+  &__arrow {
     position: absolute;
     right: 15px;
     line-height: 20px;
   }
-  &__text{
+
+  &__text {
     padding-right: 25px;
   }
 }

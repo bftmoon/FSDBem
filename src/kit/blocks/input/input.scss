@@ -1,5 +1,8 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/abstract";
 
-.input{
+.input__field {
+  @extend %field_bordered;
   color: $dark_shade75;
   padding-right: 20px;
   overflow: hidden;
@@ -8,30 +11,8 @@
   &:hover {
     border-color: $dark_shade50;
   }
+
   &:focus {
     border-color: $dark_shade50;
   }
 }
-
-
-
-
-.subscriber {
-  position: relative;
-  max-width: 267px;
-
-  &__icon {
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: $primary;
-  }
-}
-

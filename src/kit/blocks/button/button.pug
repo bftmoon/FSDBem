@@ -1,10 +1,8 @@
-- let button_type = {raised: 'button_raised', flat:'button_flat', text: 'button_text'}
-
-mixin button(type, text, isSecondary, isArrowed)
-  // button_type, string, boolean, boolean
+mixin button(text, {isFlat, isSecondary, isArrowed})
+  - let classes = [isSecondary? 'button_color_secondary': '', isFlat?'button_flat': 'button_raised'];
   if isArrowed
-    button.button.button_arrowed(class=isSecondary? [type, 'button_color_secondary']:type)&attributes(attributes)
+    button.button.button_arrowed(class=classes)&attributes(attributes)
       span.button__text=text
       i.material-icons.button__arrow arrow_forward
   else
-    button.button(class=isSecondary? [type, 'button_color_secondary']:type)&attributes(attributes)=text
+    button.button(class=classes)&attributes(attributes)=text
