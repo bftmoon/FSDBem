@@ -1,0 +1,9 @@
+mixin search-card
+  form.search-card&attributes(attributes)
+    h1 Найдём номера под ваши пожелания
+    +dropdown-date([
+      {title: 'Прибытие'},
+      {title: 'Выезд'},
+    ])
+    +guests-dropdown({title: 'Гости', withConfirm: true, withCancel: true})
+    +button('Подобрать номер', {isArrowed: true}).search-card__submit-button
