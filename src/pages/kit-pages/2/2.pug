@@ -5,117 +5,165 @@ html(lang="en")
     meta(charset="UTF-8")
     title UIKit
   body
-    main
-      section
-        label.label Text field
-          span.condition Default
-        +input(placeholder='Email')
-        label.label Text field
-          span.condition Hover/focus
-        +input(value='This is pretty awesome', autofocus)
-        label.label Dropdown
-          span.condition Default
-        +dropdownMenu(true).dropdown-default-example
-        label.label Masked text field
-          span.condition Default
-        +input(input_specify.dateMask).big-margin
-        +dropdownDate('Date dropdown', 'Date dropdown')(id='date_double_input').big-margin
-        +dropdownDate('Filter date dropdown')(id='date_single_input').big-margin
-        label.label Subscription text field
-        +input(input_specify.subscriber)(placeholder='Email').big-margin
-      section
-        label.label.title-for-clickable.title-for-clickable_first Checkbox buttons
-        +checkboxList([
-          {text: 'Можно курить', attributes: {name: '?', value: 'smoke'}},
-          {text: 'Можно с питомцами', attributes: {name: '?', value: 'pet', checked: true}},
+    -
+      const simpleCheckboxData = [
+        {text: 'Завтрак'},
+        {text: 'Письменный стол', attributes: {checked: true}},
+        {text: 'Стул для кормления', attributes: {checked: true}},
+        {text: 'Кроватка', attributes: {checked: true}},
+        {text: 'Телевизор'},
+        {text: 'Шампунь'},
+        {text: 'Телевизор'},
+        {text: 'Шампунь'},
+      ];
+
+    main.fields-example
+      .fields-example__inputs
+        +input({title: 'Text field', subtitle: 'Default'})(placeholder='Email' type='email')
+        +input({title: 'Text field', subtitle: 'Hover/focus'})(value='This is pretty awesome')
+        +guests-dropdown({title: 'Dropdown', subtitle: 'Default'})
+        +input({title: 'Masked text field'})(placeholder='ДД.ММ.ГГГГ' pattern='(\\d{2}\\.){2}\\d{4}$')
+        +dropdown-date([{title: 'Date dropdown'}, {title: 'Date dropdown', date: '19.08.2019'}])
+        +dropdown-date([{title: 'Filter date dropdown'}])
+        h3 Subscription text field
+        +subscribe-input
+      .fields-example__simple-checkables
+        +checkbox-list({
+          title: 'Checkbox buttons',
+          items: [
+            {
+              text: 'Можно курить',
+              attributes: {
+                name: '?',
+                value: 'smoke'
+              }
+            },
+            {
+              text: 'Можно с питомцами',
+              attributes: {
+                name: '?',
+                value: 'pet',
+                checked: true
+              }
+            },
+            {
+              text: 'Можно пригласить гостей (до 10 человек)',
+              attributes: {
+                name: '?',
+                value: 'visiters',
+                checked: 'checked'
+              }
+            },
+          ]
+        })
+        +radio-list({
+          title: 'Radio buttons',
+          items: [
+            {
+              text: 'Мужчина',
+              attributes: {
+                value: 'M',
+                name: 'gender',
+                checked: true
+              }
+            },
+            {
+              text: 'Женщина',
+              attributes: {
+                value: 'W',
+                name: 'gender'
+              }
+            }
+          ]
+        })
+        h3 Toggle
+        +toggle('Получать спецпредложения')(checked)
+        +toggle('Получать спецпредложения')
+        h3 Like button
+        +like-button(2)
+        +like-button(12)(checked)
+        h3 Rate button
+        +rating({rating: 4, groupName: 'star-1'})
+        +rating({rating: 5, groupName: 'star-2'})
+      .fields-example__clickables
+        +slider({title: 'Price range'})
+        h3 Buttons
+        +button('Click me', {})
+        +button('Click me', {})(disabled)
+        +button('Click me', {isFlat: true})
+        +button('Click me', {isFlat: true})(disabled)
+        +a('Click me')(href='#')
+        +a('Click me')
+        +button('Перейти к оплате', {isArrowed: true})
+        h3 Pagination
+        +paginator('1 – 12 из 100+ вариантов аренды')
+      .fields-example__dropdown-conditions
+        +furniture-dropdown({title: 'Dropdown', subtitle: 'Default'})
+        +furniture-dropdown({title: 'Dropdown', subtitle: 'Expanded', isOpened: true, isInline: true})
+      .fields-example__dropdown-with-confirm
+        +guests-dropdown({
+          title: 'Dropdown',
+          isOpened: true,
+          isInline: true,
+          withConfirm: true
+        })
+      .fields-example__dropdown-with-cancel
+        +guests-dropdown({
+          counts: [2, 1, 0],
+          title: 'Dropdown',
+          isOpened: true,
+          isInline: true,
+          withConfirm: true,
+          withCancel: true
+        })
+      .fields-example__expandable-checkboxes
+        +checkbox-list({items: simpleCheckboxData, expandTitle: 'Expandable checkbox list'})
+        +checkbox-list({items: simpleCheckboxData, expandTitle: 'Expandable checkbox list', isOpened: true})
+      .fields-example__rich-checkboxes
+        +checkbox-list({
+          title: 'Rich checkbox buttons',
+          items: [
+            {
+              text: 'Широкий коридор',
+              description: 'Ширина коридоров в номере не менее 91 см.'
+            },
+            {
+              text: 'Помощник для инвалидов',
+              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+            },
+          ]
+        })
+      .fields-example__bullets
+        +bullet-list({
+          title: 'Bullet list',
+          items: [
+            'Нельзя с питомцами',
+            'Без вечеринок и меропреятий',
+            'Время прибытия — после 13:00, а выезд до 12:00'
+          ]
+        })
+      .fields-example__iconed-list
+        +iconed-list([
           {
-            text: 'Можно пригласить гостей (до 10 человек)',
-            attributes: {name: '?', value: 'visiters', checked: 'checked'}
+            icon: 'insert_emoticon',
+            title: 'Комфорт',
+            description: 'Шумопоглощающие стены'
+          },
+          {
+            icon: 'location_city',
+            title: 'Удобство',
+            description: 'Окно в каждой из спален'
           },
         ])
-        label.label.title-for-clickable Radio buttons
-        +radioList([
-          {text: 'Мужчина', attributes: {value: 'M', name: 'gender', checked: true}},
-          {text: 'Женщина', attributes: {value: 'W', name: 'gender'}}
-        ])
-        label.label.title-for-clickable Toggle
-        +toggle('Получать спецпредложения')
-        +toggle('Получать спецпредложения')(disabled)
-        label.label.title-for-clickable Like button
-        .like-buttons
-          +likeButton(2)
-          +likeButton(12)(checked)
-        label.label.title-for-clickable Rate button
-        .rate-buttons
-          +rating(4, 'star-1')
-          //+rating(3)
-          +rating(5, 'star-2')
-      section
-        +slider
-        label.label.title-for-clickable Buttons
-        .buttons
-          +button(button_type.raised, 'Click me')
-          +button(button_type.raised, 'Click me')(disabled)
-          +button(button_type.flat, 'Click me')
-          +button(button_type.flat, 'Click me')(disabled)
-          +a('Click me')(href='#')
-          +a('Click me')
-          //+button(button_type.text, 'Click me')
-          //+button(button_type.text, 'Click me')(disabled)
-          +button(button_type.raised, 'Перейти к оплате', false, true)
-        label.label.title-for-clickable Pagination
-        +paginator
-      section.dropdown-smaller
-        label.label Dropdown
-          span.condition Default
-        +dropdownMenu(true).dropdown-titled-example
-        label.label Dropdown
-          span.condition Expanded
-        +dropdownMenu.dropdown-expanded-example
-      section
-        label.label Dropdown
-        +dropdownMenu.dropdown-confirm-example
-      section
-        label.label Dropdown
-        +dropdownMenu.dropdown-cancel-example
-      section.dropdown-smaller
-        -
-          let simpleCheckboxData = [
-            {text: 'Завтрак'},
-            {text: 'Письменный стол', attributes: {checked: true}},
-            {text: 'Стул для кормления', attributes: {checked: true}},
-            {text: 'Кроватка', attributes: {checked: true}},
-            {text: 'Телевизор'},
-            {text: 'Шампунь'},
-            {text: 'Телевизор'},
-            {text: 'Шампунь'},
-          ];
-        +checkboxList(simpleCheckboxData, 'Expandable checkbox list')
-        +checkboxList(simpleCheckboxData, 'Expandable checkbox list', true)
-      section.dropdown-smaller
-        label.label Rich checkbox buttons
-        +checkboxList([
-          {text: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
-          {text: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'},
-        ])
-      section
-        label.label Bullet list
-        +bulletList(['Нельзя с питомцами', 'Без вечеринок и меропреятий', 'Время прибытия — после 13:00, а выезд до 12:00']).dropdown-smaller
-      section
-        +iconedList([
-          {icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглощающие стены'},
-          {icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'},
-        ])
-      section.double-section
+      .fields-example__feedback
         +feedback(
           {
-            img: {src: '../../../../res/imgs/man.png', alt: 'Somebody'},
+            img: {srcName: 'man.png', alt: 'Somebody'},
             name: 'Мурад Сарафанов',
             time: '5 дней назад',
             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
             like: {count: 12, active: true}
           })
-    script(type = 'script/javascript' src='./2.js')
 
 
 
