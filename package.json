@@ -11,13 +11,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.7.6",
     "css-loader": "^3.5.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-fsd": "^1.0.1",
     "file-loader": "^6.0.0",
     "fs": "0.0.1-security",
     "html-webpack-plugin": "^4.2.0",
     "imports-loader": "^0.8.0",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "resolve-url-loader": "^3.1.1",
@@ -29,13 +33,16 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "air-datepicker": "^2.2.3",
     "expose-loader": "^0.7.5",
     "google-fonts-webpack-plugin": "^0.4.4",
     "inputs": "^0.9.2",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
+    "lightslider": "^1.1.6",
     "material-icons": "^0.3.1",
+    "tiny-slider": "^2.9.2",
     "typeface-montserrat": "0.0.75"
   }
 }

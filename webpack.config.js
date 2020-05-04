@@ -1,33 +1,38 @@
 const webpack = require('webpack')
 const path = require('path');
+const fs = require('fs');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
+const KIT_PAGES_DIR = path.resolve(__dirname, 'src/pages/kit-pages');
+const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR).filter((value => value !== 'common'));
 
 const config = {
+  resolve: {
+    alias: {
+      styleVars: path.resolve(__dirname, 'src/kit/env-styles/variables.scss'),
+      '@res': path.resolve(__dirname, 'res'),
+    },
+  },
   entry: {
-    kitInputs: './src/pages/kit-pages/2/2.js',
-    // kitColors: './src/pages/kit-pages/1/1.js',
-    // kitCards: './src/pages/kit-pages/3/3.js',
-    // kitSections: './src/pages/kit-pages/2/4.js'
+    app: './src/index.js'
     // test: './src/pages/test/test.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].bundle.js",
+    filename: "[contenthash].[name].js",
   },
   devtool: 'inline-source-map', // path of error
   plugins: [
-    // new GoogleFontsPlugin({
-    //   fonts: [
-    //     { family: 'Montserrat', subsets:['latin', 'cyrillic'],  variants: [ '400', '700' ]  },
-    //     { family: 'Quicksand', subsets:['latin'],  variants: [ '400', '700' ]  },
-    //   ]
-    // }),
     new HtmlWebpackPlugin({
       template: './src/pages/kit-pages/2/2.pug',
+      // template: './src/pages/kit-pages/3/3.pug',
       // template: './src/pages/test/test.pug',
       // template: './src/pages/kit-pages/1/1.pug'
     }),
+    // ...KIT_PAGES.map((page) => new HtmlWebpackPlugin({
+    //   filename: `${page}.html`,
+    //   template: `${KIT_PAGES_DIR}/${page}/${page}.pug`,
+    // })),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -46,20 +51,32 @@ const config = {
           'style-loader',
           'css-loader',
           'resolve-url-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                autoprefixer()
+              ],
+              sourceMap: true
+            }
+          },
           'sass-loader',
         ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'imgs/'
+            }
+          }
         ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        // include: [
-        //   path.resolve(__dirname, 'res/fonts')
-        // ],
         use: [
           {
             loader: 'file-loader',
@@ -71,7 +88,11 @@ const config = {
         ],
       },
     ]
-  }
+  },
+  devServer: {
+    // contentBase: path.join(__dirname, 'dist'),
+    overlay: true,
+  },
 
 };
 module.exports = (env, argv) => {
