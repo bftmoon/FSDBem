@@ -1,0 +1,28 @@
+// room: {number, price, isLux}, options: {startDate, endDate, daysCount, guests}, costs:{service, discount, overService}
+mixin calculator-card({room, options, costs})
+  -
+    const livingPrice = room.price * options.daysCount;
+    const result = livingPrice + costs.service - costs.discount + costs.overService
+
+  form&attributes(attributes).calculator-card
+    +room-title({number: room.number, price: room.price, isLux: room.isLux})
+    +dropdown-date([
+      {title:'Прибытие', date:options.startDate},
+      {title:'Выезд', date:options.endDate},
+    ])(disabled)
+    +guests-dropdown({title: 'Гости', counts: options.guests})(disabled)
+    .calculator-card__calculates
+      span= room.price + '₽ x ' + options.daysCount + ' суток'
+      span
+      .calculator-card__price-item= livingPrice + '₽'
+      span='Сбор за услуги: скидка ' + costs.discount + '₽'
+      span(title='some important info').calculator-card__info i
+      .calculator-card__price-item=  costs.service + '₽'
+      span Сбор за дополнительные услуги
+      span(title='some important info').calculator-card__info i
+      .calculator-card__price-item=costs.overService+'₽'
+    h2.calculator-card__result
+      | Итого
+      span.calculator-card__separator
+      span= result+'₽'
+    +button('Забронировать', {isArrowed: true})

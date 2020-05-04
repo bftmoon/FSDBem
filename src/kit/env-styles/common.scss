@@ -1,4 +1,5 @@
 @import "variables";
+@import "functions";
 
 * {
   box-sizing: border-box;
@@ -17,30 +18,30 @@ body {
 
 body {
   //font-size: 14px;
-  line-height: 24px;
+  line-height: pxToRem(24px);
 }
 
 h1 {
   font-family: $quicksand;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: pxToRem(24px);
+  line-height: pxToRem(30px);
   color: $dark_shade100;
 }
 
 h2 {
   font-family: $quicksand;
   font-weight: bold;
-  font-size: 19px;
-  line-height: 24px;
+  font-size: pxToRem(19px);
+  line-height: pxToRem(24px);
   color: $dark_shade100;
 }
 
 h3 {
   font-family: $montserrat;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: pxToRem(12px);
+  line-height: pxToRem(15px);
   text-transform: uppercase;
   color: $dark_shade100;
 }

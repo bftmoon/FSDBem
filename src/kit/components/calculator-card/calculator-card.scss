@@ -1,0 +1,41 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/abstract";
+@import "../../env-styles/functions";
+
+.calculator-card{
+  @extend %card;
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(20px);
+  &__calculates{
+    margin-top: 1px;
+    line-height: pxToRem(18px);
+    display: grid;
+    grid-row-gap: pxToRem(14px);
+    grid-column-gap: pxToRem(9px);
+    grid-template-columns: 0.75fr auto 0.2fr;
+    vertical-align: center;
+  }
+  &__info{
+    color: $dark_shade25;
+    display: inline-block;
+    text-align: center;
+    width: pxToRem(20px);
+    height: pxToRem(20px);
+    border: 1px solid $dark_shade25{
+      radius: 50%;
+    }
+  }
+  &__price-item{
+    text-align: right;
+  }
+  &__result{
+    display: flex;
+    margin-top: pxToRem(10px);
+  }
+  &__separator{
+    flex-grow: 2;
+    border-bottom: 1px dotted $dark_shade25;
+    margin-bottom: 5px;
+  }
+}
