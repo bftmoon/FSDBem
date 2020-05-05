@@ -1,0 +1,16 @@
+@import "../../env-styles/functions";
+
+.simple-footer{
+  height: pxToRem(367px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $shadow_smaller;
+  background: white;
+  flex-direction: column;
+  &__tagline{
+    margin: 20px 0 25px 0;
+    max-width: pxToRem(560px);
+    text-align: center;
+  }
+}

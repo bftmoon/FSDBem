@@ -1,0 +1,7 @@
+mixin simple-footer({language="en"})
+  - const {tagline} = require(`@res/language/${language}/footer.json`)
+
+  footer.simple-footer&attributes(attributes)
+    img.simple-footer__img(src='../res/svg/site-logo.svg' alt='Toxin')
+    .simple-footer__tagline=tagline
+    +social-networks
