@@ -1,0 +1,21 @@
+mixin footer({language="en"})
+  - const {tagline, menu, subscribe, copyright} = require(`@res/language/${language}/footer.json`)
+
+  footer.footer&attributes(attributes)
+    .footer__menu
+      .footer__logo
+        img.footer__img(src='../res/svg/site-logo.svg' alt='Toxin')
+        .footer__tagline=tagline
+      for column in menu
+        .footer__navigation
+          h3.footer__title=column.name
+          for item in column.items
+            a(href=item.url)=item.name
+      .footer__subscribe-offer
+        h3.footer__title=subscribe.title
+        .footer__subscribe-info=subscribe.description
+        +subscribe-input(placeholder=subscribe.placeholder).footer__subscribe-input
+    .footer__separator
+    .footer__info
+      .footer__copyright=copyright
+      +social-networks

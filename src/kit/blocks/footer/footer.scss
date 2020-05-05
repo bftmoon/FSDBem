@@ -1,0 +1,104 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/functions";
+
+// media 840, 650, 360
+
+.footer {
+  padding: 5px;
+  background: white;
+  box-shadow: $shadow_small;
+  &__img{
+    margin-bottom: 20px;
+  }
+  &__menu {
+    //max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(10px, 260px));
+    column-gap: 10px;
+    row-gap: 40px;
+    justify-items: center;
+    justify-content: center;
+    margin: 100px auto;
+
+    @media screen and (max-width: 840px){
+      grid-template-columns: repeat(4, minmax(10px, 260px));
+    }
+    @media screen and (max-width: 650px){
+      grid-template-columns: repeat(3, minmax(10px, 260px));
+    }
+    @media screen and (max-width: 360px){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title{
+    margin-bottom: 20px;
+  }
+
+  &__logo{
+    flex-direction: column;
+
+    @media screen and (max-width: 840px){
+      grid-column: 1/span 4;
+      display: flex;
+      text-align: center;
+    }
+    @media screen and (max-width: 650px){
+      grid-column: 1/span 3;
+      display: flex;
+      text-align: center;
+    }
+  }
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    width: fit-content;
+    :link, :visited{
+      text-decoration: none;
+      color: $dark_shade50;
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 360px){
+      grid-column: 1/span 4;
+      display: flex;
+      text-align: center;
+    }
+  }
+
+  &__subscribe-offer{
+    @media screen and (max-width: 650px){
+      grid-column: 1/span 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__subscribe-info{
+    margin-bottom: 20px;
+    @media screen and (max-width: 650px){
+      margin-bottom: 10px;
+    }
+  }
+  &__subscribe-input{
+    max-width: 260px;
+  }
+
+  &__separator{
+    width: 100%;
+    height: 1px;
+    background: $dark_shade10;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    //max-width: calc(1440px - 2 * 140px);
+    max-width: 1440px;
+    height: pxToRem(70px);
+  }
+}

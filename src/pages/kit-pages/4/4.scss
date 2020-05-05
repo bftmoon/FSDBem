@@ -1,3 +1,6 @@
-body{
+.header-footers-example{
   background: #F4F4F6;
+  &__item{
+    margin-bottom: 40px;
+  }
 }

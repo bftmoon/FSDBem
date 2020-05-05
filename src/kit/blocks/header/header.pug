@@ -3,7 +3,7 @@
 mixin header({username, language="ru"})
   - const {home, links, login, register} = require(`@res/language/${language}/header.json`)
 
-  header.header.js-header
+  header.header.js-header&attributes(attributes)
     .header__content.js-header__content
       button.header__closing-button.js-header__closing-button
         i.material-icons close

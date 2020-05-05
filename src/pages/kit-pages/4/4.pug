@@ -4,6 +4,8 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     title Headers and footers
-  body
-    +header({language: language.en})
-    +header({language: language.en, username: 'Cosmin Negoita'})
+  body.header-footers-example
+    +kit-header
+    +header({language: language.en}).header-footers-example__item
+    +header({language: language.en, username: 'Cosmin Negoita'}).header-footers-example__item
+    +footer({language: language.en}).header-footers-example__item
