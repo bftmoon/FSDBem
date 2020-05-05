@@ -1,6 +1,7 @@
-mixin subscribe-input()
+mixin subscribe-input
   .subscribe-input(class=attributes.class)
     - delete attributes.class
     input(placeholder='Email' type='email')&attributes(attributes).subscribe-input__input
+    .subscribe-input__invalid-light
     i.material-icons.subscribe-input__icon arrow_forward
 

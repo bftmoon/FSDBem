@@ -1,5 +1,5 @@
 mixin button(text, {isFlat, isSecondary, isArrowed})
-  - let classes = [isSecondary? 'button_color_secondary': '', isFlat?'button_flat': 'button_raised'];
+  - const classes = [isSecondary? 'button_color_secondary': '', isFlat?'button_flat': 'button_raised'];
   if isArrowed
     button.button.button_arrowed(class=classes)&attributes(attributes)
       span.button__text=text

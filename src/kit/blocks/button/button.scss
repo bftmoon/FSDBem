@@ -1,9 +1,12 @@
 @import "../../env-styles/variables";
+@import "../../env-styles/functions";
 
 .button {
   padding: 15px 20px;
+  line-height: pxToRem(15px);
 
   font-weight: bold;
+  font-style: pxToRem(12px);
   text-transform: uppercase;
 
   border: none;
