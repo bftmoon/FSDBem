@@ -1,0 +1,15 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/functions";
+
+.social-networks {
+  display: flex;
+  width: calc(24px * 3 + 20px * 2);
+  justify-content: space-between;
+
+  &__icon {
+    color: transparent;
+    background: $gradient;
+    -webkit-background-clip: text;
+    font-size: pxToRem(24px);
+  }
+}
