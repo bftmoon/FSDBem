@@ -1,0 +1,33 @@
+- const language = {ru: "ru", en: "en"}
+
+mixin header({username, language="ru"})
+  - const {home, links, login, register} = require(`@res/language/${language}/header.json`)
+
+  header.header.js-header
+    .header__content.js-header__content
+      button.header__closing-button.js-header__closing-button
+        i.material-icons close
+      img.header__img.header__content-img(src='../res/svg/site-logo.svg' alt='Toxin')
+      .header__separator
+      a(href=home.url).header__link.header__link_type_home
+        span=home.name
+      for link in links
+        a(href=link.url).header__link
+          span=link.name
+          if link.isExpand
+            i.material-icons expand_more
+      if username
+        .header__line
+        a(href='mockHrefToProfile').header__link.header__username
+          span=username
+      else
+        +button('Login', {isFlat: true}).header__button.header__button_login
+        +button('Register', {}).header__button
+    .header__collapsed
+      img.header__img(src='../res/svg/site-logo.svg' alt='Toxin')
+      button.js-header__menu-button.header__menu-button
+        i.material-icons menu
+    .header__dim.js-header__dim
+
+
+
