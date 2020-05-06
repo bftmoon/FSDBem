@@ -1,0 +1,283 @@
+{
+  "rooms": [
+    {
+      "imgs": [
+        {
+          "srcName": "room-1.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-1.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-1.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-1.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 888,
+      "isLux": true,
+      "price": 9990,
+      "rating": 5,
+      "reviewCount": 96
+    },
+    {
+      "imgs": [
+        {
+          "srcName": "room-2.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-2.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-2.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-2.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 840,
+      "price": 9900,
+      "rating": 4,
+      "reviewCount": 65
+    },    {
+      "imgs": [
+        {
+          "srcName": "room-3.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-3.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-3.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-3.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 980,
+      "price": 8500,
+      "rating": 3,
+      "reviewCount": 35
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-4.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-4.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-4.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-4.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 856,
+      "price": 7300,
+      "rating": 5,
+      "reviewCount":19
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-5.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-5.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-5.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-5.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 740,
+      "price": 6000,
+      "rating": 4,
+      "reviewCount":44
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-6.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-6.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-6.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-6.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 982,
+      "price": 5800,
+      "rating": 3,
+      "reviewCount":56
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-7.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-7.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-7.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-7.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 678,
+      "price": 5500,
+      "rating": 5,
+      "reviewCount":45
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-8.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-8.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-8.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-8.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 450,
+      "price": 5300,
+      "rating": 4,
+      "reviewCount":39
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-9.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-9.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-9.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-9.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 350,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount":77
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-10.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-10.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-10.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-10.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 666,
+      "price": 5000,
+      "rating": 5,
+      "reviewCount":25
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-11.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-11.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-11.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-11.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 444,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount":15
+    },   {
+      "imgs": [
+        {
+          "srcName": "room-12.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-12.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-12.jpg",
+          "alt": "room"
+        },
+        {
+          "srcName": "room-12.jpg",
+          "alt": "room"
+        }
+      ],
+      "number": 352,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount":55
+    }
+  ]
+}
