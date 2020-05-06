@@ -3,3 +3,7 @@
 @function pxToRem($size) {
   @return $size / $root-font-size * 1rem;
 }
+
+@function pxToPercent($size) {
+  @return $size / 1440px * 100%;
+}

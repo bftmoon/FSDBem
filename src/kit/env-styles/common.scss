@@ -8,17 +8,20 @@
   font-family: inherit;
 }
 
-html,
-body {
-  height: 100%;
+html {
+  //height: 100%; //todo: check where it using
   font-size: $root-font-size;
   font-family: $montserrat;
   color: $dark_shade75;
+  background: #f8f8f8;
 }
 
 body {
-  //font-size: 14px;
+  //height: 100%;
   line-height: pxToRem(24px);
+  max-width: 1440px;
+  margin: auto;
+  background: white;
 }
 
 h1 {

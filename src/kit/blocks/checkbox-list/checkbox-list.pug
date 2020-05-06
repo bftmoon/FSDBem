@@ -5,8 +5,8 @@ mixin checkbox-list({items, expandTitle, isOpened, title, subtitle})
     if expandTitle
       button(type='button').checkbox-list__expander.js-checkbox-list__expander
         .checkbox-list__title=expandTitle
-        i(hidden=!isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_more
-        i(hidden=isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_less
+        i(hidden=isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_more
+        i(hidden=!isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_less
     div(hidden=expandTitle && !isOpened).checkbox-list__group.js-checkbox-list__group
       each el in items
         +checkable-item(checkableType.checkbox, el.text, el.description).checkbox-list__item&attributes(el.attributes)
