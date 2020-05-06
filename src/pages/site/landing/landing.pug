@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+  include ../../../kit/kit
+  head
+    meta(charset="UTF-8")
+    title Landing Page
+  body.landing-page
+    +header({})
+    main.landing-page__main
+      +search-card.landing-page__card
+      .landing-page__container
+        .landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    +footer({})

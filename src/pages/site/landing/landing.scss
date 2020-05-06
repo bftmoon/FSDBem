@@ -1,0 +1,26 @@
+.landing-page {
+  &__main {
+    background: url(../../../../res/imgs/landing.jpg) center;
+    background-size: cover;
+    height: 830px;
+    width: 100%;
+  }
+
+  &__card {
+    margin: 70px 140px;
+    max-width: 380px;
+  }
+
+  &__container {
+    width: 100%;
+    text-align: right;
+    margin-top: 320px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    max-width: 300px;
+    margin-right: calc(134 / 1440 * 100%);
+  }
+}
