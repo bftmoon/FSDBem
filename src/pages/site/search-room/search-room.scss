@@ -13,28 +13,17 @@
       grid-template-columns: 1fr;
     }
   }
-
-  &__configuration {
-    //padding: 0 4px;
-    //margin-right: 60px;
+  &__config-expander{
+    display: none;
+    @media screen and (max-width: 857px){
+      display: initial;
+    }
+  }
+  &__config-content {
+    margin: 0 auto;
     max-width: 266px;
     & > *{
       margin-bottom: 30px;
-    }
-    @media screen and (max-width: 857px){
-      display: none;
-      width: 0;
-      top: 30px;
-      height: 100%;
-      background: white;
-      position: absolute;
-      z-index: 100;
-      &_opened{
-        display: initial;
-        transition-property: width;
-        width: 100%;
-        border-right: 1px solid $dark_shade10;
-      }
     }
   }
   &__cost-info{
