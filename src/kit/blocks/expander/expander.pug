@@ -1,0 +1,6 @@
+mixin expander({text})
+  .expander.js-expander&attributes(attributes)
+    button(type='button').expander__button.js-expander__button
+      span.expander__text=text
+      i(hidden=true).material-icons.expander__icon.js-expander__icon expand_more
+      i.material-icons.expander__icon.js-expander__icon expand_less
