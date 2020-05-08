@@ -4,10 +4,10 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     title UIKitColors
-  body
-    +kitHeader
-    main
-      section.colors
+  body.colors-page
+    +kit-header
+    main.colors-page__main
+      section.colors-page__colors
         -
           let colors = [
             {name: 'Dark Shade 100%', num: '#1F2041'},
@@ -19,18 +19,17 @@ html(lang="en")
             {name: 'Green', num: '#6FCF97'},
           ]
         each color, i in colors
-          .color-item
-            div(class='color' + i).color-box
-            .color-description
-              span.color-name=color.name
-              span.color-num=color.num
-      section.headers
-        h1.prefix H1
+          div(class='colors-page__color_' + i).colors-page__color
+          .colors-page__description
+            .colors-page__name=color.name
+            .colors-page__num=color.num
+      section.colors-page__headers
+        h1.colors-page__prefix H1
         h1 This one is the sub-section or widget title
-        h2.prefix H2
+        h2.colors-page__prefix H2
         h2 Next one is the item title inside widgets
-        h3.prefix H3
+        h3.colors-page__prefix H3
         h3 This is a label or CTA text
-        span.prefix Body
-        span This is the body text which is used for most of the design, like paragraphs, lists, etc.
+        .colors-page__prefix.colors-page__prefix_type_body Body
+        .colors-page__body-example This is the body text which is used for most of the design, like paragraphs, lists, etc.
 

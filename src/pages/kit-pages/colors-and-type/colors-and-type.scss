@@ -1,0 +1,115 @@
+@import "../../../kit/env-styles/common";
+
+.colors-page {
+  &__main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    grid-row-gap: 60px;
+    @media screen and (max-width: 635px){
+      justify-content: center;
+    }
+  }
+
+  &__colors {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px 40px;
+    width: min-content;
+    @media screen and (max-width: 635px){
+      justify-self: center;
+    }
+  }
+
+  &__color {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &_0 {
+      background: $dark_shade100;
+    }
+
+    &_1 {
+      background: $dark_shade75;
+    }
+
+    &_2 {
+      background: $dark_shade50;
+    }
+
+    &_3 {
+      background: $dark_shade25;
+    }
+
+    &_4 {
+      background: $dark_shade5;
+    }
+
+    &_5 {
+      background: $primary;
+    }
+
+    &_6 {
+      background: $secondary;
+    }
+  }
+&__description{
+  display: inline-flex;
+  flex-direction: column;
+  width: min-content;
+  white-space: nowrap;
+}
+  &__name {
+    margin-top: 6px;
+
+    line-height: pxToRem(29px);
+    font-size: pxToRem(19px);
+    font-family: $quicksand;
+    font-weight: bold;
+    color: $dark_shade100;
+  }
+
+  &__num {
+    line-height: pxToRem(29px);
+    font-family: $quicksand;
+    font-size: pxToRem(19px);
+    color: $dark_shade100;
+  }
+
+
+  &__headers {
+    justify-self: right;
+    height: min-content;
+    max-width: 420px;
+    margin-right: 23px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 30px;
+
+    @media screen and (max-width: 635px){
+      justify-self: center;
+    }
+  }
+
+  &__prefix {
+    text-align: right;
+    color: $dark_shade25;
+    font-weight: normal;
+
+    &_type_body {
+      margin-top: -3px;
+    }
+  }
+
+  &__body-example {
+    max-width: 301px;
+    margin-top: -3px;
+  }
+}
