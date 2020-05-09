@@ -1,0 +1,137 @@
+@import "../../../kit/env-styles/common";
+
+$form-elements-point_middle: 800px;
+$form-elements-point_small: 590px;
+
+.form-elements-page {
+  &__main {
+    max-width: 1170px;
+    padding: 5px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 320px));
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    justify-content: space-between;
+
+    @media screen and (max-width: $form-elements-point_middle) {
+      grid-template-columns: repeat(2, minmax(250px, 320px));
+    }
+    @media screen and (max-width: $form-elements-point_middle) {
+      grid-template-columns: minmax(250px, 320px);
+    }
+  }
+
+  &__title{
+    padding-bottom: 5px;
+  }
+
+  &__item{
+    margin-bottom: 20px;
+    &_height{
+      &_tall{
+        margin-bottom: 40px;
+      }
+    }
+    &_width{
+      &_short{
+        max-width: 266px;
+      }
+    }
+  }
+  &__inputs{
+    max-width: 320px;
+  }
+  &__simple-checkables{
+    margin-left: 24px;
+  }
+  &__checkbox-list{
+    max-width: 222px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+  &__radio{
+    margin-top: 12px;
+    margin-bottom: 40px;
+  }
+  &__toggle{
+    margin-top: 10px;
+    &_height_tall{
+      margin-top: 7px;
+      margin-bottom: 40px;
+    }
+  }
+  &__like{
+    margin: 12px 10px 40px 0;
+  }
+  &__rating{
+    margin: 10px 20px 0 0;
+  }
+  &__slider{
+    max-width: 266px;
+    margin-bottom: 44px;
+  }
+  &__button{
+    margin: 10px 20px 20px 0;
+  }
+  &__link{
+    display: inline-block;
+    margin: 7px 20px 25px 0;
+  }
+  &__navigator{
+    margin-bottom: 40px;
+  }
+  &__paginator{
+    margin-top: 10px;
+  }
+  &__dropdown{
+    &_first-in-item{
+      margin-top: 55px;
+      margin-bottom: 20px;
+    }
+    &_thin{
+      max-width: 266px;
+    }
+  }
+
+  &__expandable-checkboxes{
+    max-width: 266px;
+    margin-top: 16px;
+  }
+  &__expandable-checkbox{
+    &_opened {
+      margin-top: 20px;
+    }
+  }
+  &__rich-checkboxes{
+    margin-top: 30px;
+    max-width: 260px;
+  }
+  &__rich-list{
+    margin-top: 17px;
+  }
+  &__bullets{
+    margin-top: 30px;
+    max-width: 260px;
+  }
+  &__bullet-list{
+    margin-top: 12px;
+  }
+  &__iconed-list{
+    margin-top: 5px;
+    max-width: 285px;
+  }
+  &__feedback{
+    grid-column: 2/ span 2;
+    margin-top: 12px;
+    margin-left: 25px;
+    max-width: 713px;
+    margin-bottom: 40px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      grid-column: 1/ span 2;
+    }
+    @media screen and (max-width: $form-elements-point_small) {
+      grid-column: initial;
+    }
+  }
+}
