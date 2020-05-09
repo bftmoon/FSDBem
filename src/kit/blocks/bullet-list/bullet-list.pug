@@ -1,6 +1,5 @@
-mixin bullet-list({items, title, subtitle})
+mixin bullet-list({items})
   ul.bullet-list&attributes(attributes)
-    +title({title, subtitle})
     for item in items
       li.bullet-list__item
         .bullet-list__bullet-box

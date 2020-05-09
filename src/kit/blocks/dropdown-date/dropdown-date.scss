@@ -1,36 +1,51 @@
-@import "../../env-styles/common";
+@import "../../env-styles/abstract";
+@import "../../env-styles/functions";
 
-.date-dropdown {
+.dropdown-date {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
 
-  &__first-date, &__last-date {
-    width: 100%;
-
-    &::selection {
-      background: none;
-    }
+  &__title{
+    margin-bottom: 5px;
   }
-
   &__iconed-input {
-    position: relative;
-    height: auto;
-    //min-width: pxToRem(117px);
+    @extend %field_bordered;
+    display: flex;
+    align-items: center;
     cursor: pointer;
   }
 
+  &__input {
+    @extend %field;
+
+    min-width: 90px;
+    width: 1%;
+    flex-grow: 2;
+    padding-left: 15px;
+
+    background: none;
+    cursor: pointer;
+    text-transform: lowercase;
+
+    &::placeholder{
+      text-transform: uppercase;
+    }
+  }
+
+  &__item{
+width: 100%;
+  }
+
   &__icon {
-    text-align: center;
-    line-height: pxToRem(44px);
-    margin: auto;
-    width: pxToRem(44px);
-    height: pxToRem(44px);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    justify-content: right;
+    flex-shrink: 0;
+    margin-right: 10px;
     color: $dark_shade50;
+  }
+
+  &__separator{
+    width: 20px;
+    flex-shrink: 0;
   }
 }
 

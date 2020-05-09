@@ -9,42 +9,45 @@
 }
 
 html {
-  //height: 100%; //todo: check where it using
+  height: 100%;
+
   font-size: $root-font-size;
   font-family: $montserrat;
+
   color: $dark_shade75;
   background: #f8f8f8;
 }
 
 body {
-  //height: 100%;
-  line-height: pxToRem(24px);
+  min-height: 100%;
   max-width: 1440px;
   margin: auto;
+
+  line-height: pxToRem(24px);
   background: white;
 }
 
 h1 {
+  line-height: pxToRem(30px);
+  font-size: pxToRem(24px);
   font-family: $quicksand;
   font-weight: bold;
-  font-size: pxToRem(24px);
-  line-height: pxToRem(30px);
   color: $dark_shade100;
 }
 
 h2 {
+  line-height: pxToRem(24px);
+  font-size: pxToRem(19px);
   font-family: $quicksand;
   font-weight: bold;
-  font-size: pxToRem(19px);
-  line-height: pxToRem(24px);
   color: $dark_shade100;
 }
 
 h3 {
+  line-height: pxToRem(15px);
+  font-size: pxToRem(12px);
   font-family: $montserrat;
   font-weight: bold;
-  font-size: pxToRem(12px);
-  line-height: pxToRem(15px);
   text-transform: uppercase;
   color: $dark_shade100;
 }

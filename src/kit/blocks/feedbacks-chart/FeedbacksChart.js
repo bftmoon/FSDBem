@@ -2,13 +2,14 @@ import RussianLangUtils from "../../Utils";
 
 class FeedbacksChart {
   init({$element, data, scale = 1}) {
+    if ($element.length !== 0) {
+      let temp = data[1];
+      data[1] = data[2];
+      data[2] = temp;
 
-    let temp = data[1];
-    data[1] = data[2];
-    data[2] = temp;
-
-    this._buildDonut($element, data, scale);
-    this._whiteSummary($element, data);
+      this._buildDonut($element, data, scale);
+      this._whiteSummary($element, data);
+    }
   }
 
   _buildDonut($element, data, scale) {

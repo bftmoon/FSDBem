@@ -2,7 +2,7 @@ class Expander {
   init($element, $controlledContent, isOpened = true) {
     const $button = $element.find('.js-expander__button');
     this._$icons = $button.find('.js-expander__icon');
-    this._$content = $controlledContent
+    this._$content = $controlledContent;
 
     this._toggleExpander = this._toggleExpander.bind(this);
     $button.on('click', this._toggleExpander);

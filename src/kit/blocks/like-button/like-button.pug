@@ -1,9 +1,11 @@
 mixin like-button(numOfLikes)
-  .like-button.js-like-button
+  .like-button.js-like-button(class=attributes.class)
+    - delete attributes.class
     input(type='checkbox').like-button__checker&attributes(attributes)
     .like-button__box
-      i.material-icons.like-button__active favorite
-      i.material-icons.like-button__passive favorite_border
-      .like-button__count.js-like-button__count= numOfLikes
+      .like-button__inner-box
+        i.material-icons.like-button__icon.like-button__icon_active favorite
+        i.material-icons.like-button__icon.like-button__icon_passive favorite_border
+        .like-button__count.js-like-button__count= numOfLikes
 
 

@@ -3,12 +3,13 @@
 .toggle {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
 
   &__box {
     position: relative;
     width: 40px;
     height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
   }
 
   &__input {

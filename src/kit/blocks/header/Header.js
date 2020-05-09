@@ -12,6 +12,7 @@ class Header {
   }
   _toggleSidebar(){
     this._$dim.toggle();
+    console.log('jo')
     this._$sidebar.toggleClass('header__content_opened');
   }
   static initAll(selector='.js-header'){

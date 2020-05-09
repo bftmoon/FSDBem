@@ -2,7 +2,9 @@
 
 .radio-list {
   border: none;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+  display: table; // flex problem in chrome
+  &__item{
+    vertical-align: middle;
+    margin-right: 20px;
+  }
 }

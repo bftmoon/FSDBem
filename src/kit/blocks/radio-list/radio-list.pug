@@ -1,5 +1,4 @@
-mixin radio-list({title, subtitle, items})
+mixin radio-list({items})
   fieldset.radio-list&attributes(attributes)
-    +title({title, subtitle})
     each item in items
-      +checkable-item(checkableType.radio, item.text)&attributes(item.attributes)
+      +checkable-item(checkableType.radio, item.text)&attributes(item.attributes).radio-list__item

@@ -20,13 +20,14 @@ class DropdownDate {
       offset: 5
     };
 
-    this._$inputStart = element.find('.date-dropdown__first-date')
-    this._$inputEnd = element.find('.date-dropdown__last-date')
+    this._$inputStart = element.find('.js-dropdown-date__input_first');
+    this._$inputEnd = element.find('.js-dropdown-date__input_last');
+    this._$inputStart.parent().on('click', () => this._picker.show())
 
     if (this._$inputEnd.length !== 0) {
       this._extractSecondDate = this._extractSecondDate.bind(this);
       params.onSelect = this._extractSecondDate;
-      this._$inputEnd.on('click', () => this._picker.show())
+      this._$inputEnd.parent().on('click', () => this._picker.show())
     } else {
       params.dateFormat = 'd M'
     }
@@ -50,7 +51,7 @@ class DropdownDate {
       text: 'Применить',
       class: 'datepicker--button datepicker--button-apply'
     });
-    $apply.on('click', ()=>this._picker.hide())
+    $apply.on('click', ()=>this._picker.hide());
     $cancel.after($apply);
   }
 }

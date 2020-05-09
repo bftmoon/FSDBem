@@ -47,6 +47,7 @@
 
     padding-right: 5px;
     padding-left: 15px;
+    padding-bottom: 4px;
 
     border-radius: 0 0 4px 4px;
     border: $border;
@@ -65,8 +66,7 @@
   }
 
   &__item {
-    height: pxToRem(44px);
-
+    height: pxToRem(37px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,7 +113,7 @@
 
   &__button {
     margin-top: 20px;
-    margin-bottom: 13px;
+    margin-bottom: 9px;
 
     font-weight: bold;
     text-transform: uppercase;

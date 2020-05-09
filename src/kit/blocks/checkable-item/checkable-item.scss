@@ -3,12 +3,12 @@
 
 .checkable-item {
   position: relative;
-  display: flex;
-  gap: 10px;
+  display: inline-flex;
 
   &__checker {
     width: pxToRem(20px);
     height: pxToRem(20px);
+    margin-right: 10px;
 
     flex-shrink: 0;
 

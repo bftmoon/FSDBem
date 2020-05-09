@@ -1,6 +1,5 @@
-mixin input({isDateMasked, title, subtitle})
+mixin input({isDateMasked})
   .input
-    +title({title, subtitle})
     if isDateMasked
       input(placeholder='ДД.ММ.ГГГГ' pattern='(\\d{2}\\.){2}\\d{4}$').input__field&attributes(attributes)
     else

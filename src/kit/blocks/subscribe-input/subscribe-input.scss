@@ -21,6 +21,9 @@
     margin: auto 10px;
     z-index: 1;
     flex-shrink: 0;
+    color: transparent;
+    background: $gradient;
+    -webkit-background-clip: text;
   }
   &__input:invalid + &__invalid-light{
     position: absolute;

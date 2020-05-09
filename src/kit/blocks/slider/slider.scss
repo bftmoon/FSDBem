@@ -13,13 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    //width: 100%;
     margin-bottom: 20px;
   }
 
   &__amount {
     text-align: end;
-    color: $dark_shade50 !important; // plugin uses style attribute
+    color: $dark_shade50 !important;
     font-weight: normal !important;
     background: white;
     border: none;

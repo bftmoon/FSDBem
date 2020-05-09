@@ -2,13 +2,9 @@
 @import "../../env-styles/abstract";
 
 .checkbox-list {
-  max-width: 266px;
-
   &__expander {
     @extend %field;
-    width: 100%;
-    border: none;
-    background: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,31 +19,29 @@
   }
 
   &__group {
-    border: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    border: none;
 
-    &[hidden] { // flex bug fix
+    &_hidden {
       display: none;
+      //height: 0;
     }
   }
 
   &__title {
-    //@extend .field;
     display: flex;
     align-items: center;
-    padding-left: 0; // todo: delete mixes
+    padding-left: 0;
+
+    font-size: pxToRem(12px);
+    color: $dark_shade100;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
-  &__expander_opened {
-    .checkbox-list__icon_more {
-      display: none;
-    }
-
-    .checkbox-list__icon_less {
-      display: flex;
-    }
+  &__item{
+    margin-bottom: 10px;
   }
 }
 

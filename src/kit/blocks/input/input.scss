@@ -5,14 +5,22 @@
   @extend %field_bordered;
   color: $dark_shade75;
   padding-right: 20px;
+  padding-left: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
-  //padding: 1%;
+
   &:hover {
     border-color: $dark_shade50;
   }
 
   &:focus {
     border-color: $dark_shade50;
+  }
+
+  &:invalid{
+    box-shadow: 0 0 5px $primary;
+  }
+  &::placeholder{
+    color: $dark_shade25;
   }
 }
