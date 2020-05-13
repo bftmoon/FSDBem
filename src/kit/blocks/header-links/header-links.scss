@@ -1,0 +1,86 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/functions";
+
+.header-links {
+  display: flex;
+  justify-content: flex-end;
+
+  &_vertical {
+    flex-direction: column;
+    margin: 30px 20px;
+  }
+
+  &__link {
+    flex-shrink: 0;
+    margin-right: 20px;
+    margin-left: 5px;
+    line-height: pxToRem(35px);
+    padding: pxToRem(2px);
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    &_type_home {
+      font-weight: bold;
+      color: $dark_shade75;
+
+      &:link, &:visited {
+        color: $dark_shade75;
+      }
+    }
+    &_with-menu{
+      margin-right: 10px;
+    }
+  }
+
+  &__buttons {
+    flex-shrink: 0;
+    display: flex;
+    vertical-align: center;
+    &_vertical{
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    //margin: auto 0 auto 20px;
+    height: pxToRem(34px);
+    &_login{
+
+    }
+  }
+  &__login-button{
+    margin: auto 0 auto 7px;
+    height: pxToRem(34px);
+  }
+
+  &__register-button{
+    margin: auto 0 auto 20px;
+    height: pxToRem(34px);
+  }
+
+  &__line {
+    margin: auto 0 auto 10px;
+    height: pxToRem(30px);
+    width: 1px;
+    background: $dark_shade10;
+    &_vertical{
+      display: none;
+    }
+  }
+
+  &__username {
+    align-self: center;
+    margin-right: 0;
+    padding-left: 30px;
+
+    &_vertical {
+      width: 100%;
+      margin: 20px 18px;
+      padding: 20px 0;
+      border-top: 1px solid $dark_shade10;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+mixin header-links({home, links, login, register, username, isVertical})
+  .header-links(class=isVertical?"header-links_vertical":"")
+    //if isVertical
+    //  .header-links__logo
+    //    +logo
+    if home
+      a(href=home.url).header-links__link.header-links__link_type_home=home.name
+    for link in links
+      if link.content
+        .header-links__link.header-links__link_with-menu(
+          class=isVertical ? "header-links__link_vertical" : ""
+        )
+          - link.isInline = isVertical
+          +link-with-menu(link)
+      else
+        a(href=link.url).header-links__link=link.name
+    if username
+      .header-links__line(
+        class=isVertical ? "header-links__line_vertical" : ""
+        )
+      a(
+        href="mock-address"
+        class=isVertical ? "header-links__username_vertical" : ""
+      ).header-links__username=username
+    else
+      .header-links__buttons(
+        class=isVertical ? "header-links__buttons_vertical" : ""
+      )
+        +button(login, {isFlat: true}).header-links__login-button
+        +button(register, {}).header-links__register-button

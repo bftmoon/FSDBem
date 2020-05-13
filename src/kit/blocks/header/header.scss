@@ -1,24 +1,41 @@
 @import "../../env-styles/functions";
 @import "../../env-styles/variables";
 
-$header-point: pxToRem(1015px);
+$header-point: pxToRem(850px);
 
 .header {
   height: pxToRem(70px);
 
   display: flex;
   justify-content: center;
+  vertical-align: center;
 
   background: white;
   box-shadow: $shadow_smaller;
 
   &__content {
     width: 100%;
-    max-width: pxToRem(1160px);
+    max-width: pxToRem(1170px);
     padding: 5px;
 
     display: flex;
+    justify-content: space-between;
+  }
+  &__main-links{
+    display: flex;
+    @media screen and (max-width: $header-point) {
+      display: none;
+    }
+  }
+  &__menu-button{
+    display: none;
+    @media screen and (max-width: $header-point) {
+      display: initial;
+    }
+  }
 
+  &__sidebar{
+    display: none;
     @media screen and (max-width: $header-point) {
       position: fixed;
       top: 0;
@@ -27,119 +44,31 @@ $header-point: pxToRem(1015px);
 
       height: 100%;
       width: 0;
-      max-width: 350px;
+      max-width: 300px;
       padding: 0;
 
+      display: flex;
+      overflow: hidden;
       flex-direction: column;
       background: white;
       box-shadow: $shadow_smaller;
 
       transition-property: width;
-      transition: 0.5s;
+      transition: 0.6s;
 
       &_opened {
         width: 100%;
         padding: 20px;
 
         transition-property: width;
-        transition: 0.5s;
-      }
-      &-img {
-        width: 130px;
-        margin-bottom: 15px;
+        transition: 0.6s;
       }
     }
   }
 
-  &__separator {
-    min-width: 30px;
-    flex-grow: 1;
-
-    @media screen and (max-width: $header-point) {
-      flex-grow: 0;
-    }
-  }
-
-  &__nav {
+  &__sidebar-logo{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    @media screen and (max-width: $header-point) {
-      flex-direction: column;
-      justify-items: center;
-      margin: 30px 0;
-    }
-  }
-
-  &__link {
-    padding: pxToRem(2px);
-    margin-right: 28px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-
-    text-decoration: none;
-
-    &:link, &:visited {
-      color: $dark_shade50;
-    }
-
-    &_type_home {
-      font-weight: bold;
-      color: $dark_shade75;
-
-      &:link, &:visited {
-        color: $dark_shade75;
-      }
-    }
-
-    @media screen and (max-width: $header-point) {
-      margin: 5px auto;
-      font-size: pxToRem(16px);
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    vertical-align: center;
-    flex-shrink: 0;
-    @media screen and (max-width: $header-point) {
-      margin-top: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
-
-  &__button {
-    padding: 10px 20px;
-    margin: auto 0 auto 20px;
-    @media screen and (max-width: $header-point) {
-      margin: 4px 5px;
-    }
-  }
-
-
-  &__line {
-    width: 1px;
-    height: pxToRem(30px);
-    margin: auto;
-
-    background: $dark_shade10;
-
-    @media screen and (max-width: $header-point) {
-      margin: 10px 0;
-      height: 1px;
-      width: 100%;
-    }
-  }
-
-  &__username {
-    margin-left: 28px;
-    display: flex;
-    vertical-align: baseline;
+    justify-content: center;
   }
 
   &__menu-button {
@@ -149,33 +78,13 @@ $header-point: pxToRem(1015px);
     color: $dark_shade50;
   }
 
-  &__content-on-collapsed {
-    display: none;
-    @media screen and (max-width: $header-point) {
-      width: 100%;
-      padding: 5px;
-
-      display: flex;
-      justify-content: space-between;
-
-      transition-property: right;
-      color: $dark_shade50;
-    }
-  }
-
   &__closing-button {
-    display: none;
     @media screen and (max-width: $header-point) {
-      display: initial;
       background: none;
       border: none;
       text-align: end;
       color: $dark_shade50;
     }
-  }
-
-  &__content-img {
-    margin: 20px auto;
   }
 
   &__dim {
@@ -191,6 +100,10 @@ $header-point: pxToRem(1015px);
 
       background: $dark_shade25;
       opacity: 0.5;
+
+      &_opened{
+        display: initial;
+      }
     }
   }
 }

@@ -1,0 +1,10 @@
+mixin link-with-menu({name, url, content, isInline=false})
+  .link-with-menu
+    .link-with-menu__title
+      a(href=url).link-with-menu__link=name
+      i.link-with-menu__icon expand_more
+    .link-with-menu__content(
+      class=isInline ? "link-with-menu__content_inline" : ""
+    )
+      for link in content
+        a(href=link.url).link-with-menu__child-link=link.name
