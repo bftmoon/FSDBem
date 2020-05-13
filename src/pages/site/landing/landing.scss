@@ -1,26 +1,40 @@
+$landing-page-point: 480px;
+
 .landing-page {
   &__main {
-    background: url(../../../../res/imgs/landing.jpg) center;
+    background: url(./imgs/landing.jpg) center;
     background-size: cover;
     height: 830px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $landing-page-point){
+      align-items: center;
+    }
   }
 
   &__card {
-    margin: 70px 140px;
-    max-width: 380px;
+    padding: 70px 5px 0;
+    margin: 0 9.3%;
+    max-width: 390px;
+    @media screen and (max-width: $landing-page-point){
+      margin: 0;
+    }
   }
 
   &__container {
-    width: 100%;
-    text-align: right;
-    margin-top: 320px;
     display: flex;
+    height: 100%;
+    margin-bottom: 20px;
     justify-content: flex-end;
+    align-items: flex-end;
   }
 
   &__text {
     max-width: 300px;
-    margin-right: calc(134 / 1440 * 100%);
+    margin-right: 9.4%;
+    text-align: right;
+    @media screen and (max-width: $landing-page-point){
+      margin: 0;
+    }
   }
 }

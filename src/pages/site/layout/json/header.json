@@ -1,0 +1,86 @@
+{
+  "links": [
+    {
+      "name": "О нас",
+      "url": "mock-address"
+    },
+    {
+      "name": "Услуги",
+      "url": "mock-address",
+      "content": [
+        {
+          "name": "Lorem",
+          "url": "mock-address"
+        },
+        {
+          "name": "Ipsum",
+          "url": "mock-address"
+        },
+        {
+          "name": "Желает",
+          "url": "mock-address"
+        },
+        {
+          "name": "Знать",
+          "url": "mock-address"
+        },
+        {
+          "name": "Где",
+          "url": "mock-address"
+        },
+        {
+          "name": "Сидит",
+          "url": "mock-address"
+        },
+        {
+          "name": "Фазан",
+          "url": "mock-address"
+        }
+      ]
+    },
+    {
+      "name": "Вакансии",
+      "url": "mock-address"
+    },
+    {
+      "name": "Новости",
+      "url": "mock-address"
+    },
+    {
+      "name": "Соглашения",
+      "url": "mock-address",
+      "content": [
+        {
+          "name": "Lorem",
+          "url": "mock-address"
+        },
+        {
+          "name": "Ipsum",
+          "url": "mock-address"
+        },
+        {
+          "name": "Желает",
+          "url": "mock-address"
+        },
+        {
+          "name": "Знать",
+          "url": "mock-address"
+        },
+        {
+          "name": "Где",
+          "url": "mock-address"
+        },
+        {
+          "name": "Сидит",
+          "url": "mock-address"
+        },
+        {
+          "name": "Фазан",
+          "url": "mock-address"
+        }
+      ]
+    }
+  ],
+  "login": "Войти",
+  "register": "Зарегистрироваться"
+}

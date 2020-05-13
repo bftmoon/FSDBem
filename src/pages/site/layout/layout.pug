@@ -1,0 +1,13 @@
+doctype html
+html(lang="ru")
+  include ../../../kit/kit
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    title Toxin
+  body
+    - const {home, links, login, register} = require(`../layout/json/header.json`)
+    +header({home, links, login, register})
+    block content
+    - const {tagline, menu, subscribe, copyright} = require(`../layout/json/footer.json`)
+    +footer({tagline, menu, subscribe, copyright})

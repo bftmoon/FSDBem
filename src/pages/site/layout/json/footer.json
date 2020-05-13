@@ -1,0 +1,70 @@
+{
+  "tagline": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+  "menu": [
+    {
+      "name": "Навигация",
+      "items": [
+        {
+          "name": "О нас",
+          "url": "mock-address"
+        },
+        {
+          "name": "Новости",
+          "url": "mock-address"
+        },
+        {
+          "name": "Служба поддержки",
+          "url": "mock-address"
+        },
+        {
+          "name": "Услуги",
+          "url": "mock-address"
+        }
+      ]
+    },
+    {
+      "name": "О нас",
+      "items": [
+        {
+          "name": "О сервисе",
+          "url": "mock-address"
+        },
+        {
+          "name": "Наша команда",
+          "url": "mock-address"
+        },
+        {
+          "name": "Вакансии",
+          "url": "mock-address"
+        },
+        {
+          "name": "Инвесторы",
+          "url": "mock-address"
+        }
+      ]
+    },
+    {
+      "name": "Служба поддержки",
+      "items": [
+        {
+          "name": "Соглашения",
+          "url": "mock-address"
+        },
+        {
+          "name": "Сообщества",
+          "url": "mock-address"
+        },
+        {
+          "name": "Связь с нами",
+          "url": "mock-address"
+        }
+      ]
+    }
+  ],
+  "subscribe": {
+    "title": "Подписка",
+    "description": "Получайте специальные предложения и новости сервиса",
+    "placeholder": "Email"
+  },
+  "copyright": "Copyright © 2018 Toxin отель. Все права зачищены."
+}
