@@ -3,13 +3,13 @@
 .colors-page {
   &__main {
     max-width: 1150px;
-    margin: auto;
+    margin: 32px auto;
     padding: 5px;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
     grid-row-gap: 60px;
-    @media screen and (max-width: 635px){
+    @media screen and (max-width: 635px) {
       justify-content: center;
     }
   }
@@ -19,7 +19,7 @@
     grid-template-columns: auto 1fr;
     grid-gap: 20px 40px;
     width: min-content;
-    @media screen and (max-width: 635px){
+    @media screen and (max-width: 635px) {
       justify-self: center;
     }
   }
@@ -58,12 +58,14 @@
       background: $secondary;
     }
   }
-&__description{
-  display: inline-flex;
-  flex-direction: column;
-  width: min-content;
-  white-space: nowrap;
-}
+
+  &__description {
+    display: inline-flex;
+    flex-direction: column;
+    width: min-content;
+    white-space: nowrap;
+  }
+
   &__name {
     margin-top: 6px;
 
@@ -93,7 +95,7 @@
     grid-row-gap: 50px;
     grid-column-gap: 30px;
 
-    @media screen and (max-width: 635px){
+    @media screen and (max-width: 635px) {
       justify-self: center;
     }
   }

@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  include ../../../kit/kit
+  head
+    meta(charset="UTF-8")
+    title Headers and footers
+  body.header-footers-page
+    - const {home, links, login, register} = require(`./json/header.json`)
+    - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
+    .header-footers-page__header
+      +kit-header
+    .header-footers-page__item
+      +header({home, links, login, register})
+    .header-footers-page__item
+      +header({home, links, login, register, username: 'Cosmin Negoita'})
+    .header-footers-page__item
+      +footer({tagline, menu, subscribe, copyright})
+    .header-footers-page__item
+      +simple-footer({tagline})

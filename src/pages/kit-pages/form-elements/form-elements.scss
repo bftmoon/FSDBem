@@ -3,16 +3,15 @@
 $form-elements-point_middle: 800px;
 $form-elements-point_small: 590px;
 
-.form-elements-page {
+.form-elements {
   &__main {
-    max-width: 1170px;
+    max-width: 1168px;
     padding: 5px;
-    margin: auto;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 320px));
-    grid-column-gap: 20px;
-    grid-row-gap: 30px;
-    justify-content: space-between;
+    grid-column-gap: 99px;
+    grid-row-gap: 70px;
 
     @media screen and (max-width: $form-elements-point_middle) {
       grid-template-columns: repeat(2, minmax(250px, 320px));
@@ -22,111 +21,38 @@ $form-elements-point_small: 590px;
     }
   }
 
-  &__title{
-    padding-bottom: 5px;
+  &__title {
+    margin-bottom: 5px;
   }
-
-  &__item{
-    margin-bottom: 20px;
-    &_height{
-      &_tall{
-        margin-bottom: 40px;
-      }
-    }
-    &_width{
-      &_short{
-        max-width: 266px;
-      }
-    }
+  &__hight-title{
+    margin-bottom: 15px;
   }
-  &__inputs{
-    max-width: 320px;
+  &__separator{
+    height: 20px;
   }
-  &__simple-checkables{
-    margin-left: 24px;
+  &__medium-separator{
+    height: 30px;
   }
-  &__checkbox-list{
+  &__big-separator{
+    height: 40px;
+  }
+  &__wrapper{
+    max-width: 266px;
+  }
+  &__small-wrapper{
     max-width: 222px;
-    margin-top: 10px;
-    margin-bottom: 35px;
-  }
-  &__radio{
-    margin-top: 12px;
-    margin-bottom: 40px;
-  }
-  &__toggle{
-    margin-top: 10px;
-    &_height_tall{
-      margin-top: 7px;
-      margin-bottom: 40px;
-    }
   }
   &__like{
-    margin: 12px 10px 40px 0;
-  }
-  &__rating{
-    margin: 10px 20px 0 0;
-  }
-  &__slider{
-    max-width: 266px;
-    margin-bottom: 44px;
-  }
-  &__button{
-    margin: 10px 20px 20px 0;
-  }
-  &__link{
     display: inline-block;
-    margin: 7px 20px 25px 0;
+    margin-right: 10px;
   }
-  &__navigator{
-    margin-bottom: 40px;
+  &__clickable-item{
+    display: inline-block;
+    margin-right: 20px;
   }
-  &__paginator{
-    margin-top: 10px;
-  }
-  &__dropdown{
-    &_first-in-item{
-      margin-top: 55px;
-      margin-bottom: 20px;
-    }
-    &_thin{
-      max-width: 266px;
-    }
-  }
-
-  &__expandable-checkboxes{
-    max-width: 266px;
-    margin-top: 16px;
-  }
-  &__expandable-checkbox{
-    &_opened {
-      margin-top: 20px;
-    }
-  }
-  &__rich-checkboxes{
-    margin-top: 30px;
-    max-width: 260px;
-  }
-  &__rich-list{
-    margin-top: 17px;
-  }
-  &__bullets{
-    margin-top: 30px;
-    max-width: 260px;
-  }
-  &__bullet-list{
-    margin-top: 12px;
-  }
-  &__iconed-list{
-    margin-top: 5px;
-    max-width: 285px;
-  }
-  &__feedback{
+  &__feedback {
     grid-column: 2/ span 2;
-    margin-top: 12px;
-    margin-left: 25px;
     max-width: 713px;
-    margin-bottom: 40px;
     @media screen and (max-width: $form-elements-point_middle) {
       grid-column: 1/ span 2;
     }

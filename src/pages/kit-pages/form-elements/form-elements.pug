@@ -3,189 +3,221 @@ html(lang="en")
   include ../../../kit/kit
   head
     meta(charset="UTF-8")
-    title UIKit
-  body.form-elements-page
+    title Form elements
+  body.form-elements
     -
       const simpleCheckboxData = [
-        {text: 'Завтрак'},
-        {text: 'Письменный стол', attributes: {checked: true}},
-        {text: 'Стул для кормления', attributes: {checked: true}},
-        {text: 'Кроватка', attributes: {checked: true}},
-        {text: 'Телевизор'},
-        {text: 'Шампунь'},
-        {text: 'Телевизор'},
-        {text: 'Шампунь'},
+        {text: "Завтрак"},
+        {text: "Письменный стол", attributes: {checked: true}},
+        {text: "Стул для кормления", attributes: {checked: true}},
+        {text: "Кроватка", attributes: {checked: true}},
+        {text: "Телевизор"},
+        {text: "Шампунь"}
       ];
 
     +kit-header
-    main.form-elements-page__main
-      .form-elements-page__inputs
-        +title({title: 'Text field', subtitle: 'Default'})
-        +input({})(placeholder='Email' type='email').form-elements-page__item
-        +title({title: 'Text field', subtitle: 'Hover/focus'})
-        +input({})(value='This is pretty awesome').form-elements-page__item
-        +guests-dropdown({title: 'Dropdown', subtitle: 'Default'}).form-elements-page__item
-        h3.form-elements-page__title Masked text field
-        +input({isDateMasked: true}).form-elements-page__item.form-elements-page__item_height_tall
-        +dropdown-date([{title: 'Date dropdown'}, {
-          title: 'Date dropdown',
-          date: '19.08.2019'
-        }]).form-elements-page__item_height_tall
-        +dropdown-date([{title: 'Filter date dropdown'}]).form-elements-page__item.form-elements-page__item_height_tall.form-elements-page__item_width_short
-        h3.form-elements-page__title Subscription text field
-        +subscribe-input.form-elements-page__item.form-elements-page__item_width_short
-      .form-elements-page__simple-checkables
-        h3.form-elements-page__title Checkbox buttons
-        +checkbox-list({
-          items: [
-            {
-              text: 'Можно курить',
-              attributes: {
-                name: '?',
-                value: 'smoke'
-              }
-            },
-            {
-              text: 'Можно с питомцами',
-              attributes: {
-                name: '?',
-                value: 'pet',
-                checked: true
-              }
-            },
-            {
-              text: 'Можно пригласить гостей (до 10 человек)',
-              attributes: {
-                name: '?',
-                value: 'visiters',
-                checked: 'checked'
-              }
-            },
-          ]
-        }).form-elements-page__checkbox-list
-        h3.form-elements-page__title Radio buttons
+    main.form-elements__main
+      .form-elements__inputs
+          +title({title: "Text field", subtitle: "Default"})
+          +input()(placeholder="Email" type="email")
+          .form-elements__separator
+          +title({title: "Text field", subtitle: "Hover / focus"})
+          +input()(value="This is pretty awesome")
+          .form-elements__separator
+          +guests-dropdown({title: "Dropdown", subtitle: "Default"})
+          .form-elements__separator
+          +title({title:"Masked text field", subtitle:"Default"})
+          +input({isDateMasked: true})
+          .form-elements__big-separator
+          +dropdown-date([{title: "Date dropdown"}, {
+            title: "Date dropdown",
+            date: "19.08.2019"
+          }])
+          .form-elements__big-separator
+          .form-elements__wrapper
+            +dropdown-date([{title: "Filter date dropdown"}])
+            .form-elements__big-separator
+            h3.form-elements__title Subscription text field
+            +subscribe-input
+      .form-elements__simple-checkables
+        .form-elements__small-wrapper
+          h3.form-elements__hight-title Checkbox buttons
+          +checkbox-list({
+            items: [
+              {
+                text: "Можно курить",
+                attributes: {
+                  name: "?",
+                  value: "smoke"
+                }
+              },
+              {
+                text: "Можно с питомцами",
+                attributes: {
+                  name: "?",
+                  value: "pet",
+                  checked: true
+                }
+              },
+              {
+                text: "Можно пригласить гостей (до 10 человек)",
+                attributes: {
+                  name: "?",
+                  value: "visiters",
+                  checked: "checked"
+                }
+              },
+            ]
+          })
+        .form-elements__medium-separator
+        h3.form-elements__hight-title Radio buttons
         +radio-list({
-          items: [
-            {
-              text: 'Мужчина',
-              attributes: {
-                value: 'M',
-                name: 'gender',
-                checked: true
+            items: [
+              {
+                text: "Мужчина",
+                attributes: {
+                  value: "M",
+                  name: "gender",
+                  checked: true
+                }
+              },
+              {
+                text: "Женщина",
+                attributes: {
+                  value: "W",
+                  name: "gender"
+                }
               }
-            },
-            {
-              text: 'Женщина',
-              attributes: {
-                value: 'W',
-                name: 'gender'
-              }
-            }
-          ]
-        }).form-elements-page__radio
-        h3.form-elements-page__title Toggle
-        +toggle('Получать спецпредложения')(checked).form-elements-page__toggle
-        +toggle('Получать спецпредложения').form-elements-page__toggle.form-elements-page__toggle_height_tall
-        h3.form-elements-page__title Like button
-        +like-button(2).form-elements-page__like
-        +like-button(12)(checked).form-elements-page__like
-        h3.form-elements-page__title Rate button
-        +rating({rating: 4, groupName: 'star-1'}).form-elements-page__rating
-        +rating({rating: 5, groupName: 'star-2'}).form-elements-page__rating
-      .form-elements-page__clickables
-        +slider({title: 'Range slider'}).form-elements-page__slider
-        h3.form-elements-page__title Buttons
-        .form-elements-page__buttons
-          +button('Click me', {}).form-elements-page__button
-          +button('Click me', {})(disabled).form-elements-page__button
-          +button('Click me', {isFlat: true}).form-elements-page__button
-          +button('Click me', {isFlat: true})(disabled).form-elements-page__button
-        .form-elements-page__links
-          +a('Click me')(href='mockHref').form-elements-page__link
-          +a('Click me').form-elements-page__link
-        +button('Перейти к оплате', {isArrowed: true}).form-elements-page__navigator
-        h3.form-elements-page__title Pagination
-        +paginator('1 – 12 из 100+ вариантов аренды').form-elements-page__paginator
-      .form-elements-page__dropdown-conditions
+            ]
+          })
+        .form-elements__big-separator
+        h3.form-elements__hight-title Toggle
+        +toggle("Получать спецпредложения")(checked)
+        +toggle("Получать спецпредложения")
+        .form-elements__big-separator
+        h3.form-elements__hight-title Like button
+        .form-elements__like
+          +like-button(2)
+        .form-elements__like
+          +like-button(12)(checked)
+        .form-elements__big-separator
+        h3.form-elements__hight-title Rate button
+        .form-elements__clickable-item
+          +rating({rating: 4, groupName: "star-1"})
+        .form-elements__clickable-item
+          +rating({rating: 5, groupName: "star-2"})
+      .form-elements__clickables
+        .form-elements__wrapper
+          +slider({title: "Range slider"})
+        .form-elements__big-separator
+        h3.form-elements__hight-title Buttons
+        .form-elements__clickable-item
+          +button("Click me", {})
+        .form-elements__clickable-item
+          +button("Click me", {})(disabled)
+        .form-elements__medium-separator
+        .form-elements__clickable-item
+          +button("Click me", {isFlat: true})
+        .form-elements__clickable-item
+          +button("Click me", {isFlat: true})(disabled)
+        .form-elements__medium-separator
+        .form-elements__clickable-item
+          +a("Click me")(href="mock-address")
+        .form-elements__clickable-item
+          +a("Click me")
+        .form-elements__medium-separator
+        +button("Перейти к оплате", {isArrowed: true})
+        .form-elements__big-separator
+        h3.form-elements__title Pagination
+        +paginator("1 – 12 из 100+ вариантов аренды")
+      .form-elements__dropdown-conditions.form-elements__wrapper
         +furniture-dropdown({
-          title: 'Dropdown',
-          subtitle: 'Default'
-        }).form-elements-page__dropdown_first-in-item.form-elements-page__dropdown_thin
+          counts: [2, 2, 0],
+          title: "Dropdown",
+          subtitle: "Default"
+        })
+        .form-elements__separator
         +furniture-dropdown({
-          title: 'Dropdown',
-          subtitle: 'Expanded',
+          counts: [2, 2, 0],
+          title: "Dropdown",
+          subtitle: "Expanded",
           isOpened: true,
           isInline: true
-        }).form-elements-page__dropdown_thin
-      .form-elements-page__dropdown_with-confirm
+        })
+      .form-elements__dropdown_with-confirm
         +guests-dropdown({
-          title: 'Dropdown',
+          title: "Dropdown",
           isOpened: true,
           isInline: true,
           withConfirm: true
-        }).form-elements-page__dropdown_first-in-item
-      .form-elements-page__dropdown-with-cancel
+        })
+      .form-elements__dropdown-with-cancel
         +guests-dropdown({
           counts: [2, 1, 0],
-          title: 'Dropdown',
+          title: "Dropdown",
           isOpened: true,
           isInline: true,
           withConfirm: true,
           withCancel: true
-        }).form-elements-page__dropdown_first-in-item
-      .form-elements-page__expandable-checkboxes
-        +checkbox-list({
-          items: simpleCheckboxData,
-          expandTitle: 'Expandable checkbox list'
-        }).form-elements-page__expandable-checkbox
-        +checkbox-list({
-          items: simpleCheckboxData,
-          expandTitle: 'Expandable checkbox list',
-          isOpened: true
-        }).form-elements-page__expandable-checkbox.form-elements-page__expandable-checkbox_opened
-      .form-elements-page__rich-checkboxes
-        h3 Rich checkbox buttons
-        +checkbox-list({
-          items: [
+        })
+      .form-elements__expandable-checkboxes
+        .form-elements__wrapper
+          +checkbox-list({
+            items: simpleCheckboxData,
+            expanderTitle: "Expandable checkbox list"
+          })
+          .form-elements__separator
+          +checkbox-list({
+            items: simpleCheckboxData,
+            expanderTitle: "Expandable checkbox list",
+            isOpened: true
+          })
+      .form-elements__rich-checkboxes
+        .form-elements__wrapper
+          h3.form-elements__hight-title Rich checkbox buttons
+          +checkbox-list({
+            items: [
+              {
+                text: "Широкий коридор",
+                description: "Ширина коридоров в номере не менее 91 см."
+              },
+              {
+                text: "Помощник для инвалидов",
+                description: "На 1 этаже вас встретит специалист и проводит до номера."
+              },
+            ]
+          })
+      .form-elements__bullets
+        .form-elements__wrapper
+          h3.form-elements__hight-title Bullet list
+          +bullet-list({
+            items: [
+              "Нельзя с питомцами",
+              "Без вечеринок и меропреятий",
+              "Время прибытия — после 13:00, а выезд до 12:00"
+            ]
+          })
+      .form-elements__iconed-list
+        .form-elements__wrapper
+          +iconed-list([
             {
-              text: 'Широкий коридор',
-              description: 'Ширина коридоров в номере не менее 91 см.'
+              icon: "insert_emoticon",
+              title: "Комфорт",
+              description: "Шумопоглощающие стены"
             },
             {
-              text: 'Помощник для инвалидов',
-              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+              icon: "location_city",
+              title: "Удобство",
+              description: "Окно в каждой из спален"
             },
-          ]
-        }).form-elements-page__rich-list
-      .form-elements-page__bullets
-        h3 Bullet list
-        +bullet-list({
-          items: [
-            'Нельзя с питомцами',
-            'Без вечеринок и меропреятий',
-            'Время прибытия — после 13:00, а выезд до 12:00'
-          ]
-        }).form-elements-page__bullet-list
-      .form-elements-page__iconed-list
-        +iconed-list([
-          {
-            icon: 'insert_emoticon',
-            title: 'Комфорт',
-            description: 'Шумопоглощающие стены'
-          },
-          {
-            icon: 'location_city',
-            title: 'Удобство',
-            description: 'Окно в каждой из спален'
-          },
-        ])
-      .form-elements-page__feedback
+          ])
+      .form-elements__feedback
         +feedback(
           {
-            img: {src: './imgs/avatar-1.jpg', alt: 'Somebody'},
-            name: 'Мурад Сарафанов',
-            time: '5 дней назад',
-            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+            img: {src: "./imgs/avatar-1.jpg", alt: "Somebody"},
+            name: "Мурад Сарафанов",
+            time: "5 дней назад",
+            text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
             like: {count: 12, active: true}
           })
 

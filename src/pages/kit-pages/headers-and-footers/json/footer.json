@@ -1,0 +1,70 @@
+{
+  "tagline": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+  "menu": [
+    {
+      "name": "navigation",
+      "items": [
+        {
+          "name": "About Us",
+          "url": "mock-address"
+        },
+        {
+          "name": "News",
+          "url": "mock-address"
+        },
+        {
+          "name": "Support",
+          "url": "mock-address"
+        },
+        {
+          "name": "Products",
+          "url": "mock-address"
+        }
+      ]
+    },
+    {
+      "name": "About Us",
+      "items": [
+        {
+          "name": "Who we are",
+          "url": "mock-address"
+        },
+        {
+          "name": "Our team",
+          "url": "mock-address"
+        },
+        {
+          "name": "Careers",
+          "url": "mock-address"
+        },
+        {
+          "name": "Investors",
+          "url": "mock-address"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "items": [
+        {
+          "name": "Documentation",
+          "url": "mock-address"
+        },
+        {
+          "name": "Community",
+          "url": "mock-address"
+        },
+        {
+          "name": "Get in Touch",
+          "url": "mock-address"
+        }
+      ]
+    }
+  ],
+  "subscribe": {
+    "title": "Subscribe to our newsletter",
+    "description": "Receive our latest news and promotions in your inbox!",
+    "placeholder": "Your email address"
+  },
+  "copyright": "Copyright © 2018 Toxin UI Kit. All rights reserved."
+}

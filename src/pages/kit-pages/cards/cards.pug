@@ -1,0 +1,50 @@
+doctype html
+html(lang="ru")
+  include ../../../kit/kit
+  head
+    meta(charset="UTF-8")
+    title Cards
+  body.cards-example
+    +kit-header.cards-example__header
+    main.cards-example__main
+      .cards-example__wrapper-for-chrome
+        +search-card
+      .cards-example__wrapper-for-chrome
+        +registration-card
+      .cards-example__wrapper-for-chrome
+        +calculator-card({
+          room: {number: 888, price: "9 990₽", isLux: true},
+          options: {startDate: "19.08.2019", endDate: "23.08.2019", daysCount: 4, guests: [2, 1, 0]},
+          costs: {cleanPrice: "39 960₽", service: "0₽", discount: "2 179₽", overService: "300₽", summary:"38 081₽"}
+          })
+      .cards-example__wrapper-for-chrome
+        +login-card
+      .cards-example__wrapper-for-chrome.cards-example__calendar
+        +dropdown-date([{}], true)
+      .cards-example__wrapper-for-chrome
+        +room-card({
+          imgs: [
+            {srcName: "room-1.jpg", alt: "room"},
+            {srcName: "room-1.jpg", alt: "room"},
+            {srcName: "room-1.jpg", alt: "room"},
+            {srcName: "room-1.jpg", alt: "room"},
+          ],
+          number: 888,
+          price: "9 990₽",
+          isLux: true,
+          rating: 5,
+          reviewCount: 145
+          })
+      .cards-example__wrapper-for-chrome
+        +room-card({
+          imgs: [
+            {srcName: "room-2.jpg", alt: "room"},
+            {srcName: "room-2.jpg", alt: "room"},
+            {srcName: "room-2.jpg", alt: "room"},
+            {srcName: "room-2.jpg", alt: "room"}
+          ],
+          number: 840,
+          price: "9 900₽",
+          rating: 4,
+          reviewCount: 65
+        })

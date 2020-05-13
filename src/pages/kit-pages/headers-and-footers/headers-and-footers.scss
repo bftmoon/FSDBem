@@ -1,5 +1,8 @@
-.header-footers-example{
+.header-footers-page{
   background: #F4F4F6;
+  &__header{
+    margin-bottom: 42px;
+  }
   &__item{
     margin-bottom: 40px;
   }
