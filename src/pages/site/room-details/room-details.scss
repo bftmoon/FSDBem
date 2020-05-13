@@ -1,0 +1,91 @@
+$details-page-point-medium: 850px;
+$details-page-point-small: 430px;
+
+.details-page {
+  &__main {
+    padding: 0;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: 34.0625% 34.0625% auto;
+    // @formatter:off
+    grid-template-areas:
+        "img-1 img-1 img-2"
+        "img-1 img-1 img-3"
+    ;
+    // @formatter:on
+    @media screen and (max-width: $details-page-point-medium) {
+      grid-template-columns: 1fr 1fr;
+      // @formatter:off
+      grid-template-areas:
+          "img-1 img-1"
+          "img-2 img-3"
+      ;
+      // @formatter:on
+    }
+    @media screen and (max-width: $details-page-point-small) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "img-1" "img-2" "img-3";
+    }
+  }
+
+  &__image-1 {
+    width: 100%;
+    grid-area: img-1;
+  }
+
+  &__image-2 {
+    width: 100%;
+    grid-area: img-2;
+  }
+
+  &__image-3 {
+    width: 100%;
+    grid-area: img-3;
+  }
+
+  &__details {
+    max-width: 1160px;
+    margin: auto;
+    padding: 5px;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+    // @formatter:off
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "info chart card"
+        "feedbacks feedbacks card"
+        "rules cancel card"
+    ;
+    // @formatter:on
+    &-container{
+
+    }
+  }
+
+  &__info{
+    grid-area: info;
+  }
+  &__chart{
+    grid-area: chart;
+  }
+  &__feedbacks{
+    grid-area: feedbacks;
+  }
+  &__rules{
+    grid-area: rules;
+  }
+  &__cancel-info{
+    grid-area: cancel;
+  }
+  &__card{
+    grid-area: card;
+    &-block{
+      max-width: 380px;
+      margin: 10px;
+    }
+  }
+
+}
