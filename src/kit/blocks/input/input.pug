@@ -1,7 +1,10 @@
-mixin input({isDateMasked})
+mixin input(isDateMasked=false)
   .input
     if isDateMasked
-      input(placeholder='ДД.ММ.ГГГГ' pattern='(\\d{2}\\.){2}\\d{4}$').input__field&attributes(attributes)
+      input(
+        placeholder="ДД.ММ.ГГГГ"
+        pattern="(\\d{2}\\.){2}\\d{4}$"
+      ).input__field&attributes(attributes)
     else
       input.input__field&attributes(attributes)
 

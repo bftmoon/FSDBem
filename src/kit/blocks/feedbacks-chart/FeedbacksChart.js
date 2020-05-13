@@ -3,13 +3,16 @@ import RussianLangUtils from "../../Utils";
 class FeedbacksChart {
   init({$element, data, scale = 1}) {
     if ($element.length !== 0) {
-      let temp = data[1];
-      data[1] = data[2];
-      data[2] = temp;
-
+      this._swapUnordered(data);
       this._buildDonut($element, data, scale);
-      this._whiteSummary($element, data);
+      this._writeSummary($element, data);
     }
+  }
+
+  _swapUnordered(data){
+    let temp = data[1];
+    data[1] = data[2];
+    data[2] = temp;
   }
 
   _buildDonut($element, data, scale) {
@@ -25,7 +28,7 @@ class FeedbacksChart {
     canvas.height = size;
 
     this._calculateRadianPoints(data).forEach(item => {
-      let gradient = context.createLinearGradient(0, 0, 0, size);
+      const gradient = context.createLinearGradient(0, 0, 0, size);
       gradient.addColorStop(0, item.gradient[0]);
       gradient.addColorStop(1, item.gradient[1]);
 
@@ -45,8 +48,8 @@ class FeedbacksChart {
       ['#6FCF97', '#66D2EA'],
       ['#919191', '#3D4975'],
     ];
-    let startPoint = Math.PI / 2; // 270 deg
-    const gapWidth = Math.PI / 90; // 2 deg
+    let startPoint = Math.PI / 2;
+    const gapWidth = Math.PI / 90;
     const freeSpace = 2 * Math.PI - gapWidth * data.filter(size => size !== 0).length;
     const sum = data.reduce((a, b) => a + b, 0);
     const points = [];
@@ -65,11 +68,15 @@ class FeedbacksChart {
     return points;
   }
 
-  _whiteSummary($element, data) {
+  _writeSummary($element, data) {
     const [count, voice] = $element.find('.js-feedbacks-chart__summary').children();
     const voiceSum = data.reduce((a, b) => a + b, 0);
     count.innerText = voiceSum;
-    voice.innerText = RussianLangUtils.selectWordByCount(voiceSum, ['голосов', 'голос', 'голоса', 'голосов']);
+    voice.innerText = RussianLangUtils.selectWordByCount(
+      voiceSum,
+      ['голосов', 'голос', 'голоса', 'голосов'],
+      {}
+    );
   }
 
   static initDefault({selector = '.js-feedbacks-chart', data = [0, 0, 0, 0]}) {

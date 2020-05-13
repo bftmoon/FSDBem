@@ -8,13 +8,16 @@
   &__input{
     background: none;
     border: none;
-    margin-left: 10px;
+    margin-left: 15px;
     width: 1%;
     flex-grow: 1;
     flex-shrink: 2;
     z-index: 1;
     &:invalid{
       box-shadow: none;
+    }
+    &::placeholder{
+      color: $dark_shade50;
     }
   }
   &__icon{

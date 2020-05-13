@@ -1,8 +1,8 @@
 mixin guests-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline, withConfirm, withCancel})
   +dropdown-menu([
-    {text: 'Взрослые', count: counts[0]},
-    {text: 'Дети', count: counts[1]},
-    {text: 'Младенцы', count: counts[2]},
+    {text: "Взрослые", count: counts[0]},
+    {text: "Дети", count: counts[1]},
+    {text: "Младенцы", count: counts[2]},
   ],
     {title, subtitle, isOpened, isInline, withConfirm, withCancel}
   ).js-guests-dropdown&attributes(attributes)

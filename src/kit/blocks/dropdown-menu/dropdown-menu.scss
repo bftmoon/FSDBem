@@ -41,6 +41,8 @@
   }
 
   &__content {
+    display: none;
+
     width: 100%;
     height: auto;
     z-index: 10;
@@ -62,6 +64,9 @@
 
     &_over {
       position: absolute;
+    }
+    &_opened{
+      display: initial;
     }
   }
 
@@ -130,8 +135,8 @@
       color: $dark_shade50;
     }
 
-    &:hover {
-      text-shadow: $text_shadow;
+    &_hidden{
+      display: none;
     }
   }
 }

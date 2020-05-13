@@ -1,11 +1,22 @@
-// [{text, attributes:{}, description?}], string, bool
-mixin checkbox-list({items, expandTitle, isOpened})
-  .checkbox-list.js-checkbox-list&attributes(attributes)
-    if expandTitle
-      button(type='button').checkbox-list__expander.js-checkbox-list__expander
-        .checkbox-list__title=expandTitle
-        i(hidden=isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_more
-        i(hidden=!isOpened).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_less
-    div(class=expandTitle && !isOpened? 'checkbox-list__group_hidden':'').checkbox-list__group.js-checkbox-list__group
+// items: {text, attributes:{}, description?}]
+mixin checkbox-list({items, expanderTitle, isOpened})
+  .checkbox-list.js-checkbox-list
+    if expanderTitle
+      button(type="button").checkbox-list__expander.js-checkbox-list__expander&attributes(attributes)
+        .checkbox-list__title=expanderTitle
+        i(
+          class=isOpened ? "checkbox-list__icon_hidden" : ""
+        ).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_more
+        i(
+          class=!isOpened ? "checkbox-list__icon_hidden" : ""
+        ).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_less
+    div(
+      class=expanderTitle && !isOpened ? "checkbox-list__group_hidden" : ""
+    ).checkbox-list__group.js-checkbox-list__group
       each el in items
-        +checkable-item(checkableType.checkbox, el.text, el.description).checkbox-list__item&attributes(el.attributes)
+        .checkbox-list__item
+          +checkable-item({
+            type: checkableType.checkbox,
+            text: el.text,
+            description: el.description
+          })&attributes(el.attributes)

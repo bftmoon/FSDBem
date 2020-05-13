@@ -58,19 +58,19 @@
     border-radius: 50%;
     margin: auto 5px;
 
-    &_1 {
+    &_0 {
       background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
     }
 
-    &_2 {
+    &_1 {
       background: $secondary_gradient;
     }
 
-    &_3 {
+    &_2 {
       background: $gradient;
     }
 
-    &_4 {
+    &_3 {
       background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     }
   }

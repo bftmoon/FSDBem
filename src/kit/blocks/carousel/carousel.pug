@@ -1,6 +1,10 @@
 mixin carousel(imgs)
-  .carousel&attributes(attributes)
+  .carousel
     ul.carousel__content.js-carousel__content
       for img in imgs
-        li
-          img.carousel__img(src=require(`@res/imgs/${img.srcName}`).default alt=img.alt)
+        li.carousel__imgs
+          img.carousel__img(
+            src=require(`@res/imgs/${img.srcName}`).default
+            alt=img.alt
+          )
+          // todo: src

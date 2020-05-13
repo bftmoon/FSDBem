@@ -3,12 +3,12 @@ class ExpandableCheckboxList {
     this._$icons = $expander.find('.js-checkbox-list__icon');
     this._$content = $expander.find('.js-checkbox-list__group');
 
-    this._toggleElements = this._toggleElements.bind(this);
-    $expander.find('.js-checkbox-list__expander').on('click', this._toggleElements)
+    this._handleExpanderClick = this._handleExpanderClick.bind(this);
+    $expander.find('.js-checkbox-list__expander').on('click', this._handleExpanderClick)
   }
 
-  _toggleElements () {
-    this._$icons.toggle();
+  _handleExpanderClick() {
+    this._$icons.toggleClass('checkbox-list__icon_hidden');
     this._$content.toggleClass('checkbox-list__group_hidden');
   }
 

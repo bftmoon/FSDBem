@@ -1,13 +1,13 @@
 // imgs: [{srcName, alt}]
 mixin room-card({imgs, number, isLux, price, rating=0, reviewCount=0})
-  .room-card&attributes(attributes)
-    +carousel(imgs).room-card__carousel
+  .room-card
+    +carousel(imgs)
     .room-card__description
       +room-title({number, isLux, price, isMiniStyle:true})
       .room-card__impression
         +rating({rating})
         .room-card__rewiew
-          span.room-card__rewiew-count=reviewCount + ' '
+          span.room-card__count=reviewCount + " "
           | Отзывов
 
 

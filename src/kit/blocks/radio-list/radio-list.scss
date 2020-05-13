@@ -2,9 +2,11 @@
 
 .radio-list {
   border: none;
-  display: table; // flex problem in chrome
+  &__wrapper-for-chrome{
+    display: flex;
+  }
   &__item{
-    vertical-align: middle;
     margin-right: 20px;
+    line-height: 100%;
   }
 }

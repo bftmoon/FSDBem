@@ -1,13 +1,12 @@
-- const checkableType ={checkbox: 'checkbox', radio: 'radio'}
+- const checkableType ={checkbox: "checkbox", radio: "radio"}
 
-mixin checkable-item(type, text, description)
-  .checkable-item(class=attributes.class)
-    - delete attributes.class
+mixin checkable-item({type, text, description})
+  .checkable-item
     input.checkable-item__input(type=type)&attributes(attributes)
-    .checkable-item__checker(class='checkable-item__checker_' + type)
-    if description !== undefined
-      .checkable-item__text(class='checkable-item__text_' + type)
+    .checkable-item__checker(class="checkable-item__checker_" + type)
+    if description
+      .checkable-item__text(class="checkable-item__text_" + type)
         .checkable-item__text__title=text
         .checkable-item__text__description=description
     else
-      .checkable-item__text(class='checkable-item__text_' + type)=text
+      .checkable-item__text(class="checkable-item__text_" + type)=text

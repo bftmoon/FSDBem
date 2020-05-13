@@ -1,0 +1,40 @@
+@import "../../env-styles/variables";
+@import "../../env-styles/abstract";
+
+.registration-card {
+  @extend %card;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__section {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__login {
+    &-offer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $dark_shade100;
+    }
+
+    &-button {
+      width: 99px;
+    }
+  }
+}

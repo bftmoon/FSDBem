@@ -1,7 +1,7 @@
 mixin slider({title})
   .slider.js-slider&attributes(attributes)
     label.slider__header
-      span=title
+      .slider__title=title
       input.slider__amount.js-slider__amount(readonly)
     .slider__picker.js-slider__picker
 

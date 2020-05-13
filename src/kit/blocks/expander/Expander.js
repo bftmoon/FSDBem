@@ -4,15 +4,15 @@ class Expander {
     this._$icons = $button.find('.js-expander__icon');
     this._$content = $controlledContent;
 
-    this._toggleExpander = this._toggleExpander.bind(this);
-    $button.on('click', this._toggleExpander);
+    this._handleExpanderClick = this._handleExpanderClick.bind(this);
+    $button.on('click', this._handleExpanderClick);
 
     if (!isOpened)
-      this._toggleExpander()
+      this._handleExpanderClick()
   }
 
-  _toggleExpander() {
-    this._$icons.toggle();
+  _handleExpanderClick() {
+    this._$icons.toggleClass('expander__icon_hidden');
     this._$content.toggle();
   }
 

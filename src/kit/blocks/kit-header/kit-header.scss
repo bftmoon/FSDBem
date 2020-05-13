@@ -1,10 +1,7 @@
 @import "../../env-styles/common";
 
 .kit-header{
-  height: 140px;
-  &__img{
-    margin: 30px 0 0 30px;
-    color: $dark_shade25;
-  }
+  padding: 30px;
+  line-height: 0;
 }
 

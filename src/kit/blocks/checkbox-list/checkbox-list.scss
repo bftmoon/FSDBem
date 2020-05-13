@@ -13,7 +13,7 @@
   &__icon {
     margin: auto 10px;
 
-    &[hidden]{
+    &_hidden{
       display: none;
     }
   }
@@ -25,7 +25,6 @@
 
     &_hidden {
       display: none;
-      //height: 0;
     }
   }
 
@@ -42,6 +41,7 @@
 
   &__item{
     margin-bottom: 10px;
+    display: flex;
   }
 }
 

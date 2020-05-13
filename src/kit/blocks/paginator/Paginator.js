@@ -1,19 +1,23 @@
 class Paginator {
 
-  init($element, {page = 1, count = 15, href = 'mockHref/'}) {
+  init($element, {page = 1, count = 15, href = 'mock-address'}) {
     const items = [];
     if (page > 1) items.push(this._buildArrow(page, href, false));
 
     const pageNums = this._preparePageNums(page, count);
-    pageNums.forEach((element, index) => {
-      if (index > 0 && (element - pageNums[index - 1]) > 1) {
+    pageNums.forEach((pageNum, index) => {
+      if (this._checkIsThreeDotsRequired(index, pageNum, pageNums)) {
         items.push(this._buildThreeDot());
       }
-      items.push(this._buildPageNum(element, href, page))
+      items.push(this._buildPageNum(pageNum, href, page))
     })
 
     if (page < count) items.push(this._buildArrow(page, href, true));
     $element.prepend(this._buildPaginator(items));
+  }
+
+  _checkIsThreeDotsRequired(index, pageNum, pageNums) {
+    return index > 0 && (pageNum - pageNums[index - 1]) > 1;
   }
 
   _buildPaginator(items) {
@@ -78,8 +82,8 @@ class Paginator {
     return [...new Set(pages)];
   }
 
-  static initAll(selector='.js-paginator'){
-    $(selector).each((_, element)=>new Paginator().init($(element), {}))
+  static initAll(selector = '.js-paginator') {
+    $(selector).each((_, element) => new Paginator().init($(element), {}))
   }
 }
 

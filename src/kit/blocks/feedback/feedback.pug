@@ -1,11 +1,12 @@
 include ../like-button/like-button
-// {img: {src, alt}, name, time, text, like: {count, active}
+// img: {src, alt}
+// like: {count, active}
 mixin feedback({img, name, time, text, like})
-  .feedback&attributes(attributes)
+  .feedback
     img.feedback__img(src=require(`${img.src}`).default alt=img.alt)
-    div
+    .feedback__title
       .feedback__user=name
-      div=time
+      .feedback__time=time
     .feedback__like
       +like-button(like.count)(checked=like.active)
-    div=text
+    .feedback__text=text

@@ -1,7 +1,6 @@
 mixin toggle(text)
-  label.toggle(class=attributes.class)
-    - delete attributes.class
+  label.toggle
     .toggle__box
-      input(type='checkbox').toggle__input&attributes(attributes)
+      input(type="checkbox").toggle__input&attributes(attributes)
       .toggle__checker
     span.toggle__text=text

@@ -1,0 +1,45 @@
+mixin registration-card
+  .registration-card
+    h1.registration-card__header Регистрация аккаунта
+    form.registration-card__form&attributes(attributes)
+      .registration-card__section
+        .registration-card__item
+          +input()(
+            placeholder="Имя"
+            name="first-name"
+          )
+        .registration-card__item
+          +input()(
+            placeholder="Фамилия"
+            name="last-name"
+          )
+        .registration-card__item
+          +radio-list({
+            items: [
+              {text: "Мужчина", attributes: {value: "M", name: "gender", checked: true}},
+              {text: "Женщина", attributes: {value: "W", name: "gender"}}
+            ]
+          })
+      .registration-card__section
+        h3.registration-card__title Дата рождения
+        +input(true)(name="birthday")
+      .registration-card__section
+        h3.registration-card__title Данные для входа в сервис
+        .registration-card__item
+          +input()(
+            placeholder="Email"
+            type="email"
+            name="email"
+          )
+        .registration-card__item
+          +input()(
+            placeholder="Пароль"
+            type="password"
+            name="password"
+          )
+        +toggle("Получать спецпредложения")
+      .registration-card__section
+        +button("Перейти к оплате", {isArrowed: true}).registration-card__submit
+    .registration-card__login-offer
+      | Уже есть аккаунт на Toxin
+      +button("Войти", {isFlat: true}).registration-card__login-button

@@ -1,20 +1,40 @@
 // data: [{text, name, count}]
 mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withConfirm, withCancel})
-  div(class=attributes.class).dropdown-menu
+  .dropdown-menu.js-dropdown-menu&attributes(attributes)
     +title({title, subtitle})
-    button(type='button' class=isOpened?'dropdown-menu__header_opened':'').dropdown-menu__header
+    button(
+      type="button"
+      class=isOpened ? "dropdown-menu__header_opened" : ""
+    ).dropdown-menu__header.js-dropdown-menu__header
       span.dropdown-menu__text
       i.material-icons.dropdown-menu__icon expand_more
-    - delete attributes.class
-    fieldset(class=!isInline ? 'dropdown-menu__content_over': '' hidden=!isOpened).dropdown-menu__content&attributes(attributes)
+    fieldset(
+      class=[
+        !isInline ? "dropdown-menu__content_over" : "",
+        isOpened ? "dropdown-menu__content_opened" : ""
+      ]
+    ).dropdown-menu__content&attributes(attributes)
       for item in data
         .dropdown-menu__item
           span=item.text
           .dropdown-menu__counter
-            button(type='button' disabled=item.count===0).dropdown-menu__decrement -
-            input(value=item.count name=data.name readonly).dropdown-menu__count
-            button(type='button').dropdown-menu__increment +
+            button(
+              type="button"
+              disabled=item.count === 0
+            ).dropdown-menu__decrement.js-dropdown-menu__decrement -
+            input(
+              value=item.count
+              name=data.name
+              readonly
+            ).dropdown-menu__count.js-dropdown-menu__count
+            button(type="button").dropdown-menu__increment.js-dropdown-menu__increment +
       if !attributes.disabled
-        .dropdown-menu__buttons
-          button(type='button' hidden=!withConfirm).dropdown-menu__button.dropdown-menu__button_type_confirm Применить
-          button(type='button' hidden=!withCancel).dropdown-menu__button.dropdown-menu__button_type_cancel Очистить
+        .dropdown-menu__buttons.js-dropdown-menu__buttons
+          button(
+            type="button"
+            class=!withConfirm ? "dropdown-menu__button_hidden" : ""
+          ).dropdown-menu__button.dropdown-menu__button_type_confirm.js-dropdown-menu__button_type_confirm Применить
+          button(
+            type="button"
+            class=!withCancel ? "dropdown-menu__button_hidden" : ""
+          ).dropdown-menu__button.dropdown-menu__button_type_cancel.js-dropdown-menu__button_type_cancel Очистить

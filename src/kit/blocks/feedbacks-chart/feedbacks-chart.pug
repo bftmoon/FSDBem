@@ -6,16 +6,7 @@ mixin feedbacks-chart
         .feedbacks-chart__count
         .feedbacks-chart__voice
     ul.feedbacks-chart__legend
-      li.feedbacks-chart__item
-        .feedbacks-chart__bullet.feedbacks-chart__bullet_1
-        .feedbacks-chart__text Великолепно
-      li.feedbacks-chart__item
-        .feedbacks-chart__bullet.feedbacks-chart__bullet_2
-        .feedbacks-chart__text Хорошо
-      li.feedbacks-chart__item
-        .feedbacks-chart__bullet.feedbacks-chart__bullet_3
-        .feedbacks-chart__text Удовлетворительно
-      li.feedbacks-chart__item
-        .feedbacks-chart__bullet.feedbacks-chart__bullet_4
-        .feedbacks-chart__text Разочарован
-
+      for item, index in ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
+        li.feedbacks-chart__item
+          .feedbacks-chart__bullet(class="feedbacks-chart__bullet_" +index)
+          .feedbacks-chart__text=item
