@@ -1,0 +1,55 @@
+mixin calculator-card({room, options, costs})
+  -
+    const calculates = [
+      {
+        info: room.price + " x " + options.daysCount + " суток",
+        price: costs.cleanPrice
+      },
+      {
+        info: "Сбор за услуги: скидка " + costs.discount,
+        tooltip: "some important info",
+        price: costs.service
+      },
+      {
+        info: "Сбор за дополнительные услуги",
+        tooltip: "some important info",
+        price: costs.overService
+      }
+    ]
+  .calculator-card
+    .calculator-card__title
+      +room-title({
+        number: room.number,
+        price: room.price,
+        isLux: room.isLux
+      })
+    form&attributes(attributes)
+      .calculator-card__date
+        +dropdown-date([
+          {title: "Прибытие", date: options.startDate},
+          {title: "Выезд", date: options.endDate},
+        ])(disabled)
+      .calculator-card__guests
+        +guests-dropdown({
+          title: "Гости",
+          counts: options.guests
+        })(disabled)
+      .calculator-card__calculates
+        .calculator-card__price-info
+          span.calculator-card__price= room.price
+          span.calculator-card__info-part= " x " + options.daysCount + " суток"
+        .calculator-card__empty-tooltip
+        .calculator-card__price-item= costs.cleanPrice
+        .calculator-card__price-info
+          | Сбор за услуги: скидка
+          span.calculator-card__price=" " + costs.discount
+        .calculator-card__tooltip(title="some important info") i
+        .calculator-card__price-item= costs.service
+        .calculator-card__price-info= "Сбор за дополнительные услуги"
+        .calculator-card__tooltip(title="some important info") i
+        .calculator-card__price-item= costs.overService
+      h2.calculator-card__result
+        | Итого
+        .calculator-card__separator
+        .calculator-card__summary= costs.summary
+      +button("Забронировать", {isArrowed: true})

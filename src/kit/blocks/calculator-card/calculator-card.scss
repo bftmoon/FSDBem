@@ -4,38 +4,52 @@
 
 .calculator-card{
   @extend %card;
-  display: flex;
-  flex-direction: column;
-  gap: pxToRem(20px);
-  &__calculates{
-    margin-top: 1px;
-    line-height: pxToRem(18px);
-    display: grid;
-    grid-row-gap: pxToRem(14px);
-    grid-column-gap: pxToRem(9px);
-    grid-template-columns: 0.75fr auto 0.2fr;
-    vertical-align: center;
+
+  &__title{
+    margin-bottom: 20px;
   }
-  &__info{
-    color: $dark_shade25;
+  &__date{
+    margin-bottom: 20px;
+  }
+  &__guests{
+    margin-bottom: 20px;
+  }
+  &__calculates{
+    margin-bottom: 30px;
+
+    display: grid;
+    grid-template-columns: 0.73fr auto 0.2fr;
+    grid-row-gap: pxToRem(14px);
+    //grid-column-gap: pxToRem(9px);
+
+    vertical-align: center;
+    line-height: pxToRem(18px);
+  }
+  &__price{
+    white-space: nowrap;
+  }
+  &__tooltip{
     display: inline-block;
-    text-align: center;
     width: pxToRem(20px);
     height: pxToRem(20px);
+
+    text-align: center;
+    color: $dark_shade25;
     border: 1px solid $dark_shade25{
       radius: 50%;
     }
   }
   &__price-item{
-    text-align: right;
+    justify-self: right;
+    width: min-content;
+    white-space: nowrap;
   }
   &__result{
+    margin-bottom: 20px;
     display: flex;
-    margin-top: pxToRem(10px);
   }
   &__separator{
     flex-grow: 2;
     border-bottom: 1px dotted $dark_shade25;
-    margin-bottom: 5px;
   }
 }
