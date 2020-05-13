@@ -1,14 +1,14 @@
 // inputData: [{title, date}]
 mixin dropdown-date(inputData, isInline)
-  div(class=isInline ? 'js-date-dropdown-inline' : 'js-date-dropdown').dropdown-date&attributes(attributes)
+  div(class=isInline ? "js-dropdown-date-inline" : "js-dropdown-date").dropdown-date
     .dropdown-date__item
       h3.dropdown-date__title=inputData[0].title
       .dropdown-date__iconed-input
         input(
-          placeholder='ДД.ММ.ГГГГ',
+          placeholder="ДД.ММ.ГГГГ",
           readonly,
           value=inputData[0].date
-          name='start-date'
+          name="start-date"
           disabled=attributes.disabled
         ).dropdown-date__input.js-dropdown-date__input_first
         i.material-icons.dropdown-date__icon expand_more
@@ -18,10 +18,10 @@ mixin dropdown-date(inputData, isInline)
         h3.dropdown-date__title=inputData[1].title
         .dropdown-date__iconed-input
           input(
-            placeholder='ДД.ММ.ГГГГ',
+            placeholder="ДД.ММ.ГГГГ",
             readonly,
             value=inputData[1].date
-            name='end-date'
+            name="end-date"
             disabled=attributes.disabled
           ).dropdown-date__input.js-dropdown-date__input_last
           i.material-icons.dropdown-date__icon expand_more

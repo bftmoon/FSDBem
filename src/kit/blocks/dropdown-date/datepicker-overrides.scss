@@ -1,177 +1,203 @@
-@import "~air-datepicker/dist/css/datepicker.min.css";
 @import "../../env-styles/variables";
+@import "../../env-styles/functions";
 
-@mixin doubleBackground($circleColor, $bgBorderRadius, $circleOpacity, $circleBorderRadius) {
+@mixin doubleBackground($circleColor, $bgBorderRadius, $circleOpacity) {
   background: $gradient25;
   border-radius: $bgBorderRadius;
-  border-width: 0;
-  &:after {
+
+  &:before {
     position: absolute;
     display: inline-block;
     content: "";
     height: 100%;
     width: 100%;
+    left: 0;
     z-index: -1;
 
     background: $circleColor;
     opacity: $circleOpacity;
-    border-radius: $circleBorderRadius;
+    border-radius: 50%;
   }
 }
 
 .datepicker {
-  box-sizing: border-box;
-  width: pxToRem(320px);
-  padding: 19px;
+  position: absolute;
+  max-width: pxToRem(320px);
+  left: -100000px;
+  z-index: 10;
+  opacity: 0;
+  padding: 20px;
 
-  font-family: $quicksand;
+  background: white;
   color: $dark_shade50;
-  cursor: default;
-
   box-shadow: $shadow_smaller;
-  &-inline{
-    box-shadow: $shadow_smaller;
-  }
+  border: 1px solid $dark_shade25 {
+    radius: 4px;
+  };
 
-  &-icons {
-    color: $primary;
-  }
-
-  &--pointer {
-    display: none;
-  }
-
-  &--content {
-    padding: 0;
-  }
-
-  &--buttons {
-    margin-top: 20px;
-    padding: 0;
-    justify-content: space-between;
-    border: none;
-  }
+  cursor: default;
+  transition: opacity .3s ease, transform .3s ease;
 
   &--nav {
-    padding: 0;
-    border: none;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &-title {
-      margin-bottom: 30px;
-      height: min-content;
-      line-height: pxToRem(24px);
-
-      font-family: $quicksand;
       font-size: pxToRem(19px);
+      font-family: $quicksand;
       font-weight: bold;
       color: $dark_shade100;
-      &:hover{
-        background: white;
-      }
+      cursor: pointer;
     }
 
     &-action {
-      width: min-content;
-      height: min-content;
-      &:hover{
-        background: white;
-      }
+      display: flex;
+      align-items: center;
+
+      color: $primary;
+      cursor: pointer;
     }
   }
 
-  &--days-names {
-    margin-bottom: 9px;
+  &--body {
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
-  &--day-name {
+  &--days {
     font-size: pxToRem(12px);
-    font-weight: bold;
-    color: $primary;
-    text-transform: capitalize;
+
+    &-names {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-around;
+
+      color: $primary;
+      font-weight: bold;
+    }
   }
 
-  &--sells {
-    font-size: pxToRem(12px);
+  &--cells {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(7, pxToRem(40px));
+    grid-auto-rows: 40px;
+
+    justify-items: stretch;
+    align-items: stretch;
+
+    text-align: center;
+    line-height: pxToRem(40px);
+
+    cursor: pointer;
   }
 
   &--cell {
+    position: relative;
+    z-index: 1;
     border-radius: 50%;
 
     &-day {
-      width: pxToRem(40px);
-      height: pxToRem(40px);
-      &.-other-month-{
+      &.-other-month- {
         color: $dark_shade25;
+      }
+
+      &.-focus- {
+        background: $gradient25;
       }
     }
 
     &.-in-range- {
       background: $gradient25;
+      border-radius: 0;
 
       &.-focus- {
-        @include doubleBackground($gradient, 0, 0.3, 50%);
+        @include doubleBackground($gradient, 0, 0.3);
       }
     }
 
     &.-current- {
       font-weight: bold;
-      background: $secondary_gradient;
       color: white;
-      border-radius: 50%;
+      background: $secondary_gradient;
 
       &.-in-range- {
-        color: white;
-        @include doubleBackground($secondary_gradient, 0, 1, 50%);
+        @include doubleBackground($secondary_gradient, 0, 0.7);
       }
     }
 
     &.-range-from- {
       font-weight: bold;
-      @include doubleBackground($gradient, 50% 0 0 50%, 1, 50%);
+      color: white;
+      @include doubleBackground($gradient, 50% 0 0 50%, 1);
     }
 
     &.-range-to- {
       font-weight: bold;
-      @include doubleBackground($gradient, 0 50% 50% 0, 1, 50%);
+      color: white;
+      @include doubleBackground($gradient, 0 50% 50% 0, 1);
     }
+  }
 
-    &.-selected-.-focus- {
-      background: $gradient25;
-    }
+  &--buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &--button {
-    height: min-content;
-    flex: 0;
-    line-height: pxToRem(15px);
-
     font-size: pxToRem(12px);
-    font-style: normal;
     font-weight: bold;
     text-transform: uppercase;
-
-    border: none;
-    background: white;
-
-    &:hover{
-      background: white;
-      color: inherit;
-    }
+    cursor: pointer;
 
     &-apply {
       color: $primary;
-      &:hover{
-        color: $primary;
-      }
     }
+  }
 
-    &-cancel {
-      color: $dark_shade50;
 
-    }
+  &.-from-top- {
+    transform: translateY(-8px);
+  }
+
+  &.-from-right- {
+    transform: translateX(8px);
+  }
+
+  &.-from-bottom- {
+    transform: translateY(8px);
+  }
+
+  &.-from-left- {
+    transform: translateX(-8px);
+  }
+
+
+  &.active {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity .3s ease, transform .3s ease, left 0s 0s;
   }
 }
 
-.-selected-.datepicker--cell-day.-other-month- {
-  background: $gradient25;
+.datepicker-inline {
+  .datepicker {
+    position: static;
+    left: auto;
+    right: auto;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.datepickers-container {
+  position: absolute;
+  left: 0;
+  top: 0;
 }

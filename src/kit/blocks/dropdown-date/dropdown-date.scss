@@ -1,25 +1,34 @@
 @import "../../env-styles/abstract";
 @import "../../env-styles/functions";
 
+$dropdown-date-point: 350px;
+
 .dropdown-date {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: pxToRem($dropdown-date-point)){
+    flex-direction: column;
+  }
 
-  &__title{
+  &__title {
     margin-bottom: 5px;
   }
+
   &__iconed-input {
     @extend %field_bordered;
+    height: auto;
     display: flex;
     align-items: center;
     cursor: pointer;
+    @media screen and (max-width: pxToRem($dropdown-date-point)){
+      margin-bottom: 5px;
+    }
   }
 
   &__input {
     @extend %field;
 
-    min-width: 90px;
     width: 1%;
     flex-grow: 2;
     padding-left: 15px;
@@ -28,13 +37,15 @@
     cursor: pointer;
     text-transform: lowercase;
 
-    &::placeholder{
+    &::placeholder {
       text-transform: uppercase;
+      color: $dark_shade75;
+      opacity: 1;
     }
   }
 
-  &__item{
-width: 100%;
+  &__item {
+    width: 100%;
   }
 
   &__icon {
@@ -43,7 +54,7 @@ width: 100%;
     color: $dark_shade50;
   }
 
-  &__separator{
+  &__separator {
     width: 20px;
     flex-shrink: 0;
   }
