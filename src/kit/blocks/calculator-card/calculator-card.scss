@@ -2,53 +2,61 @@
 @import "../../env-styles/abstract";
 @import "../../env-styles/functions";
 
-.calculator-card{
+.calculator-card {
   @extend %card;
 
-  &__title{
+  &__title {
+    margin-top: 3px;
     margin-bottom: 20px;
   }
-  &__date{
+
+  &__date {
     margin-bottom: 20px;
   }
-  &__guests{
+
+  &__guests {
     margin-bottom: 20px;
   }
-  &__calculates{
+
+  &__calculates {
     margin-bottom: 30px;
 
     display: grid;
     grid-template-columns: 0.73fr auto 0.2fr;
     grid-row-gap: pxToRem(14px);
-    //grid-column-gap: pxToRem(9px);
 
     vertical-align: center;
     line-height: pxToRem(18px);
   }
-  &__price{
+
+  &__price {
     white-space: nowrap;
   }
-  &__tooltip{
+
+  &__tooltip {
     display: inline-block;
     width: pxToRem(20px);
     height: pxToRem(20px);
 
     text-align: center;
     color: $dark_shade25;
-    border: 1px solid $dark_shade25{
+    border: 1px solid $dark_shade25 {
       radius: 50%;
     }
   }
-  &__price-item{
+
+  &__price-item {
     justify-self: right;
     width: min-content;
     white-space: nowrap;
   }
-  &__result{
+
+  &__result {
     margin-bottom: 20px;
     display: flex;
   }
-  &__separator{
+
+  &__separator {
     flex-grow: 2;
     border-bottom: 1px dotted $dark_shade25;
   }

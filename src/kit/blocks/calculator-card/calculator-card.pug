@@ -1,21 +1,4 @@
 mixin calculator-card({room, options, costs})
-  -
-    const calculates = [
-      {
-        info: room.price + " x " + options.daysCount + " суток",
-        price: costs.cleanPrice
-      },
-      {
-        info: "Сбор за услуги: скидка " + costs.discount,
-        tooltip: "some important info",
-        price: costs.service
-      },
-      {
-        info: "Сбор за дополнительные услуги",
-        tooltip: "some important info",
-        price: costs.overService
-      }
-    ]
   .calculator-card
     .calculator-card__title
       +room-title({
