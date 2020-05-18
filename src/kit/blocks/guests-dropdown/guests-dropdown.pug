@@ -1,3 +1,5 @@
+include ../dropdown-menu/dropdown-menu
+
 mixin guests-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline, withConfirm, withCancel})
   +dropdown-menu([
     {text: "Взрослые", count: counts[0]},

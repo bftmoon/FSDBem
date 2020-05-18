@@ -1,3 +1,6 @@
+include ../link-with-menu/link-with-menu
+include ../button/button
+
 mixin header-links({home, links, login, register, username, isVertical})
   .header-links(class=isVertical?"header-links_vertical":"")
     if home

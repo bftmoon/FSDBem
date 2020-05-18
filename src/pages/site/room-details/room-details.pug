@@ -1,6 +1,12 @@
 extends ../layout/layout
 
 block main
+  include ../../../kit/blocks/iconed-list/iconed-list
+  include ../../../kit/blocks/feedbacks-chart/feedbacks-chart
+  include ../../../kit/blocks/feedback/feedback
+  include ../../../kit/blocks/bullet-list/bullet-list
+  include ../../../kit/blocks/calculator-card/calculator-card
+
   main.details-page
     .details-page__images
       img(src=require('./imgs/room-details-0.jpg').default).details-page__image-1

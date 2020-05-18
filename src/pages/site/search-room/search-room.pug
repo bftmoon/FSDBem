@@ -1,7 +1,14 @@
 extends ../layout/layout
 
 block main
-  //include ../../../kit/kit
+  include ../../../kit/blocks/dropdown-date/dropdown-date
+  include ../../../kit/blocks/checkbox-list/checkbox-list
+  include ../../../kit/blocks/slider/slider
+  include ../../../kit/blocks/guests-dropdown/guests-dropdown
+  include ../../../kit/blocks/furniture-dropdown/furniture-dropdown
+  include ../../../kit/blocks/paginator/paginator
+  include ../../../kit/blocks/room-card/room-card
+
   main.search-page__main
     section.search-page__configuration
       .search-page__date
@@ -12,7 +19,8 @@ block main
       .search-page__cost-info Стоимость за сутки пребывания в номере
       .search-page__facility
         h3.search-page__title Условия
-        +checkbox-list({items: [
+        +checkbox-list({
+          items: [
             {text: 'Можно курить'},
             {text: 'Можно с питомцами'},
             {text: 'Можно пригласить гостей \n(до 10 человек)'},

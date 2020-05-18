@@ -1,3 +1,5 @@
+include ../checkable-item/checkable-item
+
 // items: {text, attributes:{}, description?}]
 mixin checkbox-list({items, expanderTitle, isOpened})
   .checkbox-list.js-checkbox-list
@@ -16,7 +18,7 @@ mixin checkbox-list({items, expanderTitle, isOpened})
       each el in items
         .checkbox-list__item
           +checkable-item({
-            type: checkableType.checkbox,
+            type: "checkbox",
             text: el.text,
             description: el.description
           })&attributes(el.attributes)

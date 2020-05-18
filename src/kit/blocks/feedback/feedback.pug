@@ -1,6 +1,6 @@
 include ../like-button/like-button
-// img: {src, alt}
-// like: {count, active}
+
+// img: {src, alt}, like: {count, active}
 mixin feedback({img, name, time, text, like})
   .feedback
     img.feedback__img(src=require(`${img.src}`).default alt=img.alt)

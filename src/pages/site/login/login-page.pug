@@ -1,6 +1,9 @@
 extends ../layout/layout
 
 block main
+  include ../../../kit/blocks/login-card/login-card
+  include ../../../kit/blocks/registration-card/registration-card
+
   main.login-page
     .login-page__card.js-login-page__card
       +login-card

@@ -1,9 +1,14 @@
+include ../../../kit/blocks/header/header
+include ../../../kit/blocks/footer/footer
+
 doctype html
 html(lang="ru")
-  include ../../../kit/kit
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="keywords" content="fsd hotel toxin toxic")
+    meta(name="description" content="Info and info")
+    link(rel="icon" type="image/svg" href=require("../layout/images/favicon.svg").default)
     title Toxin
   body
     - const {home, links, login, register} = require(`../layout/json/header.json`)

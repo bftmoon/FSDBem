@@ -1,9 +1,11 @@
+include ../checkable-item/checkable-item
+
 mixin radio-list({items})
   fieldset.radio-list&attributes(attributes)
     .radio-list__wrapper-for-chrome
       each item in items
         .radio-list__item
           +checkable-item({
-            type: checkableType.radio,
+            type: "radio",
             text: item.text
           })&attributes(item.attributes)
