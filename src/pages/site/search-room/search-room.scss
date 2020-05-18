@@ -4,31 +4,50 @@
 .search-page {
   &__main {
     position: relative;
-    padding-top: 30px;
+    padding: 30px 5px 0;
+    margin: auto;
     display: grid;
     gap: 60px;
     grid-template-columns: 266px 1fr;
-    max-width: calc(1440px - 140px * 2);
-    @media screen and (max-width: 857px){
+    max-width: calc(1450px - 140px * 2);
+    @media screen and (max-width: 857px) {
       grid-template-columns: 1fr;
+      justify-items: center;
     }
   }
-  &__config-expander{
-    display: none;
-    @media screen and (max-width: 857px){
-      display: initial;
-    }
+
+  &__configuration {
+    width: 266px;
   }
-  &__config-content {
-    margin: 0 auto;
-    max-width: 266px;
-    & > *{
-      margin-bottom: 30px;
-    }
+
+  &__date {
+    margin-bottom: 20px;
   }
-  &__cost-info{
+
+  &__guests {
+    margin-bottom: 30px;
+  }
+
+  &__cost-info {
+    margin-top: 10px;
     font-size: pxToRem(12px);
     color: $dark_shade50;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__facility {
+    margin: 25px 0 25px;
+  }
+
+  &__accessibility {
+    margin-bottom: 20px;
+  }
+
+  &__furniture {
+    margin-bottom: 15px;
   }
 
   &__rooms {
@@ -37,7 +56,8 @@
     grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
     justify-items: center;
     justify-content: center;
-    gap: 12px;
+    grid-column-gap: (12 / 834 * 100%);
+    grid-row-gap: 21px;
   }
 
   &__paginator-wrapper {

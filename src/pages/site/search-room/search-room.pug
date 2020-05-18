@@ -1,61 +1,58 @@
-doctype html
-html(lang="en")
-  include ../../../kit/kit
-  head
-    meta(charset="UTF-8")
-    title Search Room
-  body.search-page
-    +header({})
-    main.search-page__main
+extends ../layout/layout
 
-      section.search-page__configuration
-        +expander({text: 'Параметры поиска'}).search-page__config-expander
-        .search-page__config-content.js-search-page__config-content
-          +dropdown-date([{title: 'Даты пребывания в отеле'}])
-          +guests-dropdown({title: 'Гости'})
-          +slider({title: 'Диапазон цены'})
-          .search-page__cost-info Стоимость за сутки пребывания в номере
-          +checkbox-list({
-            title: 'Условия', items: [
-              {text: 'Можно курить'},
-              {text: 'Можно с питомцами'},
-              {text: 'Можно пригласить гостей (до 10 человек)'},
-            ]
-          })
-          +checkbox-list({
-            title: 'Доступность',
-            items: [
-              {
-                text: 'Широкий коридор',
-                description: 'Ширина коридоров в номере не менее 91 см.'
-              },
-              {
-                text: 'Помощник для инвалидов',
-                description: 'На 1 этаже вас встретит специалист и проводит до номера.'
-              },
-            ]
-          })
-          +furniture-dropdown({title: 'Удобства номера'})
-          +checkbox-list({
-            items: [
-              {text: 'Завтрак'},
-              {text: 'Письменный стол'},
-              {text: 'Стул для кормления'},
-              {text: 'Кроватка'},
-              {text: 'Телевизор'},
-              {text: 'Шампунь'},
-              {text: 'Телевизор'},
-              {text: 'Шампунь'},
-            ], expandTitle: 'Дополнительные удобства'
-          })
-      section.search-page__results
-        h2 Номера, которые мы для вас подобрали
-        - const {rooms} = require('./rooms.json')
-        .search-page__rooms
-          - i=0;
-          while i < 12
-            +room-card(rooms[i]).search-page__room
-            - i++
-        .search-page__paginator-wrapper
-          +paginator('1 – 12 из 100+ вариантов аренды').search-page__paginator
-    +footer({})
+block main
+  //include ../../../kit/kit
+  main.search-page__main
+    section.search-page__configuration
+      .search-page__date
+        +dropdown-date([{title: 'Даты пребывания в отеле'}])
+      .search-page__guests
+        +guests-dropdown({title: 'Гости'})
+      +slider({title: 'Диапазон цены'})
+      .search-page__cost-info Стоимость за сутки пребывания в номере
+      .search-page__facility
+        h3.search-page__title Условия
+        +checkbox-list({items: [
+            {text: 'Можно курить'},
+            {text: 'Можно с питомцами'},
+            {text: 'Можно пригласить гостей \n(до 10 человек)'},
+          ]
+        })
+      .search-page__accessibility
+        h3.search-page__title Доступность
+        +checkbox-list({
+          items: [
+            {
+              text: 'Широкий коридор',
+              description: 'Ширина коридоров в номере не менее 91 см.'
+            },
+            {
+              text: 'Помощник для инвалидов',
+              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+            },
+          ]
+        })
+      .search-page__furniture
+        +furniture-dropdown({title: 'Удобства номера'})
+      +checkbox-list({
+        items: [
+          {text: 'Завтрак'},
+          {text: 'Письменный стол'},
+          {text: 'Стул для кормления'},
+          {text: 'Кроватка'},
+          {text: 'Телевизор'},
+          {text: 'Шампунь'},
+          {text: 'Телевизор'},
+          {text: 'Шампунь'},
+        ], expanderTitle: 'Дополнительные удобства'
+      })
+    section.search-page__results
+      h1 Номера, которые мы для вас подобрали
+      - const {rooms} = require('./json/rooms.json')
+      .search-page__rooms
+        - i=0;
+        while i < 12
+          +room-card(rooms[i]).search-page__room
+          - i++
+      .search-page__paginator-wrapper
+        +paginator('1 – 12 из 100+ вариантов аренды').search-page__paginator
