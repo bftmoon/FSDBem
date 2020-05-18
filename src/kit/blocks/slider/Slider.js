@@ -24,7 +24,7 @@ class Slider {
   }
 
   _formatRange([sum1, sum2]) {
-    return sum1 + '₽ - ' + sum2 + '₽';
+    return (sum1.toLocaleString() + '₽ - ' + sum2.toLocaleString() + '₽');
   }
 
 
