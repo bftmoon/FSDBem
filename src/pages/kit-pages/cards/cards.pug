@@ -13,9 +13,24 @@ html(lang="ru")
         +registration-card
       .cards-example__wrapper-for-chrome
         +calculator-card({
-          room: {number: 888, price: "9 990₽", isLux: true},
-          options: {startDate: "19.08.2019", endDate: "23.08.2019", daysCount: 4, guests: [2, 1, 0]},
-          costs: {cleanPrice: "39 960₽", service: "0₽", discount: "2 179₽", overService: "300₽", summary:"38 081₽"}
+          room: {
+            number: 888,
+            price: "9 990₽",
+            isLux: true
+          },
+          options: {
+            startDate: "19.08.2019",
+            endDate: "23.08.2019",
+            daysCount: 4,
+            guests: [2, 1, 0]
+          },
+          costs: {
+            cleanPrice: "39 960₽",
+            service: "0₽",
+            discount: "2 179₽",
+            overService: "300₽",
+            summary:"38 081₽"
+          }
           })
       .cards-example__wrapper-for-chrome
         +login-card
@@ -24,10 +39,10 @@ html(lang="ru")
       .cards-example__wrapper-for-chrome
         +room-card({
           imgs: [
-            {srcName: "room-1.jpg", alt: "room"},
-            {srcName: "room-1.jpg", alt: "room"},
-            {srcName: "room-1.jpg", alt: "room"},
-            {srcName: "room-1.jpg", alt: "room"},
+            {src: "./images/room-1.jpg", alt: "room"},
+            {src: "./images/room-1.jpg", alt: "room"},
+            {src: "./images/room-1.jpg", alt: "room"},
+            {src: "./images/room-1.jpg", alt: "room"},
           ],
           number: 888,
           price: "9 990₽",
@@ -38,10 +53,10 @@ html(lang="ru")
       .cards-example__wrapper-for-chrome
         +room-card({
           imgs: [
-            {srcName: "room-2.jpg", alt: "room"},
-            {srcName: "room-2.jpg", alt: "room"},
-            {srcName: "room-2.jpg", alt: "room"},
-            {srcName: "room-2.jpg", alt: "room"}
+            {src: "./images/room-2.jpg", alt: "room"},
+            {src: "./images/room-2.jpg", alt: "room"},
+            {src: "./images/room-2.jpg", alt: "room"},
+            {src: "./images/room-2.jpg", alt: "room"}
           ],
           number: 840,
           price: "9 900₽",
