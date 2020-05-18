@@ -1,5 +1,5 @@
 class LoginCard {
-  static  addRegistrationClickListener(listener){
+  static addRegistrationClickListener(listener) {
     $('.js-login-card__registration-button').on('click', listener);
   }
 }

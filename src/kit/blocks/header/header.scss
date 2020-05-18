@@ -1,3 +1,4 @@
+@import "~material-icons/iconfont/material-icons";
 @import "../../env-styles/functions";
 @import "../../env-styles/variables";
 
@@ -21,20 +22,26 @@ $header-point: pxToRem(850px);
     display: flex;
     justify-content: space-between;
   }
-  &__main-links{
+
+  &__main-links {
     display: flex;
     @media screen and (max-width: $header-point) {
       display: none;
     }
   }
-  &__menu-button{
+
+  &__menu-button {
     display: none;
     @media screen and (max-width: $header-point) {
       display: initial;
     }
   }
 
-  &__sidebar{
+  &__icon {
+    @extend .material-icons;
+  }
+
+  &__sidebar {
     display: none;
     @media screen and (max-width: $header-point) {
       position: fixed;
@@ -66,7 +73,7 @@ $header-point: pxToRem(850px);
     }
   }
 
-  &__sidebar-logo{
+  &__sidebar-logo {
     display: flex;
     justify-content: center;
   }
@@ -101,7 +108,7 @@ $header-point: pxToRem(850px);
       background: $dark_shade25;
       opacity: 0.5;
 
-      &_opened{
+      &_opened {
         display: initial;
       }
     }

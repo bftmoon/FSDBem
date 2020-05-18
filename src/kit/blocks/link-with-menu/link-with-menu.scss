@@ -1,44 +1,51 @@
 @import "../../env-styles/abstract";
 @import "~material-icons/iconfont/material-icons";
-.link-with-menu{
+
+.link-with-menu {
   position: relative;
 
   text-decoration: none;
   color: $dark_shade50;
 
-  &__title{
+  &__title {
     height: 100%;
     display: flex;
     align-items: center;
   }
-  :hover > &__content{
+
+  :hover > &__content {
     display: flex;
     flex-direction: column;
   }
-  &__icon{
+
+  &__icon {
     @extend .material-icons;
   }
-  &__content{
+
+  &__content {
     display: none;
     position: absolute;
     padding: 5px;
     background: white;
     z-index: 10;
-    border: 1px solid $dark_shade10{
+    border: 1px solid $dark_shade10 {
       radius: 4px;
     }
-    &_inline{
+
+    &_inline {
       position: initial;
       width: 100%;
       border: none;
     }
   }
-  &__child-link{
+
+  &__child-link {
     @extend %field;
     padding: 15px;
     min-width: 120px;
   }
-  :link, :visited{
+
+  :link, :visited {
     text-decoration: none;
     color: $dark_shade50;
   }

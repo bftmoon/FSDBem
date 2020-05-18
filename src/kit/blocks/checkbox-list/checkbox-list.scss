@@ -1,4 +1,5 @@
-@import "../../env-styles/common";
+@import "~material-icons/iconfont/material-icons";
+@import "../../env-styles/theme";
 @import "../../env-styles/abstract";
 
 .checkbox-list {
@@ -11,6 +12,7 @@
   }
 
   &__icon {
+    @extend .material-icons;
     margin: auto 10px;
 
     &_hidden{

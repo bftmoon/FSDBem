@@ -1,5 +1,5 @@
-
-@import "../../env-styles/common";
+@import "~material-icons/iconfont/material-icons";
+@import "../../env-styles/theme";
 
 .rating {
   display: inline-block;
@@ -16,6 +16,7 @@
   }
 
   &__star {
+    @extend .material-icons;
     color: transparent;
     background: $gradient;
     -webkit-background-clip: text;

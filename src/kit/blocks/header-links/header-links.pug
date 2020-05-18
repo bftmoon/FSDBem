@@ -1,15 +1,10 @@
 mixin header-links({home, links, login, register, username, isVertical})
   .header-links(class=isVertical?"header-links_vertical":"")
-    //if isVertical
-    //  .header-links__logo
-    //    +logo
     if home
       a(href=home.url).header-links__link.header-links__link_type_home=home.name
     for link in links
       if link.content
-        .header-links__link.header-links__link_with-menu(
-          class=isVertical ? "header-links__link_vertical" : ""
-        )
+        .header-links__link.header-links__link_with-menu
           - link.isInline = isVertical
           +link-with-menu(link)
       else
@@ -26,5 +21,11 @@ mixin header-links({home, links, login, register, username, isVertical})
       .header-links__buttons(
         class=isVertical ? "header-links__buttons_vertical" : ""
       )
-        +button(login, {isFlat: true}).header-links__login-button
-        +button(register, {}).header-links__register-button
+      .header-links__login-button(
+        class=isVertical ? "header-links__login-button_vertical" : ""
+      )
+        +button(login, {isFlat: true, isMini: true, isWide: isVertical})
+      .header-links__register-button(
+        class=isVertical ? "header-links__register-button_vertical" : ""
+      )
+        +button(register, {isMini: true, isWide: isVertical})

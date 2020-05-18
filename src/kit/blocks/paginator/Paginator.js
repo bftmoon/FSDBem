@@ -32,7 +32,7 @@ class Paginator {
       href: href + (page + (isForward ? 1 : -1)),
       class: 'paginator__item paginator__item-with-arrow',
       append: $('<i>', {
-        class: 'material-icons paginator__arrow',
+        class: 'paginator__arrow',
         text: 'arrow_' + (isForward ? 'forward' : 'backward')
       })
     });

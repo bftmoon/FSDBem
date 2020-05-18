@@ -1,34 +1,14 @@
-- const language = {ru: "ru", en: "en"}
-
 mixin header({home, links, login, register, username})
   header.header.js-header
     .header__content.js-header__content
       +logo
-      //.header__separator
-      //.header__nav
       .header__main-links
         +header-links({home, links, login, register, username})
-        //if home
-        //  a(href=home.url).header__link.header__link_type_home
-        //    span=home.name
-        //for link in links
-        //  if link.content
-        //    +link-with-menu(link)
-        //  else
-        //    a(href=link.url).header__link
-        //      span=link.name
-        //if username
-        //  a(href="mock-address").header__link.header__username
-        //    span=username
-        //else
-        //  .header__buttons
-        //    +button(login, {isFlat: true}).header__button.header__button_login
-        //    +button(register, {}).header__button
       button.js-header__menu-button.header__menu-button
-        i.material-icons menu
+        i.header__icon menu
     .header__sidebar.js-header__sidebar
       button.header__closing-button.js-header__closing-button
-        i.material-icons close
+        i.header__icon close
       .header__sidebar-logo
         +logo
       +header-links({home, links, login, register, username, isVertical: true})

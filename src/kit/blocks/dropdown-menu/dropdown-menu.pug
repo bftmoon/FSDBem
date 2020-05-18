@@ -6,8 +6,8 @@ mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withConfirm, wit
       type="button"
       class=isOpened ? "dropdown-menu__header_opened" : ""
     ).dropdown-menu__header.js-dropdown-menu__header
-      span.dropdown-menu__text
-      i.material-icons.dropdown-menu__icon expand_more
+      .dropdown-menu__text
+      i.dropdown-menu__icon expand_more
     fieldset(
       class=[
         !isInline ? "dropdown-menu__content_over" : "",

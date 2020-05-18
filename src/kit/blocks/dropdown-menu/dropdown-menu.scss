@@ -1,3 +1,4 @@
+@import "~material-icons/iconfont/material-icons";
 @import "../../env-styles/variables";
 @import "../../env-styles/abstract";
 @import "../../env-styles/functions";
@@ -11,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    //min-width: 0;
 
     padding-left: 15px;
     padding-right: 10px;
@@ -35,7 +37,8 @@
     white-space: nowrap;
   }
 
-  &__icon{
+  &__icon {
+    @extend .material-icons;
     color: $dark_shade50;
     cursor: pointer;
   }
@@ -65,7 +68,8 @@
     &_over {
       position: absolute;
     }
-    &_opened{
+
+    &_opened {
       display: initial;
     }
   }
@@ -135,7 +139,7 @@
       color: $dark_shade50;
     }
 
-    &_hidden{
+    &_hidden {
       display: none;
     }
   }

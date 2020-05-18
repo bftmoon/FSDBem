@@ -1,16 +1,19 @@
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 @import "../../env-styles/variables";
 @import "../../env-styles/functions";
 
 .social-networks {
-  display: flex;
   width: calc(24px * 3 + 20px * 2);
+  display: flex;
   justify-content: space-between;
   line-height: 0;
 
   &__icon {
+    @extend .fab;
+    font-size: pxToRem(24px);
     color: transparent;
     background: $gradient;
     -webkit-background-clip: text;
-    font-size: pxToRem(24px);
   }
 }

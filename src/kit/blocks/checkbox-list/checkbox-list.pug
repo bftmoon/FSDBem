@@ -6,10 +6,10 @@ mixin checkbox-list({items, expanderTitle, isOpened})
         .checkbox-list__title=expanderTitle
         i(
           class=isOpened ? "checkbox-list__icon_hidden" : ""
-        ).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_more
+        ).js-checkbox-list__icon.checkbox-list__icon expand_more
         i(
           class=!isOpened ? "checkbox-list__icon_hidden" : ""
-        ).material-icons.js-checkbox-list__icon.checkbox-list__icon expand_less
+        ).js-checkbox-list__icon.checkbox-list__icon expand_less
     div(
       class=expanderTitle && !isOpened ? "checkbox-list__group_hidden" : ""
     ).checkbox-list__group.js-checkbox-list__group

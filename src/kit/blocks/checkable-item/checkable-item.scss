@@ -56,7 +56,7 @@
     &_checkbox:after {
       align-self: stretch;
       height: pxToRem(8px);
-      width: pxToRem(6px);
+      width: pxToRem(5px);
       margin-top: 10%;
 
       border: solid {
@@ -75,6 +75,7 @@
 
   &__text {
     line-height: 129%;
+    white-space: pre-wrap;
 
     &__title {
       font-weight: bold;
