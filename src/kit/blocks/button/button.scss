@@ -1,3 +1,4 @@
+@import "~material-icons/iconfont/material-icons";
 @import "../../env-styles/variables";
 @import "../../env-styles/functions";
 
@@ -21,6 +22,14 @@
     cursor: pointer;
   }
 
+  &_size_mini {
+    height: pxToRem(34px);
+  }
+
+  &_size_wide {
+    width: 100%;
+  }
+
   &_flat {
     display: inline-block;
     padding: 2px;
@@ -31,7 +40,8 @@
     padding: 0 20px;
     color: white;
   }
-  &__text{
+
+  &__text {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +63,7 @@
   }
 
   &__arrow {
+    @extend .material-icons;
     flex-grow: 0;
     flex-shrink: 0;
   }

@@ -1,15 +1,17 @@
-mixin button(text, {isFlat, isSecondary, isArrowed})
+mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide})
   -
     const classes = [
       isSecondary ? "button_color_secondary" : "",
       !isFlat || isArrowed ? "button_raised" : "button_flat",
-      isArrowed ? "button_arrowed" : ""
+      isArrowed ? "button_arrowed" : "",
+      isMini? "button_size_mini":"",
+      isWide? "button_size_wide":""
     ]
 
   if isArrowed
     button.button(class=classes)&attributes(attributes)
       span.button__arrowed-text=text
-      i.material-icons.button__arrow arrow_forward
+      i.button__arrow arrow_forward
   else
     if isFlat
       button.button(class=classes)&attributes(attributes)
