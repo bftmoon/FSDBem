@@ -3,41 +3,26 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const KIT_PAGES_DIR = path.resolve(__dirname, 'src/pages/kit-pages');
-const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR).filter((value => value !== 'common'));
+const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR);
+const SITE_PAGES_DIR = path.resolve(__dirname, 'src/pages/site');
+const SITE_PAGES = fs.readdirSync(SITE_PAGES_DIR).filter((value => value !== 'layout'));
 
 const config = {
-  resolve: {
-    alias: {
-      styleVars: path.resolve(__dirname, 'src/kit/env-styles/variables.scss'),
-      '@res': path.resolve(__dirname, 'res'),
-    },
-  },
   entry: {
     app: './src/index.js'
-    // test: './src/pages/test/test.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[contenthash].[name].js",
   },
-  devtool: 'inline-source-map', // path of error
+  devtool: 'inline-source-map',
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/pages/kit-pages/2/2.pug',
-      // template: './src/pages/kit-pages/3/3.pug',
-      // template: './src/pages/test/test.pug',
-      // template: './src/pages/kit-pages/1/1.pug'
-    }),
-    // ...KIT_PAGES.map((page) => new HtmlWebpackPlugin({
-    //   filename: `${page}.html`,
-    //   template: `${KIT_PAGES_DIR}/${page}/${page}.pug`,
-    // })),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
-
   ],
   module: {
     rules: [
@@ -90,15 +75,39 @@ const config = {
     ]
   },
   devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
     overlay: true,
   },
 
 };
 module.exports = (env, argv) => {
   if (argv.mode === 'development') {
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        // for fast switch
+
+        // template: './src/pages/kit-pages/form-elements/form-elements.pug',
+        // template: './src/pages/kit-pages/headers-and-footers/headers-and-footers.pug',
+        // template: './src/pages/kit-pages/cards/cards.pug',
+        // template: './src/pages/kit-pages/colors-and-type/colors-and-type.pug'
+        // template: './src/pages/site/landing/landing.pug'
+        // template: './src/pages/site/search-room/search-room.pug'
+        template: './src/pages/site/room-details/room-details.pug'
+      }));
   }
   if (argv.mode === 'production') {
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        template: './src/index.pug',
+      }),
+      ...KIT_PAGES.map((page) => new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: `${KIT_PAGES_DIR}/${page}/${page}.pug`,
+      })),
+      ...SITE_PAGES.map((page) => new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: `${SITE_PAGES_DIR}/${page}/${page}.pug`,
+      })),
+    )
   }
   return config;
 }
