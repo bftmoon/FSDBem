@@ -4,7 +4,6 @@ mixin carousel(imgs)
       for img in imgs
         li.carousel__imgs
           img.carousel__img(
-            src=require(`@res/imgs/${img.srcName}`).default
+            src=require(img.src).default
             alt=img.alt
           )
-          // todo: src
