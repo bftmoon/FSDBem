@@ -14,7 +14,8 @@ class DropdownDate {
       range: true,
       multipleDatesSeparator: ' - ',
       inline: isInline,
-      offset: 5
+      offset: 5,
+      minDate: new Date()
     };
     this._$inputStart = element.find('.js-dropdown-date__input_first');
 

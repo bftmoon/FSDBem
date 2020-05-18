@@ -93,7 +93,6 @@
 
     text-align: center;
     line-height: pxToRem(40px);
-
     cursor: pointer;
   }
 
@@ -109,6 +108,10 @@
 
       &.-focus- {
         background: $gradient25;
+      }
+
+      &.-disabled-.-focus- {
+        background: white;
       }
     }
 

@@ -1,3 +1,4 @@
+@import "~material-icons/iconfont/material-icons";
 @import "../../env-styles/abstract";
 @import "../../env-styles/functions";
 
@@ -49,6 +50,7 @@ $dropdown-date-point: 350px;
   }
 
   &__icon {
+    @extend .material-icons;
     flex-shrink: 0;
     margin-right: 10px;
     color: $dark_shade50;
