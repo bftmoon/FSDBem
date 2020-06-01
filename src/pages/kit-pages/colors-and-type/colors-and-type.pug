@@ -1,11 +1,8 @@
-include ../../../kit/blocks/kit-header/kit-header
+extends ../layout/layout
 
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="initial-scale=1.0, width=device-width")
-    title UIKitColors
+block body
+  include ../../../kit/blocks/kit-header/kit-header
+
   body.colors-page
     +kit-header
     main.colors-page__main
