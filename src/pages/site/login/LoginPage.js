@@ -4,7 +4,6 @@ import RegistrationCard from "../../../kit/blocks/registration-card/Registration
 class LoginPage {
   init() {
     this.$cards = $('.js-login-page__card');
-    console.log(this.$cards)
     this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
     this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
@@ -21,7 +20,6 @@ class LoginPage {
   }
 
   toggleCards() {
-    console.log('kk')
     this.$cards.toggleClass('login-page__card_hidden');
   }
 }

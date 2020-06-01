@@ -1,12 +1,11 @@
 mixin input(isDateMasked=false)
-  .input
-    if isDateMasked
-      input(
-        placeholder="ДД.ММ.ГГГГ"
-        pattern="(\\d{2}\\.){2}\\d{4}$"
-      ).input__field&attributes(attributes)
-    else
-      input.input__field&attributes(attributes)
+  if isDateMasked
+    input(
+      placeholder="ДД.ММ.ГГГГ"
+      pattern="(\\d{2}\\.){2}\\d{4}$"
+    ).input.js-input_masked&attributes(attributes)
+  else
+    input.input&attributes(attributes)
 
 
 

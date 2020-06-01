@@ -85,13 +85,13 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         // for fast switch
 
-        // template: './src/pages/kit-pages/form-elements/form-elements.pug',
+        template: './src/pages/kit-pages/form-elements/form-elements.pug',
         // template: './src/pages/kit-pages/headers-and-footers/headers-and-footers.pug',
         // template: './src/pages/kit-pages/cards/cards.pug',
         // template: './src/pages/kit-pages/colors-and-type/colors-and-type.pug'
         // template: './src/pages/site/landing/landing.pug'
         // template: './src/pages/site/search-room/search-room.pug'
-        template: './src/pages/site/room-details/room-details.pug'
+        // template: './src/pages/site/room-details/room-details.pug'
       }));
   }
   if (argv.mode === 'production') {

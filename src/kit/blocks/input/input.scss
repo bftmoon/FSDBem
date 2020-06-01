@@ -1,7 +1,7 @@
 @import "../../env-styles/variables";
 @import "../../env-styles/abstract";
 
-.input__field {
+.input {
   @extend %field_bordered;
   color: $dark_shade75;
   padding-right: 20px;
