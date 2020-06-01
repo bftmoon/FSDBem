@@ -12,18 +12,18 @@ block main
   main.search-page__main
     section.search-page__configuration
       .search-page__date
-        +dropdown-date([{title: 'Даты пребывания в отеле'}])
+        +dropdown-date([{title: "Даты пребывания в отеле"}])
       .search-page__guests
-        +guests-dropdown({title: 'Гости'})
-      +slider({title: 'Диапазон цены'})
+        +guests-dropdown({title: "Гости"})
+      +slider({title: "Диапазон цены"})
       .search-page__cost-info Стоимость за сутки пребывания в номере
       .search-page__facility
         h3.search-page__title Условия
         +checkbox-list({
           items: [
-            {text: 'Можно курить'},
-            {text: 'Можно с питомцами'},
-            {text: 'Можно пригласить гостей \n(до 10 человек)'},
+            {text: "Можно курить"},
+            {text: "Можно с питомцами"},
+            {text: "Можно пригласить гостей \n(до 10 человек)"},
           ]
         })
       .search-page__accessibility
@@ -31,36 +31,36 @@ block main
         +checkbox-list({
           items: [
             {
-              text: 'Широкий коридор',
-              description: 'Ширина коридоров в номере не менее 91 см.'
+              text: "Широкий коридор",
+              description: "Ширина коридоров в номере не менее 91 см."
             },
             {
-              text: 'Помощник для инвалидов',
-              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+              text: "Помощник для инвалидов",
+              description: "На 1 этаже вас встретит специалист и проводит до номера."
             },
           ]
         })
       .search-page__furniture
-        +furniture-dropdown({title: 'Удобства номера'})
+        +furniture-dropdown({title: "Удобства номера"})
       +checkbox-list({
         items: [
-          {text: 'Завтрак'},
-          {text: 'Письменный стол'},
-          {text: 'Стул для кормления'},
-          {text: 'Кроватка'},
-          {text: 'Телевизор'},
-          {text: 'Шампунь'},
-          {text: 'Телевизор'},
-          {text: 'Шампунь'},
-        ], expanderTitle: 'Дополнительные удобства'
+          {text: "Завтрак"},
+          {text: "Письменный стол"},
+          {text: "Стул для кормления"},
+          {text: "Кроватка"},
+          {text: "Телевизор"},
+          {text: "Шампунь"},
+          {text: "Телевизор"},
+          {text: "Шампунь"},
+        ], expanderTitle: "Дополнительные удобства"
       })
     section.search-page__results
       h1 Номера, которые мы для вас подобрали
-      - const {rooms} = require('./json/rooms.json')
+      - const {rooms} = require("./json/rooms.json")
       .search-page__rooms
         - i=0;
         while i < 12
           +room-card(rooms[i]).search-page__room
           - i++
       .search-page__paginator-wrapper
-        +paginator('1 – 12 из 100+ вариантов аренды').search-page__paginator
+        +paginator("1 – 12 из 100+ вариантов аренды").search-page__paginator

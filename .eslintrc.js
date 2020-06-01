@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-undef':'warn',
-    'no-underscore-dangle': ["error", { "allowAfterThis": true }]
+    'no-undef': 'warn',
+    'no-underscore-dangle': ['error', {'allowAfterThis': true}]
   },
 };

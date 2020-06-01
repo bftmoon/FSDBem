@@ -30,6 +30,7 @@ All images can be found [here](./perfect-pixel-imgs)
 * [Air Datepicker](https://github.com/t1m0n/air-datepicker)
 * [JQueryUI Slider](https://jqueryui.com/slider/#range)
 * [JQuery Masked Input](https://github.com/digitalBush/jquery.maskedinput)
+* [LightSlider](https://github.com/sachinchoolur/lightslider)
 * [Material Icons](https://github.com/marella/material-icons)
 * [Font Awesome 5 Brands](https://github.com/FortAwesome/Font-Awesome)
 

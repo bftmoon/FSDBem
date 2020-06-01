@@ -12,16 +12,16 @@ html(lang="en")
       section.colors-page__colors
         -
           let colors = [
-            {name: 'Dark Shade 100%', num: '#1F2041'},
-            {name: 'Dark Shade 75%', num: '#1F2041'},
-            {name: 'Dark Shade 50%', num: '#1F2041'},
-            {name: 'Dark Shade 25%', num: '#1F2041'},
-            {name: 'Dark Shade 5%', num: '#1F2041'},
-            {name: 'Purple', num: '#BC9CFF'},
-            {name: 'Green', num: '#6FCF97'},
+            {name: "Dark Shade 100%", num: "#1F2041"},
+            {name: "Dark Shade 75%", num: "#1F2041"},
+            {name: "Dark Shade 50%", num: "#1F2041"},
+            {name: "Dark Shade 25%", num: "#1F2041"},
+            {name: "Dark Shade 5%", num: "#1F2041"},
+            {name: "Purple", num: "#BC9CFF"},
+            {name: "Green", num: "#6FCF97"},
           ]
         each color, i in colors
-          div(class='colors-page__color_' + i).colors-page__color
+          div(class="colors-page__color_" + i).colors-page__color
           .colors-page__description
             .colors-page__name=color.name
             .colors-page__num=color.num

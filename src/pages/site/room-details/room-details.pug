@@ -9,27 +9,27 @@ block main
 
   main.details-page
     .details-page__images
-      img(src=require('./imgs/room-details-0.jpg').default).details-page__image-1
-      img(src=require('./imgs/room-details-1.jpg').default).details-page__image-2
-      img(src=require('./imgs/room-details-2.jpg').default).details-page__image-3
+      img(src=require("./imgs/room-details-0.jpg").default).details-page__image-1
+      img(src=require("./imgs/room-details-1.jpg").default).details-page__image-2
+      img(src=require("./imgs/room-details-2.jpg").default).details-page__image-3
     .details-page__details
       .details-page__info
         h2.details-page__title Сведения о номере
         +iconed-list([
           {
-            icon: 'insert_emoticon',
-            title: 'Комфорт',
-            description: 'Шумопоглощающие стены'
+            icon: "insert_emoticon",
+            title: "Комфорт",
+            description: "Шумопоглощающие стены"
           },
           {
-            icon: 'location_city',
-            title: 'Удобство',
-            description: 'Окно в каждой из спален'
+            icon: "location_city",
+            title: "Удобство",
+            description: "Окно в каждой из спален"
           },
           {
-            icon: 'whatshot',
-            title: 'Уют',
-            description: 'Номер оснащён камином'
+            icon: "whatshot",
+            title: "Уют",
+            description: "Номер оснащён камином"
           },
         ])
       .details-page__chart
@@ -38,7 +38,7 @@ block main
       .details-page__feedbacks
         -
           const {feedbacks} = require("./json/feedbacks.json")
-          const count = require("../../../kit/Utils").default.selectWordByCount(feedbacks.length, ['отзывов', 'отзыв', 'отзыва', 'отзывов'], {
+          const count = require("../../../kit/Utils").default.selectWordByCount(feedbacks.length, ["отзывов", "отзыв", "отзыва", "отзывов"], {
             withNumber: true,
             withZeroNumber: true
           })
@@ -53,9 +53,9 @@ block main
         h2.details-page__title.details-page__title_for-list Правила
         +bullet-list({
           items: [
-            'Нельзя с питомцами',
-            'Без вечеринок и меропреятий',
-            'Время прибытия — после 13:00, а выезд до 12:00'
+            "Нельзя с питомцами",
+            "Без вечеринок и меропреятий",
+            "Время прибытия — после 13:00, а выезд до 12:00"
           ]
         })
       .details-page__cancel-info
