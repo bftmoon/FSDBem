@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //min-width: 0;
 
     padding-left: 15px;
     padding-right: 10px;
@@ -100,6 +99,7 @@
   &__decrement, &__increment {
     height: pxToRem(30px);
     width: pxToRem(30px);
+    cursor: pointer;
     padding: 0;
 
     font-size: pxToRem(18px);
@@ -111,6 +111,7 @@
     &:disabled {
       color: $dark_shade5;
       border-color: $dark_shade5;
+      cursor: default;
     }
   }
 
@@ -130,6 +131,7 @@
 
     background: white;
     border: none;
+    cursor: pointer;
 
     &_type_confirm {
       color: $primary;

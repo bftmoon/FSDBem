@@ -9,6 +9,7 @@
 
   &__input {
     opacity: 0;
+    cursor: pointer;
   }
 
   &__input:checked ~ &__star_active {

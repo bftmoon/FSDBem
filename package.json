@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rdev": "webpack-dev-server --open --mode development",
-    "rprod": "webpack-dev-server --open --mode production",
+    "dev": "webpack-dev-server --open --mode development",
+    "prod": "webpack-dev-server --open --mode production",
     "eslint": "eslint . --ext .js",
     "eslint fix": "eslint . --ext .js --fix",
     "build": "webpack --mode production",

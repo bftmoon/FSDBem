@@ -5,11 +5,7 @@ class LikeButton {
 
   static handleLikeClick(element) {
     const counter = element.currentTarget.querySelector('.js-like-button__count');
-    if (element.target.checked) {
-      counter.innerText += 1;
-    } else {
-      counter.innerText -= 1;
-    }
+    counter.innerText = Number(counter.innerText) + (element.target.checked ? 1 : -1);
   }
 
   static initAll(selector = '.js-like-button') {
