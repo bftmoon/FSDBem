@@ -1,7 +1,7 @@
-#FSDBem 
+# FSDBem 
 Project with components architecture and BEM methodology for FSD
 
-####Demo
+#### Demo
 
 UI Kit:
 * [Colors & Types](https://bigfatmoon.github.io/FSDBem/dist/colors-and-type.html)
