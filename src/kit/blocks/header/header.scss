@@ -32,6 +32,7 @@ $header-point: pxToRem(850px);
 
   &__menu-button {
     display: none;
+    cursor: pointer;
     @media screen and (max-width: $header-point) {
       display: initial;
     }
@@ -91,6 +92,7 @@ $header-point: pxToRem(850px);
       border: none;
       text-align: end;
       color: $dark_shade50;
+      cursor: pointer;
     }
   }
 
@@ -107,6 +109,7 @@ $header-point: pxToRem(850px);
 
       background: $dark_shade25;
       opacity: 0.5;
+      cursor: pointer;
 
       &_opened {
         display: initial;

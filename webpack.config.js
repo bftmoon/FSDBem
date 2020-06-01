@@ -80,7 +80,7 @@ const config = {
 
 };
 module.exports = (env, argv) => {
-  if (argv.mode === 'development') {
+  if (argv.single) {
     config.plugins.push(
       new HtmlWebpackPlugin({
 
@@ -95,8 +95,7 @@ module.exports = (env, argv) => {
         // template: './src/pages/site/room-details/room-details.pug'
       }),
     );
-  }
-  if (argv.mode === 'production') {
+  } else {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: './src/index.pug',
