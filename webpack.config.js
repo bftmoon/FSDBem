@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
@@ -7,28 +7,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const KIT_PAGES_DIR = path.resolve(__dirname, 'src/pages/kit-pages');
 const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR);
 const SITE_PAGES_DIR = path.resolve(__dirname, 'src/pages/site');
-const SITE_PAGES = fs.readdirSync(SITE_PAGES_DIR).filter((value => value !== 'layout'));
+const SITE_PAGES = fs.readdirSync(SITE_PAGES_DIR).filter(((value) => value !== 'layout'));
 
 const config = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: "[contenthash].[name].js",
+    path: path.resolve(__dirname, 'docs/dist'),
+    filename: '[contenthash].[name].js',
   },
   devtool: 'inline-source-map',
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
     }),
   ],
   module: {
     rules: [
       {
         test: /\.pug$/,
-        use: ['pug-loader']
+        use: ['pug-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -40,10 +40,10 @@ const config = {
             loader: 'postcss-loader',
             options: {
               plugins: [
-                autoprefixer()
+                autoprefixer(),
               ],
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           'sass-loader',
         ],
@@ -55,9 +55,9 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'imgs/'
-            }
-          }
+              outputPath: 'imgs/',
+            },
+          },
         ],
       },
       {
@@ -67,12 +67,12 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
+              outputPath: 'fonts/',
+            },
+          },
         ],
       },
-    ]
+    ],
   },
   devServer: {
     overlay: true,
@@ -83,6 +83,7 @@ module.exports = (env, argv) => {
   if (argv.mode === 'development') {
     config.plugins.push(
       new HtmlWebpackPlugin({
+
         // for fast switch
 
         template: './src/pages/kit-pages/form-elements/form-elements.pug',
@@ -92,7 +93,8 @@ module.exports = (env, argv) => {
         // template: './src/pages/site/landing/landing.pug'
         // template: './src/pages/site/search-room/search-room.pug'
         // template: './src/pages/site/room-details/room-details.pug'
-      }));
+      }),
+    );
   }
   if (argv.mode === 'production') {
     config.plugins.push(
@@ -107,7 +109,7 @@ module.exports = (env, argv) => {
         filename: `${page}.html`,
         template: `${SITE_PAGES_DIR}/${page}/${page}.pug`,
       })),
-    )
+    );
   }
   return config;
-}
+};

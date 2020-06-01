@@ -1,7 +1,6 @@
-import 'lightslider/dist/js/lightslider.min'
+import 'lightslider/dist/js/lightslider.min';
 
 class Carousel {
-
   init(element) {
     this.slider = element.lightSlider({
       loop: true,

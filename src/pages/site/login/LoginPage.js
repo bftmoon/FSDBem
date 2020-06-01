@@ -1,5 +1,5 @@
-import LoginCard from "../../../kit/blocks/login-card/LoginCard";
-import RegistrationCard from "../../../kit/blocks/registration-card/RegistrationCard";
+import LoginCard from '../../../kit/blocks/login-card/LoginCard';
+import RegistrationCard from '../../../kit/blocks/registration-card/RegistrationCard';
 
 class LoginPage {
   init() {
@@ -7,8 +7,8 @@ class LoginPage {
     this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
     this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
-    LoginCard.addRegistrationClickListener(this.handleRegistrationButtonClick)
-    RegistrationCard.addLoginClickListener(this.handleLoginButtonClick)
+    LoginCard.addRegistrationClickListener(this.handleRegistrationButtonClick);
+    RegistrationCard.addLoginClickListener(this.handleLoginButtonClick);
   }
 
   handleLoginButtonClick() {

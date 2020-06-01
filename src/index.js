@@ -1,5 +1,4 @@
 function importAll(resolve) {
-  const paths = resolve.keys();
   resolve.keys().forEach(resolve);
 }
 

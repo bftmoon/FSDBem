@@ -1,3 +1,3 @@
-import ExpandableCheckboxList from "./ExpandableCheckboxList";
+import ExpandableCheckboxList from './ExpandableCheckboxList';
 
 ExpandableCheckboxList.initAll();

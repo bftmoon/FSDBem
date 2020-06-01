@@ -1,12 +1,10 @@
-import 'air-datepicker/dist/js/datepicker.min'
+import 'air-datepicker/dist/js/datepicker.min';
 
 class DropdownDate {
-
   init(element, isInline = false) {
-
     const params = {
       navTitles: {
-        days: 'MM yyyy'
+        days: 'MM yyyy',
       },
       prevHtml: '<i class="material-icons datepicker-icons">arrow_back</i>',
       nextHtml: '<i class="material-icons datepicker-icons">arrow_forward</i>',
@@ -15,23 +13,33 @@ class DropdownDate {
       multipleDatesSeparator: ' - ',
       inline: isInline,
       offset: 5,
-      minDate: new Date()
+      minDate: new Date(),
     };
     this._$inputStart = element.find('.js-dropdown-date__input_first');
 
     this._$inputEnd = element.find('.js-dropdown-date__input_last');
-    this._$inputStart.parent().on('click', () => this._picker.show());
+    this._handleInputStartClick = this._handleInputStartClick.bind(this);
+    this._$inputStart.parent().on('click', this._handleInputStartClick);
 
     if (this._$inputEnd.length !== 0) {
       this._extractSecondDate = this._extractSecondDate.bind(this);
       params.onSelect = this._extractSecondDate;
-      this._$inputEnd.parent().on('click', () => this._picker.show());
+      this._handleInputEndClick = this._handleInputEndClick.bind(this);
+      this._$inputEnd.parent().on('click', this._handleInputEndClick);
     } else {
       params.dateFormat = 'd M';
     }
 
     this._picker = this._$inputStart.datepicker(params).data('datepicker');
     this._setButtons();
+  }
+
+  _handleInputStartClick() {
+    this._picker.show();
+  }
+
+  _handleInputEndClick() {
+    this._picker.show();
   }
 
   _extractSecondDate(formatted) {
@@ -49,18 +57,20 @@ class DropdownDate {
     $cancel.on('click', this._handleCancelClick);
     const $apply = $('<div>', {
       text: 'Применить',
-      class: 'datepicker--button datepicker--button-apply'
+      class: 'datepicker--button datepicker--button-apply',
     });
     $apply.on('click', this._handleApplyButtonClick);
     $cancel.after($apply);
   }
-  _handleCancelClick(){
+
+  _handleCancelClick() {
     this._$inputEnd.val('');
   }
 
-  _handleApplyButtonClick(){
+  _handleApplyButtonClick() {
     this._picker.hide();
   }
+
   static initAll(selector = '.js-dropdown-date') {
     $(selector).each((_, element) => new DropdownDate().init($(element)));
   }

@@ -25,7 +25,7 @@ class Header {
   }
 
   static initAll(selector = '.js-header') {
-    $(selector).each((_, element) => new Header().init($(element)))
+    $(selector).each((_, element) => new Header().init($(element)));
   }
 }
 

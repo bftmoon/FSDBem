@@ -1,3 +1,3 @@
-import Slider from "./Slider";
+import Slider from './Slider';
 
 Slider.initAll();

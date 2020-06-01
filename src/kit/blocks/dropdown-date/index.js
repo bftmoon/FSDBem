@@ -1,4 +1,4 @@
-import DropdownDate from "./DropdownDate";
+import DropdownDate from './DropdownDate';
 
 DropdownDate.initAll();
 DropdownDate.initAllInline();

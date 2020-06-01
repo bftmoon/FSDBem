@@ -1,10 +1,8 @@
-import RussianLangUtils from "../../Utils";
+import RussianLangUtils from '../../Utils';
 
 class DropdownMenu {
-
   constructor(headerFormatter) {
-    if (headerFormatter)
-      this._formatHeader = headerFormatter;
+    if (headerFormatter) this._formatHeader = headerFormatter;
   }
 
   init($menu) {
@@ -42,7 +40,7 @@ class DropdownMenu {
   }
 
   _updateHeader() {
-    const values = []
+    const values = [];
     this._$inputs.each((index, input) => {
       values.push(+input.value);
     });
@@ -54,29 +52,28 @@ class DropdownMenu {
     this._$header.next().toggleClass('dropdown-menu__content_opened');
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _formatHeader(countArray) {
-    return countArray.map(count =>
-      RussianLangUtils.selectWordByCount(
-        count,
-        ['вещей', 'вещь', 'вещи', 'вещей'],
-        {withNumber: true}
-      )
-    );
+    return countArray.map((count) => RussianLangUtils.selectWordByCount(
+      count,
+      ['вещей', 'вещь', 'вещи', 'вещей'],
+      { withNumber: true },
+    ));
   }
 
   _handleDecrementClick(event) {
-    const input = event.target.nextSibling;
-    input.value--;
-    if (+input.value === 0)
-      event.target.disabled = true;
+    const decrementButton = event.target;
+    const input = decrementButton.nextSibling;
+    input.value -= 1;
+    if (+input.value === 0) decrementButton.disabled = true;
     this._updateHeader();
   }
 
   _handleIncrementClick(event) {
-    let input = event.target.previousSibling;
-    if (+input.value === 0)
-      input.previousSibling.disabled = false;
-    input.value++;
+    const input = event.target.previousSibling;
+    const count = Number(input.value);
+    if (count === 0) input.previousSibling.disabled = false;
+    input.value = count + 1;
     this._updateHeader();
   }
 
@@ -86,7 +83,7 @@ class DropdownMenu {
     this._updateHeader();
   }
 
-  static initAll({selector = '.js-dropdown-menu', headerFormatter}) {
+  static initAll({ selector = '.js-dropdown-menu', headerFormatter }) {
     $(selector).each((_, element) => new DropdownMenu(headerFormatter).init($(element)));
   }
 }

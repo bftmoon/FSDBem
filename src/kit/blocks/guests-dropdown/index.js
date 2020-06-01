@@ -1,5 +1,5 @@
-import DropdownMenu from "../dropdown-menu/DropdownMenu";
-import RussianLangUtils from "../../Utils";
+import DropdownMenu from '../dropdown-menu/DropdownMenu';
+import RussianLangUtils from '../../Utils';
 
 DropdownMenu.initAll({
   selector: '.js-guests-dropdown',
@@ -8,7 +8,7 @@ DropdownMenu.initAll({
     return RussianLangUtils.selectWordByCount(
       guestsCount,
       ['Сколько гостей', 'гость', 'гостя', 'гостей'],
-      {withNumber: true}
+      { withNumber: true },
     );
-  }
+  },
 });

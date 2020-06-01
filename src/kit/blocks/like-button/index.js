@@ -1,3 +1,3 @@
-import LikeButton from "./LikeButton";
+import LikeButton from './LikeButton';
 
-
+LikeButton.initAll();

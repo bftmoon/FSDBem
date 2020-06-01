@@ -4,7 +4,7 @@ class ExpandableCheckboxList {
     this._$content = $expander.find('.js-checkbox-list__group');
 
     this._handleExpanderClick = this._handleExpanderClick.bind(this);
-    $expander.find('.js-checkbox-list__expander').on('click', this._handleExpanderClick)
+    $expander.find('.js-checkbox-list__expander').on('click', this._handleExpanderClick);
   }
 
   _handleExpanderClick() {
