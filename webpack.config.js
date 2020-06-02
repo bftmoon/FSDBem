@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const KIT_PAGES_DIR = path.resolve(__dirname, 'src/pages/kit-pages');
-const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR);
+const KIT_PAGES = fs.readdirSync(KIT_PAGES_DIR).filter(((value) => value !== 'layout'));
 const SITE_PAGES_DIR = path.resolve(__dirname, 'src/pages/site');
 const SITE_PAGES = fs.readdirSync(SITE_PAGES_DIR).filter(((value) => value !== 'layout'));
 
