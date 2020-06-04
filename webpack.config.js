@@ -3,10 +3,13 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function generatePagesData(paths) {
-  const entries = {};
-  const htmlOptions = [];
+  let entries = {};
+  let htmlOptions = [];
+
   paths.forEach((currentPath) => {
     const dir = path.resolve(__dirname, `src/pages/${currentPath}`);
     const pages = fs.readdirSync(dir).filter(((value) => value !== 'layout'));
@@ -19,10 +22,15 @@ function generatePagesData(paths) {
       entries[page] = `${dir}/${page}/${page}.js`
     })
   })
+  // htmlOptions = htmlOptions.filter((o) => o.filename === 'cards.html')
+  // entries = {'cards': entries['cards']}
   return {htmlOptions, entries};
 }
 
-const pagesData = generatePagesData(['kit-pages', 'site']);
+const pagesData = generatePagesData([
+  'kit-pages',
+  'site'
+]);
 
 const config = {
   resolve: {
@@ -42,6 +50,11 @@ const config = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new CleanWebpackPlugin({dry: true}),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -56,7 +69,7 @@ const config = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'resolve-url-loader',
           {
@@ -97,18 +110,23 @@ const config = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   devServer: {
     overlay: true,
   },
 
 };
 module.exports = (env, argv) => {
-    config.plugins.push(
-      new HtmlWebpackPlugin({
-        template: './src/index.pug',
-        chunks: ['index']
-      }),
-      ...pagesData.htmlOptions.map((options) => new HtmlWebpackPlugin(options))
-    );
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      template: './src/index.pug',
+      chunks: ['index']
+    }),
+    ...pagesData.htmlOptions.map((options) => new HtmlWebpackPlugin(options))
+  );
   return config;
 };

@@ -3,19 +3,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-1.jpg",
+          "src": "src/pages/site/search-room/images/room-1.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-1.jpg",
+          "src": "src/pages/site/search-room/images/room-1.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-1.jpg",
+          "src": "src/pages/site/search-room/images/room-1.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-1.jpg",
+          "src": "src/pages/site/search-room/images/room-1.jpg",
           "alt": "room"
         }
       ],
@@ -28,19 +28,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-2.jpg",
+          "src": "src/pages/site/search-room/images/room-2.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-2.jpg",
+          "src": "src/pages/site/search-room/images/room-2.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-2.jpg",
+          "src": "src/pages/site/search-room/images/room-2.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-2.jpg",
+          "src": "src/pages/site/search-room/images/room-2.jpg",
           "alt": "room"
         }
       ],
@@ -52,19 +52,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-3.jpg",
+          "src": "src/pages/site/search-room/images/room-3.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-3.jpg",
+          "src": "src/pages/site/search-room/images/room-3.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-3.jpg",
+          "src": "src/pages/site/search-room/images/room-3.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-3.jpg",
+          "src": "src/pages/site/search-room/images/room-3.jpg",
           "alt": "room"
         }
       ],
@@ -77,19 +77,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-4.jpg",
+          "src": "src/pages/site/search-room/images/room-4.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-4.jpg",
+          "src": "src/pages/site/search-room/images/room-4.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-4.jpg",
+          "src": "src/pages/site/search-room/images/room-4.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-4.jpg",
+          "src": "src/pages/site/search-room/images/room-4.jpg",
           "alt": "room"
         }
       ],
@@ -101,19 +101,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-5.jpg",
+          "src": "src/pages/site/search-room/images/room-5.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-5.jpg",
+          "src": "src/pages/site/search-room/images/room-5.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-5.jpg",
+          "src": "src/pages/site/search-room/images/room-5.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-5.jpg",
+          "src": "src/pages/site/search-room/images/room-5.jpg",
           "alt": "room"
         }
       ],
@@ -125,19 +125,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-6.jpg",
+          "src": "src/pages/site/search-room/images/room-6.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-6.jpg",
+          "src": "src/pages/site/search-room/images/room-6.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-6.jpg",
+          "src": "src/pages/site/search-room/images/room-6.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-6.jpg",
+          "src": "src/pages/site/search-room/images/room-6.jpg",
           "alt": "room"
         }
       ],
@@ -149,19 +149,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-7.jpg",
+          "src": "src/pages/site/search-room/images/room-7.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-7.jpg",
+          "src": "src/pages/site/search-room/images/room-7.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-7.jpg",
+          "src": "src/pages/site/search-room/images/room-7.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-7.jpg",
+          "src": "src/pages/site/search-room/images/room-7.jpg",
           "alt": "room"
         }
       ],
@@ -173,19 +173,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-8.jpg",
+          "src": "src/pages/site/search-room/images/room-8.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-8.jpg",
+          "src": "src/pages/site/search-room/images/room-8.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-8.jpg",
+          "src": "src/pages/site/search-room/images/room-8.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-8.jpg",
+          "src": "src/pages/site/search-room/images/room-8.jpg",
           "alt": "room"
         }
       ],
@@ -197,19 +197,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-9.jpg",
+          "src": "src/pages/site/search-room/images/room-9.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-9.jpg",
+          "src": "src/pages/site/search-room/images/room-9.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-9.jpg",
+          "src": "src/pages/site/search-room/images/room-9.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-9.jpg",
+          "src": "src/pages/site/search-room/images/room-9.jpg",
           "alt": "room"
         }
       ],
@@ -221,19 +221,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-10.jpg",
+          "src": "src/pages/site/search-room/images/room-10.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-10.jpg",
+          "src": "src/pages/site/search-room/images/room-10.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-10.jpg",
+          "src": "src/pages/site/search-room/images/room-10.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-10.jpg",
+          "src": "src/pages/site/search-room/images/room-10.jpg",
           "alt": "room"
         }
       ],
@@ -245,19 +245,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-11.jpg",
+          "src": "src/pages/site/search-room/images/room-11.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-11.jpg",
+          "src": "src/pages/site/search-room/images/room-11.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-11.jpg",
+          "src": "src/pages/site/search-room/images/room-11.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-11.jpg",
+          "src": "src/pages/site/search-room/images/room-11.jpg",
           "alt": "room"
         }
       ],
@@ -269,19 +269,19 @@
     {
       "imgs": [
         {
-          "src": "./images/room-12.jpg",
+          "src": "src/pages/site/search-room/images/room-12.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-12.jpg",
+          "src": "src/pages/site/search-room/images/room-12.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-12.jpg",
+          "src": "src/pages/site/search-room/images/room-12.jpg",
           "alt": "room"
         },
         {
-          "src": "./images/room-12.jpg",
+          "src": "src/pages/site/search-room/images/room-12.jpg",
           "alt": "room"
         }
       ],

@@ -2,7 +2,7 @@
   "feedbacks": [
     {
       "img": {
-        "src": "./imgs/avatar-1.jpg",
+        "src": "src/pages/site/room-details/imgs/avatar-1.jpg",
         "alt": "avatar"
       },
       "name": "Мурад Сарафанов",
@@ -15,7 +15,7 @@
     },
     {
       "img": {
-        "src": "./imgs/avatar-2.jpg",
+        "src": "src/pages/site/room-details/imgs/avatar-2.jpg",
         "alt": "avatar"
       },
       "name": "Патрисия Стёклышкова",
