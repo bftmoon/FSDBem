@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 function generatePagesData(paths) {
   let entries = {};
@@ -22,8 +23,6 @@ function generatePagesData(paths) {
       entries[page] = `${dir}/${page}/${page}.js`
     })
   })
-  // htmlOptions = htmlOptions.filter((o) => o.filename === 'cards.html')
-  // entries = {'cards': entries['cards']}
   return {htmlOptions, entries};
 }
 
@@ -50,7 +49,7 @@ const config = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin({dry: true}),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
@@ -111,6 +110,8 @@ const config = {
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       chunks: 'all',
     },
