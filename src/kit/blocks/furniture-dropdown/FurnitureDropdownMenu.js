@@ -19,11 +19,11 @@ class FurnitureDropdownMenu extends DropdownMenu {
     ].join(', ');
   }
 
-  static initDefault({selector = '.js-guests-dropdown', parent = document}) {
+  static initDefault({selector = '.js-furniture-dropdown', parent = document}) {
     new FurnitureDropdownMenu().create($(parent.querySelector(selector)));
   }
 
-  static initAll({selector = '.js-guests-dropdown', parent = document}) {
+  static initAll({selector = '.js-furniture-dropdown', parent = document}) {
     $(parent).find(selector).each((__, element) => new FurnitureDropdownMenu().create($(element)));
   }
 }

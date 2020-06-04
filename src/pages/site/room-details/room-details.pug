@@ -38,7 +38,7 @@ block main
       .details-page__feedbacks
         -
           const {feedbacks} = require("./json/feedbacks.json")
-          const count = require("../../../kit/Utils").default.selectWordByCount(feedbacks.length, ["отзывов", "отзыв", "отзыва", "отзывов"], {
+          const count = require("@utils/RussianLangUtil").default.selectWordByCount(feedbacks.length, ["отзывов", "отзыв", "отзыва", "отзывов"], {
             withNumber: true,
             withZeroNumber: true
           })

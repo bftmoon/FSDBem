@@ -48,7 +48,8 @@
       "price": "9 900₽",
       "rating": 4,
       "reviewCount": 65
-    },    {
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-3.jpg",
@@ -72,7 +73,8 @@
       "isLux": true,
       "rating": 3,
       "reviewCount": 35
-    },   {
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-4.jpg",
@@ -94,8 +96,9 @@
       "number": 856,
       "price": "7 300₽",
       "rating": 5,
-      "reviewCount":19
-    },   {
+      "reviewCount": 19
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-5.jpg",
@@ -117,8 +120,9 @@
       "number": 740,
       "price": "6 000₽",
       "rating": 4,
-      "reviewCount":44
-    },   {
+      "reviewCount": 44
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-6.jpg",
@@ -140,8 +144,9 @@
       "number": 982,
       "price": "5 800₽",
       "rating": 3,
-      "reviewCount":56
-    },   {
+      "reviewCount": 56
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-7.jpg",
@@ -163,8 +168,9 @@
       "number": 678,
       "price": "5 500₽",
       "rating": 5,
-      "reviewCount":45
-    },   {
+      "reviewCount": 45
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-8.jpg",
@@ -186,8 +192,9 @@
       "number": 450,
       "price": "5 300₽",
       "rating": 4,
-      "reviewCount":39
-    },   {
+      "reviewCount": 39
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-9.jpg",
@@ -209,8 +216,9 @@
       "number": 350,
       "price": "5 000₽",
       "rating": 3,
-      "reviewCount":77
-    },   {
+      "reviewCount": 77
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-10.jpg",
@@ -232,8 +240,9 @@
       "number": 666,
       "price": "5 000₽",
       "rating": 5,
-      "reviewCount":25
-    },   {
+      "reviewCount": 25
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-11.jpg",
@@ -255,8 +264,9 @@
       "number": 444,
       "price": "5 000₽",
       "rating": 3,
-      "reviewCount":15
-    },   {
+      "reviewCount": 15
+    },
+    {
       "imgs": [
         {
           "src": "./images/room-12.jpg",
@@ -278,7 +288,7 @@
       "number": 352,
       "price": "5 000₽",
       "rating": 3,
-      "reviewCount":55
+      "reviewCount": 55
     }
   ]
 }

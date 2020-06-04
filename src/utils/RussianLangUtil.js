@@ -1,4 +1,4 @@
-class RussianLangUtils {
+class RussianLangUtil {
   static selectWordByCount(count, variants, {withNumber = false, withZeroNumber = false}) {
     const prefix = withNumber ? `${count} ` : '';
     const residue = count % 10;
@@ -10,4 +10,4 @@ class RussianLangUtils {
   }
 }
 
-export default RussianLangUtils;
+export default RussianLangUtil;

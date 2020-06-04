@@ -1,14 +1,14 @@
-import LoginCard from '../../../kit/blocks/login-card/LoginCard';
-import RegistrationCard from '../../../kit/blocks/registration-card/RegistrationCard';
+import LoginCard from "@blocks/login-card";
+import RegistrationCard from "@blocks/registration-card";
 
 class LoginPage {
-  init() {
+  create() {
     this.$cards = $('.js-login-page__card');
     this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
     this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
     LoginCard.addRegistrationClickListener(this.handleRegistrationButtonClick);
-    RegistrationCard.addLoginClickListener(this.handleLoginButtonClick);
+    RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick});
   }
 
   handleLoginButtonClick() {

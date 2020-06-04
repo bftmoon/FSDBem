@@ -15,6 +15,10 @@ class ExpandableCheckboxList {
   static initAll({selector = '.js-checkbox-list', parent = document}) {
     $(parent).find(selector).each((__, element) => new ExpandableCheckboxList().create($(element)));
   }
+
+  static initDefault({selector = '.js-checkbox-list', parent = document}) {
+    $(parent).find(selector).each((__, element) => new ExpandableCheckboxList().create($(element)));
+  }
 }
 
 export default ExpandableCheckboxList;

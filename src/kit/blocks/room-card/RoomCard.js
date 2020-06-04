@@ -5,8 +5,8 @@ class RoomCard {
     Carousel.initDefault({parent: element});
   }
 
-  static initDefault({selector = '.js-room-card', parent = document}) {
-    RoomCard.init(parent.querySelector(selector));
+  static initAll({selector = '.js-room-card', parent = document}) {
+    $(parent).find(selector).each((__, element)=>RoomCard.init(element))
   }
 }
 

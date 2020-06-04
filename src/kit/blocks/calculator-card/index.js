@@ -1,3 +1,4 @@
+import '@blocks/room-title'
 import '@blocks/button'
 import './calculator-card.scss'
 import CalculatorCard from "./CalculatorCard";

@@ -1,0 +1,1 @@
+import './iconed-list.scss'

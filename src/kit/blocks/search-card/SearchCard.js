@@ -8,7 +8,7 @@ class SearchCard {
   }
 
   static initDefault({selector = '.js-search-card', parent = document}) {
-    SearchCard.init($(parent.querySelector(selector)));
+    SearchCard.init(parent.querySelector(selector));
   }
 }
 

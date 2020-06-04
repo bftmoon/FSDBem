@@ -7,7 +7,7 @@ $landing-page-point: 480px;
     height: 830px;
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: $landing-page-point){
+    @media screen and (max-width: $landing-page-point) {
       align-items: center;
     }
   }
@@ -16,7 +16,7 @@ $landing-page-point: 480px;
     padding: 70px 5px 0;
     margin: 0 9.3%;
     max-width: 390px;
-    @media screen and (max-width: $landing-page-point){
+    @media screen and (max-width: $landing-page-point) {
       margin: 0;
     }
   }
@@ -33,7 +33,7 @@ $landing-page-point: 480px;
     max-width: 300px;
     margin-right: 9.4%;
     text-align: right;
-    @media screen and (max-width: $landing-page-point){
+    @media screen and (max-width: $landing-page-point) {
       margin: 0;
     }
   }

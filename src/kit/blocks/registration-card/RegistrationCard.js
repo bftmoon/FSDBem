@@ -1,6 +1,10 @@
+import DateMaskedInput from "@blocks/input";
+
 class RegistrationCard {
-  static addLoginClickListener(listener) {
-    $('.js-registration-card__login-button').on('click', listener);
+  static initDefault({selector = '.js-registration-card', parent = document, loginClickListener}) {
+    const card = parent.querySelector(selector);
+    card.querySelector( '.js-registration-card__login-button').addEventListener('click', loginClickListener);
+    DateMaskedInput.initDefault({parent: card})
   }
 }
 
