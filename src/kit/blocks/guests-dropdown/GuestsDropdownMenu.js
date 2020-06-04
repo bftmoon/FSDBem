@@ -1,10 +1,10 @@
 import DropdownMenu from "../dropdown-menu/index";
-import RussianLangUtils from "../../../utils/RussianLangUtils";
+import RussianLangUtil from "@utils/RussianLangUtil";
 
 class GuestsDropdownMenu extends DropdownMenu {
   _formatHeader(countArray) {
     const guestsCount = countArray.reduce((sum, count) => sum + count, 0);
-    return RussianLangUtils.selectWordByCount(
+    return RussianLangUtil.selectWordByCount(
       guestsCount,
       ['Сколько гостей', 'гость', 'гостя', 'гостей'],
       {withNumber: true},

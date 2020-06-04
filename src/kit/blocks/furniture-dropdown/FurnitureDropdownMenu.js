@@ -1,18 +1,18 @@
 import DropdownMenu from "../dropdown-menu/index";
-import RussianLangUtils from "../../../utils/RussianLangUtils";
+import RussianLangUtil from "@utils/RussianLangUtil";
 
 class FurnitureDropdownMenu extends DropdownMenu {
   _formatHeader(countArray) {
     return [
-      RussianLangUtils.selectWordByCount(countArray[0], ['спален', 'спальня', 'спальни', 'спален'], {
+      RussianLangUtil.selectWordByCount(countArray[0], ['спален', 'спальня', 'спальни', 'спален'], {
         withNumber: true,
         withZeroNumber: true,
       }),
-      RussianLangUtils.selectWordByCount(countArray[1], ['кроватей', 'кровать', 'кровати', 'кроватей'], {
+      RussianLangUtil.selectWordByCount(countArray[1], ['кроватей', 'кровать', 'кровати', 'кроватей'], {
         withNumber: true,
         withZeroNumber: true,
       }),
-      RussianLangUtils.selectWordByCount(countArray[2], ['ванных комнат', 'ванная комната', 'ванные комнаты', 'ванных комнат'], {
+      RussianLangUtil.selectWordByCount(countArray[2], ['ванных комнат', 'ванная комната', 'ванные комнаты', 'ванных комнат'], {
         withNumber: true,
         withZeroNumber: true,
       }),

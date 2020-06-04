@@ -1,4 +1,4 @@
-import RussianLangUtils from "../../../utils/RussianLangUtils";
+import RussianLangUtil from "@utils/RussianLangUtil";
 
 class FeedbacksChart {
   init({$element, data, scale = 1}) {
@@ -67,7 +67,7 @@ class FeedbacksChart {
     const [count, voice] = this._$element.find('.js-feedbacks-chart__summary').children();
     const voiceSum = this._data.reduce((a, b) => a + b, 0);
     count.innerText = voiceSum;
-    voice.innerText = RussianLangUtils.selectWordByCount(
+    voice.innerText = RussianLangUtil.selectWordByCount(
       voiceSum,
       ['голосов', 'голос', 'голоса', 'голосов'],
       {},

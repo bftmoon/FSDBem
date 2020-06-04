@@ -1,4 +1,4 @@
-import RussianLangUtils from "../../../utils/RussianLangUtils";
+import RussianLangUtil from "@utils/RussianLangUtil";
 
 class DropdownMenu {
   create($menu) {
@@ -50,7 +50,7 @@ class DropdownMenu {
 
   // eslint-disable-next-line class-methods-use-this
   _formatHeader(countArray) {
-    return countArray.map((count) => RussianLangUtils.selectWordByCount(
+    return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
       {withNumber: true},
