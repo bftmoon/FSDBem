@@ -4,10 +4,10 @@ include ../rating/rating
 
 // imgs: [{src, alt}]
 mixin room-card({imgs, number, isLux, price, rating=0, reviewCount=0})
-  .room-card
+  .room-card.js-room-card
     +carousel(imgs)
     .room-card__description
-      +room-title({number, isLux, price, isMiniStyle:true})
+      +room-title({number, isLux, price, isMiniStyle: true})
       .room-card__impression
         +rating({rating})
         .room-card__rewiew

@@ -1,8 +1,8 @@
 import 'lightslider/dist/js/lightslider.min';
 
 class Carousel {
-  init(element) {
-    this.slider = element.lightSlider({
+  static init($element) {
+    $element.lightSlider({
       loop: true,
       item: 1,
       prevHtml: '<i class="material-icons lSAction__icon">expand_more</i>',
@@ -10,8 +10,8 @@ class Carousel {
     });
   }
 
-  static initAll(selector = '.js-carousel__content') {
-    $(selector).each((_, element) => new Carousel().init($(element)));
+  static initDefault({selector = '.js-carousel__content', parent = document}) {
+    Carousel.init($(parent.querySelector(selector)));
   }
 }
 

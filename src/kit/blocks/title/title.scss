@@ -1,7 +1,7 @@
 @import "../../env-styles/variables";
 @import "../../env-styles/functions";
 
-.title{
+.title {
   display: flex;
   justify-content: space-between;
   padding-bottom: pxToRem(5px);
@@ -10,11 +10,12 @@
   font-size: pxToRem(12px);
   line-height: pxToRem(15px);
 
-  &__main{
+  &__main {
     font-weight: bold;
     color: $dark_shade100;
   }
-  &__subtitle{
+
+  &__subtitle {
     color: $dark_shade50;
   }
 }

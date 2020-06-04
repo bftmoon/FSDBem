@@ -1,6 +1,6 @@
 class LikeButton {
-  static init($element) {
-    $element.on('click', LikeButton.handleLikeClick);
+  static init(element) {
+    element.addEventListener('click', LikeButton.handleLikeClick);
   }
 
   static handleLikeClick(element) {
@@ -8,8 +8,12 @@ class LikeButton {
     counter.innerText = Number(counter.innerText) + (element.target.checked ? 1 : -1);
   }
 
-  static initAll(selector = '.js-like-button') {
-    $(selector).each((_, like) => LikeButton.init($(like)));
+  static initAll({selector = '.js-like-button', parent = document}) {
+    $(parent).find(selector).each((_, element) => LikeButton.init(element));
+  }
+
+  static initDefault({selector = '.js-like-button', parent = document}) {
+    LikeButton.init(parent.querySelector(selector));
   }
 }
 

@@ -2,7 +2,7 @@ include ../link-with-menu/link-with-menu
 include ../button/button
 
 mixin header-links({home, links, login, register, username, isVertical})
-  .header-links(class=isVertical?"header-links_vertical":"")
+  .header-links(class=isVertical ? "header-links_vertical" : "")
     if home
       a(href=home.url).header-links__link.header-links__link_type_home=home.name
     for link in links
@@ -15,7 +15,7 @@ mixin header-links({home, links, login, register, username, isVertical})
     if username
       .header-links__line(
         class=isVertical ? "header-links__line_vertical" : ""
-        )
+      )
       a(
         href="mock-address"
         class=isVertical ? "header-links__username_vertical" : ""

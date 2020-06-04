@@ -1,0 +1,1 @@
+import './subscribe-input.scss'

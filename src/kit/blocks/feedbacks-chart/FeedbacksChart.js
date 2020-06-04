@@ -1,7 +1,7 @@
-import RussianLangUtils from '../../Utils';
+import RussianLangUtils from "../../../utils/RussianLangUtils";
 
 class FeedbacksChart {
-  init({ $element, data, scale = 1 }) {
+  init({$element, data, scale = 1}) {
     if ($element.length !== 0) {
       this._$element = $element;
       this._data = [data[0], data[2], data[1], data[3]];
@@ -74,8 +74,8 @@ class FeedbacksChart {
     );
   }
 
-  static initDefault({ selector = '.js-feedbacks-chart', data = [0, 0, 0, 0] }) {
-    new FeedbacksChart().init({ $element: $(selector), data });
+  static initDefault({selector = '.js-feedbacks-chart', parent = document, data = [0, 0, 0, 0]}) {
+    new FeedbacksChart().init({$element: $(parent.querySelector(selector)), data});
   }
 }
 

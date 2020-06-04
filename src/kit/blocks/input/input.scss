@@ -17,11 +17,11 @@
     border-color: $dark_shade50;
   }
 
-  &:invalid{
+  &:invalid {
     box-shadow: 0 0 5px $primary;
   }
 
-  &::placeholder{
+  &::placeholder {
     color: $dark_shade25;
   }
 }

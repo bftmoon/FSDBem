@@ -20,8 +20,9 @@
     position: absolute;
     cursor: pointer;
 
-    &:checked + .toggle__checker{
+    &:checked + .toggle__checker {
       border-color: $primary;
+
       &:before {
         background-image: $gradient;
         transform: translateX(20px);

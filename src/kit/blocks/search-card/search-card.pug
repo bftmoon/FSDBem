@@ -3,7 +3,7 @@ include ../guests-dropdown/guests-dropdown
 include ../button/button
 
 mixin search-card
-  form.search-card&attributes(attributes)
+  form.search-card.js-search-card&attributes(attributes)
     h1.search-card__header Найдём номера под ваши пожелания
     .search-card__item
       +dropdown-date([

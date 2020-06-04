@@ -1,3 +1,5 @@
-import Paginator from './Paginator';
+import './paginator.scss'
 
-Paginator.initAll();
+import Paginator from "./Paginator";
+
+export default Paginator;

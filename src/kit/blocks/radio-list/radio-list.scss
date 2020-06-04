@@ -2,10 +2,12 @@
 
 .radio-list {
   border: none;
-  &__wrapper-for-chrome{
+
+  &__wrapper-for-chrome {
     display: flex;
   }
-  &__item{
+
+  &__item {
     margin-right: 20px;
     line-height: 100%;
   }

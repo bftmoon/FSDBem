@@ -1,3 +1,6 @@
-import Carousel from './Carousel';
+import 'lightslider/dist/css/lightslider.min.css'
+import './carousel_overrides.scss'
+import './carousel.scss'
+import Carousel from "./Carousel";
 
-Carousel.initAll();
+export default Carousel;

@@ -16,7 +16,7 @@
     @extend .material-icons;
     margin: auto 10px;
 
-    &_hidden{
+    &_hidden {
       display: none;
     }
   }
@@ -42,7 +42,7 @@
     text-transform: uppercase;
   }
 
-  &__item{
+  &__item {
     margin-bottom: 10px;
     display: flex;
   }

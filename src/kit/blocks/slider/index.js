@@ -1,3 +1,6 @@
-import Slider from './Slider';
+import './slider_overrides.scss'
+import './slider.scss'
 
-Slider.initAll();
+import Slider from "./Slider";
+
+export default Slider;

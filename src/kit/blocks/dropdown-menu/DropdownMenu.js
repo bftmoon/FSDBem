@@ -1,11 +1,7 @@
-import RussianLangUtils from '../../Utils';
+import RussianLangUtils from "../../../utils/RussianLangUtils";
 
 class DropdownMenu {
-  constructor(headerFormatter) {
-    if (headerFormatter) this._formatHeader = headerFormatter;
-  }
-
-  init($menu) {
+  create($menu) {
     this._$header = $menu.find('.js-dropdown-menu__header');
     const $content = this._$header.next();
     this._$inputs = $content.find('.js-dropdown-menu__count');
@@ -57,7 +53,7 @@ class DropdownMenu {
     return countArray.map((count) => RussianLangUtils.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
-      { withNumber: true },
+      {withNumber: true},
     ));
   }
 
@@ -81,10 +77,6 @@ class DropdownMenu {
     this._$inputs.val(0);
     this._$inputs.prev().prop('disabled', true);
     this._updateHeader();
-  }
-
-  static initAll({ selector = '.js-dropdown-menu', headerFormatter }) {
-    $(selector).each((_, element) => new DropdownMenu(headerFormatter).init($(element)));
   }
 }
 

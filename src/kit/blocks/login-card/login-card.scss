@@ -2,18 +2,22 @@
 @import "../../env-styles/functions";
 @import "../../env-styles/abstract";
 
-.login-card{
+.login-card {
   @extend %card;
-  &__title{
+
+  &__title {
     margin-bottom: 20px;
   }
-  &__item{
+
+  &__item {
     margin-bottom: 10px;
   }
-  &__submit{
-    margin-top:20px;
+
+  &__submit {
+    margin-top: 20px;
   }
-  &__offer{
+
+  &__offer {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;

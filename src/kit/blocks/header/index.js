@@ -1,3 +1,7 @@
-import Header from './Header';
+import '@blocks/logo/index'
+import '@blocks/header-links/index'
+import './header.scss'
 
-Header.initAll();
+import Header from "./Header";
+
+export default Header;

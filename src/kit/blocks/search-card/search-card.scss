@@ -4,9 +4,10 @@
 .search-card {
   @extend %card;
 
-  &__item{
+  &__item {
     margin-top: 20px;
   }
+
   &__submit-button {
     margin-top: 30px;
   }

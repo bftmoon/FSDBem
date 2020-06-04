@@ -1,3 +1,5 @@
-import ExpandableCheckboxList from './ExpandableCheckboxList';
+import '@blocks/checkable-item/index.js'
+import './checkbox-list.scss'
+import ExpandableCheckboxList from "./ExpandableCheckboxList";
 
-ExpandableCheckboxList.initAll();
+export default ExpandableCheckboxList;

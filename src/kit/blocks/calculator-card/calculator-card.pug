@@ -4,7 +4,7 @@ include ../room-title/room-title
 include ../button/button
 
 mixin calculator-card({room, options, costs})
-  .calculator-card
+  .calculator-card.js-calculator-card
     .calculator-card__title
       +room-title({
         number: room.number,

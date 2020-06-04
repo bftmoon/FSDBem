@@ -30,7 +30,8 @@
         color: $dark_shade75;
       }
     }
-    &_with-menu{
+
+    &_with-menu {
       margin-right: 10px;
     }
   }
@@ -40,22 +41,25 @@
     display: flex;
     flex-direction: column;
     vertical-align: center;
-    &_vertical{
+
+    &_vertical {
       margin: 20px 0;
     }
   }
 
-  &__login-button{
+  &__login-button {
     margin: auto 0 auto 7px;
-    &_vertical{
+
+    &_vertical {
       margin: 2px;
       width: 100%;
     }
   }
 
-  &__register-button{
+  &__register-button {
     margin: auto 0 auto 20px;
-    &_vertical{
+
+    &_vertical {
       margin: 2px;
       width: 100%;
     }
@@ -66,7 +70,8 @@
     height: pxToRem(30px);
     width: 1px;
     background: $dark_shade10;
-    &_vertical{
+
+    &_vertical {
       display: none;
     }
   }

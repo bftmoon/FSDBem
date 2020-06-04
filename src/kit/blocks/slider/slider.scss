@@ -2,12 +2,13 @@
 @import "slider_overrides";
 
 .slider {
-  &__picker{
+  &__picker {
     height: 6px;
-    border: 1px solid $dark_shade25{
+    border: 1px solid $dark_shade25 {
       radius: 4px;
     }
   }
+
   &__header {
     @extend h3;
     margin-bottom: 20px;

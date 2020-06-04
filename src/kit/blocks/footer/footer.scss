@@ -41,7 +41,8 @@ $footer-point_small: 490px;
       align-items: center;
     }
   }
-  &__tagline{
+
+  &__tagline {
     @media screen and (max-width: $footer-point_medium) {
       text-align: center;
     }
@@ -118,7 +119,7 @@ $footer-point_small: 490px;
     }
   }
 
-  &__copyright{
+  &__copyright {
     @media screen and (max-width: $footer-point_small) {
       margin-bottom: 10px;
     }

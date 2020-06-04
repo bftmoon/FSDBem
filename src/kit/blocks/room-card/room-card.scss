@@ -9,10 +9,11 @@
   box-shadow: $shadow_smaller;
   background: white;
 
-  &__description{
+  &__description {
     padding: 13px 20px;
   }
-  &__impression{
+
+  &__impression {
     display: flex;
     justify-content: space-between;
 
@@ -20,10 +21,12 @@
     padding-top: pxToRem(8px);
     margin-top: pxToRem(8px);
   }
-  &__rewiew{
+
+  &__rewiew {
     color: $dark_shade50;
   }
-  &__count{
+
+  &__count {
     font-weight: bold;
   }
 }

@@ -1,3 +1,5 @@
-import LikeButton from './LikeButton';
+import './like-button.scss'
 
-LikeButton.initAll();
+import LikeButton from "./LikeButton";
+
+export default LikeButton;

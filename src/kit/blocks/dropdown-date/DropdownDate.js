@@ -1,7 +1,7 @@
 import 'air-datepicker/dist/js/datepicker.min';
 
 class DropdownDate {
-  init(element, isInline = false) {
+  create($element, isInline = false) {
     const params = {
       navTitles: {
         days: 'MM yyyy',
@@ -15,9 +15,9 @@ class DropdownDate {
       offset: 5,
       minDate: new Date(),
     };
-    this._$inputStart = element.find('.js-dropdown-date__input_first');
+    this._$inputStart = $element.find('.js-dropdown-date__input_first');
 
-    this._$inputEnd = element.find('.js-dropdown-date__input_last');
+    this._$inputEnd = $element.find('.js-dropdown-date__input_last');
     this._handleInputStartClick = this._handleInputStartClick.bind(this);
     this._$inputStart.parent().on('click', this._handleInputStartClick);
 
@@ -71,12 +71,16 @@ class DropdownDate {
     this._picker.hide();
   }
 
-  static initAll(selector = '.js-dropdown-date') {
-    $(selector).each((_, element) => new DropdownDate().init($(element)));
+  static initAll({selector = '.js-dropdown-date', parent = document}) {
+    $(parent).find(selector).each((_, element) => new DropdownDate().create($(element)));
   }
 
-  static initAllInline(selector = '.js-dropdown-date-inline') {
-    $(selector).each((_, element) => new DropdownDate().init($(element), true));
+  static initAllInline({selector = '.js-dropdown-date-inline', parent = document}) {
+    $(parent).find(selector).each((_, element) => new DropdownDate().create($(element), true));
+  }
+
+  static initDefault({selector = '.js-dropdown-date', parent = document}) {
+    new DropdownDate().create($(parent.querySelector(selector)));
   }
 }
 

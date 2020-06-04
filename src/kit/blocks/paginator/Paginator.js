@@ -1,5 +1,5 @@
 class Paginator {
-  static init($element, { page = 1, count = 15, href = 'mock-address' }) {
+  static init($element, {page = 1, count = 15, href = 'mock-address'}) {
     const items = [];
     if (page > 1) items.push(Paginator.buildArrow(page, href, false));
 
@@ -81,8 +81,8 @@ class Paginator {
     return [...new Set(pages)];
   }
 
-  static initAll(selector = '.js-paginator') {
-    $(selector).each((_, element) => Paginator.init($(element), {}));
+  static initDefault({selector = '.js-paginator', parent = document, options={}}) {
+    Paginator.init($(parent.querySelector(selector)), options);
   }
 }
 

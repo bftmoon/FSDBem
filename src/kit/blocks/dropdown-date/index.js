@@ -1,4 +1,5 @@
-import DropdownDate from './DropdownDate';
+import './datepicker-overrides.scss'
+import './dropdown-date.scss'
+import DropdownDate from "./DropdownDate";
 
-DropdownDate.initAll();
-DropdownDate.initAllInline();
+export default DropdownDate;
