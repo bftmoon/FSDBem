@@ -11,14 +11,14 @@
   border: none;
 }
 
-%field_bordered{
+%field_bordered {
   @extend %field;
 
   border-radius: 4px;
   border: 1px solid $dark_shade25;
 }
 
-%card{
+%card {
   width: 100%;
   max-width: 380px;
   padding: 40px 30px 30px 30px;

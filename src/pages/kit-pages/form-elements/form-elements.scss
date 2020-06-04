@@ -24,32 +24,41 @@ $form-elements-point_small: 630px;
   &__title {
     margin-bottom: 5px;
   }
-  &__hight-title{
+
+  &__hight-title {
     margin-bottom: 15px;
   }
-  &__separator{
+
+  &__separator {
     height: 20px;
   }
-  &__medium-separator{
+
+  &__medium-separator {
     height: 30px;
   }
-  &__big-separator{
+
+  &__big-separator {
     height: 40px;
   }
-  &__wrapper{
+
+  &__wrapper {
     max-width: 266px;
   }
-  &__small-wrapper{
+
+  &__small-wrapper {
     max-width: 222px;
   }
-  &__like{
+
+  &__like {
     display: inline-block;
     margin-right: 10px;
   }
-  &__clickable-item{
+
+  &__clickable-item {
     display: inline-block;
     margin-right: 20px;
   }
+
   &__feedback {
     grid-column: 2/ span 2;
     max-width: 713px;

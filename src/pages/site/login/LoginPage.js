@@ -7,7 +7,7 @@ class LoginPage {
     this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
     this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
-    LoginCard.addRegistrationClickListener(this.handleRegistrationButtonClick);
+    LoginCard.initDefault({registrationClickListener: this.handleRegistrationButtonClick});
     RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick});
   }
 

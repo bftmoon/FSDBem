@@ -1,8 +1,10 @@
 .cards-example {
   background: #F4F4F6;
-  &__header{
+
+  &__header {
     height: 130px;
   }
+
   &__main {
     column-count: 3;
     display: block;
@@ -22,13 +24,13 @@
     }
   }
 
-  &__wrapper-for-chrome{
+  &__wrapper-for-chrome {
     padding: 20px 5px;
     display: inline-block;
     width: 100%;
   }
 
-  &__calendar{
+  &__calendar {
     max-width: 320px;
     width: min-content;
     border: none;
