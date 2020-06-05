@@ -45,13 +45,13 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'docs/dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
   },
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
     new webpack.ProvidePlugin({
@@ -89,8 +89,8 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'imgs/',
+              name: '[name].[contenthash].[ext]',
+              outputPath: 'assets/',
             },
           },
         ],
@@ -101,8 +101,8 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
+              name: '[name].[contenthash].[ext]',
+              outputPath: 'assets/',
             },
           },
         ],
@@ -112,8 +112,21 @@ const config = {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    moduleIds: 'hashed',
+    // runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `npm.${packageName.replace('@', '')}`;
+          },
+        },
+      },
     },
   },
   devServer: {
