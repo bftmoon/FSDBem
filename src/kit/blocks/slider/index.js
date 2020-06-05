@@ -1,6 +1,6 @@
-import './slider_overrides.scss'
-import './slider.scss'
+import './slider_overrides.scss';
+import './slider.scss';
 
-import Slider from "./Slider";
+import Slider from './Slider';
 
 export default Slider;

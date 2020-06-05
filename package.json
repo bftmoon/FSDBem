@@ -8,7 +8,6 @@
     "eslint": "eslint . --ext .js",
     "eslint fix": "eslint . --ext .js --fix",
     "build": "webpack --mode production",
-    "add pre-push hook": "cp -R pre-push ./.git/hooks",
     "gh-pages": "gh-pages -d dist",
     "clean gh-pages errors": "rm -rf node_modules/gh-pages/.cache"
   },

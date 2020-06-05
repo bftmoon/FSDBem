@@ -1,11 +1,10 @@
-import DropdownMenu from "../dropdown-menu";
-import RussianLangUtil from "@utils/RussianLangUtil";
+import RussianLangUtil from '@utils/RussianLangUtil';
+import DropdownMenu from '../dropdown-menu';
 
 class GuestsDropdownMenu extends DropdownMenu {
-
   constructor() {
     super();
-    this.x ='I am a very long string for file that was imported more then one time find me if you can';
+    this.x = 'I am a very long string for file that was imported more then one time find me if you can';
   }
 
   _formatHeader(countArray) {
@@ -13,15 +12,15 @@ class GuestsDropdownMenu extends DropdownMenu {
     return RussianLangUtil.selectWordByCount(
       guestsCount,
       ['Сколько гостей', 'гость', 'гостя', 'гостей'],
-      {withNumber: true},
+      { withNumber: true },
     );
   }
 
-  static initDefault({selector = '.js-guests-dropdown', parent = document}) {
+  static initDefault({ selector = '.js-guests-dropdown', parent = document }) {
     new GuestsDropdownMenu().create($(parent.querySelector(selector)));
   }
 
-  static initAll({selector = '.js-guests-dropdown', parent = document}) {
+  static initAll({ selector = '.js-guests-dropdown', parent = document }) {
     $(parent).find(selector).each((__, element) => new GuestsDropdownMenu().create($(element)));
   }
 }

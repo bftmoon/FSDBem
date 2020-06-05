@@ -1,4 +1,4 @@
-import RussianLangUtil from "@utils/RussianLangUtil";
+import RussianLangUtil from '@utils/RussianLangUtil';
 
 class DropdownMenu {
   create($menu) {
@@ -53,7 +53,7 @@ class DropdownMenu {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
-      {withNumber: true},
+      { withNumber: true },
     ));
   }
 

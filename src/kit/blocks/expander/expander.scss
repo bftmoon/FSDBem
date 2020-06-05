@@ -1,6 +1,7 @@
-@import "~material-icons/iconfont/material-icons";
-@import "../../env-styles/theme";
-@import "../../env-styles/abstract";
+@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';
+@import '../../env-styles/functions';
+@import '../../env-styles/variables';
 
 .expander {
   &__header {

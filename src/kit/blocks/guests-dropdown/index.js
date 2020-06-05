@@ -1,3 +1,3 @@
-import GuestsDropdownMenu from "./GuestsDropdownMenu";
+import GuestsDropdownMenu from './GuestsDropdownMenu';
 
 export default GuestsDropdownMenu;

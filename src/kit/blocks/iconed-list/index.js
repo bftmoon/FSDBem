@@ -1,1 +1,1 @@
-import './iconed-list.scss'
+import './iconed-list.scss';

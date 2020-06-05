@@ -20,6 +20,8 @@ module.exports = {
   },
   rules: {
     'no-undef': 'warn',
+    'import/no-unresolved': 'warn',
+    'import/no-named-as-default-member': 'warn',
     'no-underscore-dangle': ['error', {'allowAfterThis': true}]
   },
 };

@@ -1,8 +1,9 @@
 class LoginCard {
-  static init($element, listener){
+  static init($element, listener) {
     $element.find('.js-login-card__registration-button').on('click', listener);
   }
-  static initDefault({selector='.js-login-card', parent = document, registrationClickListener}){
+
+  static initDefault({ selector = '.js-login-card', parent = document, registrationClickListener }) {
     LoginCard.init($(parent).find(selector), registrationClickListener);
   }
 }

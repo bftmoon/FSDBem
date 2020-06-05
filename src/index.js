@@ -1,2 +1,2 @@
-import '@theme'
-import './index.scss'
+import '@theme';
+import './index.scss';

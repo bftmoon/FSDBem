@@ -1,1 +1,1 @@
-import './rating.scss'
+import './rating.scss';

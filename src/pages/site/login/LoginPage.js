@@ -1,5 +1,5 @@
-import LoginCard from "@blocks/login-card";
-import RegistrationCard from "@blocks/registration-card";
+import LoginCard from '@blocks/login-card';
+import RegistrationCard from '@blocks/registration-card';
 
 class LoginPage {
   create() {
@@ -7,8 +7,8 @@ class LoginPage {
     this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
     this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
-    LoginCard.initDefault({registrationClickListener: this.handleRegistrationButtonClick});
-    RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick});
+    LoginCard.initDefault({ registrationClickListener: this.handleRegistrationButtonClick });
+    RegistrationCard.initDefault({ loginClickListener: this.handleLoginButtonClick });
   }
 
   handleLoginButtonClick() {

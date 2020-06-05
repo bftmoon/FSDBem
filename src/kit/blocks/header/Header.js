@@ -24,11 +24,11 @@ class Header {
     this._$sidebar.toggleClass('header__sidebar_opened');
   }
 
-  static initAll({selector = '.js-header', parent = document}) {
+  static initAll({ selector = '.js-header', parent = document }) {
     $(parent).find(selector).each((_, element) => new Header().create($(element)));
   }
 
-  static initDefault({selector = '.js-header', parent = document}) {
+  static initDefault({ selector = '.js-header', parent = document }) {
     new Header().create($(parent.querySelector(selector)));
   }
 }

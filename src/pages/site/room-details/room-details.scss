@@ -1,4 +1,4 @@
-@import "../../../kit/env-styles/variables";
+@import '../../../kit/env-styles/variables';
 
 $details-page-point_images-medium: 850px;
 $details-page-point_images-small: 430px;
@@ -13,22 +13,22 @@ $details-page-point_content-small: 460px;
     grid-template-columns: 34.0625% 34.0625% auto;
     // @formatter:off
     grid-template-areas:
-        "img-1 img-1 img-2"
-        "img-1 img-1 img-3"
+        'img-1 img-1 img-2'
+        'img-1 img-1 img-3'
     ;
     // @formatter:on
     @media screen and (max-width: $details-page-point_images-medium) {
       grid-template-columns: 1fr 1fr;
       // @formatter:off
       grid-template-areas:
-          "img-1 img-1"
-          "img-2 img-3"
+          'img-1 img-1'
+          'img-2 img-3'
       ;
       // @formatter:on
     }
     @media screen and (max-width: $details-page-point_images-small) {
       grid-template-columns: 1fr;
-      grid-template-areas: "img-1" "img-2" "img-3";
+      grid-template-areas: 'img-1' 'img-2' 'img-3';
     }
   }
 
@@ -57,9 +57,9 @@ $details-page-point_content-small: 460px;
     // @formatter:off
     grid-template-columns: 0.75fr 0.85fr 1fr;
     grid-template-areas:
-        "info chart card"
-        "feedbacks feedbacks card"
-        "rules cancel card"
+        'info chart card'
+        'feedbacks feedbacks card'
+        'rules cancel card'
     ;
     // @formatter:on
 
@@ -67,10 +67,10 @@ $details-page-point_content-small: 460px;
       grid-template-columns: 0.8fr 1fr;
       // @formatter:off
       grid-template-areas:
-          "info card"
-          "chart card"
-          "feedbacks feedbacks"
-          "rules cancel"
+          'info card'
+          'chart card'
+          'feedbacks feedbacks'
+          'rules cancel'
       ;
       // @formatter:on
       grid-column-gap: 30px;
@@ -80,7 +80,7 @@ $details-page-point_content-small: 460px;
 
     @media screen and (max-width: $details-page-point_content-medium) {
       grid-template-columns: 1fr;
-      grid-template-areas: "card" "info" "chart" "feedbacks" "rules" "cancel";
+      grid-template-areas: 'card' 'info' 'chart' 'feedbacks' 'rules' 'cancel';
       justify-items: center;
     }
     @media screen and (max-width: $details-page-point_content-small) {

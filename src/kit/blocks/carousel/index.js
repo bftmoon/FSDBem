@@ -1,5 +1,5 @@
-import './carousel_overrides.scss'
-import './carousel.scss'
-import Carousel from "./Carousel";
+import './carousel-overrides.scss';
+import './carousel.scss';
+import Carousel from './Carousel';
 
 export default Carousel;

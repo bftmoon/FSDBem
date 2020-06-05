@@ -1,7 +1,7 @@
-import '@blocks/logo/index'
-import '@blocks/header-links/index'
-import './header.scss'
+import '@blocks/header-links';
+import '@blocks/logo';
+import './header.scss';
 
-import Header from "./Header";
+import Header from './Header';
 
 export default Header;

@@ -1,3 +1,3 @@
-import FurnitureDropdownMenu from "./FurnitureDropdownMenu";
+import FurnitureDropdownMenu from './FurnitureDropdownMenu';
 
 export default FurnitureDropdownMenu;

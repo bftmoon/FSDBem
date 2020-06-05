@@ -1,1 +1,1 @@
-import './subscribe-input.scss'
+import './subscribe-input.scss';

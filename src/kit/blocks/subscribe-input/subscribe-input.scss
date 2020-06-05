@@ -1,5 +1,6 @@
-@import "~material-icons/iconfont/material-icons";
-@import "../../env-styles/abstract";
+@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';
+@import '../../env-styles/variables';
 
 .subscribe-input {
   @extend %field_bordered;

@@ -12,11 +12,11 @@ class Expander {
     this._$content.toggleClass('expander__content_hidden');
   }
 
-  static initAll({selector = '.js-expander', parent = document}) {
+  static initAll({ selector = '.js-expander', parent = document }) {
     $(parent).find(selector).each((__, element) => new Expander().create($(element)));
   }
 
-  static initDefault({selector = '.js-expander', parent = document}) {
+  static initDefault({ selector = '.js-expander', parent = document }) {
     $(parent).find(selector).each((__, element) => new Expander().create($(element)));
   }
 }

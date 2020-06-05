@@ -1,1 +1,1 @@
-import './link-with-menu.scss'
+import './link-with-menu.scss';

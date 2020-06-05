@@ -1,1 +1,1 @@
-import './kit-header.scss'
+import './kit-header.scss';

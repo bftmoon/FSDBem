@@ -1,5 +1,5 @@
-import DropdownMenu from "../dropdown-menu/index";
-import RussianLangUtil from "@utils/RussianLangUtil";
+import RussianLangUtil from '@utils/RussianLangUtil';
+import DropdownMenu from '@blocks/dropdown-menu';
 
 class FurnitureDropdownMenu extends DropdownMenu {
   _formatHeader(countArray) {
@@ -19,11 +19,11 @@ class FurnitureDropdownMenu extends DropdownMenu {
     ].join(', ');
   }
 
-  static initDefault({selector = '.js-furniture-dropdown', parent = document}) {
+  static initDefault({ selector = '.js-furniture-dropdown', parent = document }) {
     new FurnitureDropdownMenu().create($(parent.querySelector(selector)));
   }
 
-  static initAll({selector = '.js-furniture-dropdown', parent = document}) {
+  static initAll({ selector = '.js-furniture-dropdown', parent = document }) {
     $(parent).find(selector).each((__, element) => new FurnitureDropdownMenu().create($(element)));
   }
 }

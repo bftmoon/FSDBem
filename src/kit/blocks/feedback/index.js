@@ -1,4 +1,4 @@
-import './feedback.scss'
-import Feedback from "./Feedback";
+import './feedback.scss';
+import Feedback from './Feedback';
 
 export default Feedback;

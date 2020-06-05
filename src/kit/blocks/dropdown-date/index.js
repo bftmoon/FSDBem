@@ -1,5 +1,5 @@
-import './datepicker-overrides.scss'
-import './dropdown-date.scss'
-import DropdownDate from "./DropdownDate";
+import './datepicker-overrides.scss';
+import './dropdown-date.scss';
+import DropdownDate from './DropdownDate';
 
 export default DropdownDate;

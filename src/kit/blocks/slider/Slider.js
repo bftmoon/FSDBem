@@ -1,5 +1,3 @@
-import 'jquery-ui/ui/widgets/slider';
-
 class Slider {
   create($element, {min = 0, max = 15000, current = [5000, 10000]}) {
     this._$element = $element;

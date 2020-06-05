@@ -1,6 +1,6 @@
-@import "../../env-styles/variables";
-@import "../../env-styles/abstract";
-@import "../../env-styles/functions";
+@import '../../env-styles/variables';
+@import '../../env-styles/abstract';
+@import '../../env-styles/functions';
 
 .calculator-card {
   @extend %card;

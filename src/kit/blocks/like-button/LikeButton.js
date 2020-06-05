@@ -8,11 +8,11 @@ class LikeButton {
     counter.innerText = Number(counter.innerText) + (element.target.checked ? 1 : -1);
   }
 
-  static initAll({selector = '.js-like-button', parent = document}) {
+  static initAll({ selector = '.js-like-button', parent = document }) {
     $(parent).find(selector).each((_, element) => LikeButton.init(element));
   }
 
-  static initDefault({selector = '.js-like-button', parent = document}) {
+  static initDefault({ selector = '.js-like-button', parent = document }) {
     LikeButton.init(parent.querySelector(selector));
   }
 }

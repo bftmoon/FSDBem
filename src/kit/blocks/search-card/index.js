@@ -1,6 +1,6 @@
-import '@blocks/button'
-import './search-card.scss'
+import '@blocks/button';
+import './search-card.scss';
 
-import SearchCard from "./SearchCard";
+import SearchCard from './SearchCard';
 
 export default SearchCard;

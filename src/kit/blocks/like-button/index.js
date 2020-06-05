@@ -1,5 +1,4 @@
-import './like-button.scss'
-
-import LikeButton from "./LikeButton";
+import './like-button.scss';
+import LikeButton from './LikeButton';
 
 export default LikeButton;

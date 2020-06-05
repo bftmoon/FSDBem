@@ -1,5 +1,5 @@
 class RussianLangUtil {
-  static selectWordByCount(count, variants, {withNumber = false, withZeroNumber = false}) {
+  static selectWordByCount(count, variants, { withNumber = false, withZeroNumber = false }) {
     const prefix = withNumber ? `${count} ` : '';
     const residue = count % 10;
     if (count === 0) return withZeroNumber ? prefix + variants[0] : variants[0];

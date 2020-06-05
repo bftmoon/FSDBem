@@ -1,5 +1,4 @@
-@import "../../env-styles/functions";
-@import "../../env-styles/abstract";
+@import '../../env-styles/abstract';
 
 .search-card {
   @extend %card;

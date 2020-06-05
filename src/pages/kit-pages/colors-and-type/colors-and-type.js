@@ -1,2 +1,2 @@
-import './colors-and-type.scss'
-import '@blocks/kit-header'
+import '@blocks/kit-header';
+import './colors-and-type.scss';

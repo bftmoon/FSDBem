@@ -1,6 +1,4 @@
-@import "../../env-styles/variables";
-@import "../../env-styles/functions";
-@import "../../env-styles/abstract";
+@import '../../env-styles/abstract';
 
 .login-card {
   @extend %card;

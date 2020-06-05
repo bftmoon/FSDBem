@@ -1,2 +1,2 @@
-import '@blocks/checkable-item'
-import './checkbox-list.scss'
+import '@blocks/checkable-item';
+import './checkbox-list.scss';
