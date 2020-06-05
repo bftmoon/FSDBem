@@ -24,11 +24,13 @@ mixin header-links({home, links, login, register, username, isVertical})
       .header-links__buttons(
         class=isVertical ? "header-links__buttons_vertical" : ""
       )
-      a(href=login.url).header-links__login-button(
+      a(
+        href=login.url
         class=isVertical ? "header-links__login-button_vertical" : ""
-      )
+      ).header-links__login-button
         +button(login.name, {isFlat: true, isMini: true, isWide: isVertical})
-      a(href=register.url).header-links__register-button(
+      a(
+        href=register.url
         class=isVertical ? "header-links__register-button_vertical" : ""
-      )
+      ).header-links__register-button
         +button(register.name, {isMini: true, isWide: isVertical})
