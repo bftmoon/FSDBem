@@ -40,11 +40,11 @@
     "terser-webpack-plugin": "^3.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "gh-pages": "^3.0.0"
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "gh-pages": "^3.0.0",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "jquery.maskedinput": "^1.4.1",
