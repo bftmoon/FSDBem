@@ -51,7 +51,7 @@ const config = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[id].[contenthash].css',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -84,6 +84,7 @@ const config = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
+        // exclude: /node_modules/,
         use: [
           {
             loader: 'file-loader',
@@ -137,6 +138,7 @@ module.exports = (env, argv) => {
   config.plugins.push(
     new HtmlWebpackPlugin({
       template: './src/index.pug',
+      filename: 'index.html',
       chunks: ['index']
     }),
     ...pagesData.htmlOptions.map((options) => new HtmlWebpackPlugin(options))

@@ -3,6 +3,7 @@ extends ../layout/layout
 block main
   include ../../../kit/blocks/dropdown-date/dropdown-date
   include ../../../kit/blocks/checkbox-list/checkbox-list
+  include ../../../kit/blocks/expandable-checkboxes/expandable-checkboxes
   include ../../../kit/blocks/slider/slider
   include ../../../kit/blocks/guests-dropdown/guests-dropdown
   include ../../../kit/blocks/furniture-dropdown/furniture-dropdown
@@ -42,7 +43,7 @@ block main
           })
       .search-page__furniture
         +furniture-dropdown({title: "Удобства номера"})
-      +checkbox-list({
+      +expandable-checkboxes({
         items: [
           {text: "Завтрак"},
           {text: "Письменный стол"},

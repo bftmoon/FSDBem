@@ -20,6 +20,8 @@ block body
   include ../../../kit/blocks/bullet-list/bullet-list
   include ../../../kit/blocks/iconed-list/iconed-list
   include ../../../kit/blocks/feedback/feedback
+  include ../../../kit/blocks/expandable-checkboxes/expandable-checkboxes
+
 
   body.form-elements
     -
@@ -180,14 +182,14 @@ block body
         })
       .form-elements__expandable-checkboxes
         .form-elements__wrapper
-          +checkbox-list({
+          +expandable-checkboxes({
             items: simpleCheckboxData,
-            expanderTitle: "Expandable checkbox list"
+            title: "Expandable checkbox list",
           })
           .form-elements__separator
-          +checkbox-list({
+          +expandable-checkboxes({
             items: simpleCheckboxData,
-            expanderTitle: "Expandable checkbox list",
+            title: "Expandable checkbox list",
             isOpened: true
           })
       .form-elements__rich-checkboxes

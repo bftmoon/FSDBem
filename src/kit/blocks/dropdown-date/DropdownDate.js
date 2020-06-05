@@ -1,5 +1,3 @@
-import 'air-datepicker/dist/js/datepicker.min';
-
 class DropdownDate {
   create($element, isInline = false) {
     const params = {
@@ -29,9 +27,10 @@ class DropdownDate {
     } else {
       params.dateFormat = 'd M';
     }
-
-    this._picker = this._$inputStart.datepicker(params).data('datepicker');
-    this._setButtons();
+    import('air-datepicker/dist/js/datepicker.min').then(()=>{
+      this._picker = this._$inputStart.datepicker(params).data('datepicker');
+      this._setButtons();
+    })
   }
 
   _handleInputStartClick() {

@@ -2,6 +2,12 @@ import DropdownMenu from "../dropdown-menu";
 import RussianLangUtil from "@utils/RussianLangUtil";
 
 class GuestsDropdownMenu extends DropdownMenu {
+
+  constructor() {
+    super();
+    this.x ='I am a very long string for file that was imported more then one time find me if you can';
+  }
+
   _formatHeader(countArray) {
     const guestsCount = countArray.reduce((sum, count) => sum + count, 0);
     return RussianLangUtil.selectWordByCount(

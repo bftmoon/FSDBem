@@ -15,17 +15,17 @@ import DateMaskedInput from "../../../kit/blocks/input";
 import DropdownDate from "../../../kit/blocks/dropdown-date";
 import GuestsDropdownMenu from "../../../kit/blocks/guests-dropdown";
 import FurnitureDropdownMenu from "../../../kit/blocks/furniture-dropdown";
-import ExpandableCheckboxList from "../../../kit/blocks/checkbox-list";
 import Slider from "../../../kit/blocks/slider";
 import Paginator from "../../../kit/blocks/paginator";
 import Feedback from "../../../kit/blocks/feedback";
 import LikeButton from "../../../kit/blocks/like-button";
+import ExpandableCheckboxes from "../../../kit/blocks/expandable-checkboxes";
 
 DateMaskedInput.initDefault({});
 DropdownDate.initAll({})
 GuestsDropdownMenu.initAll({})
 FurnitureDropdownMenu.initAll({})
-ExpandableCheckboxList.initAll({})
+ExpandableCheckboxes.initAll({})
 Slider.initDefault({})
 Paginator.initDefault({})
 Feedback.initAll({})

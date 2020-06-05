@@ -7,15 +7,17 @@ class Slider {
     this.$picker = this._$element.find('.js-slider__picker');
     this._slideListener = this._slideListener.bind(this);
 
-    this.$picker.slider({
-      range: true,
-      min,
-      max,
-      values: current,
-      slide: this._slideListener,
-    });
+    import('jquery-ui/ui/widgets/slider').then(()=> {
+      this.$picker.slider({
+        range: true,
+        min,
+        max,
+        values: current,
+        slide: this._slideListener,
+      });
 
-    this._$amount.val(Slider.formatRange(this.$picker.slider('values')));
+      this._$amount.val(Slider.formatRange(this.$picker.slider('values')));
+    });
   }
 
   _slideListener(_, ui) {
