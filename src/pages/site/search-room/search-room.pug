@@ -25,7 +25,7 @@ block main
             {text: "Можно с питомцами"},
             {text: "Можно пригласить гостей \n(до 10 человек)"},
           ]
-        })
+          })
       .search-page__accessibility
         h3.search-page__title Доступность
         +checkbox-list({
@@ -39,7 +39,7 @@ block main
               description: "На 1 этаже вас встретит специалист и проводит до номера."
             },
           ]
-        })
+          })
       .search-page__furniture
         +furniture-dropdown({title: "Удобства номера"})
       +checkbox-list({
@@ -53,9 +53,10 @@ block main
           {text: "Телевизор"},
           {text: "Шампунь"},
         ], expanderTitle: "Дополнительные удобства"
-      })
+        })
     section.search-page__results
       h1 Номера, которые мы для вас подобрали
+      // Response simulation. Can be backend URL instead URI
       - const {rooms} = require("./json/rooms.json")
       .search-page__rooms
         - i=0;

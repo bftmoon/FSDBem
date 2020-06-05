@@ -90,7 +90,7 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/',
+              outputPath: 'imgs/',
             },
           },
         ],
@@ -102,7 +102,7 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/',
+              outputPath: 'fonts/',
             },
           },
         ],

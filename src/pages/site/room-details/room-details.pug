@@ -9,9 +9,9 @@ block main
 
   main.details-page
     .details-page__images
-      img(src="src/pages/site/room-details/imgs/room-details-0.jpg" alt = "room").details-page__image-1
-      img(src="src/pages/site/room-details/imgs/room-details-1.jpg" alt = "room").details-page__image-2
-      img(src="src/pages/site/room-details/imgs/room-details-2.jpg" alt = "room").details-page__image-3
+      img(src=require(`./imgs/room-details-0.jpg`).default alt = "room").details-page__image-1
+      img(src=require(`./imgs/room-details-1.jpg`).default alt = "room").details-page__image-2
+      img(src=require(`./imgs/room-details-2.jpg`).default alt = "room").details-page__image-3
     .details-page__details
       .details-page__info
         h2.details-page__title Сведения о номере
