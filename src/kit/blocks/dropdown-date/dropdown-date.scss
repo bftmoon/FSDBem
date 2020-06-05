@@ -23,6 +23,11 @@ $dropdown-date-point: 350px;
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
+
     @media screen and (max-width: pxToRem($dropdown-date-point)) {
       margin-bottom: 5px;
     }
@@ -43,6 +48,10 @@ $dropdown-date-point: 350px;
       text-transform: uppercase;
       color: $dark_shade75;
       opacity: 1;
+    }
+
+    &:disabled {
+      cursor: default;
     }
   }
 
