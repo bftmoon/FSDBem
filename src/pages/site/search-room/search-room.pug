@@ -53,16 +53,16 @@ block main
           {text: "Шампунь"},
           {text: "Телевизор"},
           {text: "Шампунь"},
-        ], expanderTitle: "Дополнительные удобства"
+        ], title: "Дополнительные удобства"
         })
     section.search-page__results
       h1 Номера, которые мы для вас подобрали
-      // Response simulation. Can be backend URL instead URI
       - const {rooms} = require("./json/rooms.json")
       .search-page__rooms
         - i=0;
         while i < 12
-          +room-card(rooms[i]).search-page__room
-          - i++
+          a(href='./room-details.html')
+            +room-card(rooms[i]).search-page__room
+            - i++
       .search-page__paginator-wrapper
         +paginator("1 – 12 из 100+ вариантов аренды").search-page__paginator

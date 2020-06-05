@@ -4,23 +4,28 @@ import RegistrationCard from '@blocks/registration-card';
 class LoginPage {
   create() {
     this.$cards = $('.js-login-page__card');
-    this.handleLoginButtonClick = this.handleLoginButtonClick.bind(this);
-    this.handleRegistrationButtonClick = this.handleRegistrationButtonClick.bind(this);
 
-    LoginCard.initDefault({ registrationClickListener: this.handleRegistrationButtonClick });
-    RegistrationCard.initDefault({ loginClickListener: this.handleLoginButtonClick });
+    LoginCard.initDefault({registrationClickListener: this.handleRegistrationButtonClick.bind(this)});
+    RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick.bind(this)});
+
+    if (!this.isLoginLocation()) this.$cards.toggleClass('login-page__card_hidden');
+
   }
 
   handleLoginButtonClick() {
-    this.toggleCards();
+    this.updateLocation();
   }
 
   handleRegistrationButtonClick() {
-    this.toggleCards();
+    this.updateLocation();
   }
 
-  toggleCards() {
-    this.$cards.toggleClass('login-page__card_hidden');
+  updateLocation() {
+    window.location.search = this.isLoginLocation() ? 'sign=up' : 'sign=in';
+  }
+
+  isLoginLocation() {
+    return window.location.search.split('=')[1] === 'in';
   }
 }
 

@@ -55,6 +55,12 @@
       "url": "mock-address"
     }
   ],
-  "login": "Login",
-  "register": "Register"
+  "login": {
+    "name": "Login",
+    "url": "mock-address"
+  },
+  "register": {
+    "name": "Register",
+    "url": "mock-address"
+  }
 }
