@@ -44,7 +44,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
     "air-datepicker": "^2.2.3",
     "gh-pages": "^3.0.0",
     "jquery": "^3.5.0",
