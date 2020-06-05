@@ -3,13 +3,13 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 function generatePagesData(paths) {
-  let entries = {};
-  let htmlOptions = [];
+  const entries = {};
+  const htmlOptions = [];
 
   paths.forEach((currentPath) => {
     const dir = path.resolve(__dirname, `src/pages/${currentPath}`);
@@ -18,17 +18,17 @@ function generatePagesData(paths) {
       htmlOptions.push({
         filename: `${page}.html`,
         template: `${dir}/${page}/${page}.pug`,
-        chunks: [page]
+        chunks: [page],
       });
-      entries[page] = `${dir}/${page}/${page}.js`
-    })
-  })
-  return {htmlOptions, entries};
+      entries[page] = `${dir}/${page}/${page}.js`;
+    });
+  });
+  return { htmlOptions, entries };
 }
 
 const pagesData = generatePagesData([
   'kit-pages',
-  'site'
+  'site',
 ]);
 
 const config = {
@@ -41,7 +41,7 @@ const config = {
   },
   entry: {
     ...pagesData.entries,
-    index: path.resolve(__dirname, 'src/index.js')
+    index: path.resolve(__dirname, 'src/index.js'),
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -52,11 +52,18 @@ const config = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css',
+      ignoreOrder: true,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/index.pug',
+      filename: 'index.html',
+      chunks: ['index'],
+    }),
+    ...pagesData.htmlOptions.map((options) => new HtmlWebpackPlugin(options)),
   ],
   module: {
     rules: [
@@ -84,7 +91,6 @@ const config = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        // exclude: /node_modules/,
         use: [
           {
             loader: 'file-loader',
@@ -109,39 +115,33 @@ const config = {
       },
     ],
   },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-    moduleIds: 'hashed',
-    // runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-            return `npm.${packageName.replace('@', '')}`;
-          },
-        },
-      },
-    },
-  },
   devServer: {
     overlay: true,
   },
-
 };
+
+
 module.exports = (env, argv) => {
-  config.plugins.push(
-    new HtmlWebpackPlugin({
-      template: './src/index.pug',
-      filename: 'index.html',
-      chunks: ['index']
-    }),
-    ...pagesData.htmlOptions.map((options) => new HtmlWebpackPlugin(options))
-  );
+  if (argv.mode === 'production') {
+    config.optimization = {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+      moduleIds: 'hashed',
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+              return `npm.${packageName.replace('@', '')}`;
+            },
+          },
+        },
+      },
+    };
+  }
   return config;
 };
