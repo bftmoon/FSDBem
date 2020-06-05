@@ -44,7 +44,6 @@ const config = {
     index: path.resolve(__dirname, 'src/index.js')
   },
   output: {
-    path: path.resolve(__dirname, 'docs/dist'),
     filename: '[name].[contenthash].js',
   },
   devtool: 'inline-source-map',

@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --mode development",
     "prod": "webpack-dev-server --open --mode production",
     "eslint": "eslint . --ext .js",
     "eslint fix": "eslint . --ext .js --fix",
     "build": "webpack --mode production",
-    "watch": "webpack --watch --mode development"
+    "add pre-push hook": "cp -R pre-push ./.git/hooks",
+    "gh-pages": "gh-pages -d dist",
+    "clean gh-pages errors": "rm -rf node_modules/gh-pages/.cache"
   },
   "author": "",
   "license": "ISC",
@@ -45,10 +46,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "air-datepicker": "^2.2.3",
+    "gh-pages": "^3.0.0",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "jquery.maskedinput": "^1.4.1",
-    "material-icons": "^0.3.1",
-    "lightslider": "^1.1.6"
+    "lightslider": "^1.1.6",
+    "material-icons": "^0.3.1"
   }
 }

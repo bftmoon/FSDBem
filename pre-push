@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo TESTESTEST
+webpack --mode production
+gh-pages -d dist
