@@ -1,19 +1,7 @@
 # FSDBem 
 Project with components architecture and BEM methodology for FSD
 
-#### Demo
-
-UI Kit:
-* [Colors & Types](https://bigfatmoon.github.io/FSDBem/dist/colors-and-type.html)
-* [Form Elements](https://bigfatmoon.github.io/FSDBem/dist/form-elements.html)
-* [Cards](https://bigfatmoon.github.io/FSDBem/dist/cards.html)
-* [Headers & Footers](https://bigfatmoon.github.io/FSDBem/dist/headers-and-footers.html)
-
-Site:
-* [Landing](https://bigfatmoon.github.io/FSDBem/dist/landing.html)
-* [Search](https://bigfatmoon.github.io/FSDBem/dist/search-room.html)
-* [Room details](https://bigfatmoon.github.io/FSDBem/dist/room-details.html)
-* [Login & Registration](https://bigfatmoon.github.io/FSDBem/dist/login.html)
+#### [Demo](https://bigfatmoon.github.io/FSDBem)
 
 ### How to
 ##### Install
