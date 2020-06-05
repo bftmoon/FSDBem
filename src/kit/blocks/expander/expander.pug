@@ -1,0 +1,14 @@
+mixin expander({title, isOpened})
+  .expander.js-expander
+    button(type="button").expander__header.js-expander__header&attributes(attributes)
+      .expander__title=title
+      i(
+        class=isOpened ? "expander__icon_hidden" : ""
+      ).js-expander__icon.expander__icon expand_more
+      i(
+        class=!isOpened ? "expander__icon_hidden" : ""
+      ).js-expander__icon.expander__icon expand_less
+    div(
+      class = !isOpened ? "expander__content_hidden" : ""
+    ).expander__content.js-expander__content
+      block

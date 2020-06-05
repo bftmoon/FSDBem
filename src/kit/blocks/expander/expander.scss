@@ -1,0 +1,41 @@
+@import "~material-icons/iconfont/material-icons";
+@import "../../env-styles/theme";
+@import "../../env-styles/abstract";
+
+.expander {
+  &__header {
+    @extend %field;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__icon {
+    @extend .material-icons;
+    margin: auto 10px;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__content {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+
+    font-size: pxToRem(12px);
+    color: $dark_shade100;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+

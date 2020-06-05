@@ -1,0 +1,7 @@
+include ../expander/expander
+include ../checkbox-list/checkbox-list
+
+mixin expandable-checkboxes({title, items, isOpened})
+  .js-expandable-checkboxes
+    +expander({title, isOpened})
+      +checkbox-list({items})

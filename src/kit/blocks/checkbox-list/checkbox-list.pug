@@ -1,20 +1,8 @@
 include ../checkable-item/checkable-item
 
 // items: {text, attributes:{}, description?}]
-mixin checkbox-list({items, expanderTitle, isOpened})
-  .checkbox-list.js-checkbox-list
-    if expanderTitle
-      button(type="button").checkbox-list__expander.js-checkbox-list__expander&attributes(attributes)
-        .checkbox-list__title=expanderTitle
-        i(
-          class=isOpened ? "checkbox-list__icon_hidden" : ""
-        ).js-checkbox-list__icon.checkbox-list__icon expand_more
-        i(
-          class=!isOpened ? "checkbox-list__icon_hidden" : ""
-        ).js-checkbox-list__icon.checkbox-list__icon expand_less
-    div(
-      class=expanderTitle && !isOpened ? "checkbox-list__group_hidden" : ""
-    ).checkbox-list__group.js-checkbox-list__group
+mixin checkbox-list({items})
+  .checkbox-list
       each el in items
         .checkbox-list__item
           +checkable-item({

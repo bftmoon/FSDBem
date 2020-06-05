@@ -3,45 +3,6 @@
 @import "../../env-styles/abstract";
 
 .checkbox-list {
-  &__expander {
-    @extend %field;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  &__icon {
-    @extend .material-icons;
-    margin: auto 10px;
-
-    &_hidden {
-      display: none;
-    }
-  }
-
-  &__group {
-    display: flex;
-    flex-direction: column;
-    border: none;
-
-    &_hidden {
-      display: none;
-    }
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    padding-left: 0;
-
-    font-size: pxToRem(12px);
-    color: $dark_shade100;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
   &__item {
     margin-bottom: 10px;
     display: flex;
