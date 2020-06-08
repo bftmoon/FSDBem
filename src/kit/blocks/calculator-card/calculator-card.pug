@@ -4,6 +4,8 @@ include ../room-title/room-title
 include ../button/button
 
 mixin calculator-card({room, options, costs})
+  - const util = require("@utils/LocaleForPugUtil").default
+  - const range = (options.endDate - options.startDate) / 1000 / 60 / 60 / 24;
   .calculator-card.js-calculator-card
     .calculator-card__title
       +room-title({
@@ -14,30 +16,30 @@ mixin calculator-card({room, options, costs})
     form&attributes(attributes)
       .calculator-card__date
         +dropdown-date([
-          {title: "Прибытие", date: options.startDate},
-          {title: "Выезд", date: options.endDate},
-        ])(disabled)
+          {title: "Прибытие", date: util.toRuDate(new Date(options.startDate))},
+          {title: "Выезд", date: util.toRuDate(new Date(options.endDate))},
+        ])
       .calculator-card__guests
         +guests-dropdown({
           title: "Гости",
           counts: options.guests
-        })(disabled)
+        })
       .calculator-card__calculates
         .calculator-card__price-info
-          span.calculator-card__price= room.price
-          span.calculator-card__info-part= " x " + options.daysCount + " суток"
+          span.calculator-card__price= util.toRuPrice(room.price)
+          span.calculator-card__info-part= " x " + range + " суток"
         .calculator-card__empty-tooltip
-        .calculator-card__price-item= costs.cleanPrice
+        .calculator-card__price-item= util.toRuPrice(room.price * range)
         .calculator-card__price-info
           | Сбор за услуги: скидка
-          span.calculator-card__price=" " + costs.discount
+          span.calculator-card__price=" " + util.toRuPrice(costs.discount)
         .calculator-card__tooltip(title="some important info") i
-        .calculator-card__price-item= costs.service
+        .calculator-card__price-item= util.toRuPrice(costs.service)
         .calculator-card__price-info= "Сбор за дополнительные услуги"
         .calculator-card__tooltip(title="some important info") i
-        .calculator-card__price-item= costs.overService
+        .calculator-card__price-item= util.toRuPrice(costs.overService)
       h2.calculator-card__result
         | Итого
         .calculator-card__separator
-        .calculator-card__summary= costs.summary
+        .calculator-card__summary= util.toRuPrice(room.price * range + costs.service + costs.overService - costs.discount)
       +button("Забронировать", {isArrowed: true})

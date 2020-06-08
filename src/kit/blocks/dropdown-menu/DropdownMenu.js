@@ -4,6 +4,7 @@ class DropdownMenu {
   constructor(formatHeader = DropdownMenu._formatDefaultHeader) {
     this._formatHeader = formatHeader;
   }
+
   create($menu) {
     // todo: optimization?
     document.addEventListener('click', this._handleDocumentClick.bind(this));
@@ -55,8 +56,8 @@ class DropdownMenu {
     this._$content.toggleClass('dropdown-menu__content_opened');
   }
 
-  _handleDocumentClick(event){
-    if (!this._$content.parent()[0].contains(event.target)){
+  _handleDocumentClick(event) {
+    if (!this._$content.parent()[0].contains(event.target)) {
       this._$header.removeClass('dropdown-menu__header_opened');
       this._$content.removeClass('dropdown-menu__content_opened');
     }
@@ -66,7 +67,7 @@ class DropdownMenu {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
-      { withNumber: true },
+      {withNumber: true},
     ));
   }
 
@@ -90,7 +91,7 @@ class DropdownMenu {
     this._cleanData();
   }
 
-  _cleanData(){
+  _cleanData() {
     this._$inputs.val(0);
     this._$inputs.prev().prop('disabled', true);
     this._updateHeader();
