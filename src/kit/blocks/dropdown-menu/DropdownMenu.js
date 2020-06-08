@@ -1,6 +1,9 @@
 import RussianLangUtil from '@utils/RussianLangUtil';
 
 class DropdownMenu {
+  constructor(formatHeader = DropdownMenu._formatDefaultHeader) {
+    this._formatHeader = formatHeader;
+  }
   create($menu) {
     this._$header = $menu.find('.js-dropdown-menu__header');
     const $content = this._$header.next();
@@ -9,8 +12,10 @@ class DropdownMenu {
     this._bindListeners();
 
     this._$header.on('click', this._handleHeaderClick);
-    $content.find('.js-dropdown-menu__decrement').on('click', this._handleDecrementClick);
-    $content.find('.js-dropdown-menu__increment').on('click', this._handleIncrementClick);
+    this._$decrements = $content.find('.js-dropdown-menu__decrement');
+    this._$decrements.on('click', this._handleDecrementClick);
+    this._$increments = $content.find('.js-dropdown-menu__increment')
+    this._$increments.on('click', this._handleIncrementClick);
 
     const $actionButtons = $content.find('.js-dropdown-menu__buttons');
     $actionButtons.find('.js-dropdown-menu__button_type_confirm').on('click', this._handleConfirmButtonClick);
@@ -48,8 +53,7 @@ class DropdownMenu {
     this._$header.next().toggleClass('dropdown-menu__content_opened');
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  _formatHeader(countArray) {
+  static _formatDefaultHeader(countArray) {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
@@ -74,6 +78,10 @@ class DropdownMenu {
   }
 
   _handleCancelButtonClick() {
+    this._cleanData();
+  }
+
+  _cleanData(){
     this._$inputs.val(0);
     this._$inputs.prev().prop('disabled', true);
     this._updateHeader();
