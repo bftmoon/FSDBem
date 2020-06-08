@@ -5,19 +5,21 @@ class DropdownMenu {
     this._formatHeader = formatHeader;
   }
   create($menu) {
+    // todo: optimization?
+    document.addEventListener('click', this._handleDocumentClick.bind(this));
     this._$header = $menu.find('.js-dropdown-menu__header');
-    const $content = this._$header.next();
-    this._$inputs = $content.find('.js-dropdown-menu__count');
+    this._$content = this._$header.next();
+    this._$inputs = this._$content.find('.js-dropdown-menu__count');
 
     this._bindListeners();
 
     this._$header.on('click', this._handleHeaderClick);
-    this._$decrements = $content.find('.js-dropdown-menu__decrement');
+    this._$decrements = this._$content.find('.js-dropdown-menu__decrement');
     this._$decrements.on('click', this._handleDecrementClick);
-    this._$increments = $content.find('.js-dropdown-menu__increment')
+    this._$increments = this._$content.find('.js-dropdown-menu__increment')
     this._$increments.on('click', this._handleIncrementClick);
 
-    const $actionButtons = $content.find('.js-dropdown-menu__buttons');
+    const $actionButtons = this._$content.find('.js-dropdown-menu__buttons');
     $actionButtons.find('.js-dropdown-menu__button_type_confirm').on('click', this._handleConfirmButtonClick);
     $actionButtons.find('.js-dropdown-menu__button_type_cancel').on('click', this._handleCancelButtonClick);
 
@@ -43,14 +45,21 @@ class DropdownMenu {
   _updateHeader() {
     const values = [];
     this._$inputs.each((index, input) => {
-      values.push(+input.value);
+      values.push(Number(input.value));
     });
     this._$header.children(':first-child').text(this._formatHeader(values));
   }
 
   _toggleMenu() {
     this._$header.toggleClass('dropdown-menu__header_opened');
-    this._$header.next().toggleClass('dropdown-menu__content_opened');
+    this._$content.toggleClass('dropdown-menu__content_opened');
+  }
+
+  _handleDocumentClick(event){
+    if (!this._$content.parent()[0].contains(event.target)){
+      this._$header.removeClass('dropdown-menu__header_opened');
+      this._$content.removeClass('dropdown-menu__content_opened');
+    }
   }
 
   static _formatDefaultHeader(countArray) {
