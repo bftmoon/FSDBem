@@ -21,7 +21,7 @@
       ],
       "number": 888,
       "isLux": true,
-      "price": "9 990₽",
+      "price": 9990,
       "rating": 5,
       "reviewCount": 145
     },
@@ -45,7 +45,7 @@
         }
       ],
       "number": 840,
-      "price": "9 900₽",
+      "price": 9900,
       "rating": 4,
       "reviewCount": 65
     },
@@ -69,7 +69,7 @@
         }
       ],
       "number": 980,
-      "price": "8 500₽",
+      "price": 8500,
       "isLux": true,
       "rating": 3,
       "reviewCount": 35
@@ -94,7 +94,7 @@
         }
       ],
       "number": 856,
-      "price": "7 300₽",
+      "price": 7300,
       "rating": 5,
       "reviewCount": 19
     },
@@ -118,7 +118,7 @@
         }
       ],
       "number": 740,
-      "price": "6 000₽",
+      "price": 6000,
       "rating": 4,
       "reviewCount": 44
     },
@@ -142,7 +142,7 @@
         }
       ],
       "number": 982,
-      "price": "5 800₽",
+      "price": 5800,
       "rating": 3,
       "reviewCount": 56
     },
@@ -166,7 +166,7 @@
         }
       ],
       "number": 678,
-      "price": "5 500₽",
+      "price": 5500,
       "rating": 5,
       "reviewCount": 45
     },
@@ -190,7 +190,7 @@
         }
       ],
       "number": 450,
-      "price": "5 300₽",
+      "price": 5300,
       "rating": 4,
       "reviewCount": 39
     },
@@ -214,7 +214,7 @@
         }
       ],
       "number": 350,
-      "price": "5 000₽",
+      "price": 5000,
       "rating": 3,
       "reviewCount": 77
     },
@@ -238,7 +238,7 @@
         }
       ],
       "number": 666,
-      "price": "5 000₽",
+      "price": 5000,
       "rating": 5,
       "reviewCount": 25
     },
@@ -262,7 +262,7 @@
         }
       ],
       "number": 444,
-      "price": "5 000₽",
+      "price": 5000,
       "rating": 3,
       "reviewCount": 15
     },
@@ -286,7 +286,7 @@
         }
       ],
       "number": 352,
-      "price": "5 000₽",
+      "price": 5000,
       "rating": 3,
       "reviewCount": 55
     }
