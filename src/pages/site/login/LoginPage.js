@@ -3,12 +3,12 @@ import RegistrationCard from '@blocks/registration-card';
 
 class LoginPage {
   create() {
-    this.$cards = $('.js-login-page__card');
+    this.$cards = $('.js-login__card');
 
     LoginCard.initDefault({registrationClickListener: this.handleRegistrationButtonClick.bind(this)});
     RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick.bind(this)});
 
-    if (!this.isLoginLocation()) this.$cards.toggleClass('login-page__card_hidden');
+    if (!this.isLoginLocation()) this.$cards.toggleClass('login__card_hidden');
 
   }
 
