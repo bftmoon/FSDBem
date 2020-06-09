@@ -6,16 +6,16 @@ block body
   include ../../../kit/blocks/footer/footer
   include ../../../kit/blocks/simple-footer/simple-footer
 
-  body.header-footers-page
+  body.header-and-footers
     - const {home, links, login, register} = require(`./json/header.json`)
     - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
-    .header-footers-page__header
+    .header-and-footers__header
       +kit-header
-    .header-footers-page__item
+    .header-and-footers__item
       +header({home, links, login, register})
-    .header-footers-page__item
+    .header-and-footers__item
       +header({home, links, login, register, username: "Cosmin Negoita"})
-    .header-footers-page__item
+    .header-and-footers__item
       +footer({tagline, menu, subscribe, copyright})
-    .header-footers-page__item
+    .header-and-footers__item
       +simple-footer({tagline})

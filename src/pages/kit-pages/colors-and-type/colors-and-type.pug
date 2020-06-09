@@ -3,10 +3,10 @@ extends ../layout/layout
 block body
   include ../../../kit/blocks/kit-header/kit-header
 
-  body.colors-page
+  body.colors-and-type
     +kit-header
-    main.colors-page__main
-      section.colors-page__colors
+    main.colors-and-type__main
+      section.colors-and-type__colors
         -
           let colors = [
             {name: "Dark Shade 100%", num: "#1F2041"},
@@ -18,17 +18,17 @@ block body
             {name: "Green", num: "#6FCF97"},
           ]
         each color, i in colors
-          div(class="colors-page__color_" + i).colors-page__color
-          .colors-page__description
-            .colors-page__name=color.name
-            .colors-page__num=color.num
-      section.colors-page__headers
-        h1.colors-page__prefix H1
-        h1 This one is the sub-section or widget title
-        h2.colors-page__prefix H2
-        h2 Next one is the item title inside widgets
-        h3.colors-page__prefix H3
-        h3 This is a label or CTA text
-        .colors-page__prefix.colors-page__prefix_type_body Body
-        .colors-page__body-example This is the body text which is used for most of the design, like paragraphs, lists, etc.
+          div(class="colors-and-type__color_" + i).colors-and-type__color
+          .colors-and-type__description
+            .colors-and-type__name=color.name
+            .colors-and-type__num=color.num
+      section.colors-and-type__headers
+        h1.colors-and-type__prefix H1
+        h1.colors-and-type__h This one is the sub-section or widget title
+        h2.colors-and-type__prefix H2
+        h2.colors-and-type__h Next one is the item title inside widgets
+        h3.colors-and-type__prefix H3
+        h3.colors-and-type__h This is a label or CTA text
+        .colors-and-type__prefix.colors-and-type__prefix_type_body Body
+        .colors-and-type__body-example This is the body text which is used for most of the design, like paragraphs, lists, etc.
 

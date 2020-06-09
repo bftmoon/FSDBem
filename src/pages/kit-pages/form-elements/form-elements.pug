@@ -150,28 +150,29 @@ block body
         .form-elements__big-separator
         h3.form-elements__title Pagination
         +paginator("1 – 12 из 100+ вариантов аренды")
-      .form-elements__dropdown-conditions.form-elements__wrapper
-        +furniture-dropdown({
-          counts: [2, 2, 0],
-          title: "Dropdown",
-          subtitle: "Default"
-        })
-        .form-elements__separator
-        +furniture-dropdown({
-          counts: [2, 2, 0],
-          title: "Dropdown",
-          subtitle: "Expanded",
-          isOpened: true,
-          isInline: true
-        })
-      .form-elements__dropdown_with-confirm
+      .form-elements__dropdown-conditions
+        .form-elements__wrapper
+          +furniture-dropdown({
+            counts: [2, 2, 0],
+            title: "Dropdown",
+            subtitle: "Default"
+          })
+          .form-elements__separator
+          +furniture-dropdown({
+            counts: [2, 2, 0],
+            title: "Dropdown",
+            subtitle: "Expanded",
+            isOpened: true,
+            isInline: true
+          })
+      .form-elements__dropdown.form-elements__dropdown_with-confirm
         +guests-dropdown({
           title: "Dropdown",
           isOpened: true,
           isInline: true,
           withConfirm: true
         })
-      .form-elements__dropdown-with-cancel
+      .form-elements__dropdown.form-elements__dropdown_with-cancel
         +guests-dropdown({
           counts: [2, 1, 0],
           title: "Dropdown",
