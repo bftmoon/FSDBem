@@ -31,6 +31,9 @@
   }
 
   &__calendar {
+    padding: 20px 5px;
+    display: inline-block;
+
     max-width: 320px;
     width: min-content;
     border: none;

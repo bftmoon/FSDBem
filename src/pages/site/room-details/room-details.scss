@@ -93,10 +93,11 @@ $details-page-point_content-small: 460px;
 
   &__title {
     margin-bottom: 20px;
+  }
 
-    &_for-list {
-      margin-left: 20px;
-    }
+  &__list-title{
+    margin-bottom: 20px;
+    margin-left: 20px;
   }
 
   &__info {
