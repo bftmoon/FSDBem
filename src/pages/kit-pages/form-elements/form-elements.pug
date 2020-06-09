@@ -133,18 +133,12 @@ block body
         h3.form-elements__hight-title Buttons
         .form-elements__clickable-item
           +button("Click me", {})
-        .form-elements__clickable-item
-          +button("Click me", {})(disabled)
         .form-elements__medium-separator
         .form-elements__clickable-item
           +button("Click me", {isFlat: true})
-        .form-elements__clickable-item
-          +button("Click me", {isFlat: true})(disabled)
         .form-elements__medium-separator
         .form-elements__clickable-item
           +a("Click me")(href="mock-address")
-        .form-elements__clickable-item
-          +a("Click me")
         .form-elements__medium-separator
         +button("Перейти к оплате", {isArrowed: true})
         .form-elements__big-separator

@@ -14,11 +14,8 @@
   border-radius: 22px;
   background: $gradient;
 
-  &:disabled {
-    opacity: 0.5;
-  }
-
   &:hover:enabled {
+    background: $gradient50;
     cursor: pointer;
   }
 

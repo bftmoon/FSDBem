@@ -5,11 +5,14 @@
   font-weight: bold;
   font-size: pxToRem(12px);
   text-transform: uppercase;
-  color: $dark_shade50;
   text-decoration: none;
   white-space: nowrap;
 
   &:link, &:visited {
     color: $primary;
+  }
+
+  &:hover {
+    color: $dark_shade50;
   }
 }
