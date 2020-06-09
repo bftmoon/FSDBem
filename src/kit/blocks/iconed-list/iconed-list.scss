@@ -9,6 +9,18 @@
   &__item {
     display: flex;
     align-items: center;
+    list-style: none;
+    padding: 20px 0;
+    border-bottom: 1px solid $dark_shade10;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 
   &__icon {

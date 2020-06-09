@@ -95,7 +95,7 @@ $details-page-point_content-small: 460px;
     margin-bottom: 20px;
   }
 
-  &__list-title{
+  &__list-title {
     margin-bottom: 20px;
     margin-left: 20px;
   }
@@ -112,20 +112,25 @@ $details-page-point_content-small: 460px;
   &__feedbacks {
     grid-area: feedbacks;
     max-width: 710px;
+  }
 
-    &-header {
-      margin-top: 4px;
-      display: flex;
-      justify-content: space-between;
-    }
+  &__feedbacks-header {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-    &-count {
-      color: $dark_shade50;
-      white-space: nowrap;
-    }
+  &__feedbacks-count {
+    color: $dark_shade50;
+    white-space: nowrap;
+  }
 
-    &-separator {
-      height: 22px;
+  &__feedback {
+    list-style: none;
+    margin-bottom: 22px;
+
+    &_last {
+      margin-bottom: 0;
     }
   }
 
