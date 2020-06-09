@@ -1,5 +1,6 @@
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/theme';
 
 $footer-point_medium: 840px;
 $footer-point_small: 490px;
@@ -52,23 +53,20 @@ $footer-point_small: 490px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    flex-grow: 2;
     margin: 4px 40px 0;
     @media screen and (max-width: $footer-point_small) {
       display: none;
     }
   }
 
-  &__nav-column {
-    display: flex;
-    flex-direction: column;
-    line-height: pxToRem(18px);
+  &__nav-title{
+    @extend h3;
+    margin-bottom: 20px;
+  }
 
-    :link, :visited {
-      text-decoration: none;
-      color: $dark_shade50;
-      margin-bottom: 20px;
-    }
+  &__nav-item{
+    list-style: none;
+    margin-bottom: 13px;
   }
 
   &__subscribe-offer {
