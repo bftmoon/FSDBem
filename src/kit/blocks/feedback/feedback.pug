@@ -3,7 +3,7 @@ include ../like-button/like-button
 // img: {src, alt}, like: {count, active}
 mixin feedback({img, name, time, text, like})
   .feedback.js-feedback
-    img.feedback__img(src=img.src alt=img.alt)
+    img.feedback__image(src=img.src alt=img.alt)
     .feedback__title
       .feedback__user=name
       .feedback__time=time

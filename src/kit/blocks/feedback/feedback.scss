@@ -12,10 +12,10 @@
   &__like {
     margin: 0 auto;
   }
-}
 
-.feedback__img {
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: $shadow_small;
+  &__image {
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: $shadow_small;
+  }
 }
