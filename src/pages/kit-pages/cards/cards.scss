@@ -24,7 +24,7 @@
     }
   }
 
-  &__wrapper-for-chrome {
+  &__form {
     padding: 20px 5px;
     display: inline-block;
     width: 100%;
@@ -47,5 +47,12 @@
         display: none;
       }
     }
+  }
+
+  &__room {
+    padding: 20px 5px;
+    display: inline-block;
+    width: 100%;
+    max-width: 270px;
   }
 }

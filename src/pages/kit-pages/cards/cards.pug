@@ -12,11 +12,11 @@ block body
   body.cards
     +kit-header.cards__header
     main.cards__main
-      .cards__wrapper-for-chrome
+      .cards__form
         +search-card
-      .cards__wrapper-for-chrome
+      .cards__form
         +registration-card
-      .cards__wrapper-for-chrome
+      .cards__form
         +calculator-card({
           room: {
             number: 888,
@@ -35,11 +35,11 @@ block body
             overService: 300,
           }
         })
-      .cards__wrapper-for-chrome
+      .cards__form
         +login-card
       .cards__calendar
         +dropdown-date([{}], true)
-      .cards__wrapper-for-chrome
+      .cards__room
         - const importedImg = require("./images/room-1.jpg").default;
         +room-card({
           imgs: [
@@ -54,7 +54,7 @@ block body
           rating: 5,
           reviewCount: 145
         })
-      .cards__wrapper-for-chrome
+      .cards__room
         - const otherImportedImg = require("./images/room-2.jpg").default;
         +room-card({
           imgs: [

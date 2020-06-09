@@ -46,7 +46,7 @@
     min-width: 120px;
   }
 
-  :link, :visited {
+  &:link, &:visited {
     text-decoration: none;
     color: $dark_shade50;
   }
