@@ -61,8 +61,8 @@ block main
       .search-page__rooms
         - i=0;
         while i < 12
-          a(href='./room-details.html')
+          a(href='./room-details.html').search-page__room-link
             +room-card(rooms[i]).search-page__room
             - i++
       .search-page__paginator-wrapper
-        +paginator("1 – 12 из 100+ вариантов аренды").search-page__paginator
+        +paginator("1 – 12 из 100+ вариантов аренды")
