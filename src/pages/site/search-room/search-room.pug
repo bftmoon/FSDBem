@@ -10,16 +10,16 @@ block main
   include ../../../kit/blocks/paginator/paginator
   include ../../../kit/blocks/room-card/room-card
 
-  main.search-page__main
-    section.search-page__configuration
-      .search-page__date
+  article.search-room
+    section.search-room__configuration
+      .search-room__date
         +dropdown-date([{title: "Даты пребывания в отеле"}])
-      .search-page__guests
+      .search-room__guests
         +guests-dropdown({title: "Гости"})
       +slider({title: "Диапазон цены"})
-      .search-page__cost-info Стоимость за сутки пребывания в номере
-      .search-page__facility
-        h3.search-page__title Условия
+      .search-room__cost-info Стоимость за сутки пребывания в номере
+      .search-room__facility
+        h3.search-room__title Условия
         +checkbox-list({
           items: [
             {text: "Можно курить"},
@@ -27,8 +27,8 @@ block main
             {text: "Можно пригласить гостей \n(до 10 человек)"},
           ]
           })
-      .search-page__accessibility
-        h3.search-page__title Доступность
+      .search-room__accessibility
+        h3.search-room__title Доступность
         +checkbox-list({
           items: [
             {
@@ -41,7 +41,7 @@ block main
             },
           ]
           })
-      .search-page__furniture
+      .search-room__furniture
         +furniture-dropdown({title: "Удобства номера"})
       +expandable-checkboxes({
         items: [
@@ -55,14 +55,14 @@ block main
           {text: "Шампунь"},
         ], title: "Дополнительные удобства"
         })
-    section.search-page__results
+    section.search-room__results
       h1 Номера, которые мы для вас подобрали
       - const {rooms} = require("./json/rooms.json")
-      nav.search-page__rooms
+      nav.search-room__rooms
         - i=0;
         while i < 12
-          a(href='./room-details.html').search-page__room-link
-            +room-card(rooms[i]).search-page__room
+          a(href='./room-details.html').search-room__room-link
+            +room-card(rooms[i]).search-room__room
             - i++
-      .search-page__paginator-wrapper
+      .search-room__paginator-wrapper
         +paginator("1 – 12 из 100+ вариантов аренды")

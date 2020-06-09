@@ -1,19 +1,17 @@
 @import '../../../kit/env-styles/functions';
 @import '../../../kit/env-styles/variables';
 
-.search-page {
-  &__main {
-    position: relative;
-    padding: 30px 5px 0;
-    margin: auto;
-    display: grid;
-    gap: 60px;
-    grid-template-columns: 266px 1fr;
-    max-width: calc(1450px - 140px * 2);
-    @media screen and (max-width: 857px) {
-      grid-template-columns: 1fr;
-      justify-items: center;
-    }
+.search-room {
+  position: relative;
+  padding: 30px 5px 0;
+  margin: auto;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 266px 1fr;
+  max-width: calc(1450px - 140px * 2);
+  @media screen and (max-width: 857px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   &__configuration {

@@ -1,15 +1,13 @@
 $landing-page-point: 480px;
 
 .landing {
-  &__main {
-    background: url(./imgs/landing.jpg) center;
-    background-size: cover;
-    height: 830px;
-    display: flex;
-    flex-direction: column;
-    @media screen and (max-width: $landing-page-point) {
-      align-items: center;
-    }
+  background: url(./imgs/landing.jpg) center;
+  background-size: cover;
+  height: 830px;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $landing-page-point) {
+    align-items: center;
   }
 
   &__card {

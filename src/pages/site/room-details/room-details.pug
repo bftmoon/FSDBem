@@ -7,14 +7,14 @@ block main
   include ../../../kit/blocks/bullet-list/bullet-list
   include ../../../kit/blocks/calculator-card/calculator-card
 
-  main.details-page
-    .details-page__images
-      img(src=require(`./imgs/room-details-0.jpg`).default alt = "room").details-page__image-1
-      img(src=require(`./imgs/room-details-1.jpg`).default alt = "room").details-page__image-2
-      img(src=require(`./imgs/room-details-2.jpg`).default alt = "room").details-page__image-3
-    .details-page__details
-      .details-page__info
-        h2.details-page__title Сведения о номере
+  article.room-details
+    section.room-details__images
+      img(src=require(`./imgs/room-details-0.jpg`).default alt = "room").room-details__image-1
+      img(src=require(`./imgs/room-details-1.jpg`).default alt = "room").room-details__image-2
+      img(src=require(`./imgs/room-details-2.jpg`).default alt = "room").room-details__image-3
+    section.room-details__details
+      .room-details__info
+        h2.room-details__title Сведения о номере
         +iconed-list([
           {
             icon: "insert_emoticon",
@@ -32,13 +32,13 @@ block main
             description: "Номер оснащён камином"
           },
         ])
-      .details-page__chart
-        h2.details-page__title Впечатления от номера
+      .room-details__chart
+        h2.room-details__title Впечатления от номера
         +feedbacks-chart
-      .details-page__feedbacks
-        .details-page__feedbacks-header
-          h2.details-page__title Отзывы посетителей номера
-          .details-page__feedbacks-count 2 отзыва
+      .room-details__feedbacks
+        .room-details__feedbacks-header
+          h2.room-details__title Отзывы посетителей номера
+          .room-details__feedbacks-count 2 отзыва
         +feedback({
           img: {
             src: require("./imgs/avatar-1.jpg").default,
@@ -65,9 +65,9 @@ block main
           }
         })
           if index < feedbacks.length - 1
-            .details-page__feedbacks-separator
-      .details-page__rules
-        h2.details-page__list-title Правила
+            .room-details__feedbacks-separator
+      .room-details__rules
+        h2.room-details__list-title Правила
         +bullet-list({
           items: [
             "Нельзя с питомцами",
@@ -75,10 +75,10 @@ block main
             "Время прибытия — после 13:00, а выезд до 12:00"
           ]
         })
-      .details-page__cancel-info
-        h2.details-page__title Отмена
+      .room-details__cancel-info
+        h2.room-details__title Отмена
         | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-      .details-page__card
+      .room-details__card
         +calculator-card({
           room: {
             number: 888,
