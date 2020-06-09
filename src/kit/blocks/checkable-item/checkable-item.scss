@@ -15,12 +15,14 @@
     cursor: pointer;
     border: 1px solid $dark_shade25;
 
-    &_checkbox {
-      border-radius: 4px;
-    }
+    &_type {
+      &_checkbox {
+        border-radius: 4px;
+      }
 
-    &_radio {
-      border-radius: 50%;
+      &_radio {
+        border-radius: 50%;
+      }
     }
   }
 
@@ -44,7 +46,7 @@
       content: '';
     }
 
-    &_radio:after {
+    &_type_radio:after {
       width: 60%;
       height: 60%;
       align-self: center;
@@ -53,7 +55,7 @@
       background: $gradient;
     }
 
-    &_checkbox:after {
+    &_type_checkbox:after {
       align-self: stretch;
       height: pxToRem(8px);
       width: pxToRem(5px);
@@ -69,23 +71,23 @@
     }
   }
 
-  &__input:checked ~ &__text_radio {
+  &__input:checked ~ &__text_type_radio {
     color: $dark_shade75;
   }
 
   &__text {
     line-height: 129%;
     white-space: pre-wrap;
+  }
 
-    &__title {
-      font-weight: bold;
-    }
+  &__title {
+    font-weight: bold;
+  }
 
-    &__description {
-      padding-top: 5px;
-      line-height: 117%;
-      font-size: pxToRem(12px);
-      color: $dark_shade50;
-    }
+  &__description {
+    padding-top: 5px;
+    line-height: 117%;
+    font-size: pxToRem(12px);
+    color: $dark_shade50;
   }
 }
