@@ -1,21 +1,37 @@
 include ../logo/logo
-include ../header-links/header-links
+include ../link-with-menu/link-with-menu
+include ../button/button
 
-mixin header({home, links, login, register, username})
+mixin header({links, login, register, username})
   header.header.js-header
-    .header__content.js-header__content
-      +logo
-      .header__main-links
-        +header-links({home, links, login, register, username})
-      button.js-header__menu-button.header__menu-button
-        i.header__icon menu
-    .header__sidebar.js-header__sidebar
-      button.header__closing-button.js-header__closing-button
-        i.header__icon close
-      .header__sidebar-logo
-        +logo
-      +header-links({home, links, login, register, username, isVertical: true})
-    .header__dim.js-header__dim
+    nav.header__nav
+      ul.header__links
+
+        li.header__logo
+          +logo
+
+        for link in links
+          if link.content
+            li.header__item.header__item_with-menu
+              - link.isInline = false
+              +link-with-menu(link)
+          else
+            li.header__item
+              a(href=link.url).header__link=link.name
+
+        if username
+          li.header__item
+            a(href="mock-address").header__username=username
+        else
+          li.header__item
+            a(href=login.url).header__login-button
+              +button(login.name, {isFlat: true, isMini: true, isWide: false})
+          li.header__item
+            a(href=register.url).header__register-button
+              +button(register.name, {isMini: true, isWide: false})
+
+    button.js-header__menu-button.header__menu-button
+      i.header__icon menu
 
 
 

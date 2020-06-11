@@ -1,8 +1,7 @@
 import '@blocks/button';
 import '@blocks/link-with-menu';
 import '@blocks/logo';
-import './header.scss';
+import './sidebar.scss';
+import Sidebar from './Sidebar';
 
-import Header from './Header';
-
-export default Header;
+export default Sidebar;

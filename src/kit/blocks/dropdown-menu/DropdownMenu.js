@@ -17,7 +17,7 @@ class DropdownMenu {
     this._$header.on('click', this._handleHeaderClick);
     this._$decrements = this._$content.find('.js-dropdown-menu__decrement');
     this._$decrements.on('click', this._handleDecrementClick);
-    this._$increments = this._$content.find('.js-dropdown-menu__increment')
+    this._$increments = this._$content.find('.js-dropdown-menu__increment');
     this._$increments.on('click', this._handleIncrementClick);
 
     const $actionButtons = this._$content.find('.js-dropdown-menu__buttons');
@@ -67,7 +67,7 @@ class DropdownMenu {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
-      {withNumber: true},
+      { withNumber: true },
     ));
   }
 

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -19,12 +19,12 @@ function generatePagesData(paths) {
         filename: `${page}.html`,
         template: `${dir}/${page}/${page}.pug`,
         chunks: [page],
-        hash: true
+        hash: true,
       });
       entries[page] = `${dir}/${page}/${page}.js`;
     });
   });
-  return {htmlOptions, entries};
+  return { htmlOptions, entries };
 }
 
 const pagesData = generatePagesData([
@@ -126,7 +126,7 @@ const config = {
 
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
-    config.plugins.unshift(new CleanWebpackPlugin())
+    config.plugins.unshift(new CleanWebpackPlugin());
     config.optimization = {
       minimize: true,
       minimizer: [new TerserPlugin()],

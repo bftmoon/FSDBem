@@ -58,7 +58,7 @@ block main
     section.search-room__results
       h1 Номера, которые мы для вас подобрали
       - const {rooms} = require("./json/rooms.json")
-      nav.search-room__rooms
+      .search-room__rooms
         - i=0;
         while i < 12
           a(href='./room-details.html').search-room__room-link

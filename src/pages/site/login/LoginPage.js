@@ -5,26 +5,29 @@ class LoginPage {
   create() {
     this.$cards = $('.js-login__card');
 
-    LoginCard.initDefault({registrationClickListener: this.handleRegistrationButtonClick.bind(this)});
-    RegistrationCard.initDefault({loginClickListener: this.handleLoginButtonClick.bind(this)});
+    LoginCard.initDefault({
+      registrationClickListener: this._handleRegistrationButtonClick.bind(this)
+    });
+    RegistrationCard.initDefault({
+      loginClickListener: this._handleLoginButtonClick.bind(this)
+    });
 
-    if (!this.isLoginLocation()) this.$cards.toggleClass('login__card_hidden');
-
+    if (!LoginPage.isLoginLocation()) this.$cards.toggleClass('login__card_hidden');
   }
 
-  handleLoginButtonClick() {
-    this.updateLocation();
+  _handleLoginButtonClick() {
+    this._updateLocation();
   }
 
-  handleRegistrationButtonClick() {
-    this.updateLocation();
+  _handleRegistrationButtonClick() {
+    this._updateLocation();
   }
 
-  updateLocation() {
-    window.location.search = this.isLoginLocation() ? 'sign=up' : 'sign=in';
+  _updateLocation() {
+    window.location.search = LoginPage.isLoginLocation() ? 'sign=up' : 'sign=in';
   }
 
-  isLoginLocation() {
+  static isLoginLocation() {
     return window.location.search.split('=')[1] === 'in';
   }
 }

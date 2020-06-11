@@ -1,0 +1,35 @@
+include ../logo/logo
+include ../link-with-menu/link-with-menu
+include ../button/button
+
+mixin sidebar({links, login, register, username})
+  .sidebar.js-sidebar
+    .sidebar__dim.js-sidebar__dim
+    aside.sidebar__main.js-sidebar__main
+      button.sidebar__closing-button.js-sidebar__close-button
+        i.sidebar__icon close
+
+      nav.sidebar__nav
+        ul.sidebar__links
+          li.sidebar__logo
+            +logo
+
+          for link in links
+            if link.content
+              li.sidebar__item.sidebar__item_with-menu
+                - link.isInline = true
+                +link-with-menu(link)
+            else
+              li.sidebar__item
+                a(href=link.url).sidebar__link=link.name
+
+          if username
+            li.sidebar__item
+              a(href="mock-address").sidebar__username=username
+          else
+            li.sidebar__button
+              a(href=login.url).sidebar__login-button
+                +button(login.name, {isFlat: true, isMini: true, isWide: true})
+            li.sidebar__button
+              a(href=register.url).sidebar__register-button
+                +button(register.name, {isMini: true, isWide: true})

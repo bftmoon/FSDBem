@@ -1,4 +1,4 @@
-include ../../../kit/blocks/header/header
+include ../../../kit/blocks/adaptive-header/adaptive-header
 include ../../../kit/blocks/footer/footer
 
 doctype html
@@ -12,7 +12,7 @@ html(lang="ru")
     title Toxin
   body.layout
     - const {home, links, login, register} = require(`../layout/json/header.json`)
-    +header({home, links, login, register})
+    +adaptive-header({home, links, login, register})
     main.layout__content
       block main
       - const {tagline, menu, subscribe, copyright} = require(`../layout/json/footer.json`)

@@ -2,20 +2,19 @@ extends ../layout/layout
 
 block body
   include ../../../kit/blocks/kit-header/kit-header
-  include ../../../kit/blocks/header/header
+  include ../../../kit/blocks/adaptive-header/adaptive-header
   include ../../../kit/blocks/footer/footer
   include ../../../kit/blocks/simple-footer/simple-footer
 
   body.header-and-footers
     - const {home, links, login, register} = require(`./json/header.json`)
     - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
-    .header-and-footers__header
-      +kit-header
-    .header-and-footers__item
-      +header({home, links, login, register})
-    .header-and-footers__item
-      +header({home, links, login, register, username: "Cosmin Negoita"})
-    .header-and-footers__item
+    +kit-header
+    .header-and-footers__header.js-header-and-footers__header
+      +adaptive-header({links, login, register})
+    .header-and-footers__header.js-header-and-footers__header
+      +adaptive-header({links, login, register, username: "Cosmin Negoita"})
+    .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
-    .header-and-footers__item
+    .header-and-footers__footer
       +simple-footer({tagline})
