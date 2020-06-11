@@ -6,19 +6,20 @@ $header-point: pxToRem(850px);
 
 .header {
   height: pxToRem(70px);
-  display: flex;
   background: white;
   box-shadow: $shadow_smaller;
 
+  &__content{
+    max-width: pxToRem(1170px);
+    display: flex;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5px;
+  }
+
   &__nav {
     height: 100%;
-    width: 100%;
-    padding: 0 5px;
-    max-width: pxToRem(1170px);
-    margin: 0 auto;
-    @media screen and (max-width: $header-point) {
-      margin: 0;
-    }
   }
 
   &__links {
