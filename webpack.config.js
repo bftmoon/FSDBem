@@ -19,6 +19,7 @@ function generatePagesData(paths) {
         filename: `${page}.html`,
         template: `${dir}/${page}/${page}.pug`,
         chunks: [page],
+        hash: true
       });
       entries[page] = `${dir}/${page}/${page}.js`;
     });
@@ -46,7 +47,7 @@ const config = {
   output: {
     filename: '[name].[contenthash].js',
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
@@ -55,7 +56,10 @@ const config = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
+      jquery: 'jquery',
       jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
     }),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
