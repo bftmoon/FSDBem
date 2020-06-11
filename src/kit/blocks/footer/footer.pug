@@ -10,8 +10,8 @@ mixin footer({tagline, menu, subscribe, copyright})
         .footer__tagline=tagline
       nav.footer__nav
         for column in menu
-          .footer__nav-column
-            ul.footer__nav-title=column.name
+          ul.footer__nav-column
+            .footer__nav-title=column.name
             for item in column.items
               li.footer__nav-item
                 a(href=item.url).footer__nav-link=item.name
