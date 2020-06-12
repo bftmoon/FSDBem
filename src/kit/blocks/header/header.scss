@@ -1,4 +1,4 @@
-@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';;
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
 
@@ -60,7 +60,7 @@ $header-point: pxToRem(850px);
   }
 
   &__icon {
-    @extend .material-icons;
+    @extend %material-icons;
   }
 
   &__link {

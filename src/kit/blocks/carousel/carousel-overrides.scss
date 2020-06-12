@@ -1,3 +1,4 @@
+@import '../../env-styles/abstract';
 @import '../../env-styles/variables';
 
 .lSAction {
@@ -33,6 +34,7 @@
   }
 
   &__icon {
+    @extend %material-icons;
     margin: auto;
     color: white;
     transform: rotate(90deg);

@@ -1,4 +1,4 @@
-@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
 
@@ -24,7 +24,7 @@
   }
 
   &__icon {
-    @extend .material-icons;
+    @extend %material-icons;
     font-size: pxToRem(48px);
     color: transparent;
     background: $gradient;

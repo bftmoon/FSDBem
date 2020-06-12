@@ -1,4 +1,4 @@
-@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';;
 @import '../../env-styles/variables';
 
 .rating {
@@ -19,7 +19,7 @@
   }
 
   &__star {
-    @extend .material-icons;
+    @extend %material-icons;
     color: transparent;
     background: $gradient;
     -webkit-background-clip: text;

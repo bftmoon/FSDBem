@@ -6,7 +6,6 @@ class DropdownMenu {
   }
 
   create($menu) {
-    // todo: optimization?
     document.addEventListener('click', this._handleDocumentClick.bind(this));
     this._$header = $menu.find('.js-dropdown-menu__header');
     this._$content = this._$header.next();

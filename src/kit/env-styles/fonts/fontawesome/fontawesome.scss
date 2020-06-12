@@ -4,6 +4,6 @@
   font-weight: 400;
   font-display: block;
   src: local('Fontawesome'),
-  url('./fonts/fa-brands-400.woff2') format('woff2'),
-  url('./fonts/fa-brands-400.woff') format('woff');
+  url('~@fonts/fontawesome/fonts/fa-brands-400.woff2') format('woff2'),
+  url('~@fonts/fontawesome/fonts/fa-brands-400.woff') format('woff');
 }

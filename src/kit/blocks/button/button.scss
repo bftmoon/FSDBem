@@ -1,4 +1,4 @@
-@import '~material-icons/iconfont/material-icons';
+@import '../../env-styles/abstract';;
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
 
@@ -60,7 +60,7 @@
   }
 
   &__arrow {
-    @extend .material-icons;
+    @extend %material-icons;
     flex-grow: 0;
     flex-shrink: 0;
   }
