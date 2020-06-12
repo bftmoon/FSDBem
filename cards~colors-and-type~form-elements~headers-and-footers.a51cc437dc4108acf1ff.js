@@ -1,2 +1,1 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[6],{XGFv:function(n,o,w){},x4OG:function(n,o,w){"use strict";w("XGFv")}}]);
-//# sourceMappingURL=cards~colors-and-type~form-elements~headers-and-footers.a51cc437dc4108acf1ff.js.map
