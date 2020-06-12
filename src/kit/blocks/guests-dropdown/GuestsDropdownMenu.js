@@ -67,9 +67,9 @@ class GuestsDropdownMenu extends DropdownMenu {
   }
 
   static initAll({ selector = '.js-guests-dropdown', parent = document }) {
-    $(parent).find(selector).each((__, element) =>
-      new GuestsDropdownMenu().create($(element.firstChild))
-    );
+    $(parent).find(selector).each((__, element) => {
+      new GuestsDropdownMenu().create($(element.firstChild));
+    });
   }
 }
 

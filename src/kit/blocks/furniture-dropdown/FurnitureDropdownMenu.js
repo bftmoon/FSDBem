@@ -3,10 +3,10 @@ import DropdownMenu from '@blocks/dropdown-menu';
 
 class FurnitureDropdownMenu extends DropdownMenu {
   constructor() {
-    super(FurnitureDropdownMenu._formatFurnitureHeader);
+    super(FurnitureDropdownMenu.formatFurnitureHeader);
   }
 
-  static _formatFurnitureHeader(countArray) {
+  static formatFurnitureHeader(countArray) {
     const countWords = [
       ['спален', 'спальня', 'спальни', 'спален'],
       ['кроватей', 'кровать', 'кровати', 'кроватей'],
@@ -28,9 +28,9 @@ class FurnitureDropdownMenu extends DropdownMenu {
   }
 
   static initAll({ selector = '.js-furniture-dropdown', parent = document }) {
-    $(parent).find(selector).each((__, element) =>
-      new FurnitureDropdownMenu().create($(element.firstChild))
-    );
+    $(parent).find(selector).each((__, element) => {
+      new FurnitureDropdownMenu().create($(element.firstChild));
+    });
   }
 }
 

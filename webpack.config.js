@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -24,7 +24,7 @@ function generatePagesData(paths) {
       entries[page] = `${dir}/${page}/${page}.js`;
     });
   });
-  return {htmlOptions, entries};
+  return { htmlOptions, entries };
 }
 
 const pagesData = generatePagesData([
@@ -38,7 +38,7 @@ const config = {
       '@blocks': path.resolve(__dirname, 'src/kit/blocks'),
       '@theme': path.resolve(__dirname, 'src/kit/env-styles/theme.scss'),
       '@utils': path.resolve(__dirname, 'src/utils'),
-      '@fonts': path.resolve(__dirname, 'src/kit/env-styles/fonts')
+      '@fonts': path.resolve(__dirname, 'src/kit/env-styles/fonts'),
     },
   },
   entry: {

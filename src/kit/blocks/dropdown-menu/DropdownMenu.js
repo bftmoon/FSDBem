@@ -1,7 +1,7 @@
 import RussianLangUtil from '@utils/RussianLangUtil';
 
 class DropdownMenu {
-  constructor(formatHeader = DropdownMenu._formatDefaultHeader) {
+  constructor(formatHeader = DropdownMenu.formatDefaultHeader) {
     this._formatHeader = formatHeader;
   }
 
@@ -62,7 +62,7 @@ class DropdownMenu {
     }
   }
 
-  static _formatDefaultHeader(countArray) {
+  static formatDefaultHeader(countArray) {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],

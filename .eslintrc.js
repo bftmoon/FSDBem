@@ -22,6 +22,13 @@ module.exports = {
     'no-undef': 'warn',
     'import/no-unresolved': 'warn',
     'import/no-named-as-default-member': 'warn',
-    'no-underscore-dangle': ['error', {'allowAfterThis': true}]
+    'import/no-named-as-default': 'warn',
+    'no-underscore-dangle': [
+      'error',
+      {
+        'allowAfterThis': true,
+        'allowAfterSuper': true
+      }
+    ]
   },
 };
