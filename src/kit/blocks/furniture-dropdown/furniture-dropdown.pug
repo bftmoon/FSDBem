@@ -1,11 +1,11 @@
 include ../dropdown-menu/dropdown-menu
 
-mixin furniture-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline, withConfirm, withCancel})
+mixin furniture-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline})
   .js-furniture-dropdown
     +dropdown-menu([
       {text: "Спальни", count: counts[0]},
       {text: "Кровати", count: counts[1]},
       {text: "Ванные комнаты", count: counts[2]},
     ],
-      {title, subtitle, isOpened, isInline, withConfirm, withCancel}
+      {title, subtitle, isOpened, isInline}
     )&attributes(attributes)

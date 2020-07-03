@@ -1,11 +1,11 @@
 include ../dropdown-menu/dropdown-menu
 
-mixin guests-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline, withConfirm, withCancel})
+mixin guests-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline})
   .js-guests-dropdown
     +dropdown-menu([
       {text: "Взрослые", count: counts[0]},
       {text: "Дети", count: counts[1]},
       {text: "Младенцы", count: counts[2]},
     ],
-      {title, subtitle, isOpened, isInline, withConfirm, withCancel}
-  )&attributes(attributes)
+      {title, subtitle, isOpened, isInline, withActions: true}
+    )&attributes(attributes)

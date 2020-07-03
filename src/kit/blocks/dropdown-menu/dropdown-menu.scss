@@ -134,6 +134,10 @@
 
     &_type_confirm {
       color: $primary;
+
+      &:hover {
+        color: $dark_shade50;
+      }
     }
 
     &_type_cancel {

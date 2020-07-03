@@ -1,7 +1,7 @@
 include ../title/title
 
 // data: [{text, name, count}]
-mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withConfirm, withCancel})
+mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withActions})
   .dropdown-menu.js-dropdown-menu&attributes(attributes)
     +title({title, subtitle})
     button(
@@ -20,23 +20,14 @@ mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withConfirm, wit
         .dropdown-menu__item
           span=item.text
           .dropdown-menu__counter
-            button(
-              type="button"
-              disabled=item.count === 0
-            ).dropdown-menu__decrement.js-dropdown-menu__decrement -
+            button(type="button").dropdown-menu__decrement.js-dropdown-menu__decrement -
             input(
               value=item.count
               name=data.name
               readonly
             ).dropdown-menu__count.js-dropdown-menu__count
             button(type="button").dropdown-menu__increment.js-dropdown-menu__increment +
-      if !attributes.disabled
+      if withActions
         .dropdown-menu__buttons.js-dropdown-menu__buttons
-          button(
-            type="button"
-            class=!withConfirm ? "dropdown-menu__button_hidden" : ""
-          ).dropdown-menu__button.dropdown-menu__button_type_confirm.js-dropdown-menu__button_type_confirm Применить
-          button(
-            type="button"
-            class=!withCancel ? "dropdown-menu__button_hidden" : ""
-          ).dropdown-menu__button.dropdown-menu__button_type_cancel.js-dropdown-menu__button_type_cancel Очистить
+          button(type="button").dropdown-menu__button.dropdown-menu__button_type_confirm.js-dropdown-menu__button_type_confirm Применить
+          button(type="button").dropdown-menu__button.dropdown-menu__button_type_cancel.js-dropdown-menu__button_type_cancel Очистить
