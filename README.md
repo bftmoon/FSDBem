@@ -5,11 +5,14 @@ Project with components architecture and BEM methodology for FSD
 
 ### How to
 ##### Install
+If you haven't installed npm (or yarn knowledge) you should download and install [Node.js](https://nodejs.org/en/)
 ```
 git clone https://github.com/bigfatmoon/FSDBem.git
+cd FSDBem
 npm install
 npm run dev
 ```
+
 It can be used any script from [package.json](./package.json) instead "dev"
 
 ##### Find original images and Perfect Pixel configs
