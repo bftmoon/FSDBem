@@ -2,7 +2,7 @@
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
 
-$dropdown-date-point: 350px;
+$dropdown-date-point: 340px;
 
 .dropdown-date {
   width: 100%;
@@ -12,20 +12,19 @@ $dropdown-date-point: 350px;
     flex-direction: column;
   }
 
+  &__anchor {
+    width: 0;
+    border: 0;
+  }
+
   &__title {
     margin-bottom: 5px;
   }
 
   &__iconed-input {
     @extend %field_bordered;
-    height: auto;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 
-    &:disabled {
-      cursor: default;
-    }
+    display: flex;
 
     @media screen and (max-width: pxToRem($dropdown-date-point)) {
       margin-bottom: 5px;
@@ -40,7 +39,6 @@ $dropdown-date-point: 350px;
     padding-left: 15px;
 
     background: none;
-    cursor: pointer;
     text-transform: lowercase;
 
     &::placeholder {
@@ -48,10 +46,14 @@ $dropdown-date-point: 350px;
       color: $dark_shade75;
       opacity: 1;
     }
+  }
 
-    &:disabled {
-      cursor: default;
-    }
+  &__button {
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    display: flex;
   }
 
   &__item {
@@ -60,8 +62,7 @@ $dropdown-date-point: 350px;
 
   &__icon {
     @extend %material-icons;
-    flex-shrink: 0;
-    margin-right: 10px;
+    margin: auto 10px;
     color: $dark_shade50;
   }
 

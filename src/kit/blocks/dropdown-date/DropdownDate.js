@@ -1,4 +1,11 @@
+const airDatepicker = import('air-datepicker/dist/js/datepicker.min');
+
 class DropdownDate {
+  constructor() {
+    this._newDates = '';
+    this._oldDates = '';
+  }
+
   create($element, isInline = false) {
     const params = {
       navTitles: {
@@ -12,62 +19,77 @@ class DropdownDate {
       inline: isInline,
       offset: 5,
       minDate: new Date(),
+      showEvent: 'off',
+      onSelect: this._onSelect.bind(this)
     };
-    this._$inputStart = $element.find('.js-dropdown-date__input_first');
 
-    this._$inputEnd = $element.find('.js-dropdown-date__input_last');
-    this._handleInputStartClick = this._handleInputStartClick.bind(this);
-    this._$inputStart.parent().on('click', this._handleInputStartClick);
+    $element.find('.js-dropdown-date__button').on('click', this._handleButtonClick.bind(this));
+    this._$dateFields = $element.find('.js-dropdown-date__input');
 
-    if (this._$inputEnd.length !== 0) {
-      this._extractSecondDate = this._extractSecondDate.bind(this);
-      params.onSelect = this._extractSecondDate;
-      this._handleInputEndClick = this._handleInputEndClick.bind(this);
-      this._$inputEnd.parent().on('click', this._handleInputEndClick);
-    } else {
+    if (this._$dateFields.length === 2) {
+      this._oldDates = [this._$dateFields[0].value, this._$dateFields[1].value].join(' - ');
       params.dateFormat = 'd M';
+    } else {
+      this._oldDates = this._$dateFields[0].value;
     }
-    import('air-datepicker/dist/js/datepicker.min').then(()=>{
-      this._picker = this._$inputStart.datepicker(params).data('datepicker');
+
+    airDatepicker.then(() => {
+      this._picker = $(this._$dateFields[0]).datepicker(params).data('datepicker');
       this._setButtons();
-    })
-  }
-
-  _handleInputStartClick() {
-    this._picker.show();
-  }
-
-  _handleInputEndClick() {
-    this._picker.show();
-  }
-
-  _extractSecondDate(formatted) {
-    const dates = formatted.split(' - ');
-    this._$inputStart.val(dates[0]);
-    this._$inputEnd.val(dates.length === 2 ? dates[1] : '');
+    });
   }
 
   _setButtons() {
-    this._handleCancelClick = this._handleCancelClick.bind(this);
-    this._handleApplyButtonClick = this._handleApplyButtonClick.bind(this);
-
-    const $cancel = this._picker.$datepicker.find('.datepicker--button');
-    $cancel.addClass('datepicker--button-cancel');
-    $cancel.on('click', this._handleCancelClick);
+    this._$cancel = this._picker.$datepicker.find('.datepicker--button');
+    this._$cancel.addClass(['datepicker--button-cancel', 'datepicker--button-hidden']);
+    this._$cancel.on('click', this._handleCancelClick.bind(this));
     const $apply = $('<div>', {
       text: 'Применить',
       class: 'datepicker--button datepicker--button-apply',
     });
-    $apply.on('click', this._handleApplyButtonClick);
-    $cancel.after($apply);
+    $apply.on('click', this._handleApplyClick.bind(this));
+    this._$cancel.before($apply);
+  }
+
+  _handleButtonClick() {
+    this._picker.show();
   }
 
   _handleCancelClick() {
-    this._$inputEnd.val('');
+    this._$cancel.addClass('datepicker--button-hidden');
+    this._setOldValues();
   }
 
-  _handleApplyButtonClick() {
-    this._picker.hide();
+  _handleApplyClick() {
+    const datesArr = this._newDates.split(' - ');
+    if (datesArr.length === 2) {
+      if (this._$dateFields.length === 2) {
+        this._$dateFields[0].value = datesArr[0];
+        this._$dateFields[1].value = datesArr[1];
+      } else {
+        this._$dateFields[0].value = this._newDates;
+      }
+      this._oldDates = this._newDates;
+      this._picker.hide();
+    }
+  }
+
+  _onSelect(dates) {
+    this._newDates = dates;
+    this._setOldValues(this._oldDates);
+    if (dates !== '') {
+      this._$cancel.removeClass('datepicker--button-hidden');
+    }
+  }
+
+  _setOldValues() {
+    if (this._$dateFields.length === 2) {
+      const datesArr = this._oldDates.split(' - ');
+      this._$dateFields[0].value = datesArr[0];
+      this._$dateFields[1].value = datesArr[1];
+    } else {
+      this._$dateFields[0].value = this._oldDates;
+    }
   }
 
   static initAll({selector = '.js-dropdown-date', parent = document}) {

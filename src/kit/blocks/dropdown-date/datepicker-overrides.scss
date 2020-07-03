@@ -166,6 +166,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
   }
 
   &--button {
@@ -176,6 +177,13 @@
 
     &-apply {
       color: $primary;
+      &:hover{
+        color: $dark_shade50;
+      }
+    }
+
+    &-hidden{
+      display: none;
     }
   }
 

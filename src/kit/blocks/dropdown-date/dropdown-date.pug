@@ -3,32 +3,27 @@ mixin dropdown-date(inputData, isInline)
   div(class=isInline ? "js-dropdown-date-inline" : "js-dropdown-date").dropdown-date
     .dropdown-date__item
       h3.dropdown-date__title=inputData[0].title
-      button(
-        type="button"
-        disabled=attributes.disabled
-      ).dropdown-date__iconed-input
+      .dropdown-date__iconed-input
         input(
           placeholder="ДД.ММ.ГГГГ",
           readonly,
           value=inputData[0].date
           name="start-date"
           disabled=attributes.disabled
-        ).dropdown-date__input.js-dropdown-date__input_first
-        i.dropdown-date__icon expand_more
+        ).dropdown-date__input.js-dropdown-date__input
+        button(type="button").dropdown-date__button.js-dropdown-date__button
+          i.dropdown-date__icon expand_more
     if inputData.length === 2
       .dropdown-date__separator
       .dropdown-date__item
         h3.dropdown-date__title=inputData[1].title
-        button(
-          type="button"
-          disabled=attributes.disabled
-        ).dropdown-date__iconed-input
+        .dropdown-date__iconed-input
           input(
             placeholder="ДД.ММ.ГГГГ",
             readonly,
             value=inputData[1].date
             name="end-date"
             disabled=attributes.disabled
-          ).dropdown-date__input.js-dropdown-date__input_last
-          i.dropdown-date__icon expand_more
-
+          ).dropdown-date__input.js-dropdown-date__input
+          button(type="button").dropdown-date__button.js-dropdown-date__button
+            i.dropdown-date__icon expand_more
