@@ -42,8 +42,8 @@
   &--nav {
     margin-bottom: 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    position: relative;
 
     &-title {
       font-size: pxToRem(19px);
@@ -51,18 +51,28 @@
       font-weight: bold;
       color: $dark_shade100;
       cursor: pointer;
+      margin: auto;
     }
 
     &-action {
+      position: absolute;
       display: flex;
       align-items: center;
 
       color: $primary;
       cursor: pointer;
+
+      &.-disabled- {
+        display: none;
+      }
+
+      &[data-action='next'] {
+        right: 0;
+      }
     }
   }
 
-  &--icons{
+  &--icons {
     @extend %material-icons;
   }
 
