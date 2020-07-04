@@ -4,10 +4,18 @@ $landing-page-point: 480px;
   background: url(./imgs/landing.jpg) center;
   background-size: cover;
   height: 830px;
-  display: flex;
-  flex-direction: column;
-  @media screen and (max-width: $landing-page-point) {
-    align-items: center;
+
+  &__content{
+    max-width: 1440px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $landing-page-point) {
+      align-items: center;
+    }
   }
 
   &__card {
