@@ -25,6 +25,7 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       box-shadow: $shadow_smaller;
+      border-color: $dark_shade50;
     }
   }
 
@@ -69,6 +70,7 @@
 
     &_opened {
       display: initial;
+      border-color: $dark_shade50;
     }
   }
 
@@ -102,14 +104,13 @@
     padding: 0;
 
     font-size: pxToRem(18px);
-    border: 1px solid $dark_shade25;
+    border: 1px solid $dark_shade50;
     border-radius: 50%;
     background: white;
-    color: $dark_shade25;
+    color: $dark_shade50;
 
     &:disabled {
-      color: $dark_shade5;
-      border-color: $dark_shade5;
+      opacity: 0.38;
       cursor: default;
     }
   }
