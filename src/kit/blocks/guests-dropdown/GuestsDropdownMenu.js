@@ -33,7 +33,7 @@ class GuestsDropdownMenu extends DropdownMenu {
   _cleanAndBlockChildesIncrement() {
     this._cleanData();
     this._disableChildesIncrements();
-    this._hideCancel();
+    this._updateCancel(false);
   }
 
   _disableChildesIncrements() {

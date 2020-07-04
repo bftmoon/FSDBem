@@ -1,7 +1,6 @@
 import RussianLangUtil from '@utils/RussianLangUtil';
 
 class DropdownMenu {
-  // todo: refactoring
   constructor(formatHeader = DropdownMenu.formatDefaultHeader) {
     this._formatHeader = formatHeader;
   }
@@ -9,10 +8,9 @@ class DropdownMenu {
   create($menu) {
     document.addEventListener('click', this._handleDocumentClick.bind(this));
     this._$header = $menu.find('.js-dropdown-menu__header');
+    this._$header.on('click', this._handleHeaderClick.bind(this));
     this._$content = this._$header.next();
     this._$inputs = this._$content.find('.js-dropdown-menu__count');
-
-    this._$header.on('click', this._handleHeaderClick.bind(this));
     this._$decrements = this._$content.find('.js-dropdown-menu__decrement');
     this._$decrements.on('click', this._handleDecrementClick.bind(this));
     this._$increments = this._$content.find('.js-dropdown-menu__increment');
@@ -20,52 +18,48 @@ class DropdownMenu {
 
     const $actionButtons = this._$content.find('.js-dropdown-menu__buttons');
     $actionButtons.find('.js-dropdown-menu__button_type_confirm').on('click', this._handleConfirmButtonClick.bind(this));
-
     this._$cancel = $actionButtons.find('.js-dropdown-menu__button_type_cancel');
     this._$cancel.on('click', this._handleCancelButtonClick.bind(this));
 
-    if ($actionButtons.length !== 0) {
+    this._createState($actionButtons.length !== 0);
+  }
+
+  _createState(withActions) {
+    if (withActions) {
       this._cachedData = [];
       this._supportRecovers = [];
+      this._isStateChanged = false;
     }
     this._prepareInputs();
-    this._updateHeader(this._calcValues());
-    if (this._isSummaryZero()) this._hideCancel();
+    this._updateHeader(this._getValues());
+    if (this._isSummaryZero()) this._updateCancel(false);
+  }
+
+  _recoverState() {
+    if (this._isRecoverRequired()) {
+      this._$inputs.each((index, input) => {
+        input.value = this._cachedData[index];
+        this._$decrements[index].disabled = Number(this._cachedData[index]) === 0;
+      });
+      this._updateCancel(this._isSummaryZero());
+      this._supportRecovers.forEach((recover) => recover());
+      this._isStateChanged = true;
+    }
+  }
+
+  _isRecoverRequired(){
+    return this._cachedData !== undefined && this._isStateChanged;
+  }
+
+  _prepareInputs() {
+    this._$inputs.each((index, element) => {
+      if (this._cachedData !== undefined) this._cachedData[index] = element.value;
+      if (Number(element.value) === 0) element.previousSibling.disabled = true;
+    })
   }
 
   _handleHeaderClick() {
     this._toggleMenu();
-  }
-
-  _handleConfirmButtonClick() {
-    this._toggleMenu();
-    this._cachedData = this._calcValues();
-    this._updateHeader(this._cachedData);
-  }
-
-  _updateHeader(values) {
-    this._$header.children(':first-child').text(this._formatHeader(values));
-  }
-
-  _calcValues() {
-    return this._$inputs.toArray().map((input) => Number(input.value));
-  }
-
-  _toggleMenu() {
-    this._$header.toggleClass('dropdown-menu__header_opened');
-    this._$content.toggleClass('dropdown-menu__content_opened');
-  }
-
-  _showCancel() {
-    this._$cancel.removeClass('dropdown-menu__button_hidden');
-  }
-
-  _hideCancel() {
-    this._$cancel.addClass('dropdown-menu__button_hidden');
-  }
-
-  _isSummaryZero() {
-    return this._$inputs.toArray().reduce((result, current) => Number(current.value) + result, 0) === 0;
   }
 
   _handleDocumentClick(event) {
@@ -76,22 +70,10 @@ class DropdownMenu {
     }
   }
 
-  _recoverState() {
-    if (this._cachedData) {
-      this._$inputs.each((index, input) => {
-        input.value = this._cachedData[index];
-        this._$decrements[index].disabled = this._cachedData[index] === 0;
-      })
-      this._supportRecovers.forEach((recover) => recover());
-    }
-  }
-
-  static formatDefaultHeader(countArray) {
-    return countArray.map((count) => RussianLangUtil.selectWordByCount(
-      count,
-      ['вещей', 'вещь', 'вещи', 'вещей'],
-      {withNumber: true},
-    ));
+  _handleConfirmButtonClick() {
+    this._toggleMenu();
+    this._cachedData = this._getValues();
+    this._updateHeader(this._cachedData);
   }
 
   _handleDecrementClick(event) {
@@ -100,9 +82,10 @@ class DropdownMenu {
     input.value -= 1;
     if (Number(input.value) === 0) {
       decrementButton.disabled = true;
-      if (this._isSummaryZero()) this._hideCancel();
+      this._updateCancel(!this._isSummaryZero());
     }
     this._updateHeaderIfRequired();
+    this._isStateChanged = true;
   }
 
   _handleIncrementClick(event) {
@@ -110,13 +93,40 @@ class DropdownMenu {
     const count = Number(input.value);
     if (count === 0) input.previousSibling.disabled = false;
     input.value = count + 1;
-    this._showCancel();
+    this._updateCancel(true);
     this._updateHeaderIfRequired();
+    this._isStateChanged = true;
   }
 
   _handleCancelButtonClick() {
     this._cleanData();
-    this._hideCancel();
+    this._updateCancel(false);
+    this._isStateChanged = true;
+  }
+
+  _updateHeader(values) {
+    this._$header.children(':first-child').text(this._formatHeader(values));
+  }
+
+  _getValues() {
+    return this._$inputs.toArray().map((input) => Number(input.value));
+  }
+
+  _toggleMenu() {
+    this._$header.toggleClass('dropdown-menu__header_opened');
+    this._$content.toggleClass('dropdown-menu__content_opened');
+  }
+
+  _updateCancel(isVisible) {
+    if (isVisible) {
+      this._$cancel.removeClass('dropdown-menu__button_hidden');
+    } else {
+      this._$cancel.addClass('dropdown-menu__button_hidden');
+    }
+  }
+
+  _isSummaryZero() {
+    return this._$inputs.toArray().reduce((result, current) => Number(current.value) + result, 0) === 0;
   }
 
   _cleanData() {
@@ -125,14 +135,15 @@ class DropdownMenu {
   }
 
   _updateHeaderIfRequired() {
-    if (!this._cachedData) this._updateHeader(this._calcValues());
+    if (this._cachedData === undefined) this._updateHeader(this._getValues());
   }
 
-  _prepareInputs() {
-    this._$inputs.each((index, element) => {
-      if (this._cachedData) this._cachedData[index] = element.value;
-      if (Number(element.value) === 0) element.previousSibling.disabled = true;
-    })
+  static formatDefaultHeader(countArray) {
+    return countArray.map((count) => RussianLangUtil.selectWordByCount(
+      count,
+      ['вещей', 'вещь', 'вещи', 'вещей'],
+      {withNumber: true},
+    ));
   }
 }
 
