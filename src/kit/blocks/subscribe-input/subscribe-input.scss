@@ -12,7 +12,6 @@
     margin-left: 15px;
     width: 1%;
     flex-grow: 1;
-    flex-shrink: 2;
     z-index: 1;
 
     &:invalid {
@@ -24,12 +23,18 @@
     }
   }
 
+  &__button{
+    z-index: 1;
+    display: flex;
+    background: none;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+  }
+
   &__icon {
     @extend %material-icons;
     margin: auto 10px;
-    z-index: 1;
-    flex-shrink: 0;
-    color: transparent;
     background: $gradient;
     -webkit-background-clip: text;
   }

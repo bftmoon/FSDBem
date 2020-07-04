@@ -1,9 +1,11 @@
 mixin subscribe-input
-  .subscribe-input
+  form.subscribe-input
     input(
       placeholder="Email"
       type="email"
+      name="email"
     )&attributes(attributes).subscribe-input__input
     .subscribe-input__invalid-light
-    i.subscribe-input__icon arrow_forward
+    button.subscribe-input__button
+      i.subscribe-input__icon arrow_forward
 
