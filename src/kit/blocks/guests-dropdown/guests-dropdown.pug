@@ -3,9 +3,9 @@ include ../dropdown-menu/dropdown-menu
 mixin guests-dropdown({title, subtitle, counts=[0,0,0], isOpened, isInline})
   .js-guests-dropdown
     +dropdown-menu([
-      {text: "Взрослые", count: counts[0]},
-      {text: "Дети", count: counts[1]},
-      {text: "Младенцы", count: counts[2]},
+      {name: "adults", text: "Взрослые", count: counts[0]},
+      {name: "children", text: "Дети", count: counts[1]},
+      {name: "babies", text: "Младенцы", count: counts[2]},
     ],
       {title, subtitle, isOpened, isInline, withActions: true}
     )&attributes(attributes)

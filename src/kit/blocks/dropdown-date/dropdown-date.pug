@@ -9,7 +9,6 @@ mixin dropdown-date(inputData, isInline)
           readonly,
           value=inputData[0].date
           name="start-date"
-          disabled=attributes.disabled
         ).dropdown-date__input.js-dropdown-date__input
         button(type="button").dropdown-date__button.js-dropdown-date__button
           i.dropdown-date__icon expand_more
@@ -23,7 +22,6 @@ mixin dropdown-date(inputData, isInline)
             readonly,
             value=inputData[1].date
             name="end-date"
-            disabled=attributes.disabled
           ).dropdown-date__input.js-dropdown-date__input
           button(type="button").dropdown-date__button.js-dropdown-date__button
             i.dropdown-date__icon expand_more
