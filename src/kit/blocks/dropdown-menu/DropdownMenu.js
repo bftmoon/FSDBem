@@ -41,13 +41,13 @@ class DropdownMenu {
         input.value = this._cachedData[index];
         this._$decrements[index].disabled = Number(this._cachedData[index]) === 0;
       });
-      this._updateCancel(this._isSummaryZero());
+      this._updateCancel(!this._isSummaryZero());
       this._supportRecovers.forEach((recover) => recover());
       this._isStateChanged = true;
     }
   }
 
-  _isRecoverRequired(){
+  _isRecoverRequired() {
     return this._cachedData !== undefined && this._isStateChanged;
   }
 
@@ -55,7 +55,7 @@ class DropdownMenu {
     this._$inputs.each((index, element) => {
       if (this._cachedData !== undefined) this._cachedData[index] = element.value;
       if (Number(element.value) === 0) element.previousSibling.disabled = true;
-    })
+    });
   }
 
   _handleHeaderClick() {
@@ -126,7 +126,9 @@ class DropdownMenu {
   }
 
   _isSummaryZero() {
-    return this._$inputs.toArray().reduce((result, current) => Number(current.value) + result, 0) === 0;
+    return this._$inputs.toArray().reduce(
+      (result, current) => Number(current.value) + result, 0,
+    ) === 0;
   }
 
   _cleanData() {
@@ -142,7 +144,7 @@ class DropdownMenu {
     return countArray.map((count) => RussianLangUtil.selectWordByCount(
       count,
       ['вещей', 'вещь', 'вещи', 'вещей'],
-      {withNumber: true},
+      { withNumber: true },
     ));
   }
 }

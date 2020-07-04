@@ -15,7 +15,7 @@ class GuestsDropdownMenu extends DropdownMenu {
 
   create($menu) {
     super.create($menu);
-    this._supportRecovers.push(this._incrementsRecover.bind(this))
+    this._supportRecovers.push(this._incrementsRecover.bind(this));
     if (Number(this._$inputs[0].value) === 0) {
       this._cleanAndBlockChildesIncrement();
     }
@@ -55,19 +55,19 @@ class GuestsDropdownMenu extends DropdownMenu {
     let guestsInfo = RussianLangUtil.selectWordByCount(
       countArray[0] + countArray[1],
       ['Сколько гостей', 'гость', 'гостя', 'гостей'],
-      {withNumber: true},
+      { withNumber: true },
     );
     if (countArray[2] > 0) {
-      guestsInfo += `, ${RussianLangUtil.selectWordByCount(countArray[2], ['', 'младенец', 'младенца', 'младенцев'], {withNumber: true})}`;
+      guestsInfo += `, ${RussianLangUtil.selectWordByCount(countArray[2], ['', 'младенец', 'младенца', 'младенцев'], { withNumber: true })}`;
     }
     return guestsInfo;
   }
 
-  static initDefault({selector = '.js-guests-dropdown', parent = document}) {
+  static initDefault({ selector = '.js-guests-dropdown', parent = document }) {
     new GuestsDropdownMenu().create($(parent.querySelector(selector).firstChild));
   }
 
-  static initAll({selector = '.js-guests-dropdown', parent = document}) {
+  static initAll({ selector = '.js-guests-dropdown', parent = document }) {
     $(parent).find(selector).each((__, element) => {
       new GuestsDropdownMenu().create($(element.firstChild));
     });

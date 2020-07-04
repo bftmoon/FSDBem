@@ -1,5 +1,3 @@
-const airDatepicker = import('air-datepicker/dist/js/datepicker.min');
-
 class DropdownDate {
   constructor() {
     this._newDates = '';
@@ -33,7 +31,7 @@ class DropdownDate {
       this._oldDates = this._$dateFields[0].value;
     }
 
-    airDatepicker.then(() => {
+    import('air-datepicker/dist/js/datepicker.min').then(() => {
       this._picker = $(this._$dateFields[0]).datepicker(params).data('datepicker');
       this._setButtons();
     });
