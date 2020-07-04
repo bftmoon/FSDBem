@@ -19,20 +19,19 @@ $landing-page-point: 480px;
     }
   }
 
-  &__container {
-    display: flex;
-    height: 100%;
-    margin-bottom: 20px;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
   &__text {
-    max-width: 300px;
+    height: 100%;
     margin-right: 9.4%;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     text-align: right;
+    white-space: pre-line;
+
     @media screen and (max-width: $landing-page-point) {
-      margin: 0;
+      margin-right: 0;
     }
   }
 }
