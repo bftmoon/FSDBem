@@ -4,7 +4,6 @@ block body
   include ../../../kit/blocks/kit-header/kit-header
   include ../../../kit/blocks/adaptive-header/adaptive-header
   include ../../../kit/blocks/footer/footer
-  include ../../../kit/blocks/simple-footer/simple-footer
 
   body.header-and-footers
     - const {home, links, login, register} = require(`./json/header.json`)
@@ -16,5 +15,4 @@ block body
       +adaptive-header({links, login, register, username: "Cosmin Negoita"})
     .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
-    .header-and-footers__footer
-      +simple-footer({tagline})
+

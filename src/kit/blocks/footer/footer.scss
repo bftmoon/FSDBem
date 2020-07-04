@@ -2,22 +2,27 @@
 @import '../../env-styles/variables';
 @import '../../env-styles/theme';
 
-$footer-point_medium: 840px;
-$footer-point_small: 490px;
+$footer-point_medium: 940px;
+$footer-point_small: 770px;
 
 .footer {
   background: white;
   box-shadow: $shadow_small;
   border-top: 1px solid $dark_shade5;
 
+  @media screen and (max-width: $footer-point_small) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
   &__tagline {
     margin-top: 10px;
   }
 
   &__menu {
-    max-width: pxToRem(1170px);
+    max-width: pxToRem(1200px);
     margin: 95px auto 75px;
-    padding: 5px;
+    padding: 5px 20px;
 
     display: grid;
     grid-template-columns: 1.01fr 2.5fr 1.02fr;
@@ -26,6 +31,9 @@ $footer-point_small: 490px;
     @media screen and (max-width: $footer-point_medium) {
       grid-template-columns: 1fr;
       justify-items: center;
+    }
+    @media screen and (max-width: $footer-point_small) {
+      margin: 0 auto;
     }
   }
 
@@ -47,6 +55,9 @@ $footer-point_small: 490px;
     @media screen and (max-width: $footer-point_medium) {
       text-align: center;
     }
+    @media screen and (max-width: $footer-point_small) {
+      display: none;
+    }
   }
 
   &__nav {
@@ -59,12 +70,12 @@ $footer-point_small: 490px;
     }
   }
 
-  &__nav-title{
+  &__nav-title {
     @extend h3;
     margin-bottom: 20px;
   }
 
-  &__nav-item{
+  &__nav-item {
     list-style: none;
     margin-bottom: 13px;
   }
@@ -77,6 +88,9 @@ $footer-point_small: 490px;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    @media screen and (max-width: $footer-point_small) {
+      display: none;
     }
   }
 
@@ -100,6 +114,9 @@ $footer-point_small: 490px;
     width: 100%;
     height: 1px;
     background: $dark_shade10;
+    @media screen and (max-width: $footer-point_small) {
+      display: none;
+    }
   }
 
   &__info {
@@ -110,7 +127,6 @@ $footer-point_small: 490px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     @media screen and (max-width: $footer-point_small) {
       flex-direction: column;
       text-align: center;
@@ -119,7 +135,7 @@ $footer-point_small: 490px;
 
   &__copyright {
     @media screen and (max-width: $footer-point_small) {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
   }
 }
