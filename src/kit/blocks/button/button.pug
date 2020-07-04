@@ -4,7 +4,7 @@ mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide})
       isSecondary ? "button_color_secondary" : "",
       !isFlat || isArrowed ? "button_raised" : "button_flat",
       isArrowed ? "button_arrowed" : "",
-      isMini ? "button_size_mini" : "",
+      isMini && !isFlat ? "button_size_mini" : "",
       isWide ? "button_size_wide" : ""
     ]
 
@@ -15,6 +15,6 @@ mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide})
   else
     if isFlat
       button.button(class=classes)&attributes(attributes)
-        span.button__text=text
+        span.button__text(class=isMini ? "button__text_size_mini" : "")= text
     else
       button.button(class=classes)&attributes(attributes)=text
