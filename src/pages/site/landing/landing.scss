@@ -19,7 +19,7 @@ $landing-page-point: 480px;
 
   &__card {
     padding-top: 70px;
-    margin: 0 9.3%;
+    margin: 0 9.45%;
     max-width: 390px;
     @media screen and (max-width: $landing-page-point) {
       margin: 0 auto;
@@ -28,8 +28,8 @@ $landing-page-point: 480px;
 
   &__text {
     height: 100%;
-    margin-right: 9.4%;
-    margin-bottom: 20px;
+    margin-right: 9%;
+    margin-bottom: 21px;
 
     display: flex;
     align-items: flex-end;

@@ -15,13 +15,16 @@ $footer-point_small: 770px;
     padding-bottom: 120px;
   }
 
+  &__logo{
+    //margin-top: 1px;
+  }
   &__tagline {
     margin-top: 10px;
   }
 
   &__menu {
     max-width: pxToRem(1200px);
-    margin: 95px auto 75px;
+    margin: 94px auto 80px;
     padding: 5px 20px;
 
     display: grid;
@@ -64,7 +67,7 @@ $footer-point_small: 770px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    margin: 4px 40px 0;
+    margin: 4px 41px 0;
     @media screen and (max-width: $footer-point_small) {
       display: none;
     }
@@ -99,7 +102,7 @@ $footer-point_small: 770px;
   }
 
   &__subscribe-info {
-    margin-bottom: 22px;
+    margin-bottom: 23px;
     @media screen and (max-width: $footer-point_medium) {
       margin-bottom: 10px;
       text-align: center;
@@ -122,7 +125,7 @@ $footer-point_small: 770px;
   &__info {
     max-width: pxToRem(1170px);
     margin: auto;
-    padding: 23px 5px;
+    padding: 23px 4px;
 
     display: flex;
     justify-content: space-between;
@@ -137,5 +140,9 @@ $footer-point_small: 770px;
     @media screen and (max-width: $footer-point_small) {
       margin-bottom: 25px;
     }
+  }
+
+  &__networks{
+    margin-right: 3px;
   }
 }

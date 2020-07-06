@@ -66,11 +66,13 @@
     @extend %material-icons;
     flex-grow: 0;
     flex-shrink: 0;
+    // todo: check button on other pages
+    //line-height: pxToRem(24.5px);
   }
 
   &__arrowed-text {
     flex-grow: 2;
-    margin-left: pxToRem(24px);
+    margin-left: pxToRem(20px);
   }
 
   &_color_secondary {

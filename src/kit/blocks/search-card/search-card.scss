@@ -3,12 +3,16 @@
 .search-card {
   @extend %card;
 
-  &__item {
+  &__date {
     margin-top: 20px;
   }
 
+  &__guests {
+    margin-top: 21px;
+  }
+
   &__submit-button {
-    margin-top: 30px;
+    margin-top: 31px;
   }
 
 }
