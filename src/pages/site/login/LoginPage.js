@@ -9,7 +9,7 @@ class LoginPage {
       registrationClickListener: LoginPage.handleRegistrationButtonClick,
     });
     RegistrationCard.initDefault({
-      loginClickListener: LoginPage.handleLoginButtonClick.bind,
+      loginClickListener: LoginPage.handleLoginButtonClick,
     });
 
     if (!LoginPage.isLoginLocation()) this.$cards.toggleClass('login__card_hidden');
@@ -28,7 +28,7 @@ class LoginPage {
   }
 
   static isLoginLocation() {
-    return window.location.search.split('=')[1] === 'in';
+    return window.location.search.split('=')[1] !== 'up';
   }
 }
 
