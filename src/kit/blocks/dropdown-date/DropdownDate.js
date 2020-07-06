@@ -26,9 +26,9 @@ class DropdownDate {
 
     if (this._$dateFields.length === 2) {
       this._oldDates = [this._$dateFields[0].value, this._$dateFields[1].value].join(' - ');
-      params.dateFormat = 'd M';
     } else {
       this._oldDates = this._$dateFields[0].value;
+      params.dateFormat = 'd M';
     }
 
     import('air-datepicker/dist/js/datepicker.min').then(() => {
