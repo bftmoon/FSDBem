@@ -1,0 +1,43 @@
+@import '../../env-styles/variables';
+
+.profile-links {
+  &_horizontal {
+    display: flex;
+    align-items: center;
+  }
+
+  &__login {
+    &_vertical {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 4px;
+    }
+
+    &_horizontal {
+      margin-left: 7px;
+    }
+  }
+
+  &__register {
+    &_horizontal {
+      margin-left: 20px;
+    }
+
+    &_vertical {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__username {
+    &_horizontal {
+      padding-left: 30px;
+      border-left: 1px solid $dark_shade10;
+    }
+
+    &_vertical {
+      border-top: 1px solid $dark_shade10;
+      margin: 10px;
+      padding-top: 20px;
+    }
+  }
+}

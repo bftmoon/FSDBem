@@ -1,0 +1,32 @@
+@import "../../env-styles/abstract";
+@import "../../env-styles/functions";
+@import "../../env-styles/variables";
+
+.main-links{
+  &__list {
+    list-style: none;
+
+    &_horizontal {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+    }
+  }
+
+  &__link {
+    &_vertical {
+      padding: 6px 10px;
+    }
+
+    &_horizontal {
+      display: flex;
+      white-space: nowrap;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    &_with-menu {
+      margin-right: 15px;
+    }
+  }
+}

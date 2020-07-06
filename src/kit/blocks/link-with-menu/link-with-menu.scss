@@ -2,51 +2,20 @@
 @import '../../env-styles/variables';
 
 .link-with-menu {
-  position: relative;
-
-  text-decoration: none;
   color: $dark_shade50;
+  height: 100%;
+  display: flex;
+  align-items: center;
 
-  &__title {
-    height: 100%;
+  &__expander {
     display: flex;
-    align-items: center;
-  }
-
-  :hover > &__content {
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
   }
 
   &__icon {
     @extend %material-icons;
-  }
-
-  &__content {
-    display: none;
-    position: absolute;
-    padding: 5px;
-    background: white;
-    z-index: 10;
-    border: 1px solid $dark_shade10 {
-      radius: 4px;
-    }
-
-    &_inline {
-      position: initial;
-      width: 100%;
-      border: none;
-    }
-  }
-
-  &__child-link {
-    @extend %field;
-    padding: 15px;
-    min-width: 120px;
-  }
-
-  &:link, &:visited {
-    text-decoration: none;
     color: $dark_shade50;
   }
 }

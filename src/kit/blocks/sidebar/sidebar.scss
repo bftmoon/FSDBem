@@ -8,7 +8,7 @@
   left: 0;
   z-index: 101;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: none;
 
   &_opened {
@@ -37,6 +37,8 @@
 
     &_opened {
       width: 100%;
+      height: 100%;
+      overflow-y: auto;
       padding: 20px;
 
       transition-property: width;
@@ -44,7 +46,7 @@
     }
   }
 
-  &__closing-button {
+  &__close-button {
     background: none;
     border: none;
     text-align: end;
@@ -59,26 +61,5 @@
   &__logo {
     text-align: center;
     margin: 10px 0;
-  }
-
-  &__links {
-    list-style: none;
-  }
-
-  &__item{
-    padding: 6px 10px;
-  }
-
-  &__login-button{
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 4px;
-  }
-
-  &__username{
-    display: block;
-    border-top: 1px solid $dark_shade10;
-    margin: 10px;
-    padding-top: 20px;
   }
 }

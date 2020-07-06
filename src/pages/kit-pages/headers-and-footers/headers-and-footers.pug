@@ -12,7 +12,7 @@ block body
     .header-and-footers__header.js-header-and-footers__header
       +adaptive-header({links, login, register})
     .header-and-footers__header.js-header-and-footers__header
-      +adaptive-header({links, login, register, username: "Cosmin Negoita"})
+      +adaptive-header({links, login, register, profile: {url: '/mock-address', username: "Cosmin Negoita"}})
     .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
 

@@ -3,7 +3,6 @@
 @import '../../env-styles/variables';
 
 .header {
-  height: pxToRem(70px);
   background: white;
   box-shadow: $shadow_smaller;
 
@@ -11,10 +10,9 @@
     max-width: pxToRem(1170px);
     display: flex;
     justify-content: space-between;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 5px;
+    margin: 0 auto;
+    padding: 20px 5px;
+    white-space: nowrap;
   }
 
   &__logo {
@@ -30,27 +28,9 @@
     }
   }
 
-  &__nav {
-    height: 100%;
-    padding-left: 20px;
-  }
-
-  &__links {
-    list-style: none;
+  &__profile-links{
     display: flex;
-    align-items: stretch;
-    height: 100%;
-  }
-
-
-  &__item {
-    display: flex;
-    white-space: nowrap;
     align-items: center;
-
-    &_with-menu {
-      margin-right: 15px;
-    }
   }
 
   &__menu-button {
@@ -67,25 +47,6 @@
 
   &__icon {
     @extend %material-icons;
-  }
-
-  &__link {
-    margin-right: 15px;
-    margin-left: 5px;
-    padding: pxToRem(2px);
-  }
-
-  &__login-button {
-    margin-left: 7px;
-  }
-
-  &__register-button {
-    margin-left: 20px;
-  }
-
-  &__username {
-    padding-left: 30px;
-    border-left: 1px solid $dark_shade10;
   }
 }
 

@@ -1,30 +1,16 @@
 include ../logo/logo
 include ../link-with-menu/link-with-menu
 include ../button/button
+include ../main-links/main-links
+include ../profile-links/profile-links
 
-mixin sidebar({links, login, register, username})
+mixin sidebar({links, login, register, profile})
   .sidebar.js-sidebar
     .sidebar__dim.js-sidebar__dim
     aside.sidebar__main.js-sidebar__main
-      button.sidebar__closing-button.js-sidebar__close-button
+      button.sidebar__close-button.js-sidebar__close-button
         i.sidebar__icon close
       .sidebar__logo
         +logo
-      nav.sidebar__nav
-        ul.sidebar__links
-          for link in links
-            if link.content
-              li.sidebar__item.sidebar__item_with-menu
-                - link.isInline = true
-                +link-with-menu(link)
-            else
-              li.sidebar__item
-                a(href=link.url).sidebar__link=link.name
-
-      if username
-        a(href="mock-address").sidebar__username=username
-      else
-        a(href=login.url).sidebar__login-button
-          +button(login.name, {isFlat: true, isMini: true, isWide: true})
-        a(href=register.url).sidebar__register-button
-          +button(register.name, {isMini: true, isWide: true})
+      +main-links({links, isVertical: true})
+      +profile-links({login, register, profile, isVertical: true})

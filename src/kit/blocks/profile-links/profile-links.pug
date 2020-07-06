@@ -1,0 +1,12 @@
+mixin profile-links({login, register, profile, isVertical})
+  - const makeClass = require("@utils/CssUtil").default.makeClassGenerator('profile-links', isVertical);
+
+  div(class=makeClass())
+    if profile
+      a(href=profile.url class=makeClass('username'))= profile.username
+    else
+      a(href=login.url class=makeClass('login'))
+        +button(login.name, {isFlat: true, isMini: true, isWide: isVertical})
+      a(href=register.url class=makeClass('register'))
+        +button(register.name, {isMini: true, isWide: isVertical})
+

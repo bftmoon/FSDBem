@@ -6,24 +6,23 @@ $landing-page-point: 480px;
   height: 830px;
 
   &__content{
-    max-width: 1440px;
+    max-width: 1450px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
 
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: $landing-page-point) {
-      align-items: center;
-    }
   }
 
   &__card {
-    padding: 70px 5px 0;
+    padding-top: 70px;
     margin: 0 9.3%;
     max-width: 390px;
     @media screen and (max-width: $landing-page-point) {
-      margin: 0;
+      margin: 0 auto;
     }
   }
 

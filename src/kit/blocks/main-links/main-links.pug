@@ -1,0 +1,12 @@
+mixin main-links({links, isVertical})
+  - const makeClass = require("@utils/CssUtil").default.makeClassGenerator('main-links', isVertical);
+
+  nav(class=makeClass())
+    ul(class=makeClass('list'))
+      for link in links
+        if link.content
+          li(class=makeClass('link')).main-links__link_with-menu
+            +link-with-menu(link)
+        else
+          li(class=makeClass('link'))
+            a(href=link.url).main-links__link=link.name
