@@ -21,7 +21,7 @@ class DropdownDate {
       onSelect: this._onSelect.bind(this)
     };
 
-    $element.find('.js-dropdown-date__button').on('click', this._handleButtonClick.bind(this));
+    $element.find('.js-dropdown-date__iconed-input').on('click', this._handleIconedInputClick.bind(this));
     this._$dateFields = $element.find('.js-dropdown-date__input');
 
     if (this._$dateFields.length === 2) {
@@ -49,7 +49,7 @@ class DropdownDate {
     this._$cancel.before($apply);
   }
 
-  _handleButtonClick() {
+  _handleIconedInputClick() {
     this._picker.show();
   }
 

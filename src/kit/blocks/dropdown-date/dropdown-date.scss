@@ -23,7 +23,7 @@ $dropdown-date-point: 340px;
 
   &__iconed-input {
     @extend %field_bordered;
-
+    cursor: pointer;
     display: flex;
 
     @media screen and (max-width: pxToRem($dropdown-date-point)) {
@@ -41,6 +41,7 @@ $dropdown-date-point: 340px;
 
     background: none;
     text-transform: lowercase;
+    cursor: pointer;
 
     &::placeholder {
       text-transform: uppercase;
@@ -51,9 +52,6 @@ $dropdown-date-point: 340px;
 
   &__button {
     height: 100%;
-    background: transparent;
-    cursor: pointer;
-    border: none;
     display: flex;
   }
 
