@@ -8,9 +8,9 @@
 
   &__chart {
     position: relative;
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
+    height: 124px;
+    width: 124px;
+    margin-right: 23px;
   }
 
   &__donut {
@@ -28,10 +28,9 @@
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
+
     color: $primary;
     text-transform: uppercase;
     font-weight: bold;
@@ -40,6 +39,8 @@
   &__count {
     font-family: $quicksand;
     font-size: pxToRem(24px);
+    line-height: pxToRem(24px);
+    padding-top: 2px;
   }
 
   &__voice {

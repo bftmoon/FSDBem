@@ -6,8 +6,7 @@ class Header {
     this.menuButton = this.headerContent.find('.js-header__menu-button');
     this.items = this.headerContent.find('.js-header__items');
     $(window).on('resize', this._handleWindowResize.bind(this));
-    this._calcMinWidth();
-    this._updateContent();
+    this.headerContent.ready(this._handleContentReady.bind(this));
   }
 
   _handleWindowResize() {
@@ -15,6 +14,11 @@ class Header {
     this.resizeTimer = setTimeout(() => {
       this._updateContent();
     }, 50);
+  }
+
+  _handleContentReady(){
+    this._calcMinWidth();
+    this._updateContent();
   }
 
   _calcMinWidth() {

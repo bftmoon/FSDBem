@@ -6,7 +6,7 @@
   padding: 30px 5px 0;
   margin: auto;
   display: grid;
-  gap: 60px;
+  gap: 58.7px;
   grid-template-columns: 266px 1fr;
   max-width: calc(1450px - 140px * 2);
   @media screen and (max-width: 857px) {
@@ -23,11 +23,11 @@
   }
 
   &__guests {
-    margin-bottom: 30px;
+    margin-bottom: 30.5px;
   }
 
   &__cost-info {
-    margin-top: 10px;
+    margin-top: 9px;
     font-size: pxToRem(12px);
     color: $dark_shade50;
   }
@@ -37,11 +37,11 @@
   }
 
   &__facility {
-    margin: 25px 0 35px;
+    margin: 25px 0 32px;
   }
 
   &__accessibility {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
   }
 
   &__furniture {
@@ -49,14 +49,16 @@
   }
 
   &__rooms {
-    margin-top: 20.5px;
+    margin-top: 20px;
+    margin-left: 1px;
+    padding-right: 0.5px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-items: center;
     justify-content: center;
-    grid-column-gap: (12 / 834 * 100%);
-    grid-row-gap: 21px;
+    grid-column-gap: 1.39%;
+    grid-row-gap: 22px;
   }
 
   &__room-link {
@@ -67,7 +69,7 @@
   &__paginator-wrapper {
     display: flex;
     justify-content: center;
-    margin: 40px 0 70px;
+    margin: 40px 0 72.5px;
   }
 }
 

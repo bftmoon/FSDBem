@@ -27,8 +27,9 @@
   left: -100000px;
   z-index: 10;
   opacity: 0;
-  padding: 20px;
+  padding: 19.5px 19px 19px 20px;
 
+  line-height: 1.25;
   background: white;
   color: $dark_shade50;
   box-shadow: $shadow_smaller;
@@ -40,7 +41,7 @@
   transition: opacity .3s ease, transform .3s ease;
 
   &--nav {
-    margin-bottom: 40px;
+    margin-bottom: 42px;
     display: flex;
     align-items: center;
     position: relative;
@@ -78,6 +79,7 @@
 
   &--body {
     display: none;
+    //margin-right: 0.5px;
 
     &.active {
       display: block;
@@ -88,7 +90,7 @@
     font-size: pxToRem(12px);
 
     &-names {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       display: flex;
       justify-content: space-around;
 
@@ -163,7 +165,7 @@
   }
 
   &--buttons {
-    margin-top: 20px;
+    margin-top: 21px;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
@@ -177,12 +179,13 @@
 
     &-apply {
       color: $primary;
-      &:hover{
+
+      &:hover {
         color: $dark_shade50;
       }
     }
 
-    &-hidden{
+    &-hidden {
       display: none;
     }
   }

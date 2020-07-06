@@ -18,7 +18,7 @@ mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withActions})
     ).dropdown-menu__content&attributes(attributes)
       for item in data
         .dropdown-menu__item
-          span=item.text
+          span.dropdown-menu__item-text=item.text
           .dropdown-menu__counter
             button(type="button").dropdown-menu__decrement.js-dropdown-menu__decrement -
             input(

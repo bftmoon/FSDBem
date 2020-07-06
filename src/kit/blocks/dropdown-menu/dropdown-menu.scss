@@ -48,10 +48,7 @@
     width: 100%;
     height: auto;
     z-index: 10;
-
-    padding-right: 5px;
-    padding-left: 15px;
-    padding-bottom: 4px;
+    padding: 2px 6px 4px 14px;
 
     border-radius: 0 0 4px 4px;
     border: 1px solid $dark_shade25;
@@ -76,15 +73,13 @@
   }
 
   &__item {
-    height: pxToRem(37px);
+    min-height: pxToRem(37px);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__counter {
-    width: pxToRem(92px);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,8 +118,8 @@
   }
 
   &__button {
-    margin-top: 20px;
-    margin-bottom: 9px;
+    margin-top: 18px;
+    margin-bottom: 7px;
 
     font-weight: bold;
     text-transform: uppercase;

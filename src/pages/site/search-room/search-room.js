@@ -12,7 +12,7 @@ import './search-room.scss';
 DropdownDate.initDefault({});
 GuestsDropdownMenu.initDefault({});
 FurnitureDropdownMenu.initDefault({});
-Slider.initDefault({});
+Slider.initDefault({options: {min: 80, max: 15500}});
 ExpandableCheckboxes.initAll({});
 RoomCard.initAll({});
 Paginator.initDefault({});

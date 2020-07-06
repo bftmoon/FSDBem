@@ -7,7 +7,7 @@
   &__link {
     display: inline-flex;
     // todo: font ver with old facebook and set margin
-    margin: auto 12px;
+    margin: auto 11.5px;
 
     &:first-child {
       margin-left: 0;
@@ -16,15 +16,15 @@
     &:last-child {
       margin-right: 0;
     }
+
+    &_margin_small {
+      margin-left: 8px;
+    }
   }
 
   &__icon {
-    &:before {
-      font-family: $brands;
-    }
-
+    display: flex;
     font-family: $brands;
-    font-size: pxToRem(24px);
     color: transparent;
     font-style: normal;
     font-weight: normal;
@@ -33,14 +33,17 @@
 
     &_type_twitter:before {
       content: '\f099';
+      font-size: pxToRem(29px);
     }
 
     &_type_facebook:before {
-      content: '\f082';
+      content: '\f230';
+      font-size: pxToRem(25px);
     }
 
     &_type_instagramm:before {
       content: '\f16d';
+      font-size: pxToRem(25px);
     }
   }
 }

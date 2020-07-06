@@ -9,8 +9,9 @@ $details-page-point_content-small: 460px;
 
 .room-details {
   &__images {
+    overflow-y: hidden;
     display: grid;
-    grid-template-columns: 34.0625% 34.0625% auto;
+    grid-template-columns: repeat(2, 34.06%) auto;
     // @formatter:off
     grid-template-areas:
         'img-1 img-1 img-2'
@@ -30,32 +31,35 @@ $details-page-point_content-small: 460px;
       grid-template-columns: 1fr;
       grid-template-areas: 'img-1' 'img-2' 'img-3';
     }
+    @media screen and (min-width: 1439px) and (max-width: 1441px) {
+      max-height: 485px;
+    }
   }
 
   &__image-1 {
-    width: 100%;
     grid-area: img-1;
+    width: 100%;
   }
 
   &__image-2 {
-    width: 100%;
     grid-area: img-2;
+    width: 100%;
   }
 
   &__image-3 {
-    width: 100%;
     grid-area: img-3;
+    width: 100%;
   }
 
   &__details {
-    max-width: 1180px;
-    margin: 70px auto 60px;
+    max-width: 1183px;
+    margin: 69.5px auto 63px;
     padding: 0 10px;
     display: grid;
-    grid-column-gap: 60px;
-    grid-row-gap: 30px;
+    grid-column-gap: 40px;
+    grid-row-gap: 29px;
     // @formatter:off
-    grid-template-columns: 0.75fr 0.85fr 1fr;
+    grid-template-columns: 0.7fr 0.93fr 1fr;
     grid-template-areas:
         'info chart card'
         'feedbacks feedbacks card'
@@ -91,31 +95,35 @@ $details-page-point_content-small: 460px;
     }
   }
 
-  &__title {
-    margin-bottom: 20px;
-  }
-
-  &__list-title {
-    margin-bottom: 20px;
-    margin-left: 20px;
-  }
-
   &__info {
     grid-area: info;
     max-width: 280px;
+    margin-left: 1px;
+  }
+
+  &__info-title {
+    margin-bottom: 21px;
   }
 
   &__chart {
     grid-area: chart;
+    margin-left: 32px;
+  }
+
+  &__chart-title {
+    margin-bottom: 20px;
+    margin-left: 2px;
   }
 
   &__feedbacks {
     grid-area: feedbacks;
-    max-width: 710px;
+    max-width: 720px;
   }
 
   &__feedbacks-header {
     margin-top: 4px;
+    margin-bottom: 15px;
+
     display: flex;
     justify-content: space-between;
   }
@@ -123,11 +131,12 @@ $details-page-point_content-small: 460px;
   &__feedbacks-count {
     color: $dark_shade50;
     white-space: nowrap;
+    line-height: 2;
   }
 
   &__feedback {
     list-style: none;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
 
     &_last {
       margin-bottom: 0;
@@ -143,21 +152,33 @@ $details-page-point_content-small: 460px;
     }
   }
 
+  &__rules-title {
+    margin-top: 3px;
+    margin-bottom: 18px;
+    margin-left: 21px;
+  }
+
   &__cancel-info {
     grid-area: cancel;
     max-width: 340px;
+    margin-top: 3px;
+    margin-left: 34px;
     @media screen and (max-width: $details-page-point_content-medium) {
       max-width: 100%;
       justify-self: left;
     }
   }
 
+  &__cancel-title {
+    margin-bottom: 18px;
+  }
+
   &__card {
     grid-area: card;
     justify-self: end;
+    margin-right: 2px;
     @media screen and (max-width: $details-page-point_content-large) {
       justify-self: center;
     }
   }
-
 }

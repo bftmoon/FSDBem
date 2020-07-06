@@ -15,7 +15,7 @@ class FeedbacksChart {
     const context = canvas.getContext('2d');
 
     const size = 120 * scale;
-    const lineWidth = 5 * scale;
+    const lineWidth = 4 * scale;
     const center = size / 2;
     const radius = center - lineWidth;
 

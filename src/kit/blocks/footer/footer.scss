@@ -15,9 +15,6 @@ $footer-point_small: 770px;
     padding-bottom: 120px;
   }
 
-  &__logo{
-    //margin-top: 1px;
-  }
   &__tagline {
     margin-top: 10px;
   }
@@ -25,7 +22,7 @@ $footer-point_small: 770px;
   &__menu {
     max-width: pxToRem(1200px);
     margin: 94px auto 80px;
-    padding: 5px 20px;
+    padding: 5px 19px 5px 20px;
 
     display: grid;
     grid-template-columns: 1.01fr 2.5fr 1.02fr;

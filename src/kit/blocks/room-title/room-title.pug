@@ -1,8 +1,8 @@
 mixin room-title({number, isLux=true, price, isMiniStyle})
   - const util = require("@utils/LocaleForPugUtil").default
   .room-title
-    span.room-title__prefix №
-    span(class=isMiniStyle ? "room-title__number_font_mini" : "").room-title__number=" " + number + " "
+    span.room-title__prefix №&puncsp;
+    span(class=isMiniStyle ? "room-title__number_font_mini" : "").room-title__number="" + number + " "
     if isLux
       span.room-title__lux Люкс
     span.room-title__separator
