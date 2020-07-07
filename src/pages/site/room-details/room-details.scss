@@ -4,7 +4,7 @@ $details-page-point_images-medium: 850px;
 $details-page-point_images-small: 430px;
 
 $details-page-point_content-large: 1070px;
-$details-page-point_content-medium: 770px;
+$details-page-point_content-medium: 780px;
 $details-page-point_content-small: 460px;
 
 .room-details {
@@ -87,8 +87,8 @@ $details-page-point_content-small: 460px;
     @media screen and (max-width: $details-page-point_content-small) {
       margin-right: 0;
       margin-left: 0;
-      padding-left: 2px;
-      padding-right: 2px;
+      padding-left: 3px;
+      padding-right: 3px;
     }
   }
 
@@ -96,6 +96,10 @@ $details-page-point_content-small: 460px;
     grid-area: info;
     max-width: 280px;
     margin-left: 2px;
+    @media screen and (max-width: $details-page-point_content-medium) {
+      max-width: initial;
+      width: 100%;
+    }
   }
 
   &__info-title {
@@ -105,11 +109,20 @@ $details-page-point_content-small: 460px;
   &__chart {
     grid-area: chart;
     margin-left: 32px;
+    @media screen and (max-width: $details-page-point_content-large) {
+      margin-left: 0;
+    }
+    @media screen and (max-width: $details-page-point_content-medium) {
+      width: 100%;
+    }
   }
 
   &__chart-title {
     margin-bottom: 19px;
     margin-left: 2px;
+    @media screen and (max-width: $details-page-point_content-large) {
+      margin-left: 0;
+    }
   }
 
   &__feedbacks {
@@ -155,6 +168,9 @@ $details-page-point_content-small: 460px;
     margin-top: 3px;
     margin-bottom: 18px;
     margin-left: 21px;
+    @media screen and (max-width: $details-page-point_content-medium) {
+      margin-left: 0;
+    }
   }
 
   &__cancel-info {
@@ -165,6 +181,7 @@ $details-page-point_content-small: 460px;
     @media screen and (max-width: $details-page-point_content-medium) {
       max-width: 100%;
       justify-self: left;
+      margin-left: 0;
     }
   }
 

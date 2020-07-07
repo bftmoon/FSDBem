@@ -1,6 +1,8 @@
 @import '../../../kit/env-styles/functions';
 @import '../../../kit/env-styles/variables';
 
+$search-room-point_big: 857px;
+
 .search-room {
   position: relative;
   padding: 30px 6px 0;
@@ -9,13 +11,14 @@
   gap: 58.7px;
   grid-template-columns: 266px 1fr;
   max-width: 1174px;
-  @media screen and (max-width: 857px) {
+
+  @media screen and (max-width: $search-room-point_big) {
     grid-template-columns: 1fr;
   }
 
   &__configuration {
     width: 266px;
-    @media screen and (max-width: 857px) {
+    @media screen and (max-width: $search-room-point_big) {
       margin: 0 auto;
     }
   }
@@ -48,6 +51,12 @@
 
   &__furniture {
     margin-bottom: 15px;
+  }
+
+  &__result-title {
+    @media screen and (max-width: $search-room-point_big) {
+      text-align: center;
+    }
   }
 
   &__rooms {

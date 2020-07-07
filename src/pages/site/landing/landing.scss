@@ -38,6 +38,8 @@ $landing-page-point: 480px;
     white-space: pre-line;
 
     @media screen and (max-width: $landing-page-point) {
+      justify-content: center;
+      text-align: center;
       margin-right: 0;
     }
   }

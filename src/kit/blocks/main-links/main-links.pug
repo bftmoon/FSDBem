@@ -5,7 +5,7 @@ mixin main-links({links, isVertical})
     ul(class=makeClass('list'))
       for link in links
         if link.content
-          li(class=makeClass('link')).main-links__link_with-menu
+          li(class=makeClass('link')).main-links__menu-link
             +link-with-menu(link)
         else
           li(class=makeClass('link'))
