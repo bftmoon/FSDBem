@@ -31,9 +31,6 @@ $details-page-point_content-small: 460px;
       grid-template-columns: 1fr;
       grid-template-areas: 'img-1' 'img-2' 'img-3';
     }
-    @media screen and (min-width: 1439px) and (max-width: 1441px) {
-      max-height: 485px;
-    }
   }
 
   &__image-1 {
@@ -52,8 +49,8 @@ $details-page-point_content-small: 460px;
   }
 
   &__details {
-    max-width: 1183px;
-    margin: 69.5px auto 63px;
+    max-width: 1184px;
+    margin: 69.5px auto 62px;
     padding: 0 10px;
     display: grid;
     grid-column-gap: 40px;
@@ -98,11 +95,11 @@ $details-page-point_content-small: 460px;
   &__info {
     grid-area: info;
     max-width: 280px;
-    margin-left: 1px;
+    margin-left: 2px;
   }
 
   &__info-title {
-    margin-bottom: 21px;
+    margin-bottom: 20px;
   }
 
   &__chart {
@@ -111,7 +108,7 @@ $details-page-point_content-small: 460px;
   }
 
   &__chart-title {
-    margin-bottom: 20px;
+    margin-bottom: 19px;
     margin-left: 2px;
   }
 
@@ -123,6 +120,7 @@ $details-page-point_content-small: 460px;
   &__feedbacks-header {
     margin-top: 4px;
     margin-bottom: 15px;
+    margin-left: 1px;
 
     display: flex;
     justify-content: space-between;
@@ -146,6 +144,7 @@ $details-page-point_content-small: 460px;
   &__rules {
     grid-area: rules;
     max-width: 260px;
+    margin-left: 1px;
     @media screen and (max-width: $details-page-point_content-medium) {
       max-width: 100%;
       justify-self: left;
@@ -170,7 +169,7 @@ $details-page-point_content-small: 460px;
   }
 
   &__cancel-title {
-    margin-bottom: 18px;
+    margin-bottom: 17px;
   }
 
   &__card {

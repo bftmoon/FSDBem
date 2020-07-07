@@ -20,4 +20,5 @@ mixin login-card
       +button("Войти", {isArrowed: true})
     .login-card__offer
       | Нет аккаунта на Toxin?
-      +button("Создать", {isFlat: true})(type="button").js-login-card__registration-button
+      .js-login-card__registration-button.login-card__registration-button
+        +button("Создать", {isFlat: true, isWide: true})(type="button")

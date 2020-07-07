@@ -4,11 +4,23 @@
 .registration-card {
   @extend %card;
 
-  &__title {
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__name {
     margin-bottom: 10px;
   }
 
-  &__header {
+  &__surname {
+    margin-bottom: 10px;
+  }
+
+  &__gender {
+    margin-bottom: 22px;
+  }
+
+  &__birthday {
     margin-bottom: 20px;
   }
 
@@ -16,12 +28,24 @@
     margin-bottom: 5px;
   }
 
+  &__service {
+    margin-bottom: 10px;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__password {
+    margin-bottom: 10px;
+  }
+
   &__section {
     margin-bottom: 20px;
   }
 
-  &__item {
-    margin-bottom: 10px;
+  &__ad {
+    margin-bottom: 17px;
   }
 
   &__login {

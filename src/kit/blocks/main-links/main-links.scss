@@ -2,7 +2,7 @@
 @import "../../env-styles/functions";
 @import "../../env-styles/variables";
 
-.main-links{
+.main-links {
   &__list {
     list-style: none;
 
@@ -23,10 +23,12 @@
       white-space: nowrap;
       align-items: center;
       margin-right: 10px;
+      margin-left: 10px;
     }
 
     &_with-menu {
-      margin-right: 15px;
+      margin-right: 12px;
+      margin-left: 10px;
     }
   }
 }

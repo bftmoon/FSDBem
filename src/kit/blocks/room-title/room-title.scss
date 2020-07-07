@@ -12,12 +12,16 @@
   }
 
   &__number {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: pxToRem(24px);
     font-family: $quicksand;
     color: $dark_shade100;
 
     &_font_mini {
       font-size: pxToRem(19px);
+      margin-left: 4px;
     }
   }
 

@@ -6,7 +6,7 @@
   @extend %card;
 
   &__title {
-    margin-top: 4px;
+    margin-top: 3px;
     margin-bottom: 18px;
   }
 
@@ -16,7 +16,7 @@
   }
 
   &__guests {
-    margin-bottom: 21px;
+    margin-bottom: 23px;
   }
 
   &__calculates {
@@ -24,7 +24,7 @@
 
     display: grid;
     grid-template-columns: 0.73fr auto 0.2fr;
-    grid-row-gap: pxToRem(14px);
+    grid-row-gap: pxToRem(15.5px);
 
     vertical-align: center;
     line-height: pxToRem(18px);
@@ -55,6 +55,7 @@
 
   &__result {
     margin-bottom: 20px;
+    margin-left: 1px;
     display: flex;
   }
 

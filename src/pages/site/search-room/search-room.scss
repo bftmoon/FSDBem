@@ -3,19 +3,21 @@
 
 .search-room {
   position: relative;
-  padding: 30px 5px 0;
+  padding: 30px 6px 0;
   margin: auto;
   display: grid;
   gap: 58.7px;
   grid-template-columns: 266px 1fr;
-  max-width: calc(1450px - 140px * 2);
+  max-width: 1174px;
   @media screen and (max-width: 857px) {
     grid-template-columns: 1fr;
   }
 
   &__configuration {
     width: 266px;
-    margin: 0 auto;
+    @media screen and (max-width: 857px) {
+      margin: 0 auto;
+    }
   }
 
   &__date {
@@ -37,11 +39,11 @@
   }
 
   &__facility {
-    margin: 25px 0 32px;
+    margin: 24px 0 30px;
   }
 
   &__accessibility {
-    margin-bottom: 31px;
+    margin-bottom: 30px;
   }
 
   &__furniture {
@@ -50,15 +52,15 @@
 
   &__rooms {
     margin-top: 20px;
-    margin-left: 1px;
-    padding-right: 0.5px;
+    padding-right: 1px;
+    padding-left: 1px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-items: center;
     justify-content: center;
-    grid-column-gap: 1.39%;
-    grid-row-gap: 22px;
+    grid-column-gap: 1.4%;
+    grid-row-gap: 21px;
   }
 
   &__room-link {
@@ -69,7 +71,7 @@
   &__paginator-wrapper {
     display: flex;
     justify-content: center;
-    margin: 40px 0 72.5px;
+    margin: 44px 0 72.5px;
   }
 }
 

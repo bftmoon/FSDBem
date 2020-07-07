@@ -15,7 +15,7 @@ class DropdownDate {
       range: true,
       multipleDatesSeparator: ' - ',
       inline: isInline,
-      offset: 7,
+      offset: 5,
       minDate: new Date(),
       showEvent: 'off',
       onSelect: this._onSelect.bind(this)

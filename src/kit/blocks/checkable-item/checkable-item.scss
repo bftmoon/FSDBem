@@ -47,8 +47,8 @@
     }
 
     &_type_radio:after {
-      width: 60%;
-      height: 60%;
+      width: pxToRem(12px);
+      height: pxToRem(12px);
       align-self: center;
 
       border-radius: 50%;
@@ -76,6 +76,17 @@
   }
 
   &__text {
+    padding-top: 2px;
+    line-height: 129%;
+    white-space: pre-wrap;
+
+    &_type_radio {
+      line-height: 120%;
+    }
+  }
+
+  &__text-with-info {
+    padding-top: 1px;
     line-height: 129%;
     white-space: pre-wrap;
   }

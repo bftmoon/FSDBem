@@ -10,8 +10,7 @@ mixin dropdown-date(inputData, isInline)
           value=inputData[0].date
           name="start-date"
         ).dropdown-date__input.js-dropdown-date__input
-        .dropdown-date__button
-          i.dropdown-date__icon expand_more
+        i.dropdown-date__icon expand_more
     if inputData.length === 2
       .dropdown-date__separator
       .dropdown-date__item
@@ -23,5 +22,4 @@ mixin dropdown-date(inputData, isInline)
             value=inputData[1].date
             name="end-date"
           ).dropdown-date__input.js-dropdown-date__input
-          .dropdown-date__button
-            i.dropdown-date__icon expand_more
+          i.dropdown-date__icon expand_more

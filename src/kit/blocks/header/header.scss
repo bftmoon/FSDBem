@@ -7,11 +7,11 @@
   box-shadow: $shadow_smaller;
 
   &__content {
-    max-width: pxToRem(1170px);
+    max-width: pxToRem(1180px);
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 16px 5px 14px;
+    padding: 15px 10px 15.4px;
     white-space: nowrap;
   }
 
@@ -28,7 +28,7 @@
     }
   }
 
-  &__profile-links{
+  &__profile-links {
     display: flex;
     align-items: center;
   }

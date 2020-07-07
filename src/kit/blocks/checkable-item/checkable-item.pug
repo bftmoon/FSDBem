@@ -3,7 +3,7 @@ mixin checkable-item({type, text, description})
     input.checkable-item__input(type=type)&attributes(attributes)
     .checkable-item__checker(class="checkable-item__checker_type_" + type)
     if description
-      .checkable-item__text(class="checkable-item__text_type_" + type)
+      .checkable-item__text-with-info(class="checkable-item__text_type_" + type)
         .checkable-item__title=text
         .checkable-item__description=description
     else
