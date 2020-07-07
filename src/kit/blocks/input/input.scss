@@ -8,6 +8,7 @@
   padding-left: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: pxToRem(14px);
 
   &:hover {
     border-color: $dark_shade50;

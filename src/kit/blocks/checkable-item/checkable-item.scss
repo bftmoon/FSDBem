@@ -57,12 +57,12 @@
 
     &_type_checkbox:after {
       align-self: stretch;
-      height: pxToRem(8px);
-      width: pxToRem(5px);
-      margin-top: 10%;
+      height: pxToRem(6px);
+      width: pxToRem(4px);
+      margin-top: 15%;
 
       border: solid {
-        width: 0 3px 3px 0;
+        width: 0 2px 2px 0;
         image: $gradient {
           slice: 1;
         }
@@ -79,6 +79,7 @@
     padding-top: 2px;
     line-height: 129%;
     white-space: pre-wrap;
+    color: $dark_shade50;
 
     &_type_radio {
       line-height: 120%;

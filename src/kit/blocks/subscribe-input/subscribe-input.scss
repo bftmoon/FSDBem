@@ -13,13 +13,14 @@
     width: 1%;
     flex-grow: 1;
     z-index: 1;
+    font-size: pxToRem(14px);
 
     &:invalid {
       box-shadow: none;
     }
 
     &::placeholder {
-      color: $dark_shade50;
+      color: $dark_shade25;
     }
   }
 
