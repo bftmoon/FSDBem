@@ -8,6 +8,7 @@ $dropdown-date-point: 340px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+
   @media screen and (max-width: pxToRem($dropdown-date-point)) {
     flex-direction: column;
   }

@@ -18,9 +18,10 @@ class DropdownDate {
       offset: 5,
       minDate: new Date(),
       showEvent: 'off',
-      onSelect: this._onSelect.bind(this)
+      onSelect: this._onSelect.bind(this),
     };
 
+    this._$dropdown = $element;
     $element.find('.js-dropdown-date__iconed-input').on('click', this._handleIconedInputClick.bind(this));
     this._$dateFields = $element.find('.js-dropdown-date__input');
 
@@ -51,11 +52,21 @@ class DropdownDate {
 
   _handleIconedInputClick() {
     this._picker.show();
+    // todo?
+    // if (!this._picker.opts.inline && this._picker.$datepicker.width() > this._$dropdown.width()){
+    //   this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].width())/2+'px')
+    // }
   }
 
   _handleCancelClick() {
+    this._picker.clear();
     this._$cancel.addClass('datepicker--button-hidden');
-    this._setOldValues();
+    this._$dateFields[0].value = '';
+    this._oldDates='';
+    if (this._$dateFields.length === 2) {
+      this._$dateFields[1].value = '';
+    }
+    return false;
   }
 
   _handleApplyClick() {
@@ -84,7 +95,7 @@ class DropdownDate {
     if (this._$dateFields.length === 2) {
       const datesArr = this._oldDates.split(' - ');
       this._$dateFields[0].value = datesArr[0];
-      this._$dateFields[1].value = datesArr[1];
+      this._$dateFields[1].value = datesArr[1] || '';
     } else {
       this._$dateFields[0].value = this._oldDates;
     }

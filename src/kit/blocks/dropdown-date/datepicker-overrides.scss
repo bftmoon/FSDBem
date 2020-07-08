@@ -24,10 +24,11 @@
 .datepicker {
   position: absolute;
   max-width: pxToRem(320px);
+  width: 100%;
   left: -100000px;
   z-index: 10;
   opacity: 0;
-  padding: 19.5px 19px 19px 20px;
+  padding: 19.5px 18px 19px 20px;
 
   line-height: 1.25;
   background: white;
@@ -36,12 +37,16 @@
   border: 1px solid $dark_shade25 {
     radius: 4px;
   };
-
   cursor: default;
   transition: opacity .3s ease, transform .3s ease;
 
+  //@media screen and (max-width: 400px) {
+  //  left: 1% !important;
+  //}
+
   &--nav {
     margin-bottom: 42px;
+    margin-right: 1px;
     display: flex;
     align-items: center;
     position: relative;
@@ -102,7 +107,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(7, pxToRem(40px));
-    grid-auto-rows: 40px;
+    grid-auto-rows: pxToRem(40px);
 
     justify-items: stretch;
     align-items: stretch;
@@ -126,8 +131,22 @@
         background: $gradient25;
       }
 
-      &.-disabled-.-focus- {
-        background: white;
+      &.-disabled- {
+        background: transparent;
+
+        &.-in-range- {
+          background: transparent;
+        }
+
+        &.-range-from- {
+          background: transparent;
+          color: $dark_shade75;
+          font-weight: normal;
+
+          &:before {
+            background: transparent;
+          }
+        }
       }
     }
 
@@ -146,7 +165,7 @@
       background: $secondary_gradient;
 
       &.-in-range- {
-        @include doubleBackground($secondary_gradient, 0, 0.7);
+        @include doubleBackground($secondary_gradient, 50% 0 0 50%, 0.7);
       }
     }
 
@@ -215,6 +234,8 @@
 }
 
 .datepicker-inline {
+  width: 100%;
+
   .datepicker {
     position: static;
     left: auto;
@@ -228,4 +249,6 @@
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  max-width: pxToRem(320px);
 }
