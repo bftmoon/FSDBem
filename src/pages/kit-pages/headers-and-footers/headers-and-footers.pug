@@ -9,10 +9,10 @@ block body
     - const {home, links, login, register} = require(`./json/header.json`)
     - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
     +kit-header
-    .header-and-footers__header.js-header-and-footers__header
+    .header-and-footers__anonim-header.js-header-and-footers__header
       +adaptive-header({links, login, register})
-    .header-and-footers__header.js-header-and-footers__header
-      +adaptive-header({links, login, register, profile: {url: '/mock-address', username: "Cosmin Negoita"}})
+    .header-and-footers__logged-header.js-header-and-footers__header
+      +adaptive-header({links, login, register, profile: {url: '/mock-address', username: "Юлий Цезарь"}})
     .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
 

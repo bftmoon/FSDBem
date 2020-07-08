@@ -67,7 +67,7 @@
   }
 
   &__name {
-    margin-top: 6px;
+    margin-top: 7px;
 
     line-height: pxToRem(29px);
     font-size: pxToRem(19px);
@@ -92,7 +92,7 @@
 
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-row-gap: 50px;
+    grid-row-gap: 47px;
     grid-column-gap: 30px;
 
     @media screen and (max-width: 635px) {
@@ -104,14 +104,14 @@
     text-align: right;
     color: $dark_shade25;
     font-weight: normal;
+    font-family: $montserrat;
+  }
 
-    &_type_body {
-      margin-top: -3px;
-    }
+  &__positioner{
+    padding-bottom: 3px;
   }
 
   &__body-example {
     max-width: 301px;
-    margin-top: -3px;
   }
 }

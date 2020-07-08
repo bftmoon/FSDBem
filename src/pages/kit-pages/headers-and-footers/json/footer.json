@@ -1,70 +1,70 @@
 {
-  "tagline": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+  "tagline": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
   "menu": [
     {
-      "name": "navigation",
+      "name": "Навигация",
       "items": [
         {
-          "name": "About Us",
+          "name": "О нас",
           "url": "mock-address"
         },
         {
-          "name": "News",
+          "name": "Новости",
           "url": "mock-address"
         },
         {
-          "name": "Support",
+          "name": "Служба поддержки",
           "url": "mock-address"
         },
         {
-          "name": "Products",
+          "name": "Услуги",
           "url": "mock-address"
         }
       ]
     },
     {
-      "name": "About Us",
+      "name": "О нас",
       "items": [
         {
-          "name": "Who we are",
+          "name": "О сервисе",
           "url": "mock-address"
         },
         {
-          "name": "Our team",
+          "name": "Наша команда",
           "url": "mock-address"
         },
         {
-          "name": "Careers",
+          "name": "Вакансии",
           "url": "mock-address"
         },
         {
-          "name": "Investors",
+          "name": "Инвесторы",
           "url": "mock-address"
         }
       ]
     },
     {
-      "name": "Support",
+      "name": "Служба поддержки",
       "items": [
         {
-          "name": "Documentation",
+          "name": "Соглашения",
           "url": "mock-address"
         },
         {
-          "name": "Community",
+          "name": "Сообщества",
           "url": "mock-address"
         },
         {
-          "name": "Get in Touch",
+          "name": "Связь с нами",
           "url": "mock-address"
         }
       ]
     }
   ],
   "subscribe": {
-    "title": "Subscribe to our newsletter",
-    "description": "Receive our latest news and promotions in your inbox!",
-    "placeholder": "Your email address"
+    "title": "Подписка",
+    "description": "Получайте специальные предложения и новости сервиса",
+    "placeholder": "Email"
   },
-  "copyright": "Copyright © 2018 Toxin UI Kit. All rights reserved."
+  "copyright": "Copyright © 2018 Toxin отель. Все права зачищены."
 }

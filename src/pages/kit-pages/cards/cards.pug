@@ -10,61 +10,62 @@ block body
   include ../../../kit/blocks/dropdown-date/dropdown-date
 
   body.cards
-    +kit-header.cards__header
+    +kit-header
     main.cards__main
-      .cards__form
-        +search-card
-      .cards__form
-        +registration-card
-      .cards__form
-        +calculator-card({
-          room: {
+      .cards__cards
+        .cards__form
+          +search-card
+        .cards__form
+          +registration-card
+        .cards__form
+          +calculator-card({
+            room: {
+              number: 888,
+              price: 9990,
+              isLux: true
+            },
+            options: {
+              startDate: 1566162000000,
+              endDate: 1566507600000,
+              daysCount: 4,
+              guests: [2, 1, 0]
+            },
+            costs: {
+              service: 0,
+              discount: 2179,
+              overService: 300,
+            }
+          })
+        .cards__form
+          +login-card
+        .cards__calendar
+          +dropdown-date([{}], true)
+        .cards__room
+          - const importedImg = require("./images/room-1.jpg").default;
+          +room-card({
+            imgs: [
+              {src: importedImg, alt: "room"},
+              {src: importedImg, alt: "room"},
+              {src: importedImg, alt: "room"},
+              {src: importedImg, alt: "room"},
+            ],
             number: 888,
             price: 9990,
-            isLux: true
-          },
-          options: {
-            startDate: 1566162000000,
-            endDate: 1566507600000,
-            daysCount: 4,
-            guests: [2, 1, 0]
-          },
-          costs: {
-            service: 0,
-            discount: 2179,
-            overService: 300,
-          }
-        })
-      .cards__form
-        +login-card
-      .cards__calendar
-        +dropdown-date([{}], true)
-      .cards__room
-        - const importedImg = require("./images/room-1.jpg").default;
-        +room-card({
-          imgs: [
-            {src: importedImg, alt: "room"},
-            {src: importedImg, alt: "room"},
-            {src: importedImg, alt: "room"},
-            {src: importedImg, alt: "room"},
-          ],
-          number: 888,
-          price: 9990,
-          isLux: true,
-          rating: 5,
-          reviewCount: 145
-        })
-      .cards__room
-        - const otherImportedImg = require("./images/room-2.jpg").default;
-        +room-card({
-          imgs: [
-            {src: otherImportedImg, alt: "room"},
-            {src: otherImportedImg, alt: "room"},
-            {src: otherImportedImg, alt: "room"},
-            {src: otherImportedImg, alt: "room"},
-          ],
-          number: 840,
-          price: 9900,
-          rating: 4,
-          reviewCount: 65
-        })
+            isLux: true,
+            rating: 5,
+            reviewCount: 145
+          })
+        .cards__room
+          - const otherImportedImg = require("./images/room-2.jpg").default;
+          +room-card({
+            imgs: [
+              {src: otherImportedImg, alt: "room"},
+              {src: otherImportedImg, alt: "room"},
+              {src: otherImportedImg, alt: "room"},
+              {src: otherImportedImg, alt: "room"},
+            ],
+            number: 840,
+            price: 9900,
+            rating: 4,
+            reviewCount: 65
+          })

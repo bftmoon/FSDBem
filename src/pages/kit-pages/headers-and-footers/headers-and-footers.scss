@@ -1,7 +1,11 @@
 .header-and-footers {
   background: #F4F4F6;
 
-  &__header {
+  &__anonim-header {
+    margin-top: 32px;
+  }
+
+  &__logged-header {
     margin-top: 40px;
   }
 

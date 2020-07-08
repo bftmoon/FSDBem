@@ -97,14 +97,13 @@
   &__decrement, &__increment {
     height: pxToRem(30px);
     width: pxToRem(30px);
-    cursor: pointer;
     padding: 0;
-
     font-size: pxToRem(18px);
-    border: 1px solid $dark_shade50;
+    border: 1px solid $dark_shade25;
     border-radius: 50%;
     background: white;
     color: $dark_shade50;
+    cursor: pointer;
 
     &:disabled {
       opacity: 0.38;

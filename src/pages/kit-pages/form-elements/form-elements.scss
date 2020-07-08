@@ -5,19 +5,225 @@ $form-elements-point_small: 630px;
 
 .form-elements {
   &__main {
-    max-width: 1168px;
+    max-width: 1170px;
     padding: 5px;
     margin: 30px auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 320px));
-    grid-column-gap: 99px;
-    grid-row-gap: 70px;
+    grid-template-columns: repeat(3, minmax(250px, 400px));
+    grid-row-gap: 40px;
 
     @media screen and (max-width: $form-elements-point_middle) {
-      grid-template-columns: repeat(2, minmax(250px, 320px));
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 30px;
+      grid-column-gap: 20px;
     }
+    @media screen and (max-width: $form-elements-point_small) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__inputs {
+    max-width: 320px;
+    margin-left: 1px;
     @media screen and (max-width: $form-elements-point_middle) {
-      grid-template-columns: minmax(250px, 320px);
+      margin: 2px;
+    }
+  }
+
+  &__hover-input {
+    margin-top: 21px;
+  }
+
+  &__default-dropdown {
+    margin-top: 20px;
+  }
+
+  &__masked-input {
+    margin-top: 22px;
+  }
+
+  &__date {
+    margin-top: 41px;
+  }
+
+  &__filter-date {
+    margin-top: 40px;
+    max-width: 266px;
+  }
+
+  &__subscribe {
+    margin-top: 41px;
+    max-width: 266px;
+  }
+
+  &__simple-checkables {
+    margin-left: 60px;
+    padding-top: 1px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__radio {
+    margin-top: 41px;
+  }
+
+  &__toggles {
+    margin-top: 39px;
+  }
+
+  &__toggle-on {
+    margin-top: 16px;
+  }
+
+  &__toggle-off {
+    margin-top: 7px;
+  }
+
+  &__likes {
+    margin-top: 38px;
+  }
+
+  &__like {
+    margin-top: 8px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__rates {
+    margin-top: 39px;
+  }
+
+  &__rate {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  &__clickables {
+    margin-top: 1px;
+    margin-left: 66px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__slider {
+    max-width: 266px;
+  }
+
+  &__buttons {
+    margin-top: 44px;
+  }
+
+  &__raised-button {
+    margin-top: 15px;
+  }
+
+  &__flat-button {
+    margin-top: 30px;
+  }
+
+  &__link {
+    margin-top: 26px;
+    margin-left: 1px;
+  }
+
+  &__submit-button {
+    margin-top: 25px;
+    max-width: 320px;
+  }
+
+  &__paginator {
+    margin-top: 41px;
+    margin-left: 1px;
+  }
+
+  &__paginator-item {
+    margin-top: 16px;
+  }
+
+  &__dropdown-conditions {
+    max-width: 266px;
+    margin-top: 60px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__furniture-expanded {
+    margin-top: 20px;
+  }
+
+  &__guests {
+    margin-top: 60px;
+    margin-left: 60px;
+    max-width: 320px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__filled-guests {
+    margin-top: 60px;
+    margin-left: 66px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__expandable-checkboxes {
+max-width: 266px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__expander {
+    margin-left: 1px;
+  }
+
+  &__opened-expander {
+    margin-top: 20px;
+  }
+
+  &__rich-checkboxes {
+    margin-top: 15px;
+    margin-left: 60px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__bullets {
+    margin-top: 15px;
+    margin-left: 66px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+  &__bullet-list {
+    margin-top: 13px;
+    max-width: 262px;
+  }
+
+  &__iconed-list {
+    margin-top: 49px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      margin: 2px;
+    }
+  }
+
+  &__feedback {
+    grid-column: 2/ span 2;
+    margin-top: 59px;
+    margin-left: 59px;
+    max-width: 713px;
+    @media screen and (max-width: $form-elements-point_middle) {
+      grid-column: 1/ span 2;
+      margin: 2px;
+    }
+    @media screen and (max-width: $form-elements-point_small) {
+      grid-column: initial;
     }
   }
 
@@ -27,46 +233,5 @@ $form-elements-point_small: 630px;
 
   &__hight-title {
     margin-bottom: 15px;
-  }
-
-  &__separator {
-    height: 20px;
-  }
-
-  &__medium-separator {
-    height: 30px;
-  }
-
-  &__big-separator {
-    height: 40px;
-  }
-
-  &__wrapper {
-    max-width: 266px;
-  }
-
-  &__small-wrapper {
-    max-width: 222px;
-  }
-
-  &__like {
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  &__clickable-item {
-    display: inline-block;
-    margin-right: 20px;
-  }
-
-  &__feedback {
-    grid-column: 2/ span 2;
-    max-width: 713px;
-    @media screen and (max-width: $form-elements-point_middle) {
-      grid-column: 1/ span 2;
-    }
-    @media screen and (max-width: $form-elements-point_small) {
-      grid-column: initial;
-    }
   }
 }

@@ -6,12 +6,12 @@
 
   &-handle {
     position: absolute;
-    top: pxToRem(-5px);
+    top: pxToRem(-6px);
     margin-left: -.6em;
     z-index: 2;
 
-    width: pxToRem(14px);
-    height: pxToRem(14px);
+    width: pxToRem(16px);
+    height: pxToRem(16px);
 
     touch-action: none;
     cursor: grab;

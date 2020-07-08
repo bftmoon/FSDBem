@@ -1,18 +1,24 @@
 .cards {
   background: #F4F4F6;
 
-  &__header {
-    height: 130px;
+  &__main {
+    padding-left: 77px;
+    @media screen and (max-width: 1430px){
+      padding-left: 0;
+    }
+    @media screen and (min-width: 1450px){
+      padding-left: 0;
+    }
   }
 
-  &__main {
+  &__cards {
     column-count: 3;
     display: block;
     -webkit-column-break-inside: avoid;
     column-width: 380px;
-    max-width: 1240px;
+    max-width: 1247px;
     padding: 5px 0;
-    margin: auto;
+    margin: 17px auto;
 
     @media screen and (max-width: 1045px) {
       column-count: 2;
@@ -31,7 +37,7 @@
   }
 
   &__calendar {
-    padding: 20px 5px;
+    padding: 20px 5px 25px;
     display: inline-block;
 
     max-width: 320px;
@@ -51,9 +57,9 @@
   }
 
   &__room {
-    padding: 20px 5px;
+    padding: 18px 5px 22px;
     display: inline-block;
     width: 100%;
-    max-width: 270px;
+    max-width: 280px;
   }
 }
