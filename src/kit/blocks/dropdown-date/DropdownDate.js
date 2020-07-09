@@ -1,4 +1,5 @@
 class DropdownDate {
+
   constructor() {
     this._newDates = '';
     this._oldDates = '';
@@ -19,23 +20,24 @@ class DropdownDate {
       minDate: new Date(),
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
+      onHide: this._onHide.bind(this),
     };
-
     this._$dropdown = $element;
     $element.find('.js-dropdown-date__iconed-input').on('click', this._handleIconedInputClick.bind(this));
     this._$dateFields = $element.find('.js-dropdown-date__input');
-
     if (this._$dateFields.length === 2) {
+
       this._oldDates = [this._$dateFields[0].value, this._$dateFields[1].value].join(' - ');
     } else {
       this._oldDates = this._$dateFields[0].value;
       params.dateFormat = 'd M';
     }
-
     import('air-datepicker/dist/js/datepicker.min').then(() => {
+
       this._picker = $(this._$dateFields[0]).datepicker(params).data('datepicker');
       this._setButtons();
     });
+    this._handleWindowResize = this._handleWindowResize.bind(this);
   }
 
   _setButtons() {
@@ -52,17 +54,25 @@ class DropdownDate {
 
   _handleIconedInputClick() {
     this._picker.show();
-    // todo?
-    // if (!this._picker.opts.inline && this._picker.$datepicker.width() > this._$dropdown.width()){
-    //   this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].width())/2+'px')
-    // }
+    this._updatePosition();
+    $(window).on('resize', this._handleWindowResize);
+  }
+
+  _updatePosition() {
+    if (this._areResponsiveUpdateRequired()) {
+      this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].offsetWidth) / 2 + 'px')
+    }
+  }
+
+  _areResponsiveUpdateRequired() {
+    return !this._picker.opts.inline && this._picker.$datepicker[0].offsetWidth > this._$dropdown.width();
   }
 
   _handleCancelClick() {
     this._picker.clear();
     this._$cancel.addClass('datepicker--button-hidden');
     this._$dateFields[0].value = '';
-    this._oldDates='';
+    this._oldDates = '';
     if (this._$dateFields.length === 2) {
       this._$dateFields[1].value = '';
     }
@@ -83,12 +93,23 @@ class DropdownDate {
     }
   }
 
+  _handleWindowResize() {
+    clearTimeout(this.resizeTimer);
+    this.resizeTimer = setTimeout(() => {
+      this._updatePosition();
+    });
+  }
+
   _onSelect(dates) {
     this._newDates = dates;
     this._setOldValues(this._oldDates);
     if (dates !== '') {
       this._$cancel.removeClass('datepicker--button-hidden');
     }
+  }
+
+  _onHide() {
+    $(window).off('resize', this._handleWindowResize);
   }
 
   _setOldValues() {
