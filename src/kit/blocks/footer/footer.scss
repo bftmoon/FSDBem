@@ -3,16 +3,16 @@
 @import '../../env-styles/theme';
 
 $footer-point_medium: 940px;
-$footer-point_small: 770px;
+$footer-point_small: 768px;
 
 .footer {
   background: white;
-  box-shadow: $shadow_small;
+  box-shadow: $shadow_smaller;
   border-top: 1px solid $dark_shade5;
 
   @media screen and (max-width: $footer-point_small) {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 115px;
+    padding-bottom: 95px;
   }
 
   &__tagline {
@@ -130,12 +130,13 @@ $footer-point_small: 770px;
     @media screen and (max-width: $footer-point_small) {
       flex-direction: column;
       text-align: center;
+      padding-top: 13px;
     }
   }
 
   &__copyright {
     @media screen and (max-width: $footer-point_small) {
-      margin-bottom: 25px;
+      margin-bottom: 23px;
     }
   }
 
