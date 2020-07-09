@@ -80,14 +80,7 @@ class DropdownDate {
   }
 
   _handleApplyClick() {
-    const datesArr = this._newDates.split(' - ');
-    if (datesArr.length === 2) {
-      if (this._$dateFields.length === 2) {
-        this._$dateFields[0].value = datesArr[0];
-        this._$dateFields[1].value = datesArr[1];
-      } else {
-        this._$dateFields[0].value = this._newDates;
-      }
+    if (this._newDates.split(' - ').length === 2) {
       this._oldDates = this._newDates;
       this._picker.hide();
     }
@@ -102,23 +95,24 @@ class DropdownDate {
 
   _onSelect(dates) {
     this._newDates = dates;
-    this._setOldValues(this._oldDates);
+    this._setValues(dates);
     if (dates !== '') {
       this._$cancel.removeClass('datepicker--button-hidden');
     }
   }
 
   _onHide() {
+    this._setValues(this._oldDates);
     $(window).off('resize', this._handleWindowResize);
   }
 
-  _setOldValues() {
+  _setValues(dates) {
     if (this._$dateFields.length === 2) {
-      const datesArr = this._oldDates.split(' - ');
+      const datesArr = dates.split(' - ');
       this._$dateFields[0].value = datesArr[0];
       this._$dateFields[1].value = datesArr[1] || '';
     } else {
-      this._$dateFields[0].value = this._oldDates;
+      this._$dateFields[0].value = dates;
     }
   }
 
