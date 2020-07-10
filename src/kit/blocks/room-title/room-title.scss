@@ -6,6 +6,7 @@
   align-items: baseline;
   font-weight: bold;
   white-space: pre-wrap;
+  flex-wrap: wrap;
 
   &__prefix {
     color: $dark_shade100;
@@ -33,6 +34,7 @@
 
   &__separator {
     flex-grow: 1;
+    min-width: 10px;
   }
 
   &__price {

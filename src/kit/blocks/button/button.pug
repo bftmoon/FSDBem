@@ -1,11 +1,12 @@
-mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide})
+mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide, isConstMin})
   -
     const classes = [
       isSecondary ? "button_color_secondary" : "",
       !isFlat || isArrowed ? "button_raised" : "button_flat",
       isArrowed ? "button_arrowed" : "",
       isMini && !isFlat ? "button_size_mini" : "",
-      isWide ? "button_size_wide" : ""
+      isWide ? "button_size_wide" : "",
+      isConstMin ? "button_size_const-min" : ""
     ]
 
   if isArrowed

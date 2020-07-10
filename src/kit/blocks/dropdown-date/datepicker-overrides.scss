@@ -110,13 +110,22 @@
 
     text-align: center;
     line-height: pxToRem(40px);
-    cursor: pointer;
   }
 
   &--cell {
     position: relative;
     z-index: 1;
     border-radius: 50%;
+
+    &:after {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      height: 100%;
+      width: 100%;
+      left: 0;
+      cursor: pointer;
+    }
 
     &-day {
       &.-other-month- {
@@ -130,13 +139,17 @@
       &.-disabled- {
         background: transparent;
 
+        &:after {
+          cursor: initial;
+        }
+
         &.-in-range- {
           background: transparent;
         }
 
         &.-range-from- {
           background: transparent;
-          color: $dark_shade75;
+          color: inherit;
           font-weight: normal;
 
           &:before {

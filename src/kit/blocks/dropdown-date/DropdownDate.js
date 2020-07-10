@@ -65,7 +65,7 @@ class DropdownDate {
   }
 
   _areResponsiveUpdateRequired() {
-    return !this._picker.opts.inline && this._picker.$datepicker[0].offsetWidth > this._$dropdown.width();
+    return !this._picker.opts.inline && (this._picker.$datepicker.offset().left + this._picker.$datepicker[0].offsetWidth) > $(window).width();
   }
 
   _handleCancelClick() {

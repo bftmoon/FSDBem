@@ -15,6 +15,7 @@
   &__impression {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     border-top: 1px solid $dark_shade10;
     padding-top: pxToRem(7.5px);

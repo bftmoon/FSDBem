@@ -120,9 +120,9 @@ $footer-point_small: 768px;
   }
 
   &__info {
-    max-width: pxToRem(1170px);
+    max-width: pxToRem(1190px);
     margin: auto;
-    padding: 23px 4px;
+    padding: 21px 4px;
 
     display: flex;
     justify-content: space-between;
@@ -135,12 +135,10 @@ $footer-point_small: 768px;
   }
 
   &__copyright {
+    margin-left: 10px;
     @media screen and (max-width: $footer-point_small) {
+      margin-left: 0;
       margin-bottom: 23px;
     }
-  }
-
-  &__networks{
-    margin-right: 3px;
   }
 }

@@ -1,10 +1,12 @@
 mixin room-title({number, isLux, price, isMiniStyle})
   - const util = require("@utils/LocaleForPugUtil").default
   .room-title
-    span.room-title__prefix №
-    span(class=isMiniStyle ? "room-title__number_font_mini" : "").room-title__number= number
+    .room-title__room-number
+      span.room-title__prefix №
+      span(class=isMiniStyle ? "room-title__number_font_mini" : "").room-title__number= number
     if isLux
       span.room-title__lux Люкс
-    span.room-title__separator
-    span.room-title__price= util.toRuPrice(price) + " "
-    span.room-title__info в сутки
+    .room-title__separator
+    .room-title__room-price
+      span.room-title__price= util.toRuPrice(price) + " "
+      span.room-title__info в сутки
