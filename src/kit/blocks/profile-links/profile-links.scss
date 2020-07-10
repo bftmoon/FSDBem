@@ -29,6 +29,11 @@
   }
 
   &__username {
+    &:hover, &:focus {
+      color: $dark_shade75;
+      font-weight: bold;
+    }
+
     &_horizontal {
       padding-left: 20px;
       margin-left: 10px;

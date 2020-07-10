@@ -32,6 +32,11 @@
     &_horizontal {
       margin-right: 10px;
     }
+
+    &:hover, &:focus {
+      color: $dark_shade75;
+      font-weight: bold;
+    }
   }
 
   &__menu-link {
