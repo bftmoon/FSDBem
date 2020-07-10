@@ -104,6 +104,9 @@ class DropdownDate {
     this._picker.clear();
     this._setValues(this._oldDates);
     $(window).off('resize', this._handleWindowResize);
+    if (this._oldDates.split(' - ')[0] === ''){
+      this._$cancel.addClass('datepicker--button-hidden');
+    }
   }
 
   _setValues(dates) {
