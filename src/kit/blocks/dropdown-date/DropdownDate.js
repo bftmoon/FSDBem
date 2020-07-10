@@ -101,6 +101,7 @@ class DropdownDate {
   }
 
   _onHide() {
+    this._picker.clear();
     this._setValues(this._oldDates);
     $(window).off('resize', this._handleWindowResize);
   }
