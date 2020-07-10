@@ -103,7 +103,8 @@ class DropdownMenu {
   _handleCancelButtonClick() {
     this._cleanData();
     this._updateCancel(false);
-    this._isStateChanged = true;
+    this._cachedData = this._cachedData.fill(0);
+    this._updateHeader(this._cachedData);
   }
 
   _updateHeader(values) {
