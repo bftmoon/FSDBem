@@ -10,10 +10,25 @@ If you haven't installed npm (or yarn knowledge) you should download and install
 git clone https://github.com/bigfatmoon/FSDBem.git
 cd FSDBem
 npm install
+```
+##### Run server
+For development mode
+```
 npm run dev
 ```
-
-It can be used any script from [package.json](./package.json) instead "dev"
+For production mode
+```
+npm run prod
+```
+##### Build project
+```
+npm run build
+```
+##### Check code with Eslint
+```
+npm run eslint
+```
+All used rules for linter can be found in [.eslintrc.js](./.eslintrc.js)
 
 ##### Find original images and Perfect Pixel configs
 All images can be found [here](./perfect-pixel-imgs)
