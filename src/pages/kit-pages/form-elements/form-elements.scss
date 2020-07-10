@@ -7,7 +7,9 @@ $form-elements-point_small: 630px;
   &__main {
     max-width: 1170px;
     padding: 5px;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 400px));
     grid-row-gap: 40px;
@@ -144,6 +146,7 @@ $form-elements-point_small: 630px;
 
   &__dropdown-conditions {
     max-width: 266px;
+    min-height: 266px;
     margin-top: 60px;
     @media screen and (max-width: $form-elements-point_middle) {
       margin: 2px;
@@ -208,6 +211,8 @@ max-width: 266px;
 
   &__iconed-list {
     margin-top: 49px;
+    max-width: 266px;
+    margin-bottom: 142px;
     @media screen and (max-width: $form-elements-point_middle) {
       margin: 2px;
     }
