@@ -16,13 +16,12 @@ class DropdownDate {
       range: true,
       multipleDatesSeparator: ' - ',
       inline: isInline,
-      offset: 5,
+      offset: 6,
       minDate: new Date(),
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
     };
-    this._$dropdown = $element;
     $element.find('.js-dropdown-date__iconed-input').on('click', this._handleIconedInputClick.bind(this));
     this._$dateFields = $element.find('.js-dropdown-date__input');
     if (this._$dateFields.length === 2) {
