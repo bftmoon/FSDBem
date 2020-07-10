@@ -16,7 +16,7 @@ class Header {
     }, 50);
   }
 
-  _handleContentReady(){
+  _handleContentReady() {
     this._calcMinWidth();
     this._updateContent();
   }

@@ -1,1 +1,1 @@
-import './profile-links.scss'
+import './profile-links.scss';

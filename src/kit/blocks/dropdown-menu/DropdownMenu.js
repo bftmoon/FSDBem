@@ -38,6 +38,7 @@ class DropdownMenu {
   _recoverState() {
     if (this._isRecoverRequired()) {
       this._$inputs.each((index, input) => {
+        // eslint-disable-next-line no-param-reassign
         input.value = this._cachedData[index];
         this._$decrements[index].disabled = Number(this._cachedData[index]) === 0;
       });
@@ -53,6 +54,7 @@ class DropdownMenu {
 
   _prepareInputs() {
     this._$inputs.each((index, element) => {
+      // eslint-disable-next-line no-param-reassign
       if (this._cachedData !== undefined) this._cachedData[index] = element.value;
       if (Number(element.value) === 0) element.previousSibling.disabled = true;
     });

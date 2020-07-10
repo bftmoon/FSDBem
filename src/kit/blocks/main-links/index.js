@@ -1,1 +1,1 @@
-import './main-links.scss'
+import './main-links.scss';
