@@ -17,7 +17,7 @@ mixin calculator-card({room, options, costs})
       .calculator-card__date
         +dropdown-date({
           titles: ["Прибытие", "Выезд"],
-          dates: [options.startDate, options.endDate]
+          dates: [new Date(options.startDate), new Date(options.endDate)]
         })
       .calculator-card__guests
         +guests-dropdown({

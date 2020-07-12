@@ -25,7 +25,7 @@ DropdownDate.initAll({});
 GuestsDropdownMenu.initAll({});
 FurnitureDropdownMenu.initAll({});
 ExpandableCheckboxes.initAll({});
-Slider.initDefault({});
+Slider.initDefault({ options: { min: 80, max: 15500 } });
 Paginator.initDefault({});
 Feedback.initAll({});
 LikeButton.initAll({ parent: $('.js-form-elements__likes')[0] });

@@ -51,10 +51,13 @@ block body
         .form-elements__date
           +dropdown-date({
             titles: ["Date dropdown", "Date dropdown"],
-            dates: [new Date(2019, 8, 19)]
+            dates: [new Date(2019, 7, 19)]
           })
         .form-elements__filter-date
-          +dropdown-date({titles: ["Filter date dropdown"]})
+          +dropdown-date({
+            titles: ["Filter date dropdown"],
+            dates: [new Date(2020, 7, 19), new Date(2020, 7, 23)]
+          })
         .form-elements__subscribe
           h3.form-elements__title Subscription text field
           +subscribe-input

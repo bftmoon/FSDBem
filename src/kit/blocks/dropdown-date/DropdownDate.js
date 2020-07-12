@@ -35,8 +35,8 @@ class DropdownDate {
 
     import('air-datepicker/dist/js/datepicker.min').then(() => {
       this._picker = $anchor.datepicker(params).data('datepicker');
-      if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates)
       this._setButtons();
+      if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates)
     });
     this._handleWindowResize = this._handleWindowResize.bind(this);
   }

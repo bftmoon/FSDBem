@@ -13,9 +13,12 @@ block main
   article.search-room
     section.search-room__configuration
       .search-room__date
-        +dropdown-date({titles: ["Даты пребывания в отеле"]})
+        +dropdown-date({
+          titles: ["Даты пребывания в отеле"],
+          dates: [new Date(2020, 7, 19), new Date(2020, 7, 23)]
+        })
       .search-room__guests
-        +guests-dropdown({title: "Гости"})
+        +guests-dropdown({title: "Гости", counts: [2, 1, 1]})
       +slider({title: "Диапазон цены"})
       .search-room__cost-info Стоимость за сутки пребывания в номере
       .search-room__facility
@@ -23,10 +26,10 @@ block main
         +checkbox-list({
           items: [
             {text: "Можно курить"},
-            {text: "Можно с питомцами"},
-            {text: "Можно пригласить гостей \n(до 10 человек)"},
+            {text: "Можно с питомцами", attributes: {checked: true}},
+            {text: "Можно пригласить гостей \n(до 10 человек)", attributes: {checked: true}},
           ]
-          })
+        })
       .search-room__accessibility
         h3.search-room__title Доступность
         +checkbox-list({
@@ -40,19 +43,19 @@ block main
               description: "На 1 этаже вас встретит специалист \nи проводит до номера."
             },
           ]
-          })
+        })
       .search-room__furniture
-        +furniture-dropdown({title: "Удобства номера"})
+        +furniture-dropdown({title: "Удобства номера", counts: [2, 2]})
       +expandable-checkboxes({
         items: [
           {text: "Завтрак"},
-          {text: "Письменный стол"},
-          {text: "Стул для кормления"},
-          {text: "Кроватка"},
+          {text: "Письменный стол", attributes: {checked: true}},
+          {text: "Стул для кормления", attributes: {checked: true}},
+          {text: "Кроватка", attributes: {checked: true}},
           {text: "Телевизор"},
           {text: "Шампунь"},
         ], title: "Дополнительные удобства"
-        })
+      })
     section.search-room__results
       h1.search-room__result-title Номера, которые мы для вас подобрали
       - const {rooms} = require("./json/rooms.json")
