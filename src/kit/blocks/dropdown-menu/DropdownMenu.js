@@ -27,7 +27,6 @@ class DropdownMenu {
   _createState(withActions) {
     if (withActions) {
       this._cachedData = [];
-      this._supportRecovers = [];
       this._isStateChanged = false;
     }
     this._prepareInputs();
@@ -43,7 +42,6 @@ class DropdownMenu {
         this._$decrements[index].disabled = Number(this._cachedData[index]) === 0;
       });
       this._updateCancel(!this._isSummaryZero());
-      this._supportRecovers.forEach((recover) => recover());
       this._isStateChanged = true;
     }
   }

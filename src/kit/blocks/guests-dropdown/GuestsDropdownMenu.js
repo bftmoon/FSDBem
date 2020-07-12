@@ -6,51 +6,6 @@ class GuestsDropdownMenu extends DropdownMenu {
     super(GuestsDropdownMenu.formatGuestsHeader);
   }
 
-  handleAdultsDecrementClick(event) {
-    const adultsCount = event.target.nextSibling.value;
-    if (Number(adultsCount) === 0) {
-      this._cleanAndBlockChildesIncrement();
-    }
-  }
-
-  create($menu) {
-    super.create($menu);
-    this._supportRecovers.push(this._incrementsRecover.bind(this));
-    if (Number(this._$inputs[0].value) === 0) {
-      this._cleanAndBlockChildesIncrement();
-    }
-    this._$increments[0].addEventListener('click', this.handleAdultsIncrementClick.bind(this));
-    this._$decrements[0].addEventListener('click', this.handleAdultsDecrementClick.bind(this));
-  }
-
-  handleAdultsIncrementClick(event) {
-    const adultsCount = event.target.previousSibling.value;
-    if (Number(adultsCount) === 1) {
-      this._enableChildesIncrement();
-    }
-  }
-
-  _cleanAndBlockChildesIncrement() {
-    this._cleanData();
-    this._disableChildesIncrements();
-    this._updateCancel(false);
-  }
-
-  _disableChildesIncrements() {
-    this._$increments[1].disabled = true;
-    this._$increments[2].disabled = true;
-  }
-
-  _enableChildesIncrement() {
-    this._$increments[1].disabled = false;
-    this._$increments[2].disabled = false;
-  }
-
-  _cleanData() {
-    super._cleanData();
-    this._disableChildesIncrements();
-  }
-
   static formatGuestsHeader(countArray) {
     let guestsInfo = RussianLangUtil.selectWordByCount(
       countArray[0] + countArray[1],
@@ -71,14 +26,6 @@ class GuestsDropdownMenu extends DropdownMenu {
     $(parent).find(selector).each((__, element) => {
       new GuestsDropdownMenu().create($(element.firstChild));
     });
-  }
-
-  _incrementsRecover() {
-    if (this._cachedData[0] === 0) {
-      this._disableChildesIncrements();
-    } else {
-      this._enableChildesIncrement();
-    }
   }
 }
 
