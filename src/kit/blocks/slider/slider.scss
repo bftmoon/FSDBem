@@ -1,5 +1,5 @@
 @import '../../env-styles/theme';
-@import 'slider_overrides';
+@import 'slider-overrides';
 
 .slider {
   &__picker {
@@ -10,7 +10,11 @@
   }
 
   &__header {
-    @extend h3;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $dark_shade100;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(15px);
     margin-bottom: 23px;
     padding-right: 1px;
     display: flex;
@@ -19,16 +23,13 @@
   }
 
   &__amount {
-    width: 40%;
-    max-width: max-content;
-
+    width: 1px;
+    flex-grow: 1;
     font-size: pxToRem(12px);
+    margin-bottom: 1px;
+    display: flex;
     text-align: end;
-    text-transform: uppercase;
     color: $dark_shade50;
-    font-weight: normal;
-
-    background: white;
     border: none;
   }
 }

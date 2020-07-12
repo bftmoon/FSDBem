@@ -14,6 +14,7 @@
 
   &__icon {
     @extend %material-icons;
+    color: $dark_shade50;
     margin: auto 10px;
 
     &_hidden {

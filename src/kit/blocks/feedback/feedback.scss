@@ -5,6 +5,9 @@
   gap: 9px;
   grid-template-columns: auto 1fr;
 
+  &__title{
+    padding-top: 1px;
+  }
   &__user {
     font-weight: bold;
   }

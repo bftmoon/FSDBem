@@ -16,30 +16,47 @@
   }
 
   &__guests {
-    margin-bottom: 23px;
+    margin-bottom: 18px;
   }
 
   &__calculates {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
+    margin-left: 1px;
 
     display: grid;
     grid-template-columns: 0.73fr auto 0.2fr;
-    grid-row-gap: pxToRem(15.5px);
+    grid-row-gap: pxToRem(11px);
 
-    vertical-align: center;
     line-height: pxToRem(18px);
   }
 
+  &__price-info{
+    line-height: pxToRem(24px);
+    &_line_small{
+      padding-top: 2px;
+      line-height: pxToRem(18px);
+    }
+  }
   &__price {
     white-space: nowrap;
+  }
+  &__price-item{
+    line-height: pxToRem(24px);
+    &_line_small{
+      padding-top: 2px;
+      line-height: pxToRem(18px);
+    }
   }
 
   &__tooltip {
     display: inline-block;
     width: pxToRem(20px);
     height: pxToRem(20px);
+    line-height: pxToRem(20px);
+    font-size: pxToRem(12px);
 
     text-align: center;
+    font-weight: bold;
     color: $dark_shade25;
     cursor: help;
     border: 1px solid $dark_shade25 {

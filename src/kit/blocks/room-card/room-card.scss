@@ -9,7 +9,7 @@
   background: white;
 
   &__description {
-    padding: 13px 20px 13px 21px;
+    padding: 13px 18px 14px 20px;
   }
 
   &__impression {
@@ -24,6 +24,9 @@
 
   &__rewiew {
     color: $dark_shade50;
+    margin-right: 2px;
+    padding-top: 1px;
+    //margin-bottom: 1px;
   }
 
   &__count {

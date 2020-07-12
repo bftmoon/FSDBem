@@ -10,11 +10,12 @@
 
   &__prefix {
     color: $dark_shade100;
+    font-family: $quicksand;
   }
 
   &__number {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 4px;
     margin-right: 5px;
     font-size: pxToRem(24px);
     font-family: $quicksand;
