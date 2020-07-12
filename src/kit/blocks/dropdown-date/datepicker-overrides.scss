@@ -29,6 +29,10 @@
   z-index: 10;
   opacity: 0;
   padding: 19.5px 18px 19px 20px;
+  @media screen and (max-width: 345px) {
+    padding: 18px;
+    max-width: pxToRem(310px);
+  }
 
   line-height: 1.25;
   background: white;

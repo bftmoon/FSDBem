@@ -15,6 +15,8 @@ class DropdownDate {
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
+      onChangeView: this._onChangeView.bind(this),
+      onShow: this._onShow.bind(this)
     };
 
     const $anchor = $element.find('.js-dropdown-date__anchor');
@@ -53,8 +55,6 @@ class DropdownDate {
 
   _handleIconedInputClick() {
     this._picker.show();
-    this._updatePosition();
-    $(window).on('resize', this._handleWindowResize);
   }
 
   _updatePosition() {
@@ -64,7 +64,7 @@ class DropdownDate {
   }
 
   _areResponsiveUpdateRequired() {
-    return !this._picker.opts.inline && (this._picker.$datepicker.offset().left + this._picker.$datepicker[0].offsetWidth) > $(window).width();
+    return !this._picker.opts.inline && (this._picker.$datepicker.offset().left + this._picker.$datepicker[0].offsetWidth) + 30 > $(window).width();
   }
 
   _handleCancelClick() {
@@ -103,6 +103,15 @@ class DropdownDate {
     if (this._oldDates.length === 0) {
       this._$cancel.addClass('datepicker--button-hidden');
     }
+  }
+
+  _onChangeView() {
+    this._updatePosition();
+  }
+
+  _onShow() {
+    this._updatePosition();
+    $(window).on('resize', this._handleWindowResize);
   }
 
   _setValues(dates) {
