@@ -1,6 +1,6 @@
 import '@theme';
-import AdaptiveHeader from '@blocks/adaptive-header';
+import Header from '@blocks/header';
 import '@blocks/footer';
 import './layout.scss';
 
-AdaptiveHeader.initDefault();
+Header.initDefault({});

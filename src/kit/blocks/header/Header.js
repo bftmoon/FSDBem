@@ -1,12 +1,16 @@
 class Header {
   create($element, menuButtonClickListener) {
     $element.find('.js-header__menu-button').on('click', menuButtonClickListener);
+    this._$header = $element;
+    this._$headerContent = $element.find('.js-header__content');
+    this._$links = this._$headerContent.find('.js-header__links');
+    this._$dim = this._$header.find('.js-header__dim');
 
-    this.headerContent = $element.find('.js-header__content');
-    this.menuButton = this.headerContent.find('.js-header__menu-button');
-    this.items = this.headerContent.find('.js-header__items');
+    this._$headerContent.find('.js-header__menu-button').on('click', this._handleMenuButtonClick.bind(this));
+    this._$dim.on('click', this._handleDimClick.bind(this));
+    this._$headerContent.find('.js-header__close-button').on('click', this._handleCloseButtonClick.bind(this));
     $(window).on('resize', this._handleWindowResize.bind(this));
-    this.headerContent.ready(this._handleContentReady.bind(this));
+    this._$headerContent.ready(this._handleContentReady.bind(this));
   }
 
   _handleWindowResize() {
@@ -21,23 +25,43 @@ class Header {
     this._updateContent();
   }
 
+  _handleMenuButtonClick() {
+    this._toggleSidebar();
+  }
+
+  _handleDimClick() {
+    this._toggleSidebar();
+  }
+
+  _handleCloseButtonClick() {
+    this._toggleSidebar();
+  }
+
+  _toggleSidebar() {
+    this._$links.toggleClass('header__links_opened');
+    this._$dim.toggleClass('header__dim_opened');
+  }
+
   _calcMinWidth() {
-    this.minWidth = this.headerContent
+    this._minWidth = this._$headerContent
       .children().toArray()
-      .reduce((sum, current) => current.offsetWidth + sum, 0);
+      .reduce((sum, current) => {
+        return current.offsetWidth + sum}, 0) + 20;
   }
 
   _updateContent() {
-    if (this.minWidth < this.headerContent[0].offsetWidth) {
-      this.menuButton.addClass('header__menu-button_hidden');
-      this.items.removeClass('header__items_hidden');
+    this._toggleMode(this._minWidth >= this._$headerContent[0].clientWidth);
+  }
+
+  _toggleMode(withSidebar) {
+    if (withSidebar) {
+      this._$header.addClass('header_mode_sidebar');
     } else {
-      this.menuButton.removeClass('header__menu-button_hidden');
-      this.items.addClass('header__items_hidden');
+      this._$header.removeClass('header_mode_sidebar');
     }
   }
 
-  static initDefault({ menuButtonClickListener, parent = document }) {
+  static initDefault({menuButtonClickListener, parent = document}) {
     new Header().create($(parent).find('.js-header:first'), menuButtonClickListener);
   }
 }

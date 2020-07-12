@@ -2,17 +2,17 @@ extends ../layout/layout
 
 block body
   include ../../../kit/blocks/kit-header/kit-header
-  include ../../../kit/blocks/adaptive-header/adaptive-header
   include ../../../kit/blocks/footer/footer
+  include ../../../kit/blocks/header/header
 
   body.header-and-footers
-    - const {home, links, login, register} = require(`./json/header.json`)
+    - const {links, login, register} = require(`./json/header.json`)
     - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
     +kit-header
-    .header-and-footers__anonim-header.js-header-and-footers__header
-      +adaptive-header({links, login, register})
-    .header-and-footers__logged-header.js-header-and-footers__header
-      +adaptive-header({links, login, register, profile: {url: '/mock-address', username: "Юлий Цезарь"}})
+    .header-and-footers__anonim-header.js-header-and-footers__anonim-header
+      +header({links, login, register})
+    .header-and-footers__logged-header.js-header-and-footers__logged-header
+      +header({links, profile: {url: '/mock-address', username: "Юлий Цезарь"}})
     .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
 

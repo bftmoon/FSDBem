@@ -2,7 +2,8 @@
   "links": [
     {
       "name": "О нас",
-      "url": "mock-address"
+      "url": "mock-address",
+      "isBold": true
     },
     {
       "name": "Услуги",

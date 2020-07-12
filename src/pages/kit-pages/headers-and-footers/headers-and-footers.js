@@ -1,9 +1,8 @@
-import AdaptiveHeader from '@blocks/adaptive-header';
 import '@blocks/footer';
 import '@blocks/kit-header';
 import '../layout/layout';
 import './headers-and-footers.scss';
+import Header from "@blocks/header";
 
-$('.js-header-and-footers__header').each((__, element) => {
-  new AdaptiveHeader().createForParent(element);
-});
+Header.initDefault({parent: $('.js-header-and-footers__anonim-header')});
+Header.initDefault({parent: $('.js-header-and-footers__logged-header')});

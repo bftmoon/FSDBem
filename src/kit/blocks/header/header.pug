@@ -1,19 +1,41 @@
 include ../logo/logo
-include ../link-with-menu/link-with-menu
 include ../button/button
-include ../main-links/main-links
-include ../profile-links/profile-links
 
 mixin header({links, login, register, profile})
   header.header.js-header
     .header__content.js-header__content
       .header__logo
         +logo
-      .header__items.js-header__items
-        +main-links({links, isVertical: false})
-        +profile-links({login, register, profile, isVertical: false})
+
+      .header__links.js-header__links
+        button.header__close-button.js-header__close-button
+          i.header__icon close
+        .header__sidebar-logo
+          +logo
+
+        nav.header__main-links
+          ul.header__links-list
+            for link in links
+              if link.content
+                li.header__menu-link
+                  a(href=link.url).header__link=link.name
+                  button.header__expander
+                    i.header__icon expand_more
+              else
+                li.header__simple-link
+                  a(href=link.url class=link.isBold ? "header__link_important" : "").header__link=link.name
+
+        .header__profile-links
+          if profile
+            a(href=profile.url).header__username= profile.username
+          else
+            a(href=login.url).header__login
+              +button(login.name, {isFlat: true, isMini: true})
+            a(href=register.url).header__register
+              +button(register.name, {isMini: true})
+
       button.js-header__menu-button.header__menu-button
         i.header__icon menu
-
+    .header__dim.js-header__dim
 
 
