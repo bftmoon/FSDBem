@@ -16,11 +16,20 @@
   }
 
   &__offer {
-    margin-top: 30px;
+    margin-top: 25px;
     padding-bottom: 1px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: black;
+  }
+
+  &__registration-text {
+    margin-top: 5px;
+  }
+
+  &__registration-button {
+    margin-top: 5px;
   }
 }

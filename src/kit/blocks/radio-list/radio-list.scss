@@ -3,10 +3,12 @@
 
   &__wrapper-for-chrome {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
     margin-right: 20px;
+    margin-bottom: 5px;
     line-height: 100%;
   }
 }

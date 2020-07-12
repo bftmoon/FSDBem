@@ -19,6 +19,6 @@ mixin login-card
     .login-card__submit
       +button("Войти", {isArrowed: true})
     .login-card__offer
-      | Нет аккаунта на Toxin?
+      .login-card__registration-text Нет аккаунта на Toxin?
       .js-login-card__registration-button.login-card__registration-button
         +button("Создать", {isFlat: true, isConstMin: true})(type="button")

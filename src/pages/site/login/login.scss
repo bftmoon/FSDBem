@@ -2,7 +2,7 @@
 
 .login {
   background: url('./images/login.jpg') center;
-  height: 703px;
+  min-height: 703px;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -11,6 +11,8 @@
 
   &__card {
     width: pxToRem(380px);
+    margin-top: 10px;
+    margin-bottom: 10px;
 
     &_hidden {
       display: none;
