@@ -39,7 +39,7 @@ block body
         .cards__form
           +login-card
         .cards__calendar
-          +dropdown-date([{}], true)
+          +dropdown-date({titles:[], isInline: true})
         .cards__room
           - const importedImg = require("./images/room-1.jpg").default;
           +room-card({

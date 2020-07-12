@@ -1,10 +1,4 @@
 class DropdownDate {
-
-  constructor() {
-    this._newDates = '';
-    this._oldDates = '';
-  }
-
   create($element, isInline = false) {
     const params = {
       navTitles: {
@@ -22,18 +16,24 @@ class DropdownDate {
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
     };
+
+    const $anchor = $element.find('.js-dropdown-date__anchor');
     $element.find('.js-dropdown-date__iconed-input').on('click', this._handleIconedInputClick.bind(this));
     this._$dateFields = $element.find('.js-dropdown-date__input');
-    if (this._$dateFields.length === 2) {
 
-      this._oldDates = [this._$dateFields[0].value, this._$dateFields[1].value].join(' - ');
-    } else {
-      this._oldDates = this._$dateFields[0].value;
+    this._oldDates = [];
+    ['startUtc', 'endUtc'].forEach((utc) => {
+      if ($anchor[0].dataset[utc] !== undefined) {
+        this._oldDates.push(new Date($anchor[0].dataset[utc]))
+      }
+    })
+    if (this._$dateFields.length !== 2) {
       params.dateFormat = 'd M';
     }
-    import('air-datepicker/dist/js/datepicker.min').then(() => {
 
-      this._picker = $(this._$dateFields[0]).datepicker(params).data('datepicker');
+    import('air-datepicker/dist/js/datepicker.min').then(() => {
+      this._picker = $anchor.datepicker(params).data('datepicker');
+      if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates)
       this._setButtons();
     });
     this._handleWindowResize = this._handleWindowResize.bind(this);
@@ -70,17 +70,13 @@ class DropdownDate {
   _handleCancelClick() {
     this._picker.clear();
     this._$cancel.addClass('datepicker--button-hidden');
-    this._$dateFields[0].value = '';
-    this._oldDates = '';
-    if (this._$dateFields.length === 2) {
-      this._$dateFields[1].value = '';
-    }
-    return false;
+    this._$dateFields.val('');
+    this._oldDates = [];
   }
 
   _handleApplyClick() {
-    if (this._newDates.split(' - ').length === 2) {
-      this._oldDates = this._newDates;
+    if (this._newDates.length === 2) {
+      this._oldDates = [...this._newDates];
       this._picker.hide();
     }
   }
@@ -92,19 +88,19 @@ class DropdownDate {
     });
   }
 
-  _onSelect(dates) {
+  _onSelect(formattedDates, dates) {
+    this._setValues(formattedDates);
     this._newDates = dates;
-    this._setValues(dates);
     if (dates !== '') {
       this._$cancel.removeClass('datepicker--button-hidden');
     }
   }
 
   _onHide() {
-    this._picker.clear();
-    this._setValues(this._oldDates);
+    this._picker.clear(); // for normal work with empty old dates
+    this._picker.selectDate(this._oldDates);
     $(window).off('resize', this._handleWindowResize);
-    if (this._oldDates.split(' - ')[0] === ''){
+    if (this._oldDates.length === 0) {
       this._$cancel.addClass('datepicker--button-hidden');
     }
   }

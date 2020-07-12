@@ -13,7 +13,7 @@ block main
   article.search-room
     section.search-room__configuration
       .search-room__date
-        +dropdown-date([{title: "Даты пребывания в отеле"}])
+        +dropdown-date({titles: ["Даты пребывания в отеле"]})
       .search-room__guests
         +guests-dropdown({title: "Гости"})
       +slider({title: "Диапазон цены"})

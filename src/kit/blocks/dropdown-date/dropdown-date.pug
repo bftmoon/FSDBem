@@ -1,25 +1,27 @@
-// inputData: [{title, date}]
-mixin dropdown-date(inputData, isInline)
+// dates: [Date]
+mixin dropdown-date({titles, dates, isInline})
   div(class=isInline ? "js-dropdown-date-inline" : "js-dropdown-date").dropdown-date
+    input(
+      data-start-utc = dates? dates[0]: null
+      data-end-utc = dates ? dates[1] : null
+      ).dropdown-date__anchor.js-dropdown-date__anchor
     .dropdown-date__item
-      h3.dropdown-date__title=inputData[0].title
+      h3.dropdown-date__title=titles[0]
       button(type="button").dropdown-date__iconed-input.js-dropdown-date__iconed-input
         input(
           placeholder="ДД.ММ.ГГГГ",
           readonly,
-          value=inputData[0].date
           name="start-date"
         ).dropdown-date__input.js-dropdown-date__input
         i.dropdown-date__icon expand_more
-    if inputData.length === 2
+    if titles.length === 2
       .dropdown-date__separator
       .dropdown-date__item
-        h3.dropdown-date__title=inputData[1].title
+        h3.dropdown-date__title=titles[1]
         button(type="button").dropdown-date__iconed-input.js-dropdown-date__iconed-input
           input(
             placeholder="ДД.ММ.ГГГГ",
             readonly,
-            value=inputData[1].date
             name="end-date"
           ).dropdown-date__input.js-dropdown-date__input
           i.dropdown-date__icon expand_more

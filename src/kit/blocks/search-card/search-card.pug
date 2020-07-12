@@ -6,10 +6,7 @@ mixin search-card
   form.search-card.js-search-card&attributes(attributes)
     h1.search-card__header Найдём номера под ваши пожелания
     .search-card__date
-      +dropdown-date([
-        {title: "Прибытие"},
-        {title: "Выезд"},
-      ])
+      +dropdown-date({titles:["Прибытие", "Выезд"]})
     .search-card__guests
       +guests-dropdown({title: "Гости"})
     .search-card__submit-button

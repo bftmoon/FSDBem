@@ -16,6 +16,10 @@ $dropdown-date-point: 340px;
   &__anchor {
     width: 0;
     border: 0;
+    @media screen and (max-width: pxToRem($dropdown-date-point)) {
+      height: 0;
+      order: 3;
+    }
   }
 
   &__title {

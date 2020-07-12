@@ -49,12 +49,12 @@ block body
           +title({title: "Masked text field", subtitle: "Default"})
           +input({isDateMasked: true})
         .form-elements__date
-          +dropdown-date([{title: "Date dropdown"}, {
-            title: "Date dropdown",
-            date: "19.08.2019"
-          }])
+          +dropdown-date({
+            titles: ["Date dropdown", "Date dropdown"],
+            dates: [new Date(2019, 8, 19)]
+          })
         .form-elements__filter-date
-          +dropdown-date([{title: "Filter date dropdown"}])
+          +dropdown-date({titles: ["Filter date dropdown"]})
         .form-elements__subscribe
           h3.form-elements__title Subscription text field
           +subscribe-input
