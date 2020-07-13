@@ -1,5 +1,5 @@
-import RussianLangUtil from '@utils/RussianLangUtil';
 import DropdownMenu from '@blocks/dropdown-menu';
+import RussianLangUtil from '@utils/RussianLangUtil';
 
 class FurnitureDropdownMenu extends DropdownMenu {
   constructor() {

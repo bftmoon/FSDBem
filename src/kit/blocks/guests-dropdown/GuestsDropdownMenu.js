@@ -1,4 +1,5 @@
 import RussianLangUtil from '@utils/RussianLangUtil';
+
 import DropdownMenu from '../dropdown-menu';
 
 class GuestsDropdownMenu extends DropdownMenu {

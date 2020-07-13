@@ -45,8 +45,7 @@ class Header {
   _calcMinWidth() {
     this._minWidth = this._$headerContent
       .children().toArray()
-      .reduce((sum, current) => {
-        return current.offsetWidth + sum}, 0) + 20;
+      .reduce((sum, current) => current.offsetWidth + sum, 0) + 20;
   }
 
   _updateContent() {
@@ -61,7 +60,7 @@ class Header {
     }
   }
 
-  static initDefault({menuButtonClickListener, parent = document}) {
+  static initDefault({ menuButtonClickListener, parent = document }) {
     new Header().create($(parent).find('.js-header:first'), menuButtonClickListener);
   }
 }

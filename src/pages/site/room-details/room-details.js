@@ -1,8 +1,8 @@
 import '@blocks/bullet-list';
 import '@blocks/iconed-list';
 import CalculatorCard from '@blocks/calculator-card';
-import FeedbacksChart from '@blocks/feedbacks-chart';
 import Feedback from '@blocks/feedback';
+import FeedbacksChart from '@blocks/feedbacks-chart';
 import '../layout/layout';
 import './room-details.scss';
 

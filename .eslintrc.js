@@ -13,6 +13,7 @@ module.exports = {
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    $: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -20,7 +21,7 @@ module.exports = {
   },
   rules: {
     'no-undef': 'warn',
-    'import/no-unresolved': 'warn',
+    'import/no-unresolved': 'off',
     'import/no-named-as-default-member': 'warn',
     'import/no-named-as-default': 'warn',
     'no-underscore-dangle': [
@@ -29,6 +30,18 @@ module.exports = {
         'allowAfterThis': true,
         'allowAfterSuper': true
       }
-    ]
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ["builtin", "external"],
+          "internal",
+          ["parent", "sibling"],
+        ],
+        'newlines-between': "always",
+        alphabetize: {order: 'asc', caseInsensitive: true}
+      }
+    ],
   },
 };

@@ -17,6 +17,7 @@ $details-page-point-content-small: 460px;
     // @formatter:on
     grid-template-columns: repeat(2, 34.06%) auto;
     overflow-y: hidden;
+
     @media screen and (max-width: $details-page-point-images-medium) {
       // @formatter:off
       grid-template-areas:
