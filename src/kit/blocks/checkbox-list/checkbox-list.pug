@@ -3,10 +3,10 @@ include ../checkable-item/checkable-item
 // items: {text, attributes:{}, description?}]
 mixin checkbox-list({items})
   .checkbox-list
-      each el in items
-        .checkbox-list__item
-          +checkable-item({
-            type: "checkbox",
-            text: el.text,
-            description: el.description
-          })&attributes(el.attributes)
+    each item in items
+      .checkbox-list__item(class=item.description ? "checkbox-list__item_type_rich" : "")
+        +checkable-item({
+          type: "checkbox",
+          text: item.text,
+          description: item.description
+        })&attributes(item.attributes)

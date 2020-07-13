@@ -5,6 +5,10 @@
   &__item {
     margin-bottom: 10.5px;
     display: flex;
+
+    &_type_rich {
+      margin-bottom: 8px;
+    }
   }
 }
 

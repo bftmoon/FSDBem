@@ -2,14 +2,22 @@
 @import '../../env-styles/variables';
 
 .checkable-item {
-  position: relative;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    display: inline-flex;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: none;
+  }
 
   &__checker {
     width: pxToRem(20px);
     height: pxToRem(20px);
     margin-right: 10px;
-
     flex-shrink: 0;
 
     cursor: pointer;
@@ -26,19 +34,10 @@
     }
   }
 
-  &__input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    opacity: 0;
-    cursor: pointer;
-  }
 
   &__input:checked ~ &__checker {
-    justify-content: center;
     display: flex;
-
+    justify-content: center;
     border-color: $primary;
 
     &:after {
@@ -56,7 +55,6 @@
     }
 
     &_type_checkbox:after {
-      align-self: stretch;
       height: pxToRem(6px);
       width: pxToRem(4px);
       margin-top: 4px;
@@ -84,6 +82,11 @@
     &_type_radio {
       line-height: 120%;
     }
+
+    &_title {
+      font-weight: bold;
+      color: $dark_shade75;
+    }
   }
 
   &__text-with-info {
@@ -98,8 +101,10 @@
 
   &__description {
     padding-top: 5px;
+    margin-left: 30px;
     line-height: 117%;
     font-size: pxToRem(12px);
     color: $dark_shade50;
+    white-space: pre-wrap;
   }
 }
