@@ -20,67 +20,65 @@
   }
 
   &__calculates {
+    display: grid;
     margin-bottom: 31px;
     margin-left: 1px;
-
-    display: grid;
+    grid-row-gap: px-to-rem(11px);
     grid-template-columns: 0.73fr auto 0.2fr;
-    grid-row-gap: pxToRem(11px);
-
-    line-height: pxToRem(18px);
+    line-height: px-to-rem(18px);
   }
 
-  &__price-info{
-    line-height: pxToRem(24px);
-    &_line_small{
+  &__price-info {
+    line-height: px-to-rem(24px);
+
+    &_line_small {
       padding-top: 2px;
-      line-height: pxToRem(18px);
+      line-height: px-to-rem(18px);
     }
   }
+
   &__price {
     white-space: nowrap;
-  }
-  &__price-item{
-    line-height: pxToRem(24px);
-    &_line_small{
-      padding-top: 2px;
-      line-height: pxToRem(18px);
-    }
   }
 
   &__tooltip {
     display: inline-block;
-    width: pxToRem(20px);
-    height: pxToRem(20px);
-    line-height: pxToRem(20px);
-    font-size: pxToRem(12px);
-
-    text-align: center;
-    font-weight: bold;
-    color: $dark_shade25;
-    cursor: help;
-    border: 1px solid $dark_shade25 {
+    width: px-to-rem(20px);
+    height: px-to-rem(20px);
+    border: 1px solid $dark-shade25 {
       radius: 50%;
     }
+    color: $dark-shade25;
+    cursor: help;
+    font-size: px-to-rem(12px);
+    font-weight: bold;
+    line-height: px-to-rem(20px);
+    text-align: center;
   }
 
   &__price-item {
-    justify-self: right;
     width: min-content;
+    justify-self: right;
+    line-height: px-to-rem(24px);
     white-space: nowrap;
+
+    &_line_small {
+      padding-top: 2px;
+      line-height: px-to-rem(18px);
+    }
   }
 
   &__result {
+    display: flex;
     margin-bottom: 20px;
     margin-left: 1px;
-    display: flex;
   }
 
   &__separator {
     flex-grow: 2;
-    border-bottom: 1px dotted $dark_shade25;
+    border-bottom: 1px dotted $dark-shade25;
+    margin-right: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
-    margin-right: 5px;
   }
 }

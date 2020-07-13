@@ -14,8 +14,9 @@
 
   &__icon {
     @extend %material-icons;
-    color: $dark_shade50;
+
     margin: auto 10px;
+    color: $dark-shade50;
 
     &_hidden {
       display: none;
@@ -34,11 +35,9 @@
     display: flex;
     align-items: center;
     padding-left: 0;
-
-    font-size: pxToRem(12px);
-    color: $dark_shade100;
+    color: $dark-shade100;
+    font-size: px-to-rem(12px);
     font-weight: bold;
     text-transform: uppercase;
   }
 }
-

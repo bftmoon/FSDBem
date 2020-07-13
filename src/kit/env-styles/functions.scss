@@ -1,9 +1,5 @@
 @import './variables';
 
-@function pxToRem($size) {
+@function px-to-rem($size) {
   @return $size / $root-font-size * 1rem;
-}
-
-@function pxToPercent($size) {
-  @return $size / 1440px * 100%;
 }

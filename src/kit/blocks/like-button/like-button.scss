@@ -1,4 +1,4 @@
-@import '../../env-styles/abstract';;
+@import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
 
@@ -12,38 +12,37 @@
     width: 100%;
     height: 100%;
     padding: 1px;
-    border-radius: 10px;
     background: $gradient;
+    border-radius: 10px;
   }
 
   &__inner-box {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
     align-items: center;
-
-    border-radius: inherit;
     background: white;
+    border-radius: inherit;
   }
 
   &__icon {
     @extend %material-icons;
 
-    font-size: pxToRem(10px);
     width: 50%;
+    font-size: px-to-rem(10px);
     text-align: center;
 
     &_active {
-      color: transparent;
       background: $gradient;
       -webkit-background-clip: text;
+      color: transparent;
     }
   }
 
   &__count {
     width: 30%;
+    font-size: px-to-rem(10px);
     text-align: center;
-    font-size: pxToRem(10px);
   }
 
   &__checker {
@@ -51,39 +50,37 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    opacity: 0;
     cursor: pointer;
+    opacity: 0;
   }
 
   &__checker + &__box {
-    background: $dark_shade25;
-    color: $dark_shade25;
+    background: $dark-shade25;
+    color: $dark-shade25;
+  }
 
-    .like-button__icon {
-      &_active {
-        display: none;
-      }
+  &__checker + &__box &__icon {
+    &_active {
+      display: none;
+    }
 
-      &_passive {
-        display: initial;
-      }
+    &_passive {
+      display: initial;
     }
   }
 
   &__checker:checked + &__box {
     background: $gradient;
     color: $primary;
+  }
 
-    .like-button__icon {
-      &_active {
-        display: initial;
-      }
+  &__checker:checked + &__box &__icon {
+    &_active {
+      display: initial;
+    }
 
-      &_passive {
-        display: none;
-      }
+    &_passive {
+      display: none;
     }
   }
 }
-
-

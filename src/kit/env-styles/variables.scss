@@ -1,29 +1,25 @@
-// colors
 $primary: rgba(188, 156, 255, 1);
-$secondary: #6FCF97;
+$secondary: #6fcf97;
 
-$dark_shade5: rgba(31, 32, 65, 0.05);
-$dark_shade10: rgba(31, 32, 65, 0.1);
-$dark_shade25: rgba(31, 32, 65, 0.25);
-$dark_shade50: rgba(31, 32, 65, 0.5);
-$dark_shade75: rgba(31, 32, 65, 0.75);
-$dark_shade100: #1F2041;
+$dark-shade5: rgba(31, 32, 65, 0.05);
+$dark-shade10: rgba(31, 32, 65, 0.1);
+$dark-shade25: rgba(31, 32, 65, 0.25);
+$dark-shade50: rgba(31, 32, 65, 0.5);
+$dark-shade75: rgba(31, 32, 65, 0.75);
+$dark-shade100: #1f2041;
 
 $gradient: linear-gradient($primary 0%, rgba(139, 164, 249, 1) 100%);
 $gradient25: linear-gradient(rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
 $gradient50: linear-gradient(rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-$secondary_gradient: linear-gradient($secondary 0%, #66D2EA 100%);
+$secondary-gradient: linear-gradient($secondary 0%, #66d2ea 100%);
 
-//shadows
-$shadow_smaller: 0px 10px 20px $dark_shade5;
-$shadow_small: 0px 10px 20px $dark_shade10;
-$shadow_big: 0px 0px 25px rgba(0, 0, 0, 0.2);
-$text_shadow: 2px 2px 2px rgba(34, 60, 80, 0.2);
+$shadow-smaller: 0 10px 20px $dark-shade5;
+$shadow-small: 0 10px 20px $dark-shade10;
+$shadow-big: 0 0 25px rgba(0, 0, 0, 0.2);
 
-// fonts
 $montserrat: 'Montserrat', 'Roboto', sans-serif;
 $quicksand: 'Quicksand', 'Open Sans', sans-serif;
 $brands: 'Font Awesome 5 Brands';
+$material-icons: 'Material Icons';
 
 $root-font-size: 14px;
-

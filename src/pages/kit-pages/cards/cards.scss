@@ -1,29 +1,32 @@
 .cards {
-  background: #F4F4F6;
+  background: #f4f4f6;
 
   &__main {
     padding-left: 77px;
-    @media screen and (max-width: 1430px){
+
+    @media screen and (max-width: 1430px) {
       padding-left: 0;
     }
-    @media screen and (min-width: 1450px){
+
+    @media screen and (min-width: 1450px) {
       padding-left: 0;
     }
   }
 
   &__cards {
-    column-count: 3;
     display: block;
-    -webkit-column-break-inside: avoid;
-    column-width: 380px;
     max-width: 1247px;
     max-height: 1200px;
     padding: 5px 0;
     margin: 17px auto;
+    -webkit-column-break-inside: avoid;
+    column-count: 3;
+    column-width: 380px;
 
     @media screen and (max-width: 1045px) {
       column-count: 2;
     }
+
     @media screen and (max-width: 695px) {
       display: flex;
       flex-direction: column;
@@ -32,35 +35,36 @@
   }
 
   &__form {
-    padding: 20px 5px;
     display: inline-block;
     width: 100%;
+    padding: 20px 5px;
   }
 
   &__calendar {
-    padding: 20px 5px 25px;
     display: inline-block;
-
-    max-width: 330px;
     width: 100%;
+    max-width: 330px;
+    padding: 20px 5px 25px;
     border: none;
 
-    & .dropdown-date {
+    .dropdown-date {
       &__iconed-input {
-        border: none;
         height: auto;
+        border: none;
       }
 
-      &__icon, &__input, &__title {
+      &__icon,
+      &__input,
+      &__title {
         display: none;
       }
     }
   }
 
   &__room {
-    padding: 18px 5px 22px;
     display: inline-block;
     width: 100%;
     max-width: 280px;
+    padding: 18px 5px 22px;
   }
 }

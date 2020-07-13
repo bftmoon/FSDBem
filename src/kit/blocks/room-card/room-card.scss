@@ -4,9 +4,9 @@
 
 .room-card {
   width: 100%;
-  border-radius: 4px;
-  box-shadow: $shadow_smaller;
   background: white;
+  border-radius: 4px;
+  box-shadow: $shadow-smaller;
 
   &__description {
     padding: 13px 18px 14px 20px;
@@ -14,19 +14,17 @@
 
   &__impression {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-
-    border-top: 1px solid $dark_shade10;
-    padding-top: pxToRem(7.5px);
-    margin-top: pxToRem(7px);
+    justify-content: space-between;
+    padding-top: px-to-rem(7.5px);
+    border-top: 1px solid $dark-shade10;
+    margin-top: px-to-rem(7px);
   }
 
   &__rewiew {
-    color: $dark_shade50;
-    margin-right: 2px;
     padding-top: 1px;
-    //margin-bottom: 1px;
+    margin-right: 2px;
+    color: $dark-shade50;
   }
 
   &__count {

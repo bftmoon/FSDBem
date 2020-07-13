@@ -1,25 +1,26 @@
 @import '../../../kit/env-styles/theme';
 
-$form-elements-point_middle: 980px;
-$form-elements-point_small: 630px;
+$form-elements-point-middle: 980px;
+$form-elements-point-small: 630px;
 
 .form-elements {
   &__main {
+    display: grid;
     max-width: 1170px;
     padding: 5px;
     margin-top: 30px;
-    margin-left: auto;
     margin-right: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 400px));
+    margin-left: auto;
     grid-row-gap: 40px;
+    grid-template-columns: repeat(3, minmax(250px, 400px));
 
-    @media screen and (max-width: $form-elements-point_middle) {
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 30px;
+    @media screen and (max-width: $form-elements-point-middle) {
       grid-column-gap: 20px;
+      grid-row-gap: 30px;
+      grid-template-columns: 1fr 1fr;
     }
-    @media screen and (max-width: $form-elements-point_small) {
+
+    @media screen and (max-width: $form-elements-point-small) {
       grid-template-columns: 1fr;
     }
   }
@@ -27,7 +28,8 @@ $form-elements-point_small: 630px;
   &__inputs {
     max-width: 320px;
     margin-left: 1px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -49,19 +51,20 @@ $form-elements-point_small: 630px;
   }
 
   &__filter-date {
-    margin-top: 40px;
     max-width: 266px;
+    margin-top: 40px;
   }
 
   &__subscribe {
-    margin-top: 41px;
     max-width: 266px;
+    margin-top: 41px;
   }
 
   &__simple-checkables {
-    margin-left: 60px;
     padding-top: 1px;
-    @media screen and (max-width: $form-elements-point_middle) {
+    margin-left: 60px;
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -87,8 +90,8 @@ $form-elements-point_small: 630px;
   }
 
   &__like {
-    margin-top: 8px;
     display: inline-block;
+    margin-top: 8px;
     margin-right: 10px;
   }
 
@@ -103,7 +106,8 @@ $form-elements-point_small: 630px;
 
   &__clickables {
     margin-left: 66px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -130,8 +134,8 @@ $form-elements-point_small: 630px;
   }
 
   &__submit-button {
-    margin-top: 25px;
     max-width: 320px;
+    margin-top: 25px;
   }
 
   &__paginator {
@@ -147,7 +151,8 @@ $form-elements-point_small: 630px;
     max-width: 266px;
     min-height: 266px;
     margin-top: 60px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -157,10 +162,11 @@ $form-elements-point_small: 630px;
   }
 
   &__guests {
+    max-width: 320px;
     margin-top: 60px;
     margin-left: 60px;
-    max-width: 320px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -168,14 +174,16 @@ $form-elements-point_small: 630px;
   &__filled-guests {
     margin-top: 60px;
     margin-left: 66px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
 
   &__expandable-checkboxes {
-max-width: 266px;
-    @media screen and (max-width: $form-elements-point_middle) {
+    max-width: 266px;
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -191,7 +199,8 @@ max-width: 266px;
   &__rich-checkboxes {
     margin-top: 14px;
     margin-left: 60px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
@@ -199,34 +208,39 @@ max-width: 266px;
   &__bullets {
     margin-top: 15px;
     margin-left: 66px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
+
   &__bullet-list {
-    margin-top: 13px;
     max-width: 262px;
+    margin-top: 13px;
   }
 
   &__iconed-list {
-    margin-top: 49px;
     max-width: 266px;
+    margin-top: 49px;
     margin-bottom: 142px;
-    @media screen and (max-width: $form-elements-point_middle) {
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
     }
   }
 
   &__feedback {
-    grid-column: 2/ span 2;
+    max-width: 713px;
     margin-top: 59px;
     margin-left: 59px;
-    max-width: 713px;
-    @media screen and (max-width: $form-elements-point_middle) {
-      grid-column: 1/ span 2;
+    grid-column: 2/ span 2;
+
+    @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
+      grid-column: 1/ span 2;
     }
-    @media screen and (max-width: $form-elements-point_small) {
+
+    @media screen and (max-width: $form-elements-point-small) {
       grid-column: initial;
     }
   }

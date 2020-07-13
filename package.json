@@ -6,7 +6,9 @@
     "dev": "webpack-dev-server --open --mode development",
     "prod": "webpack-dev-server --open --mode production",
     "eslint": "eslint . --ext .js",
-    "eslint fix": "eslint . --ext .js --fix",
+    "eslint-fix": "eslint . --ext .js --fix",
+    "stylelint": "stylelint '**/*.scss'",
+    "stylelint-fix": "stylelint '**/*.scss' --fix",
     "build": "webpack --mode production",
     "gh-pages": "gh-pages -d dist",
     "clean gh-pages errors": "rm -rf node_modules/gh-pages/.cache"
@@ -25,6 +27,7 @@
     "expose-loader": "^0.7.5",
     "file-loader": "^6.0.0",
     "fs": "0.0.1-security",
+    "gh-pages": "^3.0.0",
     "html-webpack-plugin": "^4.2.0",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.9.0",
@@ -37,11 +40,14 @@
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
+    "stylelint": "^13.6.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "terser-webpack-plugin": "^3.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0",
-    "gh-pages": "^3.0.0"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",

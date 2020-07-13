@@ -2,13 +2,13 @@
 
 .colors-and-type {
   &__main {
-    max-width: 1150px;
-    margin: 32px auto 145px;
-    padding: 5px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    max-width: 1150px;
+    padding: 5px;
+    margin: 32px auto 145px;
     grid-row-gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+
     @media screen and (max-width: 635px) {
       justify-content: center;
     }
@@ -16,9 +16,10 @@
 
   &__colors {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 20px 40px;
     width: min-content;
+    grid-gap: 20px 40px;
+    grid-template-columns: auto 1fr;
+
     @media screen and (max-width: 635px) {
       justify-self: center;
     }
@@ -31,23 +32,23 @@
     border-radius: 6px;
 
     &_0 {
-      background: $dark_shade100;
+      background: $dark-shade100;
     }
 
     &_1 {
-      background: $dark_shade75;
+      background: $dark-shade75;
     }
 
     &_2 {
-      background: $dark_shade50;
+      background: $dark-shade50;
     }
 
     &_3 {
-      background: $dark_shade25;
+      background: $dark-shade25;
     }
 
     &_4 {
-      background: $dark_shade5;
+      background: $dark-shade5;
     }
 
     &_5 {
@@ -61,39 +62,36 @@
 
   &__description {
     display: inline-flex;
-    flex-direction: column;
     width: min-content;
+    flex-direction: column;
     white-space: nowrap;
   }
 
   &__name {
     margin-top: 7px;
-
-    line-height: pxToRem(29px);
-    font-size: pxToRem(19px);
+    color: $dark-shade100;
     font-family: $quicksand;
+    font-size: px-to-rem(19px);
     font-weight: bold;
-    color: $dark_shade100;
+    line-height: px-to-rem(29px);
   }
 
   &__num {
-    line-height: pxToRem(29px);
+    color: $dark-shade100;
     font-family: $quicksand;
-    font-size: pxToRem(19px);
-    color: $dark_shade100;
+    font-size: px-to-rem(19px);
+    line-height: px-to-rem(29px);
   }
 
-
   &__headers {
-    justify-self: right;
-    height: min-content;
-    max-width: 420px;
-    margin-right: 23px;
-
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-row-gap: 47px;
+    max-width: 420px;
+    height: min-content;
+    margin-right: 23px;
     grid-column-gap: 30px;
+    grid-row-gap: 47px;
+    grid-template-columns: auto 1fr;
+    justify-self: right;
 
     @media screen and (max-width: 635px) {
       justify-self: center;
@@ -101,13 +99,13 @@
   }
 
   &__prefix {
-    text-align: right;
-    color: $dark_shade25;
-    font-weight: normal;
+    color: $dark-shade25;
     font-family: $montserrat;
+    font-weight: normal;
+    text-align: right;
   }
 
-  &__positioner{
+  &__positioner {
     padding-bottom: 3px;
   }
 

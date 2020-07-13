@@ -1,104 +1,103 @@
 @import '../../../kit/env-styles/variables';
 
-$details-page-point_images-medium: 850px;
-$details-page-point_images-small: 430px;
+$details-page-point-images-medium: 850px;
+$details-page-point-images-small: 430px;
 
-$details-page-point_content-large: 1070px;
-$details-page-point_content-medium: 780px;
-$details-page-point_content-small: 460px;
+$details-page-point-content-large: 1070px;
+$details-page-point-content-medium: 780px;
+$details-page-point-content-small: 460px;
 
 .room-details {
   &__images {
-    overflow-y: hidden;
     display: grid;
-    grid-template-columns: repeat(2, 34.06%) auto;
     // @formatter:off
     grid-template-areas:
-        'img-1 img-1 img-2'
-        'img-1 img-1 img-3'
-    ;
+      'img-1 img-1 img-2'
+      'img-1 img-1 img-3';
     // @formatter:on
-    @media screen and (max-width: $details-page-point_images-medium) {
-      grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 34.06%) auto;
+    overflow-y: hidden;
+    @media screen and (max-width: $details-page-point-images-medium) {
       // @formatter:off
       grid-template-areas:
-          'img-1 img-1'
-          'img-2 img-3'
-      ;
+        'img-1 img-1'
+        'img-2 img-3';
       // @formatter:on
+      grid-template-columns: 1fr 1fr;
     }
-    @media screen and (max-width: $details-page-point_images-small) {
-      grid-template-columns: 1fr;
+
+    @media screen and (max-width: $details-page-point-images-small) {
       grid-template-areas: 'img-1' 'img-2' 'img-3';
+      grid-template-columns: 1fr;
     }
   }
 
   &__image-1 {
-    grid-area: img-1;
     width: 100%;
+    grid-area: img-1;
   }
 
   &__image-2 {
-    grid-area: img-2;
     width: 100%;
+    grid-area: img-2;
   }
 
   &__image-3 {
-    grid-area: img-3;
     width: 100%;
+    grid-area: img-3;
   }
 
   &__details {
-    max-width: 1184px;
-    margin: 69.5px auto 62px;
-    padding: 0 10px;
     display: grid;
+    max-width: 1184px;
+    padding: 0 10px;
+    margin: 69.5px auto 62px;
     grid-column-gap: 40px;
     grid-row-gap: 29px;
     // @formatter:off
-    grid-template-columns: 0.7fr 0.93fr 1fr;
     grid-template-areas:
-        'info chart card'
-        'feedbacks feedbacks card'
-        'rules cancel card'
-    ;
+      'info chart card'
+      'feedbacks feedbacks card'
+      'rules cancel card';
     // @formatter:on
+    grid-template-columns: 0.7fr 0.93fr 1fr;
 
-    @media screen and (max-width: $details-page-point_content-large) {
-      grid-template-columns: 0.8fr 1fr;
+    @media screen and (max-width: $details-page-point-content-large) {
+      margin-right: 30px;
+      margin-left: 30px;
+      grid-column-gap: 30px;
       // @formatter:off
       grid-template-areas:
-          'info card'
-          'chart card'
-          'feedbacks feedbacks'
-          'rules cancel'
-      ;
+        'info card'
+        'chart card'
+        'feedbacks feedbacks'
+        'rules cancel';
       // @formatter:on
-      grid-column-gap: 30px;
-      margin-left: 30px;
-      margin-right: 30px;
+      grid-template-columns: 0.8fr 1fr;
     }
 
-    @media screen and (max-width: $details-page-point_content-medium) {
-      grid-template-columns: 1fr;
+    @media screen and (max-width: $details-page-point-content-medium) {
       grid-template-areas: 'card' 'info' 'chart' 'feedbacks' 'rules' 'cancel';
+      grid-template-columns: 1fr;
       justify-items: center;
     }
-    @media screen and (max-width: $details-page-point_content-small) {
+
+    @media screen and (max-width: $details-page-point-content-small) {
+      padding-right: 3px;
+      padding-left: 3px;
       margin-right: 0;
       margin-left: 0;
-      padding-left: 3px;
-      padding-right: 3px;
     }
   }
 
   &__info {
-    grid-area: info;
     max-width: 280px;
     margin-left: 2px;
-    @media screen and (max-width: $details-page-point_content-medium) {
-      max-width: initial;
+    grid-area: info;
+
+    @media screen and (max-width: $details-page-point-content-medium) {
       width: 100%;
+      max-width: initial;
     }
   }
 
@@ -107,12 +106,14 @@ $details-page-point_content-small: 460px;
   }
 
   &__chart {
-    grid-area: chart;
     margin-left: 32px;
-    @media screen and (max-width: $details-page-point_content-large) {
+    grid-area: chart;
+
+    @media screen and (max-width: $details-page-point-content-large) {
       margin-left: 0;
     }
-    @media screen and (max-width: $details-page-point_content-medium) {
+
+    @media screen and (max-width: $details-page-point-content-medium) {
       width: 100%;
     }
   }
@@ -120,34 +121,34 @@ $details-page-point_content-small: 460px;
   &__chart-title {
     margin-bottom: 19px;
     margin-left: 2px;
-    @media screen and (max-width: $details-page-point_content-large) {
+
+    @media screen and (max-width: $details-page-point-content-large) {
       margin-left: 0;
     }
   }
 
   &__feedbacks {
-    grid-area: feedbacks;
     max-width: 720px;
+    grid-area: feedbacks;
   }
 
   &__feedbacks-header {
+    display: flex;
+    justify-content: space-between;
     margin-top: 4px;
     margin-bottom: 15px;
     margin-left: 1px;
-
-    display: flex;
-    justify-content: space-between;
   }
 
   &__feedbacks-count {
-    color: $dark_shade50;
-    white-space: nowrap;
+    color: $dark-shade50;
     line-height: 2;
+    white-space: nowrap;
   }
 
   &__feedback {
-    list-style: none;
     margin-bottom: 23px;
+    list-style: none;
 
     &_last {
       margin-bottom: 0;
@@ -155,10 +156,11 @@ $details-page-point_content-small: 460px;
   }
 
   &__rules {
-    grid-area: rules;
     max-width: 260px;
     margin-left: 1px;
-    @media screen and (max-width: $details-page-point_content-medium) {
+    grid-area: rules;
+
+    @media screen and (max-width: $details-page-point-content-medium) {
       max-width: 100%;
       justify-self: left;
     }
@@ -168,20 +170,22 @@ $details-page-point_content-small: 460px;
     margin-top: 3px;
     margin-bottom: 18px;
     margin-left: 21px;
-    @media screen and (max-width: $details-page-point_content-medium) {
+
+    @media screen and (max-width: $details-page-point-content-medium) {
       margin-left: 0;
     }
   }
 
   &__cancel-info {
-    grid-area: cancel;
     max-width: 340px;
     margin-top: 3px;
     margin-left: 34px;
-    @media screen and (max-width: $details-page-point_content-medium) {
+    grid-area: cancel;
+
+    @media screen and (max-width: $details-page-point-content-medium) {
       max-width: 100%;
-      justify-self: left;
       margin-left: 0;
+      justify-self: left;
     }
   }
 
@@ -190,10 +194,11 @@ $details-page-point_content-small: 460px;
   }
 
   &__card {
+    margin-right: 2px;
     grid-area: card;
     justify-self: end;
-    margin-right: 2px;
-    @media screen and (max-width: $details-page-point_content-large) {
+
+    @media screen and (max-width: $details-page-point-content-large) {
       justify-self: center;
     }
   }

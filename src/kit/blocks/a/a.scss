@@ -2,17 +2,18 @@
 @import '../../env-styles/variables';
 
 .a {
+  font-size: px-to-rem(12px);
   font-weight: bold;
-  font-size: pxToRem(12px);
-  text-transform: uppercase;
   text-decoration: none;
+  text-transform: uppercase;
   white-space: nowrap;
 
-  &:link, &:visited {
+  &:link,
+  &:visited {
     color: $primary;
   }
 
   &:hover {
-    color: $dark_shade50;
+    color: $dark-shade50;
   }
 }

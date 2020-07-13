@@ -2,20 +2,21 @@
 @import '../../env-styles/variables';
 
 .input {
-  @extend %field_bordered;
-  color: $dark_shade75;
+  @extend %field-bordered;
+
+  overflow: hidden;
   padding-right: 20px;
   padding-left: 13px;
-  overflow: hidden;
+  color: $dark-shade75;
+  font-size: px-to-rem(14px);
   text-overflow: ellipsis;
-  font-size: pxToRem(14px);
 
   &:hover {
-    border-color: $dark_shade50;
+    border-color: $dark-shade50;
   }
 
   &:focus {
-    border-color: $dark_shade50;
+    border-color: $dark-shade50;
   }
 
   &:invalid {
@@ -23,6 +24,6 @@
   }
 
   &::placeholder {
-    color: $dark_shade25;
+    color: $dark-shade25;
   }
 }

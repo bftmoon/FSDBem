@@ -1,24 +1,25 @@
 @import '../../../kit/env-styles/functions';
 @import '../../../kit/env-styles/variables';
 
-$search-room-point_big: 857px;
+$search-room-point-big: 857px;
 
 .search-room {
   position: relative;
+  display: grid;
+  max-width: 1174px;
   padding: 30px 6px 0;
   margin: auto;
-  display: grid;
   gap: 58.7px;
   grid-template-columns: 266px 1fr;
-  max-width: 1174px;
 
-  @media screen and (max-width: $search-room-point_big) {
+  @media screen and (max-width: $search-room-point-big) {
     grid-template-columns: 1fr;
   }
 
   &__configuration {
     width: 266px;
-    @media screen and (max-width: $search-room-point_big) {
+
+    @media screen and (max-width: $search-room-point-big) {
       margin: 0 auto;
     }
   }
@@ -33,8 +34,8 @@ $search-room-point_big: 857px;
 
   &__cost-info {
     margin-top: 9px;
-    font-size: pxToRem(12px);
-    color: $dark_shade50;
+    color: $dark-shade50;
+    font-size: px-to-rem(12px);
   }
 
   &__title {
@@ -54,22 +55,22 @@ $search-room-point_big: 857px;
   }
 
   &__result-title {
-    @media screen and (max-width: $search-room-point_big) {
+    @media screen and (max-width: $search-room-point-big) {
       text-align: center;
     }
   }
 
   &__rooms {
-    margin-top: 20px;
+    display: grid;
+    width: 100%;
+    justify-content: center;
     padding-right: 1px;
     padding-left: 1px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
-    justify-content: center;
+    margin-top: 20px;
     grid-column-gap: 1.4%;
     grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
   }
 
   &__room-link {
@@ -84,4 +85,3 @@ $search-room-point_big: 857px;
     margin: 42px 0 73px;
   }
 }
-

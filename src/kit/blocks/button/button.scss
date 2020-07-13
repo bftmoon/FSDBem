@@ -3,14 +3,13 @@
 @import '../../env-styles/variables';
 
 .button {
-  line-height: pxToRem(14px);
-  font-size: pxToRem(12px);
-  font-weight: bold;
-  text-transform: uppercase;
-
   border: none;
-  border-radius: 22px;
   background: $gradient;
+  border-radius: 22px;
+  font-size: px-to-rem(12px);
+  font-weight: bold;
+  line-height: px-to-rem(14px);
+  text-transform: uppercase;
 
   &:hover:enabled {
     background: $gradient50;
@@ -21,7 +20,7 @@
     width: 100%;
   }
 
-  &_size_const-min{
+  &_size_const-min {
     min-width: 99px;
   }
 
@@ -43,13 +42,12 @@
 
   &__text {
     display: inline-flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     padding: 13px 17px;
-    width: 100%;
-
-    border-radius: inherit;
     background: white;
+    border-radius: inherit;
 
     &_size_mini {
       padding: 8px 19px;
@@ -57,30 +55,26 @@
   }
 
   &_arrowed {
-    width: 100%;
-    padding: 10px;
-
     display: inline-flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
+    padding: 10px;
   }
 
   &__arrow {
     @extend %material-icons;
+
     flex-grow: 0;
     flex-shrink: 0;
   }
 
   &__arrowed-text {
     flex-grow: 2;
-    margin-left: pxToRem(20px);
+    margin-left: px-to-rem(20px);
   }
 
   &_color_secondary {
-    background: $secondary_gradient;
+    background: $secondary-gradient;
   }
 }
-
-
-
-

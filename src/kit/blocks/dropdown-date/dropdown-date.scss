@@ -5,18 +5,19 @@
 $dropdown-date-point: 340px;
 
 .dropdown-date {
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 
-  @media screen and (max-width: pxToRem($dropdown-date-point)) {
+  @media screen and (max-width: px-to-rem($dropdown-date-point)) {
     flex-direction: column;
   }
 
   &__anchor {
     width: 0;
     border: 0;
-    @media screen and (max-width: pxToRem($dropdown-date-point)) {
+
+    @media screen and (max-width: px-to-rem($dropdown-date-point)) {
       height: 0;
       order: 3;
     }
@@ -28,33 +29,33 @@ $dropdown-date-point: 340px;
 
   &__iconed-input {
     @extend %field;
-    cursor: pointer;
+
     display: flex;
     align-items: center;
-
     border-radius: 4px;
-    box-shadow: inset 0 0 0 1px $dark_shade25;
+    box-shadow: inset 0 0 0 1px $dark-shade25;
+    cursor: pointer;
 
-    @media screen and (max-width: pxToRem($dropdown-date-point)) {
+    @media screen and (max-width: px-to-rem($dropdown-date-point)) {
       margin-bottom: 5px;
     }
   }
 
   &__input {
     @extend %field;
+
     width: 1%;
     flex-grow: 2;
     padding-left: 15px;
-
-    font-size: pxToRem(14px);
     background: none;
     cursor: pointer;
+    font-size: px-to-rem(14px);
     text-transform: lowercase;
 
     &::placeholder {
-      text-transform: uppercase;
-      color: $dark_shade75;
+      color: $dark-shade75;
       opacity: 1;
+      text-transform: uppercase;
     }
   }
 
@@ -64,9 +65,10 @@ $dropdown-date-point: 340px;
 
   &__icon {
     @extend %material-icons;
-    margin: auto 10px;
+
     padding-top: 1px;
-    color: $dark_shade50;
+    margin: auto 10px;
+    color: $dark-shade50;
   }
 
   &__separator {
@@ -74,5 +76,3 @@ $dropdown-date-point: 340px;
     flex-shrink: 0;
   }
 }
-
-

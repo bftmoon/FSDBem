@@ -1,16 +1,16 @@
 @import '../../../kit/env-styles/functions';
 
 .login {
-  background: url('./images/login.jpg') center;
-  min-height: 703px;
-  background-size: cover;
   display: flex;
+  min-height: 703px;
   align-items: center;
   justify-content: center;
   padding: 0 2px;
+  background: url('./images/login.jpg') center;
+  background-size: cover;
 
   &__card {
-    width: pxToRem(380px);
+    width: px-to-rem(380px);
     margin-top: 10px;
     margin-bottom: 10px;
 

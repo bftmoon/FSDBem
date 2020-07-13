@@ -4,32 +4,32 @@
 .slider {
   &__picker {
     height: 6px;
-    border: 1px solid $dark_shade25 {
+    border: 1px solid $dark-shade25 {
       radius: 4px;
     }
   }
 
   &__header {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $dark_shade100;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(15px);
-    margin-bottom: 23px;
-    padding-right: 1px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 1px;
+    margin-bottom: 23px;
+    color: $dark-shade100;
+    font-size: px-to-rem(12px);
+    font-weight: bold;
+    line-height: px-to-rem(15px);
+    text-transform: uppercase;
   }
 
   &__amount {
+    display: flex;
     width: 1px;
     flex-grow: 1;
-    font-size: pxToRem(12px);
-    margin-bottom: 1px;
-    display: flex;
-    text-align: end;
-    color: $dark_shade50;
     border: none;
+    margin-bottom: 1px;
+    color: $dark-shade50;
+    font-size: px-to-rem(12px);
+    text-align: end;
   }
 }

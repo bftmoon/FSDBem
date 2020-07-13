@@ -3,48 +3,48 @@
 
 .room-title {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   font-weight: bold;
   white-space: pre-wrap;
-  flex-wrap: wrap;
 
   &__prefix {
-    color: $dark_shade100;
+    color: $dark-shade100;
     font-family: $quicksand;
   }
 
   &__number {
     display: inline-block;
-    margin-left: 4px;
     margin-right: 5px;
-    font-size: pxToRem(24px);
+    margin-left: 4px;
+    color: $dark-shade100;
     font-family: $quicksand;
-    color: $dark_shade100;
+    font-size: px-to-rem(24px);
 
     &_font_mini {
-      font-size: pxToRem(19px);
       margin-left: 4px;
+      font-size: px-to-rem(19px);
     }
   }
 
   &__lux {
-    font-size: pxToRem(12px);
     color: $primary;
+    font-size: px-to-rem(12px);
     text-transform: uppercase;
   }
 
   &__separator {
-    flex-grow: 1;
     min-width: 10px;
+    flex-grow: 1;
   }
 
   &__price {
-    color: $dark_shade50;
+    color: $dark-shade50;
   }
 
   &__info {
-    font-size: pxToRem(12px);
+    color: $dark-shade50;
+    font-size: px-to-rem(12px);
     font-weight: normal;
-    color: $dark_shade50;
   }
 }

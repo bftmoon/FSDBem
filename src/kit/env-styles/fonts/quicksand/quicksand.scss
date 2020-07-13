@@ -2,16 +2,18 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  src: local(''),
-  url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-regular.woff2') format('woff2'),
-  url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-regular.woff') format('woff');
+  src:
+    local(''),
+    url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-regular.woff2') format('woff2'),
+    url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 700;
-  src: local(''),
-  url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-700.woff2') format('woff2'),
-  url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-700.woff') format('woff');
+  src:
+    local(''),
+    url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-700.woff2') format('woff2'),
+    url('~@fonts/quicksand/fonts/quicksand-v21-vietnamese-latin-ext-latin-700.woff') format('woff');
 }

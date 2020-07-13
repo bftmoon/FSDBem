@@ -4,18 +4,17 @@
 .title {
   display: flex;
   justify-content: space-between;
-  padding-bottom: pxToRem(5px);
-
+  padding-bottom: px-to-rem(5px);
+  font-size: px-to-rem(12px);
+  line-height: px-to-rem(15px);
   text-transform: uppercase;
-  font-size: pxToRem(12px);
-  line-height: pxToRem(15px);
 
   &__main {
+    color: $dark-shade100;
     font-weight: bold;
-    color: $dark_shade100;
   }
 
   &__subtitle {
-    color: $dark_shade50;
+    color: $dark-shade50;
   }
 }

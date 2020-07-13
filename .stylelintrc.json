@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-idiomatic-order"
+  ],
+  "rules": {
+    "indentation": 2,
+    "color-named": "always-where-possible",
+    "max-nesting-depth": null,
+    "property-no-vendor-prefix": null,
+    "declaration-property-value-blacklist": null,
+    "property-no-unknown": null,
+    "scss/at-extend-no-missing-placeholder": null
+  }
+}

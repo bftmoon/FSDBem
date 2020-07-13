@@ -49,12 +49,12 @@
   }
 
   &__login-offer {
-    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    color: $dark_shade100;
+    justify-content: space-between;
+    margin-top: 25px;
+    color: $dark-shade100;
   }
 
   &__login-text {

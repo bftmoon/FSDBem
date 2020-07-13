@@ -1,8 +1,8 @@
-.layout{
+.layout {
   display: flex;
   flex-direction: column;
 
-  &__content{
+  &__content {
     flex-grow: 1;
   }
 }

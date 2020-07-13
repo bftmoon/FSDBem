@@ -7,59 +7,56 @@
 @import 'functions';
 @import 'variables';
 
-
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-family: inherit;
 }
 
 html {
   height: 100%;
-
-  font-size: $root-font-size;
-  font-family: $montserrat;
-
-  color: $dark_shade75;
   background: #f8f8f8;
+  color: $dark-shade75;
+  font-family: $montserrat;
+  font-size: $root-font-size;
 }
 
 body {
-  min-height: 100%;
   max-width: 1920px;
+  min-height: 100%;
   margin: auto;
-
-  line-height: pxToRem(24px);
   background: white;
+  line-height: px-to-rem(24px);
 }
 
 h1 {
-  line-height: pxToRem(30px);
-  font-size: pxToRem(24px);
+  color: $dark-shade100;
   font-family: $quicksand;
+  font-size: px-to-rem(24px);
   font-weight: bold;
-  color: $dark_shade100;
+  line-height: px-to-rem(30px);
 }
 
 h2 {
-  line-height: pxToRem(24px);
-  font-size: pxToRem(19px);
+  color: $dark-shade100;
   font-family: $quicksand;
+  font-size: px-to-rem(19px);
   font-weight: bold;
-  color: $dark_shade100;
+  line-height: px-to-rem(24px);
 }
 
 h3 {
-  line-height: pxToRem(15px);
-  font-size: pxToRem(12px);
+  color: $dark-shade100;
   font-family: $montserrat;
+  font-size: px-to-rem(12px);
   font-weight: bold;
+  line-height: px-to-rem(15px);
   text-transform: uppercase;
-  color: $dark_shade100;
 }
 
-:link, :visited {
+:link,
+:visited {
+  color: $dark-shade50;
   text-decoration: none;
-  color: $dark_shade50;
 }

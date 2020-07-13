@@ -1,46 +1,45 @@
 $landing-page-point: 480px;
 
 .landing {
-  background: url(./imgs/landing.jpg) center;
-  background-size: cover;
   height: 830px;
+  background: url('./imgs/landing.jpg') center;
+  background-size: cover;
 
-  &__content{
+  &__content {
+    display: flex;
     max-width: 1450px;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 5px;
-    padding-right: 5px;
-
-    display: flex;
     flex-direction: column;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   &__card {
+    max-width: 390px;
     padding-top: 70px;
     margin: 0 9.45%;
-    max-width: 390px;
+
     @media screen and (max-width: $landing-page-point) {
       margin: 0 auto;
     }
   }
 
   &__text {
-    height: 100%;
-    margin-right: 9%;
-    margin-bottom: 21px;
-
     display: flex;
+    height: 100%;
     align-items: flex-end;
     justify-content: flex-end;
+    margin-right: 9%;
+    margin-bottom: 21px;
     text-align: right;
     white-space: pre-line;
 
     @media screen and (max-width: $landing-page-point) {
       justify-content: center;
-      text-align: center;
       margin-right: 0;
+      text-align: center;
     }
   }
 }

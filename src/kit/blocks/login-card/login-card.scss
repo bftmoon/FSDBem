@@ -16,12 +16,12 @@
   }
 
   &__offer {
-    margin-top: 25px;
-    padding-bottom: 1px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1px;
+    margin-top: 25px;
     color: black;
   }
 

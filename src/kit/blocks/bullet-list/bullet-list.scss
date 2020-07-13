@@ -9,17 +9,12 @@
   }
 
   &__bullet {
-    width: pxToRem(10px);
-    height: pxToRem(10px);
-    margin-right: 11px;
-
     display: inline-block;
+    width: px-to-rem(10px);
+    height: px-to-rem(10px);
     flex-shrink: 0;
-
+    margin-right: 11px;
+    background: $dark-shade25;
     border-radius: 50%;
-    background: $dark_shade25;
   }
 }
-
-
-

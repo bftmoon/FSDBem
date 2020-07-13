@@ -5,9 +5,10 @@
   gap: 9px;
   grid-template-columns: auto 1fr;
 
-  &__title{
+  &__title {
     padding-top: 1px;
   }
+
   &__user {
     font-weight: bold;
   }
@@ -17,8 +18,8 @@
   }
 
   &__image {
-    border-radius: 50%;
     border: 2px solid white;
-    box-shadow: $shadow_small;
+    border-radius: 50%;
+    box-shadow: $shadow-small;
   }
 }

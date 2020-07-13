@@ -9,9 +9,9 @@
   &__item {
     display: flex;
     align-items: center;
-    list-style: none;
     padding: 20px 0;
-    border-bottom: 1px solid $dark_shade10;
+    border-bottom: 1px solid $dark-shade10;
+    list-style: none;
 
     &:first-child {
       padding-top: 0;
@@ -25,27 +25,27 @@
 
   &__icon {
     @extend %material-icons;
-    font-size: pxToRem(48px);
-    color: transparent;
+
+    margin-right: 10px;
     background: $gradient;
     -webkit-background-clip: text;
-    margin-right: 10px;
+    color: transparent;
+    font-size: px-to-rem(48px);
   }
 
   &__separator {
     display: block;
-    border-top: 1px solid $dark_shade10;
+    border-top: 1px solid $dark-shade10;
     margin: 20px 0;
   }
 
   &__text {
     display: inline-block;
-    font-size: pxToRem(14px);
-    color: $dark_shade75;
+    color: $dark-shade75;
+    font-size: px-to-rem(14px);
   }
 
   &__title {
     font-weight: bold;
   }
-
 }

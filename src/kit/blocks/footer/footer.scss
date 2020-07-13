@@ -2,37 +2,33 @@
 @import '../../env-styles/variables';
 @import '../../env-styles/theme';
 
-$footer-point_medium: 940px;
-$footer-point_small: 768px;
+$footer-point-medium: 940px;
+$footer-point-small: 768px;
 
 .footer {
+  border-top: 1px solid $dark-shade5;
   background: white;
-  box-shadow: $shadow_smaller;
-  border-top: 1px solid $dark_shade5;
+  box-shadow: $shadow-smaller;
 
-  @media screen and (max-width: $footer-point_small) {
+  @media screen and (max-width: $footer-point-small) {
     padding-top: 115px;
     padding-bottom: 95px;
   }
 
-  &__tagline {
-    margin-top: 10px;
-  }
-
   &__menu {
-    max-width: pxToRem(1200px);
-    margin: 94px auto 80px;
-    padding: 5px 19px 5px 20px;
-
     display: grid;
-    grid-template-columns: 1.01fr 2.5fr 1.02fr;
+    max-width: px-to-rem(1200px);
+    padding: 5px 19px 5px 20px;
+    margin: 94px auto 80px;
     grid-row-gap: 30px;
+    grid-template-columns: 1.01fr 2.5fr 1.02fr;
 
-    @media screen and (max-width: $footer-point_medium) {
+    @media screen and (max-width: $footer-point-medium) {
       grid-template-columns: 1fr;
       justify-items: center;
     }
-    @media screen and (max-width: $footer-point_small) {
+
+    @media screen and (max-width: $footer-point-small) {
       margin: 0 auto;
     }
   }
@@ -43,53 +39,61 @@ $footer-point_small: 768px;
 
   &__logo {
     max-width: 260px;
-    @media screen and (max-width: $footer-point_medium) {
-      max-width: 715px;
+
+    @media screen and (max-width: $footer-point-medium) {
       display: flex;
+      max-width: 715px;
       flex-direction: column;
       align-items: center;
     }
   }
 
   &__tagline {
-    @media screen and (max-width: $footer-point_medium) {
+    margin-top: 10px;
+
+    @media screen and (max-width: $footer-point-medium) {
       text-align: center;
     }
-    @media screen and (max-width: $footer-point_small) {
+
+    @media screen and (max-width: $footer-point-small) {
       display: none;
     }
   }
 
   &__nav {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
     margin: 4px 41px 0;
-    @media screen and (max-width: $footer-point_small) {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: $footer-point-small) {
       display: none;
     }
   }
 
   &__nav-title {
     @extend h3;
+
     margin-bottom: 20px;
   }
 
   &__nav-item {
-    list-style: none;
     margin-bottom: 13px;
+    list-style: none;
   }
 
   &__subscribe-offer {
     max-width: 260px;
     margin-top: 4px;
-    @media screen and (max-width: $footer-point_medium) {
-      max-width: initial;
+
+    @media screen and (max-width: $footer-point-medium) {
       display: flex;
+      max-width: initial;
       flex-direction: column;
       align-items: center;
     }
-    @media screen and (max-width: $footer-point_small) {
+
+    @media screen and (max-width: $footer-point-small) {
       display: none;
     }
   }
@@ -100,7 +104,8 @@ $footer-point_small: 768px;
 
   &__subscribe-info {
     margin-bottom: 23px;
-    @media screen and (max-width: $footer-point_medium) {
+
+    @media screen and (max-width: $footer-point-medium) {
       margin-bottom: 10px;
       text-align: center;
     }
@@ -113,32 +118,34 @@ $footer-point_small: 768px;
   &__separator {
     width: 100%;
     height: 1px;
-    background: $dark_shade10;
-    @media screen and (max-width: $footer-point_small) {
+    background: $dark-shade10;
+
+    @media screen and (max-width: $footer-point-small) {
       display: none;
     }
   }
 
   &__info {
-    max-width: pxToRem(1190px);
-    margin: auto;
-    padding: 21px 4px;
-
     display: flex;
-    justify-content: space-between;
+    max-width: px-to-rem(1190px);
     align-items: center;
-    @media screen and (max-width: $footer-point_small) {
+    justify-content: space-between;
+    padding: 21px 4px;
+    margin: auto;
+
+    @media screen and (max-width: $footer-point-small) {
       flex-direction: column;
-      text-align: center;
       padding-top: 13px;
+      text-align: center;
     }
   }
 
   &__copyright {
     margin-left: 10px;
-    @media screen and (max-width: $footer-point_small) {
-      margin-left: 0;
+
+    @media screen and (max-width: $footer-point-small) {
       margin-bottom: 23px;
+      margin-left: 0;
     }
   }
 }
