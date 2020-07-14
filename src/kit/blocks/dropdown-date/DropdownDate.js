@@ -15,7 +15,6 @@ class DropdownDate {
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
-      onChangeView: this._onChangeView.bind(this),
       onShow: this._onShow.bind(this)
     };
 
@@ -36,12 +35,13 @@ class DropdownDate {
     import('air-datepicker/dist/js/datepicker.min').then(() => {
       this._picker = $anchor.datepicker(params).data('datepicker');
       this._setButtons();
-      if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates)
+      if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates);
     });
     this._handleWindowResize = this._handleWindowResize.bind(this);
   }
 
   _setButtons() {
+    this._picker.$datepicker.find('.datepicker--nav-title').addClass('-disabled-');
     this._$cancel = this._picker.$datepicker.find('.datepicker--button');
     this._$cancel.addClass(['datepicker--button-cancel', 'datepicker--button-hidden']);
     this._$cancel.on('click', this._handleCancelClick.bind(this));
@@ -59,7 +59,7 @@ class DropdownDate {
 
   _updatePosition() {
     if (this._areResponsiveUpdateRequired()) {
-      this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].offsetWidth) / 2 + 'px')
+      this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].offsetWidth) / 2 + 'px');
     }
   }
 
@@ -69,6 +69,7 @@ class DropdownDate {
 
   _handleCancelClick() {
     this._picker.clear();
+    this._picker.hide();
     this._$cancel.addClass('datepicker--button-hidden');
     this._$dateFields.val('');
     this._oldDates = [];
@@ -103,10 +104,6 @@ class DropdownDate {
     if (this._oldDates.length === 0) {
       this._$cancel.addClass('datepicker--button-hidden');
     }
-  }
-
-  _onChangeView() {
-    this._updatePosition();
   }
 
   _onShow() {
