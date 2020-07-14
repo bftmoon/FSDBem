@@ -3,7 +3,8 @@
 
 %field {
   width: 100%;
-  height: px-to-rem(44px);
+  // todo: change to margin?
+  min-height: px-to-rem(44px);
   border: none;
   background: white;
   color: $dark-shade75;

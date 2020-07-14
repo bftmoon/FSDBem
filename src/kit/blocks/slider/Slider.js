@@ -14,12 +14,12 @@ class Slider {
         slide: this._slideListener,
       });
 
-      this._$amount.val(Slider.formatRange(this.$picker.slider('values')));
+      this._$amount.text(Slider.formatRange(this.$picker.slider('values')));
     });
   }
 
-  _slideListener(_, ui) {
-    this._$amount.val(Slider.formatRange(ui.values));
+  _slideListener(__, ui) {
+    this._$amount.text(Slider.formatRange(ui.values));
   }
 
   static formatRange([sum1, sum2]) {

@@ -3,7 +3,9 @@
 @import '../../env-styles/variables';
 
 .paginator {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 
   &__item {
     display: inline-block;

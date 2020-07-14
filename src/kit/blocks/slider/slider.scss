@@ -4,6 +4,7 @@
 .slider {
   &__picker {
     height: 6px;
+    cursor: pointer;
     border: 1px solid $dark-shade25 {
       radius: 4px;
     }
@@ -11,6 +12,7 @@
 
   &__header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding-right: 1px;
@@ -22,14 +24,11 @@
     text-transform: uppercase;
   }
 
+  //todo: margin after line-height fix on wrap
   &__amount {
-    display: flex;
-    width: 1px;
-    flex-grow: 1;
-    border: none;
     margin-bottom: 1px;
     color: $dark-shade50;
+    font-weight: initial;
     font-size: px-to-rem(12px);
-    text-align: end;
   }
 }
