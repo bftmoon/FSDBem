@@ -16,7 +16,7 @@ mixin calculator-card({room, options, costs})
     form&attributes(attributes)
       .calculator-card__date
         +dropdown-date({
-          titles: ["Прибытие", "Выезд"],
+          titles: ["Константин Константинович Константинопольский", "Константин Константинович Константинопольский"],
           dates: [new Date(options.startDate), new Date(options.endDate)]
         })
       .calculator-card__guests
@@ -31,7 +31,7 @@ mixin calculator-card({room, options, costs})
         .calculator-card__empty-tooltip
         .calculator-card__price-item= util.toRuPrice(room.price * range)
         .calculator-card__price-info
-          | Сбор за услуги: скидка
+          | Константин Константинович Константинопольский Константин Константинович Константинопольский
           span.calculator-card__price=" " + util.toRuPrice(costs.discount)
         .calculator-card__tooltip(title="some important info") i
         .calculator-card__price-item= util.toRuPrice(costs.service)
@@ -39,7 +39,7 @@ mixin calculator-card({room, options, costs})
         .calculator-card__tooltip(title="some important info") i
         .calculator-card__price-item.calculator-card__price-item_line_small= util.toRuPrice(costs.overService)
       h2.calculator-card__result
-        | Итого
+        | Константин Константинович Константинопольский
         .calculator-card__separator
         .calculator-card__summary= util.toRuPrice(room.price * range + costs.service + costs.overService - costs.discount)
-      +button("Забронировать", {isArrowed: true})
+      +button("Константин Константинович Константинопольский", {isArrowed: true})
