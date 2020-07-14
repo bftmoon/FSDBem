@@ -6,7 +6,6 @@
 
   &-handle {
     position: absolute;
-    z-index: 2;
     top: px-to-rem(-6px);
     width: px-to-rem(16px);
     height: px-to-rem(16px);
@@ -22,7 +21,6 @@
 
   &-range {
     position: absolute;
-    z-index: 1;
     top: 0;
     display: block;
     height: 100%;

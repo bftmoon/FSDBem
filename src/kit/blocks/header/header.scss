@@ -16,6 +16,10 @@
     white-space: nowrap;
   }
 
+  &_mode_sidebar &__content{
+    white-space: initial;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
@@ -31,7 +35,7 @@
 
     &_opened {
       position: fixed;
-      z-index: 101;
+      z-index: 15;
       top: 0;
       right: 0;
       display: flex;
@@ -99,9 +103,8 @@
   }
 
   &__link {
-    display: flex;
+    display: inline-flex;
     height: 100%;
-    flex-grow: 1;
     align-items: center;
 
     &_important {

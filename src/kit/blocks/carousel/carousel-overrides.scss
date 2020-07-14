@@ -16,7 +16,7 @@
   > .lSNext,
   > .lSPrev {
     position: static;
-    z-index: 1;
+    z-index: initial;
     display: flex;
     width: 42px;
     height: 100%;
@@ -72,7 +72,6 @@
 
 .lSPager {
   position: absolute;
-  z-index: 2;
   right: 12px;
   bottom: 15px;
 }
