@@ -11,6 +11,7 @@
   &__prefix {
     color: $dark-shade100;
     font-family: $quicksand;
+    line-height: px-to-rem(17px);
   }
 
   &__number {
@@ -20,10 +21,12 @@
     color: $dark-shade100;
     font-family: $quicksand;
     font-size: px-to-rem(24px);
+    line-height: px-to-rem(30px);
 
     &_font_mini {
       margin-left: 4px;
       font-size: px-to-rem(19px);
+      line-height: px-to-rem(24px);
     }
   }
 
@@ -31,6 +34,7 @@
     color: $primary;
     font-size: px-to-rem(12px);
     text-transform: uppercase;
+    line-height: px-to-rem(15px);
   }
 
   &__separator {
@@ -40,11 +44,13 @@
 
   &__price {
     color: $dark-shade50;
+    line-height: px-to-rem(18px);
   }
 
   &__info {
     color: $dark-shade50;
     font-size: px-to-rem(12px);
     font-weight: normal;
+    line-height: px-to-rem(18px);
   }
 }

@@ -1,6 +1,6 @@
 mixin checkable-item({type, text, description})
-  .checkable-item(class = description ? "checkable-item_vertical" : "")
-    label.checkable-item__label
+  .checkable-item
+    label(class="checkable-item__label_type_" + type).checkable-item__label
       input.checkable-item__input(type=type)&attributes(attributes)
       .checkable-item__checker(class="checkable-item__checker_type_" + type)
       .checkable-item__text(class=["checkable-item__text_type_" + type, description ? "checkable-item__text_title" : ""])=text

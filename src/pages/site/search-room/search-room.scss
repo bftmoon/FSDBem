@@ -6,8 +6,8 @@ $search-room-point-big: 857px;
 .search-room {
   position: relative;
   display: grid;
-  max-width: 1174px;
-  padding: 30px 6px 0;
+  max-width: 1202px;
+  padding: 30px 20px 0;
   margin: auto;
   gap: 58.7px;
   grid-template-columns: 266px 1fr;
@@ -33,7 +33,7 @@ $search-room-point-big: 857px;
   }
 
   &__cost-info {
-    margin-top: 9px;
+    margin-top: 14px;
     color: $dark-shade50;
     font-size: px-to-rem(12px);
     line-height: px-to-rem(14px);
@@ -44,11 +44,11 @@ $search-room-point-big: 857px;
   }
 
   &__facility {
-    margin: 24px 0 30px;
+    margin: 29px 0 32px;
   }
 
   &__accessibility {
-    margin-bottom: 30px;
+    margin-bottom: 29px;
   }
 
   &__furniture {
@@ -76,6 +76,7 @@ $search-room-point-big: 857px;
 
   &__room-link {
     width: 100%;
+    display: flex;
     max-width: 340px;
     cursor: pointer;
   }
@@ -83,6 +84,6 @@ $search-room-point-big: 857px;
   &__paginator-wrapper {
     display: flex;
     justify-content: center;
-    margin: 42px 0 73px;
+    margin: 40px 0 73px;
   }
 }

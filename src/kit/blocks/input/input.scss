@@ -10,6 +10,7 @@
   color: $dark-shade75;
   font-size: px-to-rem(14px);
   text-overflow: ellipsis;
+  line-height: px-to-rem(24px);
 
   &:hover {
     border-color: $dark-shade50;

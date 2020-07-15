@@ -6,8 +6,7 @@
   @extend %card;
 
   &__title {
-    margin-top: 3px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   &__date {
@@ -21,7 +20,7 @@
 
   &__calculates {
     display: grid;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
     margin-left: 1px;
     grid-row-gap: px-to-rem(11px);
     grid-template-columns: 0.73fr auto 0.2fr;
@@ -42,7 +41,7 @@
   }
 
   &__tooltip {
-    display: inline-block;
+    display: inline-flex;
     width: px-to-rem(20px);
     height: px-to-rem(20px);
     border: 1px solid $dark-shade25 {
@@ -52,8 +51,9 @@
     cursor: help;
     font-size: px-to-rem(12px);
     font-weight: bold;
-    line-height: px-to-rem(20px);
-    text-align: center;
+    line-height: px-to-rem(14px);
+    align-items: center;
+    justify-content: center;
   }
 
   &__price-item {
@@ -80,5 +80,9 @@
     margin-right: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+  }
+
+  &__summary{
+    white-space: nowrap;
   }
 }

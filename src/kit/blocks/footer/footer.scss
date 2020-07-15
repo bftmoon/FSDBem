@@ -17,9 +17,9 @@ $footer-point-small: 768px;
 
   &__menu {
     display: grid;
-    max-width: px-to-rem(1200px);
-    padding: 5px 19px 5px 20px;
-    margin: 94px auto 80px;
+    max-width: px-to-rem(1220px);
+    padding: 15px 29px 15px 30px;
+    margin: 84px auto 70px;
     grid-row-gap: 30px;
     grid-template-columns: 1.01fr 2.5fr 1.02fr;
 
@@ -82,6 +82,10 @@ $footer-point-small: 768px;
     list-style: none;
   }
 
+  &__nav-link{
+    line-height: px-to-rem(17px);
+  }
+
   &__subscribe-offer {
     max-width: 260px;
     margin-top: 4px;
@@ -100,6 +104,10 @@ $footer-point-small: 768px;
 
   &__subscribe-title {
     margin-bottom: 18px;
+
+    @media screen and (max-width: $footer-point-medium) {
+      text-align: center;
+    }
   }
 
   &__subscribe-info {
@@ -127,10 +135,10 @@ $footer-point-small: 768px;
 
   &__info {
     display: flex;
-    max-width: px-to-rem(1190px);
+    max-width: px-to-rem(1210px);
     align-items: center;
     justify-content: space-between;
-    padding: 21px 4px;
+    padding: 21px 14px;
     margin: auto;
 
     @media screen and (max-width: $footer-point-small) {
@@ -142,6 +150,7 @@ $footer-point-small: 768px;
 
   &__copyright {
     margin-left: 10px;
+    line-height: px-to-rem(17px);
 
     @media screen and (max-width: $footer-point-small) {
       margin-bottom: 23px;

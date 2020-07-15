@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: space-between;
     padding-right: 1px;
-    margin-bottom: 23px;
+    margin-bottom: 22px;
     color: $dark-shade100;
     font-size: px-to-rem(12px);
     font-weight: bold;
@@ -24,9 +24,13 @@
     text-transform: uppercase;
   }
 
+  &__title{
+    margin-bottom: 1px;
+  }
+
   //todo: margin after line-height fix on wrap
   &__amount {
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     color: $dark-shade50;
     font-weight: initial;
     font-size: px-to-rem(12px);

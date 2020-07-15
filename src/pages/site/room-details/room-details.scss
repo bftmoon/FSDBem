@@ -1,4 +1,5 @@
 @import '../../../kit/env-styles/variables';
+@import '../../../kit/env-styles/functions';
 
 $details-page-point-images-medium: 850px;
 $details-page-point-images-small: 430px;
@@ -26,11 +27,6 @@ $details-page-point-content-small: 460px;
       // @formatter:on
       grid-template-columns: 1fr 1fr;
     }
-
-    @media screen and (max-width: $details-page-point-images-small) {
-      grid-template-areas: 'img-1' 'img-2' 'img-3';
-      grid-template-columns: 1fr;
-    }
   }
 
   &__image-1 {
@@ -50,11 +46,11 @@ $details-page-point-content-small: 460px;
 
   &__details {
     display: grid;
-    max-width: 1184px;
-    padding: 0 10px;
+    max-width: 1194px;
+    padding: 0 15px;
     margin: 69.5px auto 62px;
     grid-column-gap: 40px;
-    grid-row-gap: 29px;
+    grid-row-gap: 30px;
     // @formatter:off
     grid-template-areas:
       'info chart card'
@@ -78,14 +74,12 @@ $details-page-point-content-small: 460px;
     }
 
     @media screen and (max-width: $details-page-point-content-medium) {
-      grid-template-areas: 'card' 'info' 'chart' 'feedbacks' 'rules' 'cancel';
+      grid-template-areas: 'info' 'chart' 'feedbacks' 'rules' 'cancel' 'card';
       grid-template-columns: 1fr;
       justify-items: center;
     }
 
     @media screen and (max-width: $details-page-point-content-small) {
-      padding-right: 3px;
-      padding-left: 3px;
       margin-right: 0;
       margin-left: 0;
     }
@@ -135,23 +129,30 @@ $details-page-point-content-small: 460px;
 
   &__feedbacks-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-bottom: 15px;
     margin-left: 1px;
   }
 
+  &__feedbacks-title{
+    margin-bottom: 4px;
+  }
+
   &__feedbacks-count {
     color: $dark-shade50;
-    line-height: 2;
+    line-height: px-to-rem(14px);
     white-space: nowrap;
+    display: flex;
+    align-items: center;
   }
 
   &__feedback {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
     list-style: none;
 
-    &_last {
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -201,6 +202,13 @@ $details-page-point-content-small: 460px;
 
     @media screen and (max-width: $details-page-point-content-large) {
       justify-self: center;
+    }
+
+    @media screen and (max-width: $details-page-point-content-medium){
+      margin-top: 25px;
+      margin-right: 0;
+      width: 100%;
+      max-width: 380px;
     }
   }
 }

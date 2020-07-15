@@ -17,8 +17,11 @@
 
   &__icon {
     display: flex;
+    align-items: center;
+    text-align: center;
     width: px-to-rem(24px);
     height: px-to-rem(24px);
+    line-height: px-to-rem(23px);
     background: $gradient;
     -webkit-background-clip: text;
     color: transparent;

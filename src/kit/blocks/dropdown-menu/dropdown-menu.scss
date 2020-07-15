@@ -22,6 +22,7 @@
 
     &_opened {
       border-color: $dark-shade50;
+      border-bottom: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       box-shadow: $shadow-smaller;
@@ -47,9 +48,8 @@
     display: none;
     width: 100%;
     height: auto;
-    padding: 2px 6px 4px 14px;
+    padding: 0 6px 5px 14px;
     border: 1px solid $dark-shade25;
-    border-top: 0;
     background: white;
     border-radius: 0 0 4px 4px;
     box-shadow: $shadow-smaller;
@@ -75,6 +75,10 @@
     justify-content: space-between;
   }
 
+  &__item-text{
+    line-height: px-to-rem(15px);
+  }
+
   &__counter {
     display: flex;
     align-items: center;
@@ -83,6 +87,7 @@
 
   &__count {
     width: px-to-rem(32px);
+    line-height: px-to-rem(15px);
     border: none;
     background: white;
     font: inherit;
@@ -93,13 +98,14 @@
   &__increment {
     width: px-to-rem(30px);
     height: px-to-rem(30px);
-    padding: 0;
+    //padding: 0;
     border: 1px solid $dark-shade25;
     background: white;
     border-radius: 50%;
     color: $dark-shade50;
     cursor: pointer;
     font-size: px-to-rem(18px);
+    line-height: px-to-rem(22px);
 
     &:disabled {
       cursor: default;
