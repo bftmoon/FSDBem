@@ -5,12 +5,14 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  flex-wrap: wrap;
 
   &__chart {
     position: relative;
     width: 124px;
     height: 124px;
     margin-right: 23px;
+    margin-bottom: 10px;
     flex-shrink: 0;
   }
 
@@ -45,6 +47,10 @@
   &__voice {
     font-size: px-to-rem(12px);
     line-height: px-to-rem(15px);
+  }
+
+  &__legend{
+    margin-bottom: 10px;
   }
 
   &__item {

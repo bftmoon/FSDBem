@@ -51,8 +51,8 @@ $details-page-point-content-small: 460px;
 
   &__details {
     display: grid;
-    max-width: 1184px;
-    padding: 0 10px;
+    max-width: 1194px;
+    padding: 0 15px;
     margin: 69.5px auto 62px;
     grid-column-gap: 40px;
     grid-row-gap: 29px;
@@ -85,8 +85,6 @@ $details-page-point-content-small: 460px;
     }
 
     @media screen and (max-width: $details-page-point-content-small) {
-      padding-right: 3px;
-      padding-left: 3px;
       margin-right: 0;
       margin-left: 0;
     }
@@ -144,14 +142,14 @@ $details-page-point-content-small: 460px;
   }
 
   &__feedbacks-title{
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
 
   &__feedbacks-count {
     color: $dark-shade50;
     line-height: px-to-rem(14px);
     white-space: nowrap;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
 
   &__feedback {
