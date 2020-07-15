@@ -42,7 +42,7 @@
   }
 
   &__tooltip {
-    display: inline-block;
+    display: inline-flex;
     width: px-to-rem(20px);
     height: px-to-rem(20px);
     border: 1px solid $dark-shade25 {
@@ -52,8 +52,9 @@
     cursor: help;
     font-size: px-to-rem(12px);
     font-weight: bold;
-    line-height: px-to-rem(20px);
-    text-align: center;
+    line-height: px-to-rem(14px);
+    align-items: center;
+    justify-content: center;
   }
 
   &__price-item {
@@ -80,5 +81,9 @@
     margin-right: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+  }
+
+  &__summary{
+    white-space: nowrap;
   }
 }

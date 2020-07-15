@@ -1,4 +1,5 @@
 @import '../../env-styles/variables';
+@import '../../env-styles/functions';
 
 .toggle {
   display: inline-flex;
@@ -51,6 +52,6 @@
   }
 
   &__text {
-    line-height: 1;
+    line-height: px-to-rem(24px);
   }
 }

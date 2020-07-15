@@ -68,11 +68,11 @@
   &__text {
     padding-top: 2px;
     color: $dark-shade50;
-    line-height: 129%;
+    line-height: px-to-rem(18px);
     white-space: pre-wrap;
 
     &_type_radio {
-      line-height: 120%;
+      line-height: px-to-rem(24px);
     }
 
     &_title {
@@ -85,22 +85,12 @@
     color: $dark-shade75;
   }
 
-  &__text-with-info {
-    padding-top: 1px;
-    line-height: 129%;
-    white-space: pre-wrap;
-  }
-
-  &__title {
-    font-weight: bold;
-  }
-
   &__description {
     padding-top: 5px;
     margin-left: 30px;
     color: $dark-shade50;
     font-size: px-to-rem(12px);
-    line-height: 117%;
+    line-height: px-to-rem(14px);
     white-space: pre-wrap;
   }
 }

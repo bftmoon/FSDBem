@@ -82,6 +82,10 @@ $footer-point-small: 768px;
     list-style: none;
   }
 
+  &__nav-link{
+    line-height: px-to-rem(17px);
+  }
+
   &__subscribe-offer {
     max-width: 260px;
     margin-top: 4px;
@@ -100,6 +104,10 @@ $footer-point-small: 768px;
 
   &__subscribe-title {
     margin-bottom: 18px;
+
+    @media screen and (max-width: $footer-point-medium) {
+      text-align: center;
+    }
   }
 
   &__subscribe-info {
@@ -142,6 +150,7 @@ $footer-point-small: 768px;
 
   &__copyright {
     margin-left: 10px;
+    line-height: px-to-rem(17px);
 
     @media screen and (max-width: $footer-point-small) {
       margin-bottom: 23px;

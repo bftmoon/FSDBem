@@ -76,6 +76,7 @@ $search-room-point-big: 857px;
 
   &__room-link {
     width: 100%;
+    display: flex;
     max-width: 340px;
     cursor: pointer;
   }

@@ -50,6 +50,7 @@ $dropdown-date-point: 340px;
     background: none;
     cursor: pointer;
     font-size: px-to-rem(14px);
+    line-height: px-to-rem(24px);
     text-transform: lowercase;
 
     &::placeholder {

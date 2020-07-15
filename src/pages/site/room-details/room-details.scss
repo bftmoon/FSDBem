@@ -1,4 +1,5 @@
 @import '../../../kit/env-styles/variables';
+@import '../../../kit/env-styles/functions';
 
 $details-page-point-images-medium: 850px;
 $details-page-point-images-small: 430px;
@@ -135,16 +136,22 @@ $details-page-point-content-small: 460px;
 
   &__feedbacks-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 4px;
     margin-bottom: 15px;
     margin-left: 1px;
   }
 
+  &__feedbacks-title{
+    margin-bottom: 3px;
+  }
+
   &__feedbacks-count {
     color: $dark-shade50;
-    line-height: 2;
+    line-height: px-to-rem(14px);
     white-space: nowrap;
+    margin-bottom: 3px;
   }
 
   &__feedback {

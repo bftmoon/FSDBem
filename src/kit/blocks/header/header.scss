@@ -34,6 +34,7 @@
     display: none;
 
     &_opened {
+      overflow-y: auto;
       position: fixed;
       z-index: 15;
       top: 0;
@@ -80,7 +81,6 @@
 
   &_mode_sidebar &__links-list {
     flex-direction: column;
-    overflow-y: auto;
   }
 
   &__simple-link {
@@ -104,6 +104,7 @@
 
   &__link {
     display: inline-flex;
+    line-height: px-to-rem(17px);
     height: 100%;
     align-items: center;
 
@@ -150,7 +151,7 @@
   }
 
   &_mode_sidebar &__register {
-    margin-bottom: 5px;
+    margin-bottom: 45px;
     margin-left: 0;
   }
 
@@ -186,6 +187,7 @@
     @extend %material-icons;
 
     color: $dark-shade50;
+    line-height: px-to-rem(20px);
   }
 
   &__dim {
