@@ -6,8 +6,7 @@
   @extend %card;
 
   &__title {
-    margin-top: 3px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   &__date {
@@ -21,7 +20,7 @@
 
   &__calculates {
     display: grid;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
     margin-left: 1px;
     grid-row-gap: px-to-rem(11px);
     grid-template-columns: 0.73fr auto 0.2fr;

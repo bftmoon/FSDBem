@@ -50,7 +50,7 @@ $details-page-point-content-small: 460px;
     padding: 0 15px;
     margin: 69.5px auto 62px;
     grid-column-gap: 40px;
-    grid-row-gap: 29px;
+    grid-row-gap: 30px;
     // @formatter:off
     grid-template-areas:
       'info chart card'
@@ -131,27 +131,28 @@ $details-page-point-content-small: 460px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-bottom: 15px;
     margin-left: 1px;
   }
 
   &__feedbacks-title{
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   &__feedbacks-count {
     color: $dark-shade50;
     line-height: px-to-rem(14px);
     white-space: nowrap;
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
   }
 
   &__feedback {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
     list-style: none;
 
-    &_last {
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -205,6 +206,9 @@ $details-page-point-content-small: 460px;
 
     @media screen and (max-width: $details-page-point-content-medium){
       margin-top: 25px;
+      margin-right: 0;
+      width: 100%;
+      max-width: 380px;
     }
   }
 }

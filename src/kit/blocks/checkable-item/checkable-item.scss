@@ -8,6 +8,10 @@
   &__label {
     display: inline-flex;
     cursor: pointer;
+
+    &_type_radio {
+      align-items: center;
+    }
   }
 
   &__input {
@@ -72,6 +76,7 @@
     white-space: pre-wrap;
 
     &_type_radio {
+      padding-top: 0;
       line-height: px-to-rem(24px);
     }
 

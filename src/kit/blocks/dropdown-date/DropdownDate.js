@@ -15,7 +15,8 @@ class DropdownDate {
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
-      onShow: this._onShow.bind(this)
+      onShow: this._onShow.bind(this),
+      onChangeMonth: this._onChangeMonth.bind(this),
     };
 
     const $anchor = $element.find('.js-dropdown-date__anchor');
@@ -109,6 +110,10 @@ class DropdownDate {
   _onShow() {
     this._updatePosition();
     $(window).on('resize', this._handleWindowResize);
+  }
+
+  _onChangeMonth() {
+    this._updatePosition();
   }
 
   _setValues(dates) {

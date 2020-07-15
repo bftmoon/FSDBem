@@ -20,13 +20,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: px-to-rem(7.5px);
+    padding-top: px-to-rem(11px);
     border-top: 1px solid $dark-shade10;
-    margin-top: px-to-rem(7px);
+    margin-top: px-to-rem(8px);
   }
 
   &__rewiew {
-    padding-top: 1px;
+    padding-top: 2px;
     margin-right: 2px;
     color: $dark-shade50;
     line-height: px-to-rem(18px);

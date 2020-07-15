@@ -36,8 +36,8 @@
   }
 
   &_size_mini {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
   }
 
   &__text {
@@ -45,12 +45,12 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 13px 17px;
+    padding: 12.5px 16.5px;
     background: white;
     border-radius: inherit;
 
     &_size_mini {
-      padding: 8px 19px;
+      padding: 7.5px 18.5px;
     }
   }
 
@@ -71,7 +71,7 @@
 
   &__arrowed-text {
     flex-grow: 2;
-    margin-left: px-to-rem(20px);
+    margin-left: px-to-rem(22px);
   }
 
   &_color_secondary {

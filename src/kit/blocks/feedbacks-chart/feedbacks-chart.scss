@@ -38,7 +38,6 @@
   }
 
   &__count {
-    padding-top: 2px;
     font-family: $quicksand;
     font-size: px-to-rem(24px);
     line-height: px-to-rem(30px);
@@ -47,6 +46,7 @@
   &__voice {
     font-size: px-to-rem(12px);
     line-height: px-to-rem(15px);
+    padding-bottom: 5px;
   }
 
   &__legend{
