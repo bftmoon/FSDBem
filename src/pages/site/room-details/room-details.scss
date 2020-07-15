@@ -27,11 +27,6 @@ $details-page-point-content-small: 460px;
       // @formatter:on
       grid-template-columns: 1fr 1fr;
     }
-
-    @media screen and (max-width: $details-page-point-images-small) {
-      grid-template-areas: 'img-1' 'img-2' 'img-3';
-      grid-template-columns: 1fr;
-    }
   }
 
   &__image-1 {
@@ -79,7 +74,7 @@ $details-page-point-content-small: 460px;
     }
 
     @media screen and (max-width: $details-page-point-content-medium) {
-      grid-template-areas: 'card' 'info' 'chart' 'feedbacks' 'rules' 'cancel';
+      grid-template-areas: 'info' 'chart' 'feedbacks' 'rules' 'cancel' 'card';
       grid-template-columns: 1fr;
       justify-items: center;
     }
@@ -206,6 +201,10 @@ $details-page-point-content-small: 460px;
 
     @media screen and (max-width: $details-page-point-content-large) {
       justify-self: center;
+    }
+
+    @media screen and (max-width: $details-page-point-content-medium){
+      margin-top: 25px;
     }
   }
 }
