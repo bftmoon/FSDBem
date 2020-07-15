@@ -62,8 +62,8 @@ block body
           h3.form-elements__title Subscription text field
           +subscribe-input
       .form-elements__simple-checkables
+        h3.form-elements__title Checkbox buttons
         .form-elements__checklist
-          h3.form-elements__hight-title Checkbox buttons
           +checkbox-list({
             items: [
               {
@@ -92,26 +92,27 @@ block body
             ]
           })
         .form-elements__radio
-          h3.form-elements__hight-title Radio buttons
-          +radio-list({
-            items: [
-              {
-                text: "Мужчина",
-                attributes: {
-                  value: "M",
-                  name: "gender",
-                  checked: true
+          h3.form-elements__title Radio buttons
+          .form-elements__radio-list
+            +radio-list({
+              items: [
+                {
+                  text: "Мужчина",
+                  attributes: {
+                    value: "M",
+                    name: "gender",
+                    checked: true
+                  }
+                },
+                {
+                  text: "Женщина",
+                  attributes: {
+                    value: "W",
+                    name: "gender"
+                  }
                 }
-              },
-              {
-                text: "Женщина",
-                attributes: {
-                  value: "W",
-                  name: "gender"
-                }
-              }
-            ]
-          })
+              ]
+            })
         .form-elements__toggles
           h3.form-elements__title Toggle
           .form-elements__toggle-on

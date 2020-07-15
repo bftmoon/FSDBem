@@ -37,7 +37,7 @@ $form-elements-point-small: 630px;
   }
 
   &__hover-input {
-    margin-top: 21px;
+    margin-top: 20px;
   }
 
   &__default-dropdown {
@@ -54,7 +54,7 @@ $form-elements-point-small: 630px;
 
   &__filter-date {
     max-width: 266px;
-    margin-top: 40px;
+    margin-top: 41px;
   }
 
   &__subscribe {
@@ -63,7 +63,6 @@ $form-elements-point-small: 630px;
   }
 
   &__simple-checkables {
-    padding-top: 1px;
     margin-left: 60px;
 
     @media screen and (max-width: $form-elements-point-middle) {
@@ -71,20 +70,28 @@ $form-elements-point-small: 630px;
     }
   }
 
+  &__checklist{
+    margin-top: 17px;
+  }
+
   &__radio {
     margin-top: 41px;
   }
 
+  &__radio-list{
+    margin-top: 14px;
+  }
+
   &__toggles {
-    margin-top: 36px;
+    margin-top: 34px;
   }
 
   &__toggle-on {
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   &__toggle-off {
-    margin-top: 7px;
+    margin-top: 4px;
   }
 
   &__likes {
@@ -93,16 +100,17 @@ $form-elements-point-small: 630px;
 
   &__like {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 9px;
     margin-right: 10px;
   }
 
   &__rates {
-    margin-top: 39px;
+    margin-top: 38px;
   }
 
   &__rate {
     display: inline-block;
+    margin-top: 4px;
     margin-right: 20px;
   }
 
@@ -119,7 +127,7 @@ $form-elements-point-small: 630px;
   }
 
   &__buttons {
-    margin-top: 44px;
+    margin-top: 43px;
   }
 
   &__raised-button {
@@ -141,7 +149,7 @@ $form-elements-point-small: 630px;
   }
 
   &__paginator {
-    margin-top: 41px;
+    margin-top: 40px;
     margin-left: 1px;
   }
 
@@ -233,7 +241,7 @@ $form-elements-point-small: 630px;
 
   &__feedback {
     max-width: 713px;
-    margin-top: 59px;
+    margin-top: 58px;
     margin-left: 59px;
     grid-column: 2/ span 2;
 
