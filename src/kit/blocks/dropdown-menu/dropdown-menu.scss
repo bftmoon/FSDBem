@@ -76,6 +76,8 @@
   }
 
   &__item-text{
+    margin-top: 5px;
+    margin-bottom: 5px;
     line-height: px-to-rem(15px);
   }
 
@@ -98,7 +100,6 @@
   &__increment {
     width: px-to-rem(30px);
     height: px-to-rem(30px);
-    //padding: 0;
     border: 1px solid $dark-shade25;
     background: white;
     border-radius: 50%;
