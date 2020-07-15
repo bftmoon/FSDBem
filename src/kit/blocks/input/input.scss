@@ -9,8 +9,8 @@
   padding-left: 13px;
   color: $dark-shade75;
   font-size: px-to-rem(14px);
-  text-overflow: ellipsis;
   line-height: px-to-rem(24px);
+  text-overflow: ellipsis;
 
   &:hover {
     border-color: $dark-shade50;

@@ -4,16 +4,16 @@
 .feedbacks-chart {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   flex-wrap: wrap;
+  align-items: flex-end;
 
   &__chart {
     position: relative;
     width: 124px;
     height: 124px;
+    flex-shrink: 0;
     margin-right: 23px;
     margin-bottom: 10px;
-    flex-shrink: 0;
   }
 
   &__donut {
@@ -44,12 +44,12 @@
   }
 
   &__voice {
+    padding-bottom: 5px;
     font-size: px-to-rem(12px);
     line-height: px-to-rem(15px);
-    padding-bottom: 5px;
   }
 
-  &__legend{
+  &__legend {
     margin-bottom: 10px;
   }
 
@@ -59,10 +59,10 @@
   }
 
   &__bullet {
-    flex-shrink: 0;
     display: inline-block;
     width: 10px;
     height: 10px;
+    flex-shrink: 0;
     margin: auto 5px;
     border-radius: 50%;
 

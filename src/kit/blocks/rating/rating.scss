@@ -23,10 +23,10 @@
 
     width: 24px;
     height: 24px;
-    line-height: px-to-rem(20px);
     background: $gradient;
     -webkit-background-clip: text;
     color: transparent;
+    line-height: px-to-rem(20px);
 
     &_absolute {
       position: absolute;

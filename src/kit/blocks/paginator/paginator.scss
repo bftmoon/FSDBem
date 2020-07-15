@@ -31,8 +31,8 @@
     @extend %material-icons;
 
     color: white;
-    vertical-align: middle;
     line-height: px-to-rem(20px);
+    vertical-align: middle;
   }
 
   &__current {

@@ -44,6 +44,8 @@
     display: inline-flex;
     width: px-to-rem(20px);
     height: px-to-rem(20px);
+    align-items: center;
+    justify-content: center;
     border: 1px solid $dark-shade25 {
       radius: 50%;
     }
@@ -52,8 +54,6 @@
     font-size: px-to-rem(12px);
     font-weight: bold;
     line-height: px-to-rem(14px);
-    align-items: center;
-    justify-content: center;
   }
 
   &__price-item {
@@ -82,7 +82,7 @@
     margin-left: 5px;
   }
 
-  &__summary{
+  &__summary {
     white-space: nowrap;
   }
 }

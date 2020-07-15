@@ -75,7 +75,7 @@
     justify-content: space-between;
   }
 
-  &__item-text{
+  &__item-text {
     margin-top: 5px;
     margin-bottom: 5px;
     line-height: px-to-rem(15px);
@@ -89,10 +89,10 @@
 
   &__count {
     width: px-to-rem(32px);
-    line-height: px-to-rem(15px);
     border: none;
     background: white;
     font: inherit;
+    line-height: px-to-rem(15px);
     text-align: center;
   }
 

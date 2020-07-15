@@ -4,10 +4,10 @@
 .slider {
   &__picker {
     height: 6px;
-    cursor: pointer;
     border: 1px solid $dark-shade25 {
       radius: 4px;
     }
+    cursor: pointer;
   }
 
   &__header {
@@ -24,7 +24,7 @@
     text-transform: uppercase;
   }
 
-  &__title{
+  &__title {
     margin-bottom: 1px;
   }
 
@@ -32,7 +32,7 @@
   &__amount {
     margin-bottom: 2px;
     color: $dark-shade50;
-    font-weight: initial;
     font-size: px-to-rem(12px);
+    font-weight: initial;
   }
 }
