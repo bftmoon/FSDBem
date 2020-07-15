@@ -4,6 +4,8 @@ $form-elements-point-middle: 980px;
 $form-elements-point-small: 630px;
 
 .form-elements {
+  min-height: 1853px;
+
   &__main {
     display: grid;
     max-width: 1170px;
