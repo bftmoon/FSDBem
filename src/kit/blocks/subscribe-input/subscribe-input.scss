@@ -23,7 +23,9 @@
 
   &__button {
     position: absolute;
+    display: flex;
     right: 0;
+    top: 0;
     height: 100%;
     border: none;
     background: none;
