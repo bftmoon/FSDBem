@@ -5,7 +5,7 @@
 .like-button {
   position: relative;
   display: inline-block;
-  width: 40px;
+  min-width: 40px;
   height: 20px;
 
   &__box {
@@ -28,7 +28,7 @@
   &__icon {
     @extend %material-icons;
 
-    width: 50%;
+    width: px-to-rem(20px);
     font-size: px-to-rem(10px);
     text-align: center;
 
@@ -40,8 +40,9 @@
   }
 
   &__count {
-    width: 30%;
     font-size: px-to-rem(10px);
+    line-height: px-to-rem(12px);
+    padding-right: 4px;
     text-align: center;
   }
 
