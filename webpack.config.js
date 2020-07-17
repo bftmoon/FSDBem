@@ -51,7 +51,7 @@ const config = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
+      chunkFilename: '[name].[contenthash].css',
       ignoreOrder: true,
     }),
     new webpack.ProvidePlugin({
