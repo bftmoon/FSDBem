@@ -1,6 +1,7 @@
 @import '../../../kit/env-styles/theme';
 
-$colors-and-type-point: 770px;
+$colors-and-type-point-medium: 770px;
+$colors-and-type-point-small: 400px;
 
 .colors-and-type {
   min-height: 900px;
@@ -11,7 +12,12 @@ $colors-and-type-point: 770px;
     padding: 5px 40px;
     margin: 32px auto 0;
     grid-row-gap: 100px;
+    grid-column-gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+
+    @media screen and (max-width: $colors-and-type-point-small) {
+      padding: 5px 0;
+    }
   }
 
   &__colors {
@@ -20,7 +26,7 @@ $colors-and-type-point: 770px;
     grid-gap: 20px 40px;
     grid-template-columns: auto 1fr;
 
-    @media screen and (max-width: $colors-and-type-point) {
+    @media screen and (max-width: $colors-and-type-point-medium) {
       justify-self: center;
     }
   }
@@ -94,8 +100,13 @@ $colors-and-type-point: 770px;
     grid-template-columns: auto 1fr;
     justify-self: right;
 
-    @media screen and (max-width: $colors-and-type-point) {
+    @media screen and (max-width: $colors-and-type-point-medium) {
       justify-self: center;
+    }
+
+    @media screen and (max-width: $colors-and-type-point-small) {
+      justify-self: center;
+      padding: 5px 20px;
     }
   }
 
