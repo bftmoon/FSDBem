@@ -1,9 +1,14 @@
 extends ../layout/layout
 
+block keywords
+  meta(name="keywords" content="отель, toxin, профиль, регистрация")
+block description
+  meta(name="description" content="Создание аккаунта Toxin")
+
 block main
   include ../../../kit/blocks/registration-card/registration-card
   include ../../../kit/blocks/registration-card/registration-card
 
   article.registration
-    .registration__card.js-registration__card
+    .registration__card
       +registration-card
