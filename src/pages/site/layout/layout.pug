@@ -9,7 +9,9 @@ html(lang="ru")
     block keywords
     block description
     link(rel="icon" type="image/svg" href=require("../layout/images/favicon.svg").default)
+    link(rel="mask-icon" href=require("../layout/images/safari-pinned-tab.svg").default color="#c28ad1")
     title Toxin
+
   body.layout
     - const {home, links, login, register} = require(`../layout/json/header.json`)
     +header({home, links, login, register})
