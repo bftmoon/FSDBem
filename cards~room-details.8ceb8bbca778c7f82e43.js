@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{JXWt:function(t,a,n){},jqRu:function(t,a,n){"use strict";n("a+RB"),n("r5n0"),n("JXWt");var i=n("nErQ"),e=n("gTPn");class c{static init(t){i.a.initDefault({parent:t}),e.a.initDefault({parent:t})}static initDefault({selector:t=".js-calculator-card",parent:a=document}){c.init(a.querySelector(t))}}var r=c;a.a=r}}]);
