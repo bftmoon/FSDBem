@@ -4,10 +4,10 @@ mixin expander({title, isOpened})
       .expander__title=title
       i(
         class=isOpened ? "expander__icon_hidden" : ""
-      ).js-expander__icon.expander__icon expand_more
+      ).expander__icon.js-expander__icon expand_more
       i(
         class=!isOpened ? "expander__icon_hidden" : ""
-      ).js-expander__icon.expander__icon expand_less
+      ).expander__icon.js-expander__icon expand_less
     div(
       class = !isOpened ? "expander__content_hidden" : ""
     ).expander__content.js-expander__content
