@@ -15,8 +15,6 @@ class DropdownDate {
       showEvent: 'off',
       onSelect: this._onSelect.bind(this),
       onHide: this._onHide.bind(this),
-      onShow: this._onShow.bind(this),
-      onChangeMonth: this._onChangeMonth.bind(this),
     };
 
     const $anchor = $element.find('.js-dropdown-date__anchor');
@@ -36,9 +34,17 @@ class DropdownDate {
     import('air-datepicker/dist/js/datepicker.min').then(() => {
       this._picker = $anchor.datepicker(params).data('datepicker');
       this._setButtons();
+      this._picker.setPosition = this._setPosition.bind(this);
       if (this._oldDates.length !== 0) this._picker.selectDate(this._oldDates);
     });
-    this._handleWindowResize = this._handleWindowResize.bind(this);
+  }
+
+  _setPosition() {
+    this._picker.$datepicker
+      .css({
+        left: this._selectLeft(),
+        top: this._$dateFields[0].offsetTop + this._$dateFields[0].offsetHeight + 5 + 'px'
+      });
   }
 
   _setButtons() {
@@ -58,14 +64,15 @@ class DropdownDate {
     this._picker.show();
   }
 
-  _updatePosition() {
-    if (this._areResponsiveUpdateRequired()) {
-      this._picker.$datepicker.css('left', ($(window).width() - this._picker.$datepicker[0].offsetWidth) / 2 + 'px');
-    }
+  _selectLeft() {
+    const windowWidth = $(window).width();
+    const datepickerWidth = this._picker.$datepicker[0].offsetWidth;
+    const datepickerRight = this._picker.$el.offset().left + datepickerWidth;
+    return this._areCenteringRequired(windowWidth, datepickerRight) ? (windowWidth - datepickerWidth) / 2 : this._$dateFields[0].offsetLeft + 'px'
   }
 
-  _areResponsiveUpdateRequired() {
-    return !this._picker.opts.inline && (this._picker.$datepicker.offset().left + this._picker.$datepicker[0].offsetWidth) + 30 > $(window).width();
+  _areCenteringRequired(windowWidth, datepickerRight) {
+    return !this._picker.opts.inline && (windowWidth < 410 || datepickerRight > windowWidth);
   }
 
   _handleCancelClick() {
@@ -83,13 +90,6 @@ class DropdownDate {
     }
   }
 
-  _handleWindowResize() {
-    clearTimeout(this.resizeTimer);
-    this.resizeTimer = setTimeout(() => {
-      this._updatePosition();
-    });
-  }
-
   _onSelect(formattedDates, dates) {
     this._setValues(formattedDates);
     this._newDates = dates;
@@ -99,21 +99,11 @@ class DropdownDate {
   }
 
   _onHide() {
-    this._picker.clear(); // for normal work with empty old dates
+    this._picker.clear();
     this._picker.selectDate(this._oldDates);
-    $(window).off('resize', this._handleWindowResize);
     if (this._oldDates.length === 0) {
       this._$cancel.addClass('datepicker--button-hidden');
     }
-  }
-
-  _onShow() {
-    this._updatePosition();
-    $(window).on('resize', this._handleWindowResize);
-  }
-
-  _onChangeMonth() {
-    this._updatePosition();
   }
 
   _setValues(dates) {

@@ -136,16 +136,16 @@ $details-page-point-content-small: 460px;
     margin-left: 1px;
   }
 
-  &__feedbacks-title{
+  &__feedbacks-title {
     margin-bottom: 4px;
   }
 
   &__feedbacks-count {
+    display: flex;
+    align-items: center;
     color: $dark-shade50;
     line-height: px-to-rem(14px);
     white-space: nowrap;
-    display: flex;
-    align-items: center;
   }
 
   &__feedback {
@@ -204,11 +204,11 @@ $details-page-point-content-small: 460px;
       justify-self: center;
     }
 
-    @media screen and (max-width: $details-page-point-content-medium){
-      margin-top: 25px;
-      margin-right: 0;
+    @media screen and (max-width: $details-page-point-content-medium) {
       width: 100%;
       max-width: 380px;
+      margin-top: 25px;
+      margin-right: 0;
     }
   }
 }

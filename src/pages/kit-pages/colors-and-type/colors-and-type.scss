@@ -1,17 +1,17 @@
 @import '../../../kit/env-styles/theme';
 
+$colors-and-type-point: 770px;
+
 .colors-and-type {
+  min-height: 900px;
+
   &__main {
     display: grid;
-    max-width: 1150px;
-    padding: 5px;
-    margin: 32px auto 145px;
-    grid-row-gap: 60px;
+    max-width: 1220px;
+    padding: 5px 40px;
+    margin: 32px auto 0;
+    grid-row-gap: 100px;
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
-
-    @media screen and (max-width: 635px) {
-      justify-content: center;
-    }
   }
 
   &__colors {
@@ -20,7 +20,7 @@
     grid-gap: 20px 40px;
     grid-template-columns: auto 1fr;
 
-    @media screen and (max-width: 635px) {
+    @media screen and (max-width: $colors-and-type-point) {
       justify-self: center;
     }
   }
@@ -88,12 +88,13 @@
     max-width: 420px;
     height: min-content;
     margin-right: 23px;
+    margin-bottom: 80px;
     grid-column-gap: 30px;
     grid-row-gap: 47px;
     grid-template-columns: auto 1fr;
     justify-self: right;
 
-    @media screen and (max-width: 635px) {
+    @media screen and (max-width: $colors-and-type-point) {
       justify-self: center;
     }
   }

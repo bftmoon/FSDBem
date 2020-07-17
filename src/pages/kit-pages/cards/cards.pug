@@ -12,11 +12,12 @@ block body
   body.cards
     +kit-header
     main.cards__main
-      .cards__cards
+      .cards__group-1
         .cards__form
           +search-card
         .cards__form
           +registration-card
+      .cards__group-2
         .cards__form
           +calculator-card({
             room: {
@@ -38,6 +39,7 @@ block body
           })
         .cards__form
           +login-card
+      .cards__group-3
         .cards__calendar
           +dropdown-date({titles:[], isInline: true})
         .cards__room

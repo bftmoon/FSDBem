@@ -17,17 +17,17 @@
 
   &__icon {
     display: flex;
-    align-items: center;
-    text-align: center;
     width: px-to-rem(24px);
     height: px-to-rem(24px);
-    line-height: px-to-rem(23px);
+    align-items: center;
     background: $gradient;
     -webkit-background-clip: text;
     color: transparent;
     font-family: $brands;
     font-style: normal;
     font-weight: normal;
+    line-height: px-to-rem(23px);
+    text-align: center;
 
     &_type_twitter::before {
       content: '\f099';

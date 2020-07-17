@@ -3,12 +3,12 @@
 @import '../../env-styles/variables';
 
 .room-card {
+  display: flex;
   width: 100%;
+  flex-direction: column;
   background: white;
   border-radius: 4px;
   box-shadow: $shadow-smaller;
-  display: flex;
-  flex-direction: column;
 
   &__description {
     width: 100%;

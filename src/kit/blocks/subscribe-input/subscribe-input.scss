@@ -8,9 +8,10 @@
     @extend %field-bordered;
 
     width: 100%;
-    font-size: px-to-rem(14px);
-padding-left: 15px;
     padding-right: 40px;
+    padding-left: 15px;
+    font-size: px-to-rem(14px);
+
     &:invalid {
       box-shadow: 0 0 5px $primary;
     }
@@ -22,7 +23,9 @@ padding-left: 15px;
 
   &__button {
     position: absolute;
+    display: flex;
     right: 0;
+    top: 0;
     height: 100%;
     border: none;
     background: none;
