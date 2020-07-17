@@ -1,5 +1,5 @@
 import '../layout/layout';
 import './login.scss';
-import LoginPage from './LoginPage';
+import LoginCard from "@blocks/login-card";
 
-new LoginPage().create();
+LoginCard.initDefault({});

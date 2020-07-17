@@ -1,16 +1,20 @@
 @import '../../../kit/env-styles/functions';
 
-.login {
+.registration {
   display: flex;
   min-height: 703px;
   align-items: center;
   justify-content: center;
   padding: 0 2px;
-  background: url('./images/login.jpg') center;
+  background: url('./images/registration.jpg') center;
   background-size: cover;
 
   &__card {
     width: px-to-rem(380px);
     margin: 10px;
+
+    &_hidden {
+      display: none;
+    }
   }
 }
