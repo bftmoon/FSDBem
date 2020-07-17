@@ -16,7 +16,7 @@ module.exports = {
     $: 'readonly'
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 11,
     sourceType: 'module',
   },
   rules: {

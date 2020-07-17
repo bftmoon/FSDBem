@@ -10,10 +10,10 @@ class Carousel {
         prevHtml: '<i class="lSAction__icon">expand_more</i>',
         nextHtml: '<i class="lSAction__icon">expand_more</i>',
       });
-    })
+    });
   }
 
-  static initDefault({selector = '.js-carousel__content', parent = document}) {
+  static initDefault({ selector = '.js-carousel__content', parent = document }) {
     Carousel.init($(parent.querySelector(selector)));
   }
 }

@@ -24,9 +24,9 @@ class DropdownDate {
     this._oldDates = [];
     ['startUtc', 'endUtc'].forEach((utc) => {
       if ($anchor[0].dataset[utc] !== undefined) {
-        this._oldDates.push(new Date($anchor[0].dataset[utc]))
+        this._oldDates.push(new Date($anchor[0].dataset[utc]));
       }
-    })
+    });
     if (this._$dateFields.length !== 2) {
       params.dateFormat = 'd M';
     }
@@ -43,7 +43,7 @@ class DropdownDate {
     this._picker.$datepicker
       .css({
         left: this._selectLeft(),
-        top: this._$dateFields[0].offsetTop + this._$dateFields[0].offsetHeight + 5 + 'px'
+        top: `${this._$dateFields[0].offsetTop + this._$dateFields[0].offsetHeight + 5}px`,
       });
   }
 
@@ -68,7 +68,7 @@ class DropdownDate {
     const windowWidth = $(window).width();
     const datepickerWidth = this._picker.$datepicker[0].offsetWidth;
     const datepickerRight = this._picker.$el.offset().left + datepickerWidth;
-    return this._areCenteringRequired(windowWidth, datepickerRight) ? (windowWidth - datepickerWidth) / 2 : this._$dateFields[0].offsetLeft + 'px'
+    return this._areCenteringRequired(windowWidth, datepickerRight) ? (windowWidth - datepickerWidth) / 2 : `${this._$dateFields[0].offsetLeft}px`;
   }
 
   _areCenteringRequired(windowWidth, datepickerRight) {
@@ -108,23 +108,23 @@ class DropdownDate {
 
   _setValues(dates) {
     if (this._$dateFields.length === 2) {
-      const datesArr = dates.split(' - ');
-      this._$dateFields[0].value = datesArr[0];
-      this._$dateFields[1].value = datesArr[1] || '';
+      const [startDate, endDate] = dates.split(' - ');
+      this._$dateFields[0].value = startDate;
+      this._$dateFields[1].value = endDate || '';
     } else {
       this._$dateFields[0].value = dates;
     }
   }
 
-  static initAll({selector = '.js-dropdown-date', parent = document}) {
+  static initAll({ selector = '.js-dropdown-date', parent = document }) {
     $(parent).find(selector).each((_, element) => new DropdownDate().create($(element)));
   }
 
-  static initAllInline({selector = '.js-dropdown-date-inline', parent = document}) {
+  static initAllInline({ selector = '.js-dropdown-date-inline', parent = document }) {
     $(parent).find(selector).each((_, element) => new DropdownDate().create($(element), true));
   }
 
-  static initDefault({selector = '.js-dropdown-date', parent = document}) {
+  static initDefault({ selector = '.js-dropdown-date', parent = document }) {
     new DropdownDate().create($(parent.querySelector(selector)));
   }
 }

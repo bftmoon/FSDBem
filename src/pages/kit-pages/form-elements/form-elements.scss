@@ -182,9 +182,9 @@ $form-elements-point-small: 630px;
   }
 
   &__filled-guests {
+    max-width: 320px;
     margin-top: 60px;
     margin-left: 66px;
-    max-width: 320px;
 
     @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;

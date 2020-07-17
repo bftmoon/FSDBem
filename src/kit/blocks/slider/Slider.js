@@ -1,11 +1,11 @@
 class Slider {
-  create($element, {min = 0, max = 15000, current = [5000, 10000]}) {
+  create($element, { min = 0, max = 15000, current = [5000, 10000] }) {
     this._$element = $element;
     this._$amount = this._$element.find('.js-slider__amount');
     this.$picker = this._$element.find('.js-slider__picker');
     this._slideListener = this._slideListener.bind(this);
 
-    import('jquery-ui/ui/widgets/slider').then(()=> {
+    import('jquery-ui/ui/widgets/slider').then(() => {
       this.$picker.slider({
         range: true,
         min,
@@ -26,7 +26,7 @@ class Slider {
     return (`${sum1.toLocaleString()}₽ - ${sum2.toLocaleString()}₽`);
   }
 
-  static initDefault({selector = '.js-slider', parent = document, options = {}}) {
+  static initDefault({ selector = '.js-slider', parent = document, options = {} }) {
     new Slider().create($(parent.querySelector(selector)), options);
   }
 }

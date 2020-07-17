@@ -8,24 +8,25 @@ $cards-point-small: 395px;
 
   &__main {
     display: grid;
-    grid-template-columns: 380px 380px 320px;
-    grid-template-areas: 'group-1 group-2 group-3';
     max-width: 1160px;
     margin: 22px auto;
     grid-column-gap: 40px;
     grid-row-gap: 40px;
+    grid-template-areas: 'group-1 group-2 group-3';
+    grid-template-columns: 380px 380px 320px;
 
     @media screen and (max-width: $cards-point-large) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'group-1 group-2' 'group-3 group-3';
       margin: 40px;
+      grid-template-areas: 'group-1 group-2' 'group-3 group-3';
+      grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-width: $cards-point-medium) {
-      grid-template-columns: 1fr;
-      grid-template-areas: 'group-1' 'group-2' 'group-3';
       grid-row-gap: 0;
+      grid-template-areas: 'group-1' 'group-2' 'group-3';
+      grid-template-columns: 1fr;
     }
+
     @media screen and (max-width: $cards-point-small) {
       margin: 10px;
     }
@@ -33,6 +34,7 @@ $cards-point-small: 395px;
 
   &__group-1 {
     grid-area: group-1;
+
     @media screen and (max-width: $cards-point-medium) {
       display: flex;
       flex-direction: column;
@@ -49,6 +51,7 @@ $cards-point-small: 395px;
 
   &__group-2 {
     grid-area: group-2;
+
     @media screen and (max-width: $cards-point-medium) {
       display: flex;
       flex-direction: column;
@@ -58,10 +61,12 @@ $cards-point-small: 395px;
 
   &__group-3 {
     grid-area: group-3;
+
     @media screen and (max-width: $cards-point-large) {
       display: flex;
       justify-content: space-between;
     }
+
     @media screen and (max-width: $cards-point-medium) {
       display: flex;
       flex-direction: column;
@@ -77,7 +82,7 @@ $cards-point-small: 395px;
     padding-bottom: 24px;
     border: none;
 
-    @media screen and (max-width: $cards-point-large){
+    @media screen and (max-width: $cards-point-large) {
       padding: 0;
     }
 
@@ -92,8 +97,8 @@ $cards-point-small: 395px;
       }
 
       &__iconed-input {
-        height: auto;
         width: 0;
+        height: auto;
         border: none;
       }
 
