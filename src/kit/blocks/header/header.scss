@@ -83,23 +83,20 @@
     flex-direction: column;
   }
 
-  &__simple-link {
+  &__list-item {
     margin-right: 10px;
     margin-left: 11px;
+    &_type_menu{
+      display: flex;
+      margin-left: 10px;
+    }
   }
 
-  &__menu-link {
-    display: flex;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-
-  &_mode_sidebar &__menu-link {
+  &_mode_sidebar &__list-item {
     margin: 5px 25px;
-  }
-
-  &_mode_sidebar &__simple-link {
-    margin: 5px 25px;
+    &_type_menu{
+      margin: 5px 25px;
+    }
   }
 
   &__link {
