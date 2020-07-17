@@ -9,7 +9,7 @@ $form-elements-point-small: 630px;
   &__main {
     display: grid;
     max-width: 1220px;
-    padding: 5px 25px;
+    padding: 5px 30px;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
@@ -244,6 +244,7 @@ $form-elements-point-small: 630px;
     max-width: 713px;
     margin-top: 58px;
     margin-left: 59px;
+    padding-bottom: 30px;
     grid-column: 2/ span 2;
 
     @media screen and (max-width: $form-elements-point-middle) {
