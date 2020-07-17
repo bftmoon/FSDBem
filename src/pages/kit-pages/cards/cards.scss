@@ -1,34 +1,39 @@
+$cards-point-large: 1220px;
+$cards-point-medium: 1000px;
+$cards-point-small: 395px;
+
 .cards {
   min-height: 1350px;
   background: #f4f4f6;
 
   &__main {
-    padding-left: 77px;
+    display: grid;
+    grid-template-columns: 380px 380px 320px;
+    grid-template-areas: 'group-1 group-2 group-3';
+    max-width: 1160px;
+    margin: 22px auto;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
 
-    @media screen and (max-width: 1430px) {
-      padding-left: 0;
+    @media screen and (max-width: $cards-point-large) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'group-1 group-2' 'group-3 group-3';
+      margin: 40px;
     }
 
-    @media screen and (min-width: 1450px) {
-      padding-left: 0;
+    @media screen and (max-width: $cards-point-medium) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'group-1' 'group-2' 'group-3';
+      grid-row-gap: 0;
+    }
+    @media screen and (max-width: $cards-point-small) {
+      margin: 10px;
     }
   }
 
-  &__cards {
-    display: block;
-    max-width: 1247px;
-    max-height: 1200px;
-    padding: 5px 0;
-    margin: 17px auto;
-    -webkit-column-break-inside: avoid;
-    column-count: 3;
-    column-width: 380px;
-
-    @media screen and (max-width: 1045px) {
-      column-count: 2;
-    }
-
-    @media screen and (max-width: 695px) {
+  &__group-1 {
+    grid-area: group-1;
+    @media screen and (max-width: $cards-point-medium) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -38,19 +43,57 @@
   &__form {
     display: inline-block;
     width: 100%;
-    padding: 20px 5px;
+    max-width: 390px;
+    padding: 20px 0;
+  }
+
+  &__group-2 {
+    grid-area: group-2;
+    @media screen and (max-width: $cards-point-medium) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__group-3 {
+    grid-area: group-3;
+    @media screen and (max-width: $cards-point-large) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: $cards-point-medium) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__calendar {
     display: inline-block;
     width: 100%;
     max-width: 330px;
-    padding: 20px 5px 25px;
+    padding-top: 20px;
+    padding-bottom: 24px;
     border: none;
 
+    @media screen and (max-width: $cards-point-large){
+      padding: 0;
+    }
+
+    @media screen and (max-width: $cards-point-medium) {
+      padding-top: 20px;
+      padding-bottom: 24px;
+    }
+
     .dropdown-date {
+      &__item {
+        width: 0;
+      }
+
       &__iconed-input {
         height: auto;
+        width: 0;
         border: none;
       }
 
@@ -65,7 +108,7 @@
   &__room {
     display: inline-block;
     width: 100%;
-    max-width: 280px;
-    padding: 18px 5px 22px;
+    max-width: 270px;
+    margin-bottom: 22px;
   }
 }

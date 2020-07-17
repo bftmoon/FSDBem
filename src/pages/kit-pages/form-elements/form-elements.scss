@@ -8,8 +8,8 @@ $form-elements-point-small: 630px;
 
   &__main {
     display: grid;
-    max-width: 1170px;
-    padding: 5px;
+    max-width: 1220px;
+    padding: 5px 25px;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
@@ -17,8 +17,8 @@ $form-elements-point-small: 630px;
     grid-template-columns: repeat(3, minmax(250px, 400px));
 
     @media screen and (max-width: $form-elements-point-middle) {
-      grid-column-gap: 20px;
-      grid-row-gap: 30px;
+      grid-column-gap: 40px;
+      grid-row-gap: 70px;
       grid-template-columns: 1fr 1fr;
     }
 
@@ -184,6 +184,7 @@ $form-elements-point-small: 630px;
   &__filled-guests {
     margin-top: 60px;
     margin-left: 66px;
+    max-width: 320px;
 
     @media screen and (max-width: $form-elements-point-middle) {
       margin: 2px;
