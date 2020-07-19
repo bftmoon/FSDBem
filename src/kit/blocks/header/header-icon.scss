@@ -1,0 +1,55 @@
+// todo: move to changed header
+@import "../../env-styles/functions";
+@import "../../env-styles/variables";
+
+@mixin line-style {
+  background: $dark-shade50;
+  height: 2px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.header {
+  &__menu-b {
+    position: relative;
+    width: px-to-rem(20px);
+    height: px-to-rem(20px);
+    background: none;
+    border: none;
+  }
+
+  &__new-icon {
+    @include line-style;
+    margin: auto;
+
+    &:before {
+      @include line-style;
+      display: block;
+      position: absolute;
+      content: '';
+      top: 15%;
+    }
+
+    &:after {
+      @include line-style;
+      display: block;
+      position: absolute;
+      content: '';
+      bottom: 15%;
+    }
+  }
+
+  &__menu-b:hover &__new-icon {
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg);
+      top: 45%;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      bottom: 45%;
+    }
+  }
+}
