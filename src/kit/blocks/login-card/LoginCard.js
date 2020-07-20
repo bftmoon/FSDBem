@@ -4,7 +4,7 @@ class LoginCard {
     $element.find('.js-login-card__registration-button').find(':first-child').on('click', this._handleRegistrationButtonClick.bind(this));
   }
 
-  static initDefault({ selector = '.js-login-card', parent = document, registrationPath='./registration.html' }) {
+  static initDefault({ selector = '.js-login-card', parent = document, registrationPath = './registration.html' }) {
     new LoginCard().create($(parent).find(selector), registrationPath);
   }
 

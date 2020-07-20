@@ -5,10 +5,10 @@
 $header-point: 1040px;
 
 @mixin line-style {
-  background: $dark-shade50;
-  height: 2px;
-  border-radius: 2px;
   width: 100%;
+  height: 2px;
+  background: $dark-shade50;
+  border-radius: 2px;
 }
 
 .header {
@@ -18,10 +18,10 @@ $header-point: 1040px;
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
     max-width: px-to-rem(1180px);
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     padding: 15px 10px 15.4px;
     margin: 0 auto;
   }
@@ -37,58 +37,63 @@ $header-point: 1040px;
 
   &__menu-label {
     display: none;
+
     @media screen and (max-width: $header-point) {
-      display: flex;
-      cursor: pointer;
       position: relative;
+      display: flex;
       width: px-to-rem(20px);
       height: px-to-rem(20px);
+      cursor: pointer;
     }
   }
 
   &__menu-icon {
     @include line-style;
+
     margin: auto;
 
-    &:before {
+    &::before {
       @include line-style;
-      display: block;
+
       position: absolute;
-      content: '';
       top: 15%;
+      display: block;
+      content: '';
     }
 
-    &:after {
+    &::after {
       @include line-style;
-      display: block;
+
       position: absolute;
-      content: '';
       bottom: 15%;
+      display: block;
+      content: '';
     }
   }
 
   &__menu-checkbox:checked + &__menu-label &__menu-icon {
     background: transparent;
 
-    &:before {
-      transform: rotate(45deg);
+    &::before {
       top: 45%;
+      transform: rotate(45deg);
     }
 
-    &:after {
-      transform: rotate(-45deg);
+    &::after {
       bottom: 45%;
+      transform: rotate(-45deg);
     }
   }
 
   &__links {
     display: flex;
     flex-wrap: wrap;
+
     @media screen and (max-width: $header-point) {
       width: 100%;
-      overflow-y: hidden;
-      flex-direction: column;
       height: 0;
+      flex-direction: column;
+      overflow-y: hidden;
     }
   }
 
@@ -101,28 +106,30 @@ $header-point: 1040px;
 
   &__links-list {
     display: inline-flex;
-    flex-wrap: wrap;
     height: 100%;
+    flex-wrap: wrap;
 
     @media screen and (max-width: $header-point) {
       flex-direction: column;
-      margin-left: 20px;
       margin-top: 10px;
+      margin-left: 20px;
     }
   }
 
   &__list-item {
     display: inline-flex;
-    align-items: center;
     min-height: 24px;
+    align-items: center;
     margin-right: 10px;
     margin-left: 11px;
+
     @media screen and (max-width: $header-point) {
-    margin: 3px 0;
+      margin: 3px 0;
     }
 
     &_type_menu {
       margin-left: 10px;
+
       @media screen and (max-width: $header-point) {
         margin: 3px 0;
       }
@@ -158,14 +165,16 @@ $header-point: 1040px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     @media screen and (max-width: $header-point) {
-      margin-top: 15px;
       padding-left: 10px;
+      margin-top: 15px;
     }
   }
 
   &__login {
     margin-left: 10px;
+
     @media screen and (max-width: $header-point) {
       margin: 4px;
     }
@@ -173,6 +182,7 @@ $header-point: 1040px;
 
   &__register {
     margin-left: 20px;
+
     @media screen and (max-width: $header-point) {
       margin: 4px;
     }
@@ -182,13 +192,14 @@ $header-point: 1040px;
     padding-left: 20px;
     border-left: 1px solid $dark-shade10;
     margin-left: 10px;
+
     @media screen and (max-width: $header-point) {
-      border-left: none;
-      border-top: 1px solid $dark-shade10;
-      margin-left: 0;
-      padding-left: 10px;
-      padding-top: 10px;
       width: 100%;
+      padding-top: 10px;
+      padding-left: 10px;
+      border-top: 1px solid $dark-shade10;
+      border-left: none;
+      margin-left: 0;
     }
   }
 

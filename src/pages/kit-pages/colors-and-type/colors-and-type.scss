@@ -11,8 +11,8 @@ $colors-and-type-point-small: 400px;
     max-width: 1220px;
     padding: 5px 40px;
     margin: 32px auto 0;
-    grid-row-gap: 100px;
     grid-column-gap: 40px;
+    grid-row-gap: 100px;
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
 
     @media screen and (max-width: $colors-and-type-point-small) {
@@ -105,8 +105,8 @@ $colors-and-type-point-small: 400px;
     }
 
     @media screen and (max-width: $colors-and-type-point-small) {
-      justify-self: center;
       padding: 5px 20px;
+      justify-self: center;
     }
   }
 

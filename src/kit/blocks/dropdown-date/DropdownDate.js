@@ -68,7 +68,10 @@ class DropdownDate {
     const windowWidth = $(window).width();
     const datepickerWidth = this._picker.$datepicker[0].offsetWidth;
     const datepickerRight = this._picker.$el.offset().left + datepickerWidth;
-    return this._areCenteringRequired(windowWidth, datepickerRight) ? (windowWidth - datepickerWidth) / 2 : $(this._$dateFields[0]).offset().left;
+    if (this._areCenteringRequired(windowWidth, datepickerRight)) {
+      return (windowWidth - datepickerWidth) / 2;
+    }
+    return $(this._$dateFields[0]).offset().left;
   }
 
   _selectTop() {
@@ -121,15 +124,15 @@ class DropdownDate {
     }
   }
 
-  static initAll({selector = '.js-dropdown-date', parent = document}) {
+  static initAll({ selector = '.js-dropdown-date', parent = document }) {
     $(parent).find(selector).each((_, element) => new DropdownDate().create($(element)));
   }
 
-  static initAllInline({selector = '.js-dropdown-date-inline', parent = document}) {
+  static initAllInline({ selector = '.js-dropdown-date-inline', parent = document }) {
     $(parent).find(selector).each((_, element) => new DropdownDate().create($(element), true));
   }
 
-  static initDefault({selector = '.js-dropdown-date', parent = document}) {
+  static initDefault({ selector = '.js-dropdown-date', parent = document }) {
     new DropdownDate().create($(parent.querySelector(selector)));
   }
 }

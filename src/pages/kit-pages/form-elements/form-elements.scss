@@ -242,9 +242,9 @@ $form-elements-point-small: 630px;
 
   &__feedback {
     max-width: 713px;
+    padding-bottom: 30px;
     margin-top: 58px;
     margin-left: 59px;
-    padding-bottom: 30px;
     grid-column: 2/ span 2;
 
     @media screen and (max-width: $form-elements-point-middle) {
