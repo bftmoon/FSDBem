@@ -87,6 +87,6 @@
   },
   "register": {
     "name": "Зарегистрироваться",
-    "url": "./registration.html?"
+    "url": "./registration.html"
   }
 }

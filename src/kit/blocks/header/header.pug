@@ -1,23 +1,22 @@
 include ../logo/logo
 include ../button/button
 
-mixin header({links, login, register, profile})
-  header.header.js-header
-    .header__content.js-header__content
+mixin header({links, login, register, profile, id="header"})
+  header.header
+    .header__content
       .header__logo
         +logo
 
-      .header__links.js-header__links
-        button.header__close-button.js-header__close-button
-          i.header__icon close
-        .header__sidebar-logo
-          +logo
+      input(type="checkbox" id=id).header__menu-checkbox
+      label(for=id).header__menu-label
+        .header__menu-icon
 
+      .header__links
         nav.header__main-links
           ul.header__links-list
             for link in links
               if link.content
-                li.header__list-item_type_menu
+                li.header__list-item.header__list-item_type_menu
                   a(href=link.url).header__link=link.name
                   button.header__expander
                     i.header__icon expand_more
@@ -33,11 +32,4 @@ mixin header({links, login, register, profile})
               +button(login.name, {isFlat: true, isMini: true})
             a(href=register.url).header__register
               +button(register.name, {isMini: true})
-
-      button.header__menu-button.js-header__menu-button
-        i.header__icon menu
-      button.header__menu-b
-        .header__new-icon
-    .header__dim.js-header__dim
-
 

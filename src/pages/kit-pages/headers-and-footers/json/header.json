@@ -84,10 +84,10 @@
   ],
   "login": {
     "name": "Войти",
-    "url": "./login.html?sign=in"
+    "url": "./login.html"
   },
   "register": {
     "name": "Зарегистрироваться",
-    "url": "./login.html?sign=up"
+    "url": "./registration.html"
   }
 }
