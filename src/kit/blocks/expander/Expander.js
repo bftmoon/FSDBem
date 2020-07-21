@@ -1,6 +1,6 @@
 class Expander {
   create($element) {
-    this._$icons = $element.find('.js-expander__icon');
+    this._$icon = $element.find('.js-expander__icon');
     this._$content = $element.find('.js-expander__content');
 
     this._handleExpanderClick = this._handleExpanderClick.bind(this);
@@ -8,7 +8,7 @@ class Expander {
   }
 
   _handleExpanderClick() {
-    this._$icons.toggleClass('expander__icon_hidden');
+    this._$icon.toggleClass('expander__icon_direction_down');
     this._$content.toggleClass('expander__content_hidden');
   }
 

@@ -6,42 +6,17 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  //fill: $secondary-gradient;
+
   &__link {
     display: inline-flex;
-    margin: 2px 10px;
-
-    &_margin_big {
-      margin-right: 13px;
-    }
-  }
-
-  &__icon {
-    display: flex;
-    width: px-to-rem(24px);
-    height: px-to-rem(24px);
+    justify-content: center;
     align-items: center;
-    background: $gradient;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-family: $brands;
-    font-style: normal;
-    font-weight: normal;
-    line-height: px-to-rem(23px);
-    text-align: center;
-
-    &_type_twitter::before {
-      content: '\f099';
-      font-size: px-to-rem(28px);
-    }
-
-    &_type_facebook::before {
-      content: '\f230';
-      font-size: px-to-rem(24px);
-    }
-
-    &_type_instagramm::before {
-      content: '\f16d';
-      font-size: px-to-rem(24px);
-    }
+    margin: 2px 10px;
+    //width: 24px;
+    //height: 24px;
+    //&_margin-top_big {
+    //  margin-top: 3px;
+    //}
   }
 }

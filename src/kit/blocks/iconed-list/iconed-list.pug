@@ -1,8 +1,11 @@
+include ../icon/icon
+
 mixin iconed-list(items)
   ul.iconed-list
     for item, index in items
       li.iconed-list__item
-        i.iconed-list__icon=item.icon
+        .iconed-list__icon
+          +icon(item.icon)
         .iconed-list__text
           .iconed-list__title=item.title
           .iconed-list__description=item.description

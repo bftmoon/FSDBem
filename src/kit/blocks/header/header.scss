@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 $header-point: 1040px;
 
@@ -204,9 +205,6 @@ $header-point: 1040px;
   }
 
   &__icon {
-    @extend %material-icons;
-
-    color: $dark-shade50;
-    line-height: px-to-rem(20px);
+    @include expander($dark-shade50);
   }
 }

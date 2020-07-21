@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 $dropdown-date-point: 340px;
 
@@ -65,11 +66,8 @@ $dropdown-date-point: 340px;
   }
 
   &__icon {
-    @extend %material-icons;
-
-    padding-top: 1px;
+    @include expander($dark-shade50);
     margin: auto 10px;
-    color: $dark-shade50;
   }
 
   &__separator {

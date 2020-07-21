@@ -1,5 +1,6 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 .subscribe-input {
   position: relative;
@@ -34,12 +35,13 @@
   }
 
   &__icon {
-    @extend %material-icons;
-
-    margin: auto 10px;
-    background: $gradient;
-    -webkit-background-clip: text;
+    //@extend %material-icons;
+    height: 20px;
+    width: 20px;
+    @include arrow($gradient, true);
+    margin: auto 12px;
   }
+
 
   &__input:invalid + &__invalid-light {
     position: absolute;

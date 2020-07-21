@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 .expander {
   &__header {
@@ -13,13 +14,14 @@
   }
 
   &__icon {
-    @extend %material-icons;
+    //@extend %material-icons;
 
+    @include expander($dark-shade50);
     margin: auto 10px;
-    color: $dark-shade50;
+    //color: $dark-shade50;
 
-    &_hidden {
-      display: none;
+    &_direction_down{
+      transform: rotate(180deg);
     }
   }
 

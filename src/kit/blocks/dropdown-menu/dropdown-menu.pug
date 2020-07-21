@@ -8,7 +8,7 @@ mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withActions})
       class=isOpened ? "dropdown-menu__header_opened" : ""
     ).dropdown-menu__header.js-dropdown-menu__header
       .dropdown-menu__text
-      i.dropdown-menu__icon expand_more
+      .dropdown-menu__icon
     fieldset(
       class=[
         !isInline ? "dropdown-menu__content_over" : "",

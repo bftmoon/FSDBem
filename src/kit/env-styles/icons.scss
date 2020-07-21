@@ -1,0 +1,54 @@
+@import "./variables";
+
+@mixin arrow($color, $isGradient) {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    height: 50%;
+    width: 50%;
+    content: '';
+    @if ($isGradient) {
+      border-right: 2px solid;
+      border-top: 2px solid;
+      border-image: $color 2;
+      border-radius: 3px;
+    } @else {
+      border-right: 2px solid $color;
+      border-top: 2px solid $color;
+    }
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 78%;
+    background: $color;
+    margin: auto;
+  }
+}
+
+@mixin expander($color) {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &:before {
+    content: '';
+    height: 30%;
+    width: 30%;
+    transform: rotate(45deg);
+    border-right: 2px solid $color;
+    border-bottom: 2px solid $color;
+  }
+  &:after {
+    content: '';
+    height: 5px;
+  }
+}

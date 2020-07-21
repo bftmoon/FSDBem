@@ -12,7 +12,7 @@ mixin dropdown-date({titles, dates, isInline})
           readonly,
           name="start-date"
         ).dropdown-date__input.js-dropdown-date__input
-        i.dropdown-date__icon expand_more
+        .dropdown-date__icon
     if titles.length === 2
       .dropdown-date__separator
       .dropdown-date__item
@@ -23,4 +23,4 @@ mixin dropdown-date({titles, dates, isInline})
             readonly,
             name="end-date"
           ).dropdown-date__input.js-dropdown-date__input
-          i.dropdown-date__icon expand_more
+          .dropdown-date__icon

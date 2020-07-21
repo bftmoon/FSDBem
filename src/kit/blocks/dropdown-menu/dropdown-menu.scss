@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 .dropdown-menu {
   position: relative;
@@ -37,10 +38,7 @@
   }
 
   &__icon {
-    @extend %material-icons;
-
-    color: $dark-shade50;
-    cursor: pointer;
+    @include expander($dark-shade50);
   }
 
   &__content {
