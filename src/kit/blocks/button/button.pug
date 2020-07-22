@@ -12,7 +12,7 @@ mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide, isConstMin})
   if isArrowed
     button.button(class=classes)&attributes(attributes)
       span.button__arrowed-text=text
-      i.button__arrow arrow_forward
+      .button__arrow
   else
     if isFlat
       button.button(class=classes)&attributes(attributes)

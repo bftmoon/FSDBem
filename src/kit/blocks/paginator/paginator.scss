@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 .paginator {
   display: inline-flex;
@@ -22,17 +23,19 @@
       color: $dark-shade50;
     }
 
-    &-with-arrow {
+    &_with-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: $secondary-gradient;
     }
   }
 
   &__arrow {
-    @extend %material-icons;
-
-    color: white;
-    line-height: px-to-rem(20px);
-    vertical-align: middle;
+    @include arrow(white, false);
+    &_backward{
+      transform: rotate(180deg);
+    }
   }
 
   &__current {

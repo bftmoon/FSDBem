@@ -29,10 +29,9 @@ class Paginator {
   static buildArrow(page, href, isForward) {
     return $('<a>', {
       href: href + (page + (isForward ? 1 : -1)),
-      class: 'paginator__item paginator__item-with-arrow',
-      append: $('<i>', {
-        class: 'paginator__arrow',
-        text: `arrow_${isForward ? 'forward' : 'backward'}`,
+      class: 'paginator__item paginator__item_with-arrow',
+      append: $('<div>', {
+        class: `paginator__arrow${isForward ? '' : '_backward'}`,
       }),
     });
   }

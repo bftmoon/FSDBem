@@ -1,5 +1,6 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 /* stylelint-disable selector-class-pattern, selector-max-compound-selectors, selector-no-qualifying-type */
 
@@ -37,10 +38,8 @@
   }
 
   &__icon {
-    @extend %material-icons;
-
+    @include expander(white);
     margin: auto;
-    color: white;
     transform: rotate(90deg);
   }
 }

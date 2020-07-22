@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 .button {
   border: none;
@@ -63,8 +64,7 @@
   }
 
   &__arrow {
-    @extend %material-icons;
-
+    @include arrow(white, false);
     flex-grow: 0;
     flex-shrink: 0;
   }

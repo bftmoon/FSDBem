@@ -4,8 +4,8 @@ class DropdownDate {
       navTitles: {
         days: 'MM yyyy',
       },
-      prevHtml: '<i class="datepicker--icons">arrow_back</i>',
-      nextHtml: '<i class="datepicker--icons">arrow_forward</i>',
+      prevHtml: '<div class="datepicker--arrow-reverted"></div>',
+      nextHtml: '<div class="datepicker--arrow"></div>',
       clearButton: true,
       range: true,
       multipleDatesSeparator: ' - ',

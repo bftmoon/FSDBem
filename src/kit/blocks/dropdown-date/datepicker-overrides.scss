@@ -1,6 +1,7 @@
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
 @import '../../env-styles/variables';
+@import '../../env-styles/icons';
 
 @mixin double-background($circleColor, $bgBorderRadius, $circleOpacity) {
   background: $gradient25;
@@ -75,8 +76,11 @@
     }
   }
 
-  &--icons {
-    @extend %material-icons;
+  &--arrow {
+    @include arrow($primary, false);
+    &-rotated{
+      transform: rotate(180deg);
+    }
   }
 
   &--body {

@@ -3,9 +3,7 @@
 
 .rating {
   position: relative;
-  display: inline-block;
   border: none;
-  line-height: 20px;
 
   &__input {
     width: 24px;
@@ -15,18 +13,15 @@
   }
 
   &__input:checked ~ &__star_active {
-    background: transparent;
+    display: none;
   }
 
   &__star {
-    @extend %material-icons;
-
     width: 24px;
     height: 24px;
-    background: $gradient;
-    -webkit-background-clip: text;
-    color: transparent;
-    line-height: px-to-rem(20px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     &_absolute {
       position: absolute;

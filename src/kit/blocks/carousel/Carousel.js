@@ -7,8 +7,8 @@ class Carousel {
         useCSS: false,
         slideMargin: 0,
         galleryMargin: 0,
-        prevHtml: '<i class="lSAction__icon">expand_more</i>',
-        nextHtml: '<i class="lSAction__icon">expand_more</i>',
+        prevHtml: '<div class="lSAction__icon"></div>',
+        nextHtml: '<div class="lSAction__icon"></div>',
       });
     });
   }
