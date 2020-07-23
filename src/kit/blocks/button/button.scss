@@ -11,8 +11,9 @@
   font-weight: bold;
   line-height: px-to-rem(15px);
   text-transform: uppercase;
+  cursor: pointer;
 
-  &:hover:enabled {
+  &:hover {
     background: $gradient50;
     cursor: pointer;
   }
@@ -29,11 +30,17 @@
     display: inline-block;
     padding: 2px;
     color: $primary;
+    &:link, &:visited{
+      color: $primary;
+    }
   }
 
   &_raised {
     padding: 15px 20px;
     color: white;
+    &:link, &:visited{
+      color: white;
+    }
   }
 
   &_size_mini {
@@ -49,10 +56,10 @@
     padding: 12.5px 16.5px;
     background: white;
     border-radius: inherit;
+  }
 
-    &_size_mini {
-      padding: 7.5px 18.5px;
-    }
+  &_content-size_mini &__text{
+    padding: 7.5px 18.5px;
   }
 
   &_arrowed {
@@ -67,6 +74,7 @@
     @include arrow(white, false);
     flex-grow: 0;
     flex-shrink: 0;
+    margin: 2px;
   }
 
   &__arrowed-text {

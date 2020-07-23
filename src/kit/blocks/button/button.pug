@@ -1,21 +1,36 @@
-mixin button(text, {isFlat, isSecondary, isArrowed, isMini, isWide, isConstMin})
+mixin button(text, {isBordered, isSecondary, isArrowed, isMini, isWide, isConstMin})
   -
     const classes = [
       isSecondary ? "button_color_secondary" : "",
-      !isFlat || isArrowed ? "button_raised" : "button_flat",
+      !isBordered || isArrowed ? "button_raised" : "button_flat",
       isArrowed ? "button_arrowed" : "",
-      isMini && !isFlat ? "button_size_mini" : "",
+      isMini && !isBordered ? "button_size_mini" : "",
+      isMini && isBordered ? "button_content-size_mini" : "",
       isWide ? "button_size_wide" : "",
       isConstMin ? "button_size_const-min" : ""
     ]
 
   if isArrowed
-    button.button(class=classes)&attributes(attributes)
-      span.button__arrowed-text=text
-      .button__arrow
-  else
-    if isFlat
+    if attributes.href
+      a.button(class=classes)&attributes(attributes)
+        span.button__arrowed-text=text
+        .button__arrow
+    else
       button.button(class=classes)&attributes(attributes)
-        span.button__text(class=isMini ? "button__text_size_mini" : "")= text
+        span.button__arrowed-text=text
+        .button__arrow
+
+  else if isBordered
+    if attributes.href
+      a.button(class=classes)&attributes(attributes)
+        span.button__text=text
+    else
+      button.button(class=classes)&attributes(attributes)
+        span.button__text=text
+
+
+  else
+    if attributes.href
+      a.button(class=classes)&attributes(attributes)=text
     else
       button.button(class=classes)&attributes(attributes)=text
