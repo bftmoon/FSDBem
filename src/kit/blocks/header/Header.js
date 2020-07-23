@@ -8,7 +8,7 @@ class Header {
     this._header.classList.toggle('header_opened');
   }
 
-  static initDefault({selector = '.js-header', parent = document}) {
+  static initDefault({ selector = '.js-header', parent = document }) {
     new Header().create(parent.querySelector(selector));
   }
 }

@@ -1,6 +1,6 @@
 import '@blocks/button';
 import '@blocks/logo';
 import './header.scss';
-import Header from "./Header";
+import Header from './Header';
 
 export default Header;

@@ -22,7 +22,7 @@
     font-size: px-to-rem(14px);
   }
 
-  &_opened &__header{
+  &_opened &__header {
     border-color: $dark-shade50;
     border-bottom: 0;
     border-bottom-left-radius: 0;
@@ -42,6 +42,7 @@
   }
 
   &__content {
+    position: absolute;
     z-index: 10;
     display: none;
     width: 100%;
@@ -55,10 +56,9 @@
     font-size: px-to-rem(12px);
     font-weight: bold;
     text-transform: uppercase;
-    position: absolute;
   }
 
-  &_opened &__content{
+  &_opened &__content {
     display: initial;
     border-color: $dark-shade50;
   }

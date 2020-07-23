@@ -7,11 +7,11 @@
   border: none;
   background: $gradient;
   border-radius: 22px;
+  cursor: pointer;
   font-size: px-to-rem(12px);
   font-weight: bold;
   line-height: px-to-rem(15px);
   text-transform: uppercase;
-  cursor: pointer;
 
   &:hover {
     background: $gradient50;
@@ -24,7 +24,8 @@
       padding: 2px;
       color: $primary;
 
-      &:link, &:visited {
+      &:link,
+      &:visited {
         color: $primary;
       }
     }
@@ -33,7 +34,8 @@
       padding: 15px 20px;
       color: white;
 
-      &:link, &:visited {
+      &:link,
+      &:visited {
         color: white;
       }
     }
@@ -80,7 +82,6 @@
     padding: 7.5px 18.5px;
   }
 
-
   &__arrowed-text {
     flex-grow: 2;
     margin-left: px-to-rem(22px);
@@ -88,6 +89,7 @@
 
   &__arrow {
     @include arrow(white, false);
+
     flex-grow: 0;
     flex-shrink: 0;
     margin: 2px;

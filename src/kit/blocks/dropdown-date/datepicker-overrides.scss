@@ -78,8 +78,10 @@
 
   &--arrow {
     @include arrow($primary, false);
+
     margin: 2px;
-    &-rotated{
+
+    &-rotated {
       transform: rotate(180deg);
     }
   }

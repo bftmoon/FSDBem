@@ -1,79 +1,86 @@
-@import "./variables";
+@import './variables';
 
 @mixin arrow($color, $isGradient: false) {
-  width: 20px;
-  height: 20px;
   position: relative;
   display: flex;
-  justify-content: center;
+  width: 20px;
+  height: 20px;
   align-items: center;
+  justify-content: center;
 
-  &:before {
-    height: 50%;
+  &::before {
     width: 50%;
+    height: 50%;
     content: '';
+    transform: rotate(45deg);
+
     @if ($isGradient) {
-      border-right: 2px solid;
       border-top: 2px solid;
+      border-right: 2px solid;
       border-image: $color 2;
       border-radius: 3px;
-    } @else {
-      border-right: 2px solid $color;
-      border-top: 2px solid $color;
     }
-    transform: rotate(45deg);
+
+    @else {
+      border-top: 2px solid $color;
+      border-right: 2px solid $color;
+    }
   }
 
-  &:after {
+  &::after {
     position: absolute;
-    content: '';
-    height: 2px;
     width: 78%;
-    background: $color;
+    height: 2px;
     margin: auto;
+    background: $color;
+    content: '';
   }
 }
 
 @mixin expander($color) {
+  display: flex;
   width: 20px;
   height: 20px;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  &:before {
-    content: '';
-    height: 35%;
+
+  &::before {
     width: 35%;
-    transform: rotate(45deg);
+    height: 35%;
     border-right: 2px solid $color;
     border-bottom: 2px solid $color;
-  }
-  &:after {
     content: '';
+    transform: rotate(45deg);
+  }
+
+  &::after {
     height: 5px;
+    content: '';
   }
 }
 
 @mixin menu($color) {
+  position: relative;
+  display: flex;
   width: 18px;
   height: 10px;
-  display: flex;
   align-items: center;
-  position: relative;
-  &:before {
+
+  &::before {
     position: absolute;
-    content: '';
     width: 100%;
     height: 100%;
     border-top: 2px solid $color;
     border-bottom: 2px solid $color;
     border-radius: 1px;
-  }
-  &:after {
-    width: 100%;
     content: '';
+  }
+
+  &::after {
+    width: 100%;
     border: 1px solid $color;
     border-radius: 1px;
+    content: '';
   }
 }

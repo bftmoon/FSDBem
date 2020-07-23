@@ -50,10 +50,11 @@ $header-point: 1040px;
 
   &__menu-button {
     display: none;
+    padding: 10px;
     border: none;
     background: none;
-    padding: 10px;
     cursor: pointer;
+
     @media screen and (max-width: $header-point) {
       display: initial;
     }
@@ -89,8 +90,8 @@ $header-point: 1040px;
 
     @media screen and (max-width: $header-point) {
       flex-direction: column;
-      margin-left: 5px;
       margin-right: 5px;
+      margin-left: 5px;
     }
   }
 
@@ -149,6 +150,7 @@ $header-point: 1040px;
 
   &__icon {
     @include expander($dark-shade50);
+
     margin-left: 2px;
   }
 

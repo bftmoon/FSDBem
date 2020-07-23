@@ -15,10 +15,11 @@
 
   &__icon {
     @include expander($dark-shade50);
+
     margin: auto 10px;
   }
 
-  &_opened &__icon{
+  &_opened &__icon {
     transform: rotate(180deg);
   }
 

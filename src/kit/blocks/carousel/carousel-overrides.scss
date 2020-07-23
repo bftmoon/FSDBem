@@ -39,6 +39,7 @@
 
   &__icon {
     @include expander(white);
+
     margin: auto;
     transform: rotate(90deg);
   }

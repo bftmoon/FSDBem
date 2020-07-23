@@ -52,8 +52,8 @@ $dropdown-date-point: 340px;
     cursor: pointer;
     font-size: px-to-rem(14px);
     line-height: px-to-rem(24px);
-    vertical-align: center;
     text-transform: lowercase;
+    vertical-align: center;
 
     &::placeholder {
       color: $dark-shade75;
@@ -68,6 +68,7 @@ $dropdown-date-point: 340px;
 
   &__icon {
     @include expander($dark-shade50);
+
     margin: auto 11px;
   }
 
