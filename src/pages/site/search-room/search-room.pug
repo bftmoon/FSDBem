@@ -67,7 +67,7 @@ block main
       .search-room__rooms
         - i=0;
         while i < 12
-          a(href= i === 0 ? './room-details.html' : '/mock-address').search-room__room-link
+          a(href= i === 0 ? '/room-details.html' : '/mock-address').search-room__room-link
             +room-card(rooms[i]).search-room__room
             - i++
       .search-room__paginator-wrapper

@@ -2,91 +2,91 @@
   "links": [
     {
       "name": "О нас",
-      "url": "mock-address"
+      "url": "/mock-address"
     },
     {
       "name": "Услуги",
-      "url": "mock-address",
+      "url": "/mock-address",
       "content": [
         {
           "name": "Lorem",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Ipsum",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Желает",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Знать",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Где",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Сидит",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Фазан",
-          "url": "mock-address"
+          "url": "/mock-address"
         }
       ]
     },
     {
       "name": "Вакансии",
-      "url": "mock-address"
+      "url": "/mock-address"
     },
     {
       "name": "Новости",
-      "url": "mock-address"
+      "url": "/mock-address"
     },
     {
       "name": "Соглашения",
-      "url": "mock-address",
+      "url": "/mock-address",
       "content": [
         {
           "name": "Lorem",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Ipsum",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Желает",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Знать",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Где",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Сидит",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Фазан",
-          "url": "mock-address"
+          "url": "/mock-address"
         }
       ]
     }
   ],
   "login": {
     "name": "Войти",
-    "url": "./login.html"
+    "url": "/login.html"
   },
   "registration": {
     "name": "Зарегистрироваться",
-    "url": "./registration.html"
+    "url": "/registration.html"
   }
 }

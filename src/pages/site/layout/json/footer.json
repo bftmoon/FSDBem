@@ -6,19 +6,19 @@
       "items": [
         {
           "name": "О нас",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Новости",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Служба поддержки",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Услуги",
-          "url": "mock-address"
+          "url": "/mock-address"
         }
       ]
     },
@@ -27,19 +27,19 @@
       "items": [
         {
           "name": "О сервисе",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Наша команда",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Вакансии",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Инвесторы",
-          "url": "mock-address"
+          "url": "/mock-address"
         }
       ]
     },
@@ -48,15 +48,15 @@
       "items": [
         {
           "name": "Соглашения",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Сообщества",
-          "url": "mock-address"
+          "url": "/mock-address"
         },
         {
           "name": "Связь с нами",
-          "url": "mock-address"
+          "url": "/mock-address"
         }
       ]
     }
