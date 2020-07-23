@@ -24,13 +24,12 @@
   }
 
   &__icon {
-    @extend %material-icons;
-
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px;
-    background: $gradient;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: px-to-rem(48px);
   }
 
   &__separator {

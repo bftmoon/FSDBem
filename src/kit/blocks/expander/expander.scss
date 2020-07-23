@@ -14,11 +14,8 @@
   }
 
   &__icon {
-    //@extend %material-icons;
-
     @include expander($dark-shade50);
     margin: auto 10px;
-    //color: $dark-shade50;
 
     &_direction_down{
       transform: rotate(180deg);

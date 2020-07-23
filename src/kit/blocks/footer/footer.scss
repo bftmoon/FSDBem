@@ -11,8 +11,8 @@ $footer-point-small: 768px;
   box-shadow: $shadow-smaller;
 
   @media screen and (max-width: $footer-point-small) {
-    padding-top: 115px;
-    padding-bottom: 95px;
+    padding-top: 105px;
+    padding-bottom: 97px;
   }
 
   &__menu {
@@ -138,12 +138,12 @@ $footer-point-small: 768px;
     max-width: px-to-rem(1210px);
     align-items: center;
     justify-content: space-between;
-    padding: 21px 14px;
+    padding: 22px 14px;
     margin: auto;
 
     @media screen and (max-width: $footer-point-small) {
       flex-direction: column;
-      padding-top: 13px;
+      padding-top: 7px;
       text-align: center;
     }
   }
@@ -156,5 +156,8 @@ $footer-point-small: 768px;
       margin-bottom: 23px;
       margin-left: 0;
     }
+  }
+  &__networks{
+    margin-right: 2px;
   }
 }
