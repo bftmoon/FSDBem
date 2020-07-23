@@ -2,8 +2,8 @@ mixin button(text, {isBordered, isSecondary, isArrowed, isMini, isWide, isConstM
   -
     const classes = [
       isSecondary ? "button_color_secondary" : "",
-      !isBordered || isArrowed ? "button_raised" : "button_flat",
-      isArrowed ? "button_arrowed" : "",
+      !isBordered || isArrowed ? "button_style_filled" : "button_style_bordered",
+      isArrowed ? "button_content_arrowed" : "",
       isMini && !isBordered ? "button_size_mini" : "",
       isMini && isBordered ? "button_content-size_mini" : "",
       isWide ? "button_size_wide" : "",
@@ -27,7 +27,6 @@ mixin button(text, {isBordered, isSecondary, isArrowed, isMini, isWide, isConstM
     else
       button.button(class=classes)&attributes(attributes)
         span.button__text=text
-
 
   else
     if attributes.href

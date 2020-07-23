@@ -1,20 +1,12 @@
 include ../title/title
 
 mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withActions})
-  .dropdown-menu.js-dropdown-menu&attributes(attributes)
+  div(class=isOpened ? "dropdown-menu_opened" : "").dropdown-menu.js-dropdown-menu&attributes(attributes)
     +title({title, subtitle})
-    button(
-      type="button"
-      class=isOpened ? "dropdown-menu__header_opened" : ""
-    ).dropdown-menu__header.js-dropdown-menu__header
+    button(type="button").dropdown-menu__header.js-dropdown-menu__header
       .dropdown-menu__text
       .dropdown-menu__icon
-    fieldset(
-      class=[
-        !isInline ? "dropdown-menu__content_over" : "",
-        isOpened ? "dropdown-menu__content_opened" : ""
-      ]
-    ).dropdown-menu__content&attributes(attributes)
+    fieldset.dropdown-menu__content&attributes(attributes)
       for item in data
         .dropdown-menu__item
           span.dropdown-menu__item-text=item.text

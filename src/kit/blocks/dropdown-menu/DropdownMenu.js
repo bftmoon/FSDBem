@@ -6,6 +6,7 @@ class DropdownMenu {
   }
 
   create($menu) {
+    this._$menu = $menu;
     document.addEventListener('click', this._handleDocumentClick.bind(this));
     this._$header = $menu.find('.js-dropdown-menu__header');
     this._$header.on('click', this._handleHeaderClick.bind(this));
@@ -63,9 +64,8 @@ class DropdownMenu {
   }
 
   _handleDocumentClick(event) {
-    if (!this._$content.parent()[0].contains(event.target)) {
-      this._$header.removeClass('dropdown-menu__header_opened');
-      this._$content.removeClass('dropdown-menu__content_opened');
+    if (!this._$menu[0].contains(event.target)) {
+      this._$menu.removeClass('dropdown-menu_opened');
       this._recoverState();
     }
   }
@@ -114,8 +114,7 @@ class DropdownMenu {
   }
 
   _toggleMenu() {
-    this._$header.toggleClass('dropdown-menu__header_opened');
-    this._$content.toggleClass('dropdown-menu__content_opened');
+    this._$menu.toggleClass('dropdown-menu_opened');
   }
 
   _updateCancel(isVisible) {

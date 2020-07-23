@@ -20,14 +20,14 @@
     background: white;
     cursor: pointer;
     font-size: px-to-rem(14px);
+  }
 
-    &_opened {
-      border-color: $dark-shade50;
-      border-bottom: 0;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      box-shadow: $shadow-smaller;
-    }
+  &_opened &__header{
+    border-color: $dark-shade50;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: $shadow-smaller;
   }
 
   &__text {
@@ -55,15 +55,12 @@
     font-size: px-to-rem(12px);
     font-weight: bold;
     text-transform: uppercase;
+    position: absolute;
+  }
 
-    &_over {
-      position: absolute;
-    }
-
-    &_opened {
-      display: initial;
-      border-color: $dark-shade50;
-    }
+  &_opened &__content{
+    display: initial;
+    border-color: $dark-shade50;
   }
 
   &__item {

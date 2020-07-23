@@ -3,7 +3,7 @@ include ../checkable-item/checkable-item
 mixin checkbox-list({items})
   .checkbox-list
     each item in items
-      .checkbox-list__item(class=item.description ? "checkbox-list__item_type_rich" : "")
+      .checkbox-list__item(class=item.description ? "checkbox-list__item_margin_smaller" : "")
         +checkable-item({
           type: "checkbox",
           text: item.text,

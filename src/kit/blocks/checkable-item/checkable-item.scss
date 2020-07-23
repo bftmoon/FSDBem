@@ -8,10 +8,10 @@
   &__label {
     display: inline-flex;
     cursor: pointer;
+  }
 
-    &_type_radio {
-      align-items: center;
-    }
+  &_style_round &__label {
+    align-items: center;
   }
 
   &__input {
@@ -25,16 +25,14 @@
     border: 1px solid $dark-shade25;
     margin-right: 10px;
     cursor: pointer;
+  }
 
-    &_type {
-      &_checkbox {
-        border-radius: 4px;
-      }
+  &_style_round &__checker {
+    border-radius: 50%;
+  }
 
-      &_radio {
-        border-radius: 50%;
-      }
-    }
+  &_style_with-daw &__checker {
+    border-radius: 4px;
   }
 
   &__input:checked ~ &__checker {
@@ -46,27 +44,27 @@
       display: inline-block;
       content: '';
     }
+  }
 
-    &_type_radio::after {
-      width: px-to-rem(12px);
-      height: px-to-rem(12px);
-      align-self: center;
-      background: $gradient;
-      border-radius: 50%;
-    }
+  &_style_round &__input:checked ~ &__checker::after {
+    width: px-to-rem(12px);
+    height: px-to-rem(12px);
+    align-self: center;
+    background: $gradient;
+    border-radius: 50%;
+  }
 
-    &_type_checkbox::after {
-      width: px-to-rem(4px);
-      height: px-to-rem(6px);
-      border: solid {
-        width: 0 2px 2px 0;
-        image: $gradient {
-          slice: 1;
-        }
+  &_style_with-daw &__input:checked ~ &__checker::after {
+    width: px-to-rem(4px);
+    height: px-to-rem(6px);
+    border: solid {
+      width: 0 2px 2px 0;
+      image: $gradient {
+        slice: 1;
       }
-      margin-top: 4px;
-      transform: rotate(45deg);
     }
+    margin-top: 4px;
+    transform: rotate(45deg);
   }
 
   &__text {
@@ -75,18 +73,18 @@
     line-height: px-to-rem(18px);
     white-space: pre-wrap;
 
-    &_type_radio {
-      padding-top: 0;
-      line-height: px-to-rem(24px);
-    }
-
-    &_title {
+    &_importance_big {
       color: $dark-shade75;
       font-weight: bold;
     }
   }
 
-  &__input:checked ~ &__text_type_radio {
+  &_style_round &__text {
+    padding-top: 0;
+    line-height: px-to-rem(24px);
+  }
+
+  &_style_round &__input:checked ~ &__text {
     color: $dark-shade75;
   }
 

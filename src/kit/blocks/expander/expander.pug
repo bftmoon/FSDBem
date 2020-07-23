@@ -1,11 +1,7 @@
 mixin expander({title, isOpened})
-  .expander.js-expander
+  div(class=isOpened ? "expander_opened" : "").expander.js-expander
     button(type="button").expander__header.js-expander__header&attributes(attributes)
       .expander__title=title
-      div(
-        class=isOpened ? "expander__icon_direction_down" : ""
-      ).expander__icon.js-expander__icon
-    div(
-      class = !isOpened ? "expander__content_hidden" : ""
-    ).expander__content.js-expander__content
+      .expander__icon.js-expander__icon
+    .expander__content.js-expander__content
       block

@@ -3,8 +3,8 @@ mixin like-button(numOfLikes)
     input(type="checkbox").like-button__checker&attributes(attributes)
     .like-button__box
       .like-button__inner-box
-        .like-button__icon.like-button__icon_active
+        .like-button__icon.like-button__icon_filled
           include ./svg/like-filled.svg
-        .like-button__icon.like-button__icon_passive
+        .like-button__icon.like-button__icon_bordered
           include ./svg/like.svg
         .like-button__count.js-like-button__count= numOfLikes

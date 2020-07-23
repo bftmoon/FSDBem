@@ -22,12 +22,12 @@
     font-family: $quicksand;
     font-size: px-to-rem(24px);
     line-height: px-to-rem(30px);
+  }
 
-    &_font_mini {
-      margin-left: 4px;
-      font-size: px-to-rem(19px);
-      line-height: px-to-rem(24px);
-    }
+  &_font_mini &__number {
+    margin-left: 4px;
+    font-size: px-to-rem(19px);
+    line-height: px-to-rem(24px);
   }
 
   &__lux {

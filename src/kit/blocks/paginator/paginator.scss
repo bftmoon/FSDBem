@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
 
-  &__pages{
+  &__pages {
     display: flex;
   }
 
@@ -27,7 +27,7 @@
       color: $dark-shade50;
     }
 
-    &_with-arrow {
+    &_content_with-arrow {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -37,7 +37,8 @@
 
   &__arrow {
     @include arrow(white, false);
-    &_backward{
+
+    &_direction_back {
       transform: rotate(180deg);
     }
   }

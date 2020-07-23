@@ -18,34 +18,52 @@
     cursor: pointer;
   }
 
-  &_size_wide {
-    width: 100%;
-  }
-
-  &_size_const-min {
-    min-width: 99px;
-  }
-
-  &_flat {
-    display: inline-block;
-    padding: 2px;
-    color: $primary;
-    &:link, &:visited{
+  &_style {
+    &_bordered {
+      display: inline-block;
+      padding: 2px;
       color: $primary;
-    }
-  }
 
-  &_raised {
-    padding: 15px 20px;
-    color: white;
-    &:link, &:visited{
+      &:link, &:visited {
+        color: $primary;
+      }
+    }
+
+    &_filled {
+      padding: 15px 20px;
       color: white;
+
+      &:link, &:visited {
+        color: white;
+      }
     }
   }
 
-  &_size_mini {
-    padding-top: 9.5px;
-    padding-bottom: 9.5px;
+  &_size {
+    &_wide {
+      width: 100%;
+    }
+
+    &_const-min {
+      min-width: 99px;
+    }
+
+    &_mini {
+      padding-top: 9.5px;
+      padding-bottom: 9.5px;
+    }
+  }
+
+  &_content_arrowed {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+  &_color_secondary {
+    background: $secondary-gradient;
   }
 
   &__text {
@@ -58,16 +76,14 @@
     border-radius: inherit;
   }
 
-  &_content-size_mini &__text{
+  &_content-size_mini &__text {
     padding: 7.5px 18.5px;
   }
 
-  &_arrowed {
-    display: inline-flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
+
+  &__arrowed-text {
+    flex-grow: 2;
+    margin-left: px-to-rem(22px);
   }
 
   &__arrow {
@@ -75,14 +91,5 @@
     flex-grow: 0;
     flex-shrink: 0;
     margin: 2px;
-  }
-
-  &__arrowed-text {
-    flex-grow: 2;
-    margin-left: px-to-rem(22px);
-  }
-
-  &_color_secondary {
-    background: $secondary-gradient;
   }
 }

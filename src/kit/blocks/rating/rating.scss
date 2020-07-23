@@ -12,7 +12,7 @@
     opacity: 0;
   }
 
-  &__input:checked ~ &__star_active {
+  &__input:checked ~ &__star_filled {
     display: none;
   }
 
@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
 
-    &_absolute {
+    &_position_absolute {
       position: absolute;
     }
 

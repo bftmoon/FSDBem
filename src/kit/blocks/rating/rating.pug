@@ -3,9 +3,9 @@ mixin rating({rating=0, groupName})
     fieldset.rating&attributes(attributes)
       - let i=0
       while i < 5
-        div(class="rating__star_" + i).rating__star.rating__star_absolute.rating__star_passive
+        div(class="rating__star_" + i).rating__star.rating__star_position_absolute
           include ./svg/star-bordered.svg
-        div(class="rating__star_" + i).rating__star.rating__star_absolute.rating__star_active
+        div(class="rating__star_" + i).rating__star.rating__star_position_absolute.rating__star_filled
           include ./svg/star.svg
         input(class="rating__star_" + i type="radio" name=groupName || "stars" value=i + 1 checked=(rating === (i + 1))).rating__item.rating__input
         - i++;
@@ -13,10 +13,10 @@ mixin rating({rating=0, groupName})
     .rating
       - let i=0
       while i < rating
-        .rating__star.rating__star_active
+        .rating__star.rating__star_filled
           include ./svg/star.svg
         - i++;
       while i < 5
-        .rating__star.rating__star_passive
+        .rating__star
           include ./svg/star-bordered.svg
         - i++;

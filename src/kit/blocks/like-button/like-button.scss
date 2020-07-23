@@ -54,11 +54,11 @@
   }
 
   &__checker + &__box &__icon {
-    &_active {
+    &_filled {
       display: none;
     }
 
-    &_passive {
+    &_bordered {
       display: flex;
     }
   }
@@ -69,11 +69,11 @@
   }
 
   &__checker:checked + &__box &__icon {
-    &_active {
+    &_filled {
       display: flex;
     }
 
-    &_passive {
+    &_bordered {
       display: none;
     }
   }
