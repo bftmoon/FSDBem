@@ -13,8 +13,8 @@ html(lang="ru")
     title Toxin
 
   body.layout
-    - const {home, links, login, register} = require(`../layout/json/header.json`)
-    +header({home, links, login, register})
+    - const {home, links, login, registration} = require(`../layout/json/header.json`)
+    +header({home, links, login, registration})
     main.layout__content
       block main
       - const {tagline, menu, subscribe, copyright} = require(`../layout/json/footer.json`)

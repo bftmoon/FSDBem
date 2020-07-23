@@ -1,35 +1,31 @@
 include ../logo/logo
 include ../button/button
 
-mixin header({links, login, register, profile, id="header"})
-  header.header
+mixin header({links, login, registration, profile})
+  header.header.js-header
     .header__content
       .header__logo
         +logo
-
-      input(type="checkbox" id=id).header__menu-checkbox
-      label(for=id).header__menu-label
+      button(type="button").header__menu-button.js-header__menu-button
         .header__menu-icon
 
-      .header__links
-        nav.header__main-links
-          ul.header__links-list
-            for link in links
-              if link.content
-                li.header__list-item.header__list-item_type_menu
-                  a(href=link.url).header__link=link.name
-                  button.header__expander
-                    .header__icon
-              else
-                li.header__list-item
-                  a(href=link.url class=link.isBold ? "header__link_important" : "").header__link=link.name
+      nav.header__links
+        ul.header__links-list
+          for link in links
+            if link.content
+              li.header__list-item
+                a(href=link.url).header__link=link.name
+                button(type="button").header__expander
+                  .header__icon
+            else
+              li.header__list-item
+                a(href=link.url class=link.isBold ? "header__link_important" : "").header__link=link.name
 
-        .header__profile-links
           if profile
-            a(href=profile.url).header__username= profile.username
+            li.header__list-item
+              a(href=profile.url).header__username= profile.username
           else
-            a(href=login.url).header__login
-              +button(login.name, {isFlat: true, isMini: true})
-            a(href=register.url).header__register
-              +button(register.name, {isMini: true})
-
+            li.header__list-item
+              +button(login.name, {isBordered: true, isMini: true})(href=login.url)
+            li.header__list-item
+              +button(registration.name, {isMini: true})(href=registration.url)

@@ -85,7 +85,7 @@
     "name": "Войти",
     "url": "./login.html"
   },
-  "register": {
+  "registration": {
     "name": "Зарегистрироваться",
     "url": "./registration.html"
   }

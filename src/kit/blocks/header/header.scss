@@ -48,42 +48,19 @@ $header-point: 1040px;
     }
   }
 
-  &__menu-icon {
-    @include line-style;
-
-    margin: auto;
-
-    &::before {
-      @include line-style;
-
-      position: absolute;
-      top: 15%;
-      display: block;
-      content: '';
-    }
-
-    &::after {
-      @include line-style;
-
-      position: absolute;
-      bottom: 15%;
-      display: block;
-      content: '';
+  &__menu-button {
+    display: none;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    @media screen and (max-width: $header-point) {
+      display: initial;
     }
   }
 
-  &__menu-checkbox:checked + &__menu-label &__menu-icon {
-    background: transparent;
-
-    &::before {
-      top: 45%;
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      bottom: 45%;
-      transform: rotate(-45deg);
-    }
+  &__menu-icon {
+    @include menu($dark-shade50);
   }
 
   &__links {
@@ -98,7 +75,7 @@ $header-point: 1040px;
     }
   }
 
-  &__menu-checkbox:checked ~ &__links {
+  &_opened &__links {
     @media screen and (max-width: $header-point) {
       height: auto;
       margin-top: 10px;
@@ -112,8 +89,8 @@ $header-point: 1040px;
 
     @media screen and (max-width: $header-point) {
       flex-direction: column;
-      margin-top: 10px;
-      margin-left: 20px;
+      margin-left: 5px;
+      margin-right: 5px;
     }
   }
 
@@ -123,6 +100,14 @@ $header-point: 1040px;
     align-items: center;
     margin-right: 10px;
     margin-left: 11px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     @media screen and (max-width: $header-point) {
       margin: 3px 0;
@@ -162,49 +147,51 @@ $header-point: 1040px;
     cursor: pointer;
   }
 
-  &__profile-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  //&__profile-links {
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //  align-items: center;
+  //
+  //  @media screen and (max-width: $header-point) {
+  //    padding-left: 10px;
+  //    margin-top: 15px;
+  //  }
+  //}
 
-    @media screen and (max-width: $header-point) {
-      padding-left: 10px;
-      margin-top: 15px;
-    }
-  }
-
-  &__login {
-    margin-left: 10px;
-
-    @media screen and (max-width: $header-point) {
-      margin: 4px;
-    }
-  }
-
-  &__register {
-    margin-left: 20px;
-
-    @media screen and (max-width: $header-point) {
-      margin: 4px;
-    }
+  //&__login {
+  //  margin-left: 10px;
+  //
+  //  @media screen and (max-width: $header-point) {
+  //    margin: 4px;
+  //  }
+  //}
+  //
+  //&__registration {
+  //  margin-left: 20px;
+  //
+  //  @media screen and (max-width: $header-point) {
+  //    margin: 4px;
+  //  }
+  //}
+  &__icon {
+    @include expander($dark-shade50);
+    margin-left: 2px;
+    //margin-right: 1px;
   }
 
   &__username {
     padding-left: 20px;
     border-left: 1px solid $dark-shade10;
-    margin-left: 10px;
+    //margin-left: 10px;
 
     @media screen and (max-width: $header-point) {
       width: 100%;
-      padding-top: 10px;
-      padding-left: 10px;
+      padding-top: 5px;
+      padding-left: 0;
       border-top: 1px solid $dark-shade10;
       border-left: none;
-      margin-left: 0;
+      //margin-left: 0;
     }
   }
 
-  &__icon {
-    @include expander($dark-shade50);
-  }
 }

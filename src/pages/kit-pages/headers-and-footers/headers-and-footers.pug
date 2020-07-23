@@ -6,15 +6,14 @@ block body
   include ../../../kit/blocks/header/header
 
   body.header-and-footers
-    - const {links, login, register} = require(`./json/header.json`)
+    - const {links, login, registration} = require(`./json/header.json`)
     - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
     +kit-header
     .header-and-footers__anonim-header.js-header-and-footers__anonim-header
       +header({
         links,
         login,
-        register,
-        id: "header-1"
+        registration,
       })
     .header-and-footers__logged-header.js-header-and-footers__logged-header
       +header({
@@ -23,7 +22,6 @@ block body
           url: '/mock-address',
           username: "Юлий Цезарь",
         },
-        id: "header-2"
       })
     .header-and-footers__footer
       +footer({tagline, menu, subscribe, copyright})
