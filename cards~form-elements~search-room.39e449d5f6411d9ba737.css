@@ -1,0 +1,2 @@
+.rating{position:relative;border:none}.rating__input{width:24px;height:24px;cursor:pointer;opacity:0}.rating__input:checked ~ .rating__star_filled{display:none}.rating__star{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center}.rating__star_position_absolute{position:absolute}.rating__star_0{left:0}.rating__star_1{left:24px}.rating__star_2{left:48px}.rating__star_3{left:72px}.rating__star_4{left:96px}
+
