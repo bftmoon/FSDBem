@@ -38,7 +38,7 @@
   }
 
   &__icon {
-    @include expander(white);
+    @include expanding-icon(white);
 
     margin: auto;
     transform: rotate(90deg);

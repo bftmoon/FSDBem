@@ -3,7 +3,7 @@
 @import '../../env-styles/variables';
 @import '../../env-styles/icons';
 
-.expander {
+.expanding-panel {
   &__header {
     @extend %field;
 
@@ -14,7 +14,7 @@
   }
 
   &__icon {
-    @include expander($dark-shade50);
+    @include expanding-icon($dark-shade50);
 
     margin: auto 10px;
   }

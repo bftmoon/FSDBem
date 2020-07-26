@@ -15,7 +15,7 @@ mixin header({links, login, registration, profile})
             if link.content
               li.header__list-item
                 a(href=link.url).header__link=link.name
-                button(type="button").header__expander
+                button(type="button").header__submenu-button
                   .header__icon
             else
               li.header__list-item

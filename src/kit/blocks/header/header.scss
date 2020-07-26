@@ -139,7 +139,7 @@ $header-point: 1040px;
     }
   }
 
-  &__expander {
+  &__submenu-button {
     display: flex;
     align-items: center;
     border: none;
@@ -148,7 +148,7 @@ $header-point: 1040px;
   }
 
   &__icon {
-    @include expander($dark-shade50);
+    @include expanding-icon($dark-shade50);
 
     margin-left: 2px;
   }

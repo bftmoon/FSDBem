@@ -38,7 +38,7 @@
   }
 
   &__icon {
-    @include expander($dark-shade50);
+    @include expanding-icon($dark-shade50);
   }
 
   &__content {

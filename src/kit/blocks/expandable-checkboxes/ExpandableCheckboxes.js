@@ -1,4 +1,4 @@
-import Expander from '../expander';
+import Expander from '../expanding-panel';
 
 class ExpandableCheckboxes {
   static initAll({ selector = '.js-expandable-checkboxes', parent = document }) {

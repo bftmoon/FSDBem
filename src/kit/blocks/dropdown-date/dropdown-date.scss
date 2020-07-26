@@ -67,7 +67,7 @@ $dropdown-date-point: 340px;
   }
 
   &__icon {
-    @include expander($dark-shade50);
+    @include expanding-icon($dark-shade50);
 
     margin: auto 11px;
   }

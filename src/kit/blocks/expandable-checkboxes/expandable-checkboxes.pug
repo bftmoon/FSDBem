@@ -1,7 +1,7 @@
-include ../expander/expander
+include ../expanding-panel/expanding-panel
 include ../checkbox-list/checkbox-list
 
 mixin expandable-checkboxes({title, items, isOpened})
   .js-expandable-checkboxes
-    +expander({title, isOpened})
+    +expanding-panel({title, isOpened})
       +checkbox-list({items})
