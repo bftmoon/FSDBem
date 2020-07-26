@@ -44,19 +44,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3px;
 
   &::before {
-    width: 35%;
-    height: 35%;
+    width: 6px;
+    height: 6px;
     border-right: 2px solid $color;
     border-bottom: 2px solid $color;
     content: '';
     transform: rotate(45deg);
-  }
-
-  &::after {
-    height: 5px;
-    content: '';
   }
 }
 
