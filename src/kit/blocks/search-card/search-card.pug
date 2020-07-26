@@ -10,4 +10,4 @@ mixin search-card
     .search-card__guests
       +guests-dropdown({title: "Гости"})
     .search-card__submit-button
-      +button("Подобрать номер", {isArrowed: true})
+      +button("Подобрать номер", {isArrowed: true})(type="submit")

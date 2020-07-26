@@ -1,11 +1,20 @@
-mixin input(isDateMasked=false)
+mixin input({isDateMasked, isSubscribe})
   if isDateMasked
     input(
       placeholder="ДД.ММ.ГГГГ"
       pattern="(\\d{2}\\.){2}\\d{4}$"
-    ).input.js-input_masked&attributes(attributes)
+    ).input.input_style_simple.js-input_masked&attributes(attributes)
+  else if isSubscribe
+    .input.input_style_with-content
+      input(
+        placeholder="Email"
+        type="email"
+        name="email"
+      ).input__field&attributes(attributes)
+      button(type="submit").input__arrow
+        .input__icon
   else
-    input.input&attributes(attributes)
+    input.input.input_style_simple&attributes(attributes)
 
 
 

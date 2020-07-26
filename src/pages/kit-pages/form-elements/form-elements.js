@@ -14,7 +14,6 @@ import Paginator from '@blocks/paginator';
 import '@blocks/radio-list';
 import '@blocks/rating';
 import Slider from '@blocks/slider';
-import '@blocks/subscribe-input';
 import '@blocks/title';
 import '@blocks/toggle';
 import '../layout/layout';

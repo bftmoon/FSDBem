@@ -8,12 +8,12 @@ mixin registration-card
     h1.registration-card__header Регистрация аккаунта
     form.registration-card__form&attributes(attributes)
       .registration-card__name
-        +input()(
+        +input({})(
           placeholder="Имя"
           name="first-name"
         )
       .registration-card__surname
-        +input()(
+        +input({})(
           placeholder="Фамилия"
           name="last-name"
         )
@@ -26,17 +26,17 @@ mixin registration-card
         })
       .registration-card__birthday
         h3.registration-card__title Дата рождения
-        +input(true)(name="birthday")
+        +input({isDateMasked: true})(name="birthday")
       .registration-card__service
         h3.registration-card__title Данные для входа в сервис
         .registration-card__email
-          +input()(
+          +input({})(
             placeholder="Email"
             type="email"
             name="email"
           )
         .registration-card__password
-          +input()(
+          +input({})(
             placeholder="Пароль"
             type="password"
             name="password"
@@ -44,8 +44,8 @@ mixin registration-card
         .registration-card__ad
           +toggle("Получать спецпредложения")
       .registration-card__submit
-        +button("Перейти к оплате", {isArrowed: true})
+        +button("Перейти к оплате", {isArrowed: true})(type="submit")
     .registration-card__login-offer
       .registration-card__login-text Уже есть аккаунт на Toxin
       .registration-card__login-button.js-registration-card__login-button
-        +button("Войти", {isBordered: true, isConstMin: true})
+        +button("Войти", {isBordered: true, isConstMin: true})(type="button")

@@ -6,7 +6,6 @@ block body
   include ../../../kit/blocks/input/input
   include ../../../kit/blocks/guests-dropdown/guests-dropdown
   include ../../../kit/blocks/dropdown-date/dropdown-date
-  include ../../../kit/blocks/subscribe-input/subscribe-input
   include ../../../kit/blocks/checkbox-list/checkbox-list
   include ../../../kit/blocks/radio-list/radio-list
   include ../../../kit/blocks/toggle/toggle
@@ -39,10 +38,10 @@ block body
       .form-elements__inputs
         .form-elements__default-input
           +title({title: "Text field", subtitle: "Default"})
-          +input()(placeholder="Email" type="email")
+          +input({})(placeholder="Email" type="email")
         .form-elements__hover-input
           +title({title: "Text field", subtitle: "Hover / focus"})
-          +input()(value="This is pretty awesome")
+          +input({})(value="This is pretty awesome")
         .form-elements__default-dropdown
           +guests-dropdown({title: "Dropdown", subtitle: "Default"})
         .form-elements__masked-input
@@ -60,7 +59,7 @@ block body
           })
         .form-elements__subscribe
           h3.form-elements__title Subscription text field
-          +subscribe-input
+          +input({isSubscribe: true})
       .form-elements__simple-checkables
         h3.form-elements__title Checkbox buttons
         .form-elements__checklist
@@ -137,13 +136,13 @@ block body
         .form-elements__buttons
           h3.form-elements__hight-title Buttons
           .form-elements__raised-button
-            +button("Click me", {})
+            +button("Click me", {})(type="button")
           .form-elements__flat-button
-            +button("Click me", {isBordered: true})
+            +button("Click me", {isBordered: true})(type="button")
           .form-elements__link
             +a("Click me")(href="/mock-address")
           .form-elements__submit-button
-            +button("Перейти к оплате", {isArrowed: true})
+            +button("Перейти к оплате", {isArrowed: true})(type="submit")
         .form-elements__paginator
           h3.form-elements__title Pagination
           .form-elements__paginator-item
