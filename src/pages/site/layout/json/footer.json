@@ -66,5 +66,10 @@
     "description": "Получайте специальные предложения и новости сервиса",
     "placeholder": "Email"
   },
-  "copyright": "Copyright © 2018 Toxin отель. Все права зачищены."
+  "copyright": "Copyright © 2018 Toxin отель. Все права зачищены.",
+  "communication": {
+    "twitter": "https://twitter.com",
+    "facebook": "https://www.facebook.com",
+    "instagram": "https://www.instagram.com"
+  }
 }

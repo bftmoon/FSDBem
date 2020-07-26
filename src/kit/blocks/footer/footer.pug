@@ -1,8 +1,7 @@
 include ../logo/logo
-include ../subscribe-input/subscribe-input
-include ../social-networks/social-networks
+include ../input/input
 
-mixin footer({tagline, menu, subscribe, copyright})
+mixin footer({tagline, menu, subscribe, copyright, communication})
   footer.footer
     .footer__menu
       .footer__logo
@@ -10,18 +9,24 @@ mixin footer({tagline, menu, subscribe, copyright})
         .footer__tagline=tagline
       nav.footer__nav
         for column in menu
-          ul.footer__nav-column
+          .footer__nav-column
             .footer__nav-title=column.name
-            for item in column.items
-              li.footer__nav-item
-                a(href=item.url).footer__nav-link=item.name
+            ul.footer__nav-links
+              for item in column.items
+                li.footer__nav-item
+                  a(href=item.url).footer__nav-link=item.name
       .footer__subscribe-offer
         h3.footer__subscribe-title=subscribe.title
         .footer__subscribe-info=subscribe.description
-        .footer__subscribe-input
-          +subscribe-input(placeholder=subscribe.placeholder)
-    .footer__separator
+        form.footer__subscribe-input
+          +input({isSubscribe: true})(placeholder=subscribe.placeholder)
     .footer__info
-      .footer__copyright=copyright
-      .footer__networks
-        +social-networks
+      .footer__info-content
+        .footer__copyright=copyright
+        .footer__networks
+          a(href=communication.twitter target="_blank" rel="noopener noreferrer").footer__networks-link
+            include ./svg/twitter.svg
+          a(href=communication.facebook target="_blank" rel="noopener noreferrer").footer__networks-link
+            include ./svg/facebook.svg
+          a(href=communication.instagram target="_blank" rel="noopener noreferrer").footer__networks-link
+            include ./svg/instagram.svg

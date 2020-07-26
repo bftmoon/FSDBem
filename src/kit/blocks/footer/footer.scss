@@ -123,17 +123,14 @@ $footer-point-small: 768px;
     max-width: 260px;
   }
 
-  &__separator {
-    width: 100%;
-    height: 1px;
-    background: $dark-shade10;
-
+  &__info {
+    border-top: 1px solid $dark-shade10;
     @media screen and (max-width: $footer-point-small) {
-      display: none;
+      border-top: none;
     }
   }
 
-  &__info {
+  &__info-content {
     display: flex;
     max-width: px-to-rem(1210px);
     align-items: center;
@@ -160,5 +157,15 @@ $footer-point-small: 768px;
 
   &__networks {
     margin-right: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__networks-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 11px;
   }
 }

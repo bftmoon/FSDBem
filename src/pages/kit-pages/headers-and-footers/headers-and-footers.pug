@@ -7,7 +7,7 @@ block body
 
   body.header-and-footers
     - const {links, login, registration} = require(`./json/header.json`)
-    - const {tagline, menu, subscribe, copyright} = require(`./json/footer.json`)
+    - const {tagline, menu, subscribe, copyright, communication} = require(`./json/footer.json`)
     +kit-header
     .header-and-footers__anonim-header.js-header-and-footers__anonim-header
       +header({
@@ -24,5 +24,5 @@ block body
         },
       })
     .header-and-footers__footer
-      +footer({tagline, menu, subscribe, copyright})
+      +footer({tagline, menu, subscribe, copyright, communication})
 
