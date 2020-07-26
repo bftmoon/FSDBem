@@ -14,7 +14,8 @@
     line-height: px-to-rem(24px);
     text-overflow: ellipsis;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $dark-shade50;
     }
 

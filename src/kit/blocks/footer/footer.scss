@@ -125,6 +125,7 @@ $footer-point-small: 768px;
 
   &__info {
     border-top: 1px solid $dark-shade10;
+
     @media screen and (max-width: $footer-point-small) {
       border-top: none;
     }
@@ -156,10 +157,10 @@ $footer-point-small: 768px;
   }
 
   &__networks {
-    margin-right: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-right: 2px;
   }
 
   &__networks-link {
