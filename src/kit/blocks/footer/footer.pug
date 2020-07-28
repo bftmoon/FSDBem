@@ -16,7 +16,7 @@ mixin footer({tagline, menu, subscribe, copyright, communication})
                 li.footer__nav-item
                   a(href=item.url).footer__nav-link=item.name
       .footer__subscribe-offer
-        h3.footer__subscribe-title=subscribe.title
+        .footer__subscribe-title=subscribe.title
         .footer__subscribe-info=subscribe.description
         form.footer__subscribe-input
           +input({isSubscribe: true})(placeholder=subscribe.placeholder)

@@ -25,6 +25,7 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     border-radius: 4px 0 0;
     opacity: 0;
+    padding-left: 7px;
   }
 
   > .lSNext {
@@ -38,10 +39,12 @@
   }
 
   &__icon {
-    @include expanding-icon(white);
-
+    width: 9px;
+    height: 9px;
     margin: auto;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
   }
 }
 

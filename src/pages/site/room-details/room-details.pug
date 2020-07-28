@@ -19,7 +19,7 @@ block main
       img(src=require(`./imgs/room-details-2.jpg`).default alt = "room").room-details__image-3
     section.room-details__details
       .room-details__info
-        h2.room-details__info-title Сведения о номере
+        .room-details__info-title Сведения о номере
         +iconed-list([
           {
             icon: "face",
@@ -38,11 +38,11 @@ block main
           },
         ])
       .room-details__chart
-        h2.room-details__chart-title Впечатления от номера
+        .room-details__chart-title Впечатления от номера
         +feedbacks-chart
       ul.room-details__feedbacks
         .room-details__feedbacks-header
-          h2.room-details__feedbacks-title Отзывы посетителей номера
+          .room-details__feedbacks-title Отзывы посетителей номера
           .room-details__feedbacks-count 2 отзыва
         li.room-details__feedback
           +feedback({
@@ -72,7 +72,7 @@ block main
             }
           })
       .room-details__rules
-        h2.room-details__rules-title Правила
+        .room-details__rules-title Правила
         +bullet-list({
           items: [
             "Нельзя с питомцами",
@@ -81,7 +81,7 @@ block main
           ]
         })
       .room-details__cancel-info
-        h2.room-details__cancel-title Отмена
+        .room-details__cancel-title Отмена
         | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       .room-details__card
         +calculator-card({

@@ -58,10 +58,10 @@ block body
             dates: [new Date(2020, 7, 19), new Date(2020, 7, 23)]
           })
         .form-elements__subscribe
-          h3.form-elements__title Subscription text field
+          .form-elements__title Subscription text field
           +input({isSubscribe: true})
       .form-elements__simple-checkables
-        h3.form-elements__title Checkbox buttons
+        .form-elements__title Checkbox buttons
         .form-elements__checklist
           +checkbox-list({
             items: [
@@ -91,7 +91,7 @@ block body
             ]
           })
         .form-elements__radio
-          h3.form-elements__title Radio buttons
+          .form-elements__title Radio buttons
           .form-elements__radio-list
             +radio-list({
               items: [
@@ -113,19 +113,19 @@ block body
               ]
             })
         .form-elements__toggles
-          h3.form-elements__title Toggle
+          .form-elements__title Toggle
           .form-elements__toggle-on
             +toggle("Получать спецпредложения")(checked)
           .form-elements__toggle-off
             +toggle("Получать спецпредложения")
         .form-elements__likes.js-form-elements__likes
-          h3.form-elements__title Like button
+          .form-elements__title Like button
           .form-elements__like
             +like-button(2)
           .form-elements__like
             +like-button(12)(checked)
         .form-elements__rates
-          h3.form-elements__hight-title Rate button
+          .form-elements__hight-title Rate button
           .form-elements__rate
             +rating({rating: 4, groupName: "star-1"})
           .form-elements__rate
@@ -134,7 +134,7 @@ block body
         .form-elements__slider
           +slider({title: "Range slider"})
         .form-elements__buttons
-          h3.form-elements__hight-title Buttons
+          .form-elements__hight-title Buttons
           .form-elements__raised-button
             +button("Click me", {})(type="button")
           .form-elements__flat-button
@@ -144,7 +144,7 @@ block body
           .form-elements__submit-button
             +button("Перейти к оплате", {isArrowed: true})(type="submit")
         .form-elements__paginator
-          h3.form-elements__title Pagination
+          .form-elements__title Pagination
           .form-elements__paginator-item
             +paginator("1 – 12 из 100+ вариантов аренды")
       .form-elements__dropdown-conditions
@@ -185,7 +185,7 @@ block body
             isOpened: true
           })
       .form-elements__rich-checkboxes
-        h3.form-elements__hight-title Rich checkbox buttons
+        .form-elements__hight-title Rich checkbox buttons
         +checkbox-list({
           items: [
             {
@@ -199,7 +199,7 @@ block body
           ]
         })
       .form-elements__bullets
-        h3.form-elements__title Bullet list
+        .form-elements__title Bullet list
         .form-elements__bullet-list
           +bullet-list({
             items: [

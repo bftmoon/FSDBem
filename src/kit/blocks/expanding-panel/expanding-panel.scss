@@ -7,20 +7,26 @@
   &__header {
     @extend %field;
 
+    @include expanding-icon($dark-shade50);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 18px;
+    margin-bottom: 3px;
     cursor: pointer;
+
+    &::after {
+      margin-bottom: 3px;
+    }
   }
 
-  &__icon {
-    @include expanding-icon($dark-shade50);
-
-    margin: auto 10px;
-  }
-
-  &_opened &__icon {
-    transform: rotate(180deg);
+  &_opened &__header {
+    &::after {
+      margin-top: 5px;
+      margin-bottom: 0;
+      transform: rotate(-135deg);
+    }
   }
 
   &__content {
@@ -29,7 +35,6 @@
 
   &_opened &__content {
     display: unset;
-    margin-top: 2px;
   }
 
   &__title {

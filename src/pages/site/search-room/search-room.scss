@@ -1,4 +1,5 @@
 @import '../../../kit/env-styles/functions';
+@import '../../../kit/env-styles/theme';
 @import '../../../kit/env-styles/variables';
 
 $search-room-point-big: 857px;
@@ -25,7 +26,7 @@ $search-room-point-big: 857px;
   }
 
   &__date {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   &__guests {
@@ -40,6 +41,7 @@ $search-room-point-big: 857px;
   }
 
   &__title {
+    @extend h3;
     margin-bottom: 16px;
   }
 

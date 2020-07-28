@@ -9,10 +9,12 @@
   &__header {
     @extend %field-bordered;
 
+    @include expanding-icon($dark-shade50);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
+    padding-right: 17px;
     padding-left: 14px;
     border: 1px solid $dark-shade25 {
       radius: 4px;
@@ -20,6 +22,10 @@
     background: white;
     cursor: pointer;
     font-size: px-to-rem(14px);
+
+    &::after {
+      margin-bottom: 3px;
+    }
   }
 
   &_opened &__header {
@@ -37,9 +43,8 @@
     white-space: nowrap;
   }
 
-  &__icon {
-    @include expanding-icon($dark-shade50);
-  }
+  //&__icon {
+  //}
 
   &__content {
     position: absolute;

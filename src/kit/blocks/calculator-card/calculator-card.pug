@@ -38,7 +38,7 @@ mixin calculator-card({room, options, costs})
         .calculator-card__price-info.calculator-card__price-info_line_small= "Сбор за дополнительные услуги"
         .calculator-card__tooltip(title="some important info") i
         .calculator-card__price-item.calculator-card__price-item_line_small= util.toRuPrice(costs.overService)
-      h2.calculator-card__result
+      .calculator-card__result
         | Итого
         .calculator-card__separator
         .calculator-card__summary= util.toRuPrice(room.price * range + costs.service + costs.overService - costs.discount)

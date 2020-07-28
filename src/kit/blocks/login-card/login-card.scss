@@ -1,9 +1,11 @@
 @import '../../env-styles/abstract';
+@import '../../env-styles/theme';
 
 .login-card {
   @extend %card;
 
   &__title {
+    @extend h1;
     margin-bottom: 20px;
   }
 

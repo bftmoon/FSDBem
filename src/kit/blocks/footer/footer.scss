@@ -103,6 +103,7 @@ $footer-point-small: 768px;
   }
 
   &__subscribe-title {
+    @extend h3;
     margin-bottom: 18px;
 
     @media screen and (max-width: $footer-point-medium) {

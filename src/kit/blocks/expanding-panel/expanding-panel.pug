@@ -1,7 +1,6 @@
 mixin expanding-panel({title, isOpened})
   div(class=isOpened ? "expanding-panel_opened" : "").expanding-panel.js-expanding-panel
-    button(type="button").expanding-panel__header.js-expanding-panel__header&attributes(attributes)
+    button(type="button").expanding-panel__header&attributes(attributes)
       .expanding-panel__title=title
-      .expanding-panel__icon.js-expanding-panel__icon
-    .expanding-panel__content.js-expanding-panel__content
+    .expanding-panel__content
       block

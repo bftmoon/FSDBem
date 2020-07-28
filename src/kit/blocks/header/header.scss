@@ -110,16 +110,16 @@ $header-point: 1040px;
       margin-right: 0;
     }
 
-    @media screen and (max-width: $header-point) {
-      margin: 3px 0;
-    }
-
     &_type_menu {
       margin-left: 10px;
 
       @media screen and (max-width: $header-point) {
         margin: 3px 0;
       }
+    }
+
+    @media screen and (max-width: $header-point) {
+      margin: 3px 0;
     }
   }
 
@@ -140,17 +140,16 @@ $header-point: 1040px;
   }
 
   &__submenu-button {
+    @include expanding-icon($dark-shade50);
+
     display: flex;
     align-items: center;
+    padding-right: 6px;
+    padding-bottom: 2px;
+    padding-left: 8px;
     border: none;
     background: none;
     cursor: pointer;
-  }
-
-  &__icon {
-    @include expanding-icon($dark-shade50);
-
-    margin-left: 2px;
   }
 
   &__username {

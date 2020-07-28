@@ -1,6 +1,7 @@
 @import '../../env-styles/variables';
 @import '../../env-styles/abstract';
 @import '../../env-styles/functions';
+@import '../../env-styles/theme';
 
 .calculator-card {
   @extend %card;
@@ -69,6 +70,7 @@
   }
 
   &__result {
+    @extend h2;
     display: flex;
     margin-bottom: 20px;
     margin-left: 1px;

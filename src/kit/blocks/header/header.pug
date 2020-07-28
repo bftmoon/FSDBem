@@ -16,7 +16,6 @@ mixin header({links, login, registration, profile})
               li.header__list-item
                 a(href=link.url).header__link=link.name
                 button(type="button").header__submenu-button
-                  .header__icon
             else
               li.header__list-item
                 a(href=link.url class=link.isBold ? "header__link_important" : "").header__link=link.name

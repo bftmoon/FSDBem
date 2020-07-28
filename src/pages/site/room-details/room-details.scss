@@ -1,5 +1,6 @@
 @import '../../../kit/env-styles/variables';
 @import '../../../kit/env-styles/functions';
+@import '../../../kit/env-styles/theme';
 
 $details-page-point-images-medium: 850px;
 $details-page-point-images-small: 430px;
@@ -97,6 +98,7 @@ $details-page-point-content-small: 460px;
   }
 
   &__info-title {
+    @extend h2;
     margin-bottom: 20px;
   }
 
@@ -114,6 +116,7 @@ $details-page-point-content-small: 460px;
   }
 
   &__chart-title {
+    @extend h2;
     margin-bottom: 19px;
     margin-left: 2px;
 
@@ -137,6 +140,7 @@ $details-page-point-content-small: 460px;
   }
 
   &__feedbacks-title {
+    @extend h2;
     margin-bottom: 4px;
   }
 
@@ -169,6 +173,7 @@ $details-page-point-content-small: 460px;
   }
 
   &__rules-title {
+    @extend h2;
     margin-top: 3px;
     margin-bottom: 18px;
     margin-left: 21px;
@@ -192,6 +197,7 @@ $details-page-point-content-small: 460px;
   }
 
   &__cancel-title {
+    @extend h2;
     margin-bottom: 17px;
   }
 

@@ -1,7 +1,12 @@
 @import '../../env-styles/abstract';
+@import '../../env-styles/theme';
 
 .search-card {
   @extend %card;
+
+  &__header{
+    @extend h1;
+  }
 
   &__date {
     margin-top: 20px;

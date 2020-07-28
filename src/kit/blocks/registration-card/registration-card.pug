@@ -5,7 +5,7 @@ include ../button/button
 
 mixin registration-card
   .registration-card.js-registration-card
-    h1.registration-card__header Регистрация аккаунта
+    .registration-card__header Регистрация аккаунта
     form.registration-card__form&attributes(attributes)
       .registration-card__name
         +input({})(
@@ -25,10 +25,10 @@ mixin registration-card
           ]
         })
       .registration-card__birthday
-        h3.registration-card__title Дата рождения
+        .registration-card__title Дата рождения
         +input({isDateMasked: true})(name="birthday")
       .registration-card__service
-        h3.registration-card__title Данные для входа в сервис
+        .registration-card__title Данные для входа в сервис
         .registration-card__email
           +input({})(
             placeholder="Email"

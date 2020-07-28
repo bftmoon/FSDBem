@@ -5,7 +5,6 @@ mixin dropdown-menu(data, {title, subtitle, isOpened, isInline, withActions})
     +title({title, subtitle})
     button(type="button").dropdown-menu__header.js-dropdown-menu__header
       .dropdown-menu__text
-      .dropdown-menu__icon
     fieldset.dropdown-menu__content&attributes(attributes)
       for item in data
         .dropdown-menu__item
