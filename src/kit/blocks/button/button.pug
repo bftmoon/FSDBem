@@ -13,11 +13,11 @@ mixin button(text, {isBordered, isSecondary, isArrowed, isMini, isWide, isConstM
   if isArrowed
     if attributes.href
       a.button(class=classes)&attributes(attributes)
-        span.button__arrowed-text=text
+        span.button__text=text
         .button__arrow
     else
       button.button(class=classes)&attributes(attributes)
-        span.button__arrowed-text=text
+        span.button__text=text
         .button__arrow
 
   else if isBordered

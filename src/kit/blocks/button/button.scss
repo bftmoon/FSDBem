@@ -68,7 +68,7 @@
     background: $secondary-gradient;
   }
 
-  &__text {
+  &_style_bordered &__text {
     display: inline-flex;
     width: 100%;
     align-items: center;
@@ -82,7 +82,7 @@
     padding: 7.5px 18.5px;
   }
 
-  &__arrowed-text {
+  &_content_arrowed &__text {
     flex-grow: 2;
     margin-left: px-to-rem(22px);
   }
